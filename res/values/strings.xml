@@ -24,4 +24,14 @@
 	<!-- login screen 3 -->
 	<string name="MAVERIC_MEMBER">Maveric member</string>
 	<string name="MAVERIC_MEMBER_ID">Maveric Id</string>
+	<string name="WELCOME_LOGINSCREEN">Welcome to my Maverick,the on-the-go assistant for
+		all your fitness needs.your workouts,your diet and your fitness
+		plans-all in the palm of your hand
+	</string>
+	<string name="SIGNUP_LOGINSCREEN">To get started,enter your login details below
+	</string>
+	<string name="EMAIL_ID">email id</string>
+	<string name="PASSWORD">password</string>
+	<string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
 </resources> 
+

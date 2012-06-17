@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linearLayout1"
+	android:background="@color/allpage_side_page_color"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+			<RelativeLayout
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:layout_margin="10dp">
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:background="@drawable/maveric_logo"
+					android:layout_alignParentRight="true" />
+
+			</RelativeLayout>
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:orientation="vertical"
+				android:background="@drawable/diet_trcker"
+				android:layout_marginRight="15dp">
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_marginTop="20dp"
+					android:layout_height="wrap_content">
+					<ImageView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:src="@drawable/diet_trcker_side"
+						android:id="@+id/workout_tracker_side" />
+					<TextView
+						android:id="@+id/date"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="20dip"
+						android:layout_toRightOf="@+id/workout_tracker_side"
+						android:text="date" />
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:layout_marginLeft="20dip"
+						android:id="@+id/favourite"
+						android:layout_below="@+id/date"
+						android:layout_toRightOf="@+id/workout_tracker_side"
+						android:text="Add and save as favourite"
+						android:background="#fff"
+						android:textColor="#000"
+						android:layout_marginTop="15dip" />
+
+				</RelativeLayout>
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:layout_marginLeft="10dip"
+					android:textColor="@color/subtitle_answer_text_color"
+					android:text="Breakfast" />
+				<EditText
+					android:layout_width="fill_parent"
+					android:layout_height="100dip"
+					android:padding="5dip"
+					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
+					android:id="@+id/breakfast"
+					android:background="@drawable/trancparent_curve_all_page"
+					android:layout_margin="10dip" />
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:layout_marginLeft="10dip"
+					android:textColor="@color/subtitle_answer_text_color"
+					android:text="Lunch" />
+				<EditText
+					android:layout_width="fill_parent"
+					android:layout_height="100dip"
+					android:padding="5dip"
+					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
+					android:background="@drawable/trancparent_curve_all_page"
+					android:id="@+id/lunch"
+					android:layout_margin="10dip" />
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:layout_marginLeft="10dip"
+					android:textColor="@color/subtitle_answer_text_color"
+					android:text="Dinner" />
+				<EditText
+					android:layout_width="fill_parent"
+					android:layout_height="100dip"
+					android:padding="5dip"
+					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
+					android:id="@+id/dinner"
+					android:background="@drawable/trancparent_curve_all_page"
+					android:layout_margin="10dip" />
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:layout_marginLeft="10dip"
+					android:textColor="@color/subtitle_answer_text_color"
+					android:text="snacks" />
+				<EditText
+					android:layout_width="fill_parent"
+					android:layout_height="100dip"
+					android:padding="5dip"
+					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
+					android:background="@drawable/trancparent_curve_all_page"
+					android:id="@+id/snacks"
+					android:layout_margin="10dip" />
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="fill_parent"
+					android:layout_margin="10dip"
+					android:padding="20dip"
+					android:orientation="horizontal">
+					<TextView
+						android:layout_weight="1"
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content"
+						android:layout_marginLeft="10dip"
+						android:textColor="@color/subtitle_answer_text_color"
+						android:text="Daily goal:" />
+					<RelativeLayout
+						android:layout_width="wrap_content"
+						android:layout_weight="1"
+						android:layout_height="wrap_content">
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:id="@+id/calories_title"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="Calories" />
+						<TextView
+							android:layout_below="@+id/calories_title"
+							android:id="@+id/calories_answer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="286" />
+					</RelativeLayout>
+					<RelativeLayout
+						android:layout_weight="1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content">
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:id="@+id/Carbos_title"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="Carbos" />
+						<TextView
+							android:layout_below="@+id/Carbos_title"
+							android:id="@+id/Carbos_answer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="286" />
+					</RelativeLayout>
+					<RelativeLayout
+						android:layout_weight="1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content">
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:id="@+id/fat_title"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="Fat" />
+						<TextView
+							android:layout_below="@+id/fat_title"
+							android:id="@+id/fat_answer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="286" />
+					</RelativeLayout>
+					<RelativeLayout
+						android:layout_weight="1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content">
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:id="@+id/protein_title"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="Protein" />
+						<TextView
+							android:layout_below="@+id/protein_title"
+							android:id="@+id/protein_answer"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:textColor="@color/subtitle_answer_text_color"
+							android:text="286" />
+					</RelativeLayout>
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</RelativeLayout>

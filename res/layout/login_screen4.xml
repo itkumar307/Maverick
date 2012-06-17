@@ -30,10 +30,11 @@
 				android:orientation="vertical"
 				android:background="@drawable/login_screen">
 				<!-- slide title start -->
-				<ImageView android:layout_width="wrap_content"
-				    android:layout_height="fill_parent"
-				    android:layout_marginTop="15dip"
-				    android:src="@drawable/login_screen_side"/>
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent"
+					android:layout_marginTop="15dip"
+					android:src="@drawable/login_screen_side" />
 				<!-- slide title end -->
 				<!-- login default description wit image start -->
 				<RelativeLayout
@@ -102,6 +103,18 @@
 						android:layout_height="wrap_content" />
 				</LinearLayout>
 				<!-- editbox group end -->
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:padding="10dip"
+					android:id="@+id/next"
+					android:layout_margin="10dip"
+					android:layout_height="wrap_content">
+					<ImageView
+						android:layout_width="wrap_content"
+						android:layout_alignParentRight="true"
+						android:src="@drawable/next"
+						android:layout_height="wrap_content" />
+				</RelativeLayout>
 			</LinearLayout>
 
 		</LinearLayout>
