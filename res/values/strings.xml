@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, MavericActivity!</string>
+	<string name="app_name">Maveric</string>
+	<string name="LOGIN">LOGIN</string>
+	<string name="LOGIN_TITLE_TEXT">Please enter your physical statics in the fields
+		below
+	</string>
+	<!-- login screen 2 -->
+	<string name="CURRENT_HEIGHT">Current height</string>
+	<string name="CURRENT_WEIGHT">Current Weight</string>
+	<string name="WAIST">Waist</string>
+	<string name="HIP">Hip</string>
+	<!-- all page -->
+	<string name="DUMMY_STRING">Lorem Ipsum is simply dummy text of the printing
+		and typesetting industry. Lorem Ipsum has been the industry s standard
+		dummy text ever since the 1500s,
+	</string>
+	<!-- login screen 3 -->
+	<string name="TARGET_HEIGHT">Target height</string>
+	<string name="TARGET_WEIGHT">Target Weight</string>
+	<string name="TARGET_HIP">Target Hip</string>
+	<string name="CURRENT_BMI">Current BMI</string>
+	<!-- login screen 3 -->
+	<string name="MAVERIC_MEMBER">Maveric member</string>
+	<string name="MAVERIC_MEMBER_ID">Maveric Id</string>
+</resources> 

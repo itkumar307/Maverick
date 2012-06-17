@@ -1,0 +1,9 @@
+<resources>
+
+	<color name="allpage_side_page_color">#ffffff</color>
+	<color name="sidetext_title_color">#00FFFF</color>
+	<color name="login_page_content_text_color">#24957e</color>
+	<color name="allpage_subtitle">#F38F2F</color>
+	<color name="subtitle_answer_text_backgroud">#E6E6E6</color>
+	<color name="subtitle_answer_text_color">#8A4B08</color>
+</resources>

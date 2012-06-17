@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/linearLayout1"
+	android:orientation="vertical"
+	android:background="@color/allpage_side_page_color"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_margin="10dp">
+		<ImageView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:background="@drawable/maveric_logo"
+			android:layout_alignParentRight="true" />
+
+	</RelativeLayout>
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:orientation="vertical"
+		android:background="@drawable/workout_tracker"
+		android:layout_marginRight="15dp">
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_marginTop="20dp"
+			android:layout_height="wrap_content">
+			<ImageView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:src="@drawable/workout_trackerside"
+				android:id="@+id/workout_tracker_side" />
+			<TextView
+				android:id="@+id/date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="20dip"
+				android:layout_toRightOf="@+id/workout_tracker_side"
+				android:text="date" />
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/favourite"
+				android:layout_below="@+id/date"
+				android:layout_toRightOf="@+id/workout_tracker_side"
+				android:text="Add and save as favourite"
+				android:background="#fff"
+				android:textColor="#000"
+				android:layout_marginTop="15dip" />
+
+		</RelativeLayout>
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_marginLeft="10dip"
+			android:textColor="@color/subtitle_answer_text_color"
+			android:text="Select excerise" />
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/select_excerise"
+			android:background="@drawable/trancparent_curve_all_page"
+			android:layout_margin="10dip" />
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_marginLeft="10dip"
+			android:textColor="@color/subtitle_answer_text_color"
+			android:text="workout" />
+		<EditText
+			android:layout_width="fill_parent"
+			android:layout_height="100dip"
+			android:background="@drawable/trancparent_curve_all_page"
+			android:id="@+id/workout"
+			android:layout_margin="10dip" />
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_marginLeft="10dip"
+			android:textColor="@color/subtitle_answer_text_color"
+			android:text="Calories Burned Today" />
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/Calories_burned_today"
+				android:paddingLeft="25dip"
+				android:paddingRight="25dip"
+				android:paddingTop="5dip"
+				android:paddingBottom="5dip"
+				android:background="@color/subtitle_answer_text_backgroud"
+				android:textColor="@color/subtitle_answer_text_color"
+				android:text="76cal"
+				android:layout_margin="10dip" />
+			<ImageView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:src="@drawable/workout_tracker_right"
+				android:layout_alignParentRight="true" />
+		</RelativeLayout>
+	</LinearLayout>
+</LinearLayout>
