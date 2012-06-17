@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.maveric"
-      android:versionCode="1"
-      android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8" />
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.maveric"
+	android:versionCode="1"
+	android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="8" />
 
-    <application android:icon="@drawable/iphone_icon" android:label="@string/app_name">
-        <activity android:name=".MavericActivity"
-                  android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-    </application>
+	<application
+		android:icon="@drawable/iphone_icon"
+		android:label="@string/app_name">
+		<activity
+			android:name=".MavericHomeActivity"
+			android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".LoginActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".LoginActivity2"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".LoginActivity3"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".LoginActivity4"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".WorkoutTrackerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".DietTrackerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+	</application>
 </manifest>

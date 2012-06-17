@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="fill_parent"
+
+	android:orientation="vertical">
+
+	<View
+		android:id="@+id/realhomeview"
+		android:layout_width="fill_parent"
+		android:layout_height="2dip"
+		android:layout_above="@+id/bottommenu"
+		android:background="@color/menu_view_line" />
+
+	<!-- child layout start -->
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/bottommenu"
+		android:layout_width="fill_parent"
+		android:background="#D8D8D8"
+		android:layout_height="50dip"
+		android:layout_alignParentBottom="true"
+		android:gravity="center_horizontal">
+
+		<!-- member zone start -->
+
+		<RelativeLayout
+			android:id="@+id/member_zone_layout "
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:paddingTop="2dip">
+
+			<TextView
+				android:id="@+id/member_zone"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/menu_member_zone"
+				android:paddingTop="1dip" />
+		</RelativeLayout>
+
+		<View
+			android:id="@+id/realhomeview"
+			android:layout_width="1dip"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realhome"
+			android:background="@color/menu_view_line" />
+
+		<!-- member zone End -->
+
+		<!-- Diet tracker Menu Start -->
+
+		<RelativeLayout
+			android:id="@+id/Diet_tracker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realhome"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/Diet_tracker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/menu_dieat_tracker"
+				android:paddingTop="1dip" />
+		</RelativeLayout>
+
+		<View
+			android:id="@+id/Diet_tracker_view"
+			android:layout_width="1dip"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realadd"
+			android:background="@color/menu_view_line" />
+
+		<!-- Diet tracker Menu End -->
+
+		<!-- workout tracker Menu Start -->
+
+		<RelativeLayout
+			android:id="@+id/workout_tracker_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realadd"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/workout_tracker"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/menu_workout_tracker" />
+		</RelativeLayout>
+
+		<View
+			android:id="@+id/workout_tracker_view"
+			android:layout_width="1dip"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realsearch"
+			android:background="@color/menu_view_line" />
+		<!-- workout tracker Menu End -->
+
+		<!-- metapolic typing Menu Start -->
+		<RelativeLayout
+			android:id="@+id/metapolic_typing_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realsearch"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/metapolic_typing"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/menu_metabolic" />
+
+		</RelativeLayout>
+
+		<View
+			android:id="@+id/metapolic_typing_view"
+			android:layout_width="1dip"
+			android:layout_height="fill_parent"
+			android:layout_toRightOf="@+id/realsearch"
+			android:background="@color/menu_view_line" />
+		<!-- metapolic typing Menu End -->
+
+		<!-- intract menu start -->
+
+		<RelativeLayout
+			android:id="@+id/intract_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/intract"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/menu_interact" />
+
+
+		</RelativeLayout>
+
+		<!-- intract menu end -->
+	</LinearLayout>
+
+
+</RelativeLayout>

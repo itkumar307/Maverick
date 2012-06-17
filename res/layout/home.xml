@@ -117,4 +117,17 @@
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>
+	<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            layout="@layout/menu" />
+    </RelativeLayout>
 </RelativeLayout>
