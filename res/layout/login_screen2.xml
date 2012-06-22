@@ -36,6 +36,12 @@
 					android:src="@drawable/login_screen_side" />
 				<!-- slide title end -->
 				<!-- login default description wit image start -->
+				<!-- login with current detail start -->
+				    <LinearLayout
+                    android:id="@+id/login_with_current_detail"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 				<RelativeLayout
 					android:layout_below="@+id/slide_title"
 					android:id="@+id/LOGIN_TITLE"
@@ -127,10 +133,7 @@
 						android:layout_height="wrap_content" />
 				</RelativeLayout>
 			</LinearLayout>
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="50dip"
-				android:visibility="invisible"></LinearLayout>
+			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>
 	<RelativeLayout
