@@ -27,7 +27,6 @@
 			<LinearLayout
 				android:layout_height="fill_parent"
 				android:layout_width="fill_parent"
-				android:layout_marginRight="20dip"
 				android:orientation="vertical"
 				android:background="@drawable/home_screen">
                 <ImageView android:layout_width="wrap_content"

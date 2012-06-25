@@ -72,5 +72,8 @@ public abstract class MavericBaseActiity extends Activity {
 	}
 
 	protected abstract void setContentToLayout();
-
+	protected void toast(String text)
+	{
+		Toast.makeText(context, text, Toast.LENGTH_LONG).show();
+	}
 }

@@ -24,11 +24,10 @@
 
 			</RelativeLayout>
 			<LinearLayout
-				android:layout_height="wrap_content"
+				android:layout_height="fill_parent"
 				android:layout_width="fill_parent"
 				android:orientation="vertical"
-				android:background="@drawable/diet_trcker"
-				android:layout_marginRight="15dp">
+				android:background="@drawable/diet_trcker">
 				<RelativeLayout
 					android:layout_width="fill_parent"
 					android:layout_marginTop="20dp"
@@ -66,8 +65,9 @@
 					android:text="Breakfast" />
 				<EditText
 					android:layout_width="fill_parent"
-					android:layout_height="100dip"
+					android:layout_height="wrap_content"
 					android:padding="5dip"
+					android:textColor="@color/Editbox_text_color"
 					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
 					android:id="@+id/breakfast"
 					android:background="@drawable/trancparent_curve_all_page"
@@ -80,8 +80,9 @@
 					android:text="Lunch" />
 				<EditText
 					android:layout_width="fill_parent"
-					android:layout_height="100dip"
+					android:layout_height="wrap_content"
 					android:padding="5dip"
+					android:textColor="@color/Editbox_text_color"
 					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
 					android:background="@drawable/trancparent_curve_all_page"
 					android:id="@+id/lunch"
@@ -94,7 +95,8 @@
 					android:text="Dinner" />
 				<EditText
 					android:layout_width="fill_parent"
-					android:layout_height="100dip"
+					android:textColor="@color/Editbox_text_color"
+					android:layout_height="wrap_content"
 					android:padding="5dip"
 					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
 					android:id="@+id/dinner"
@@ -108,7 +110,8 @@
 					android:text="snacks" />
 				<EditText
 					android:layout_width="fill_parent"
-					android:layout_height="100dip"
+					android:layout_height="wrap_content"
+					android:textColor="@color/Editbox_text_color"
 					android:padding="5dip"
 					android:hint="@string/DIET_TRACKER_EDITBOX_HINT"
 					android:background="@drawable/trancparent_curve_all_page"

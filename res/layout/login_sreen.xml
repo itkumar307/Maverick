@@ -23,13 +23,13 @@
 					android:layout_alignParentRight="true" />
 			</RelativeLayout>
 			<LinearLayout
+				android:layout_width="fill_parent"
 				android:orientation="vertical"
-				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:background="@drawable/login_screen">
 				<ImageView
 					android:layout_width="wrap_content"
-					android:layout_height="fill_parent"
+					android:layout_height="wrap_content"
 					android:layout_marginTop="15dip"
 					android:src="@drawable/login_screen_side" />
 
@@ -104,6 +104,17 @@
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:padding="5dip"
+								android:text="@string/USER_NAME"
+								android:textColor="@color/login_page_content_text_color" />
+							<EditText
+								android:id="@+id/user_name"
+								android:layout_margin="10dip"
+								android:layout_width="fill_parent"
+								android:layout_height="wrap_content" />
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:padding="5dip"
 								android:text="@string/EMAIL_ID"
 								android:textColor="@color/login_page_content_text_color" />
 							<EditText
@@ -123,17 +134,32 @@
 								android:layout_margin="10dip"
 								android:layout_width="fill_parent"
 								android:layout_height="wrap_content" />
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:padding="5dip"
+								android:text="@string/CONFORM_PWD"
+								android:textColor="@color/login_page_content_text_color" />
+							<EditText
+								android:id="@+id/confrm_pwd"
+								android:layout_margin="10dip"
+								android:layout_width="fill_parent"
+								android:inputType="textPassword"
+								android:layout_height="wrap_content" />
 						</LinearLayout>
 						<RelativeLayout
 							android:layout_width="fill_parent"
 							android:padding="10dip"
-							android:id="@+id/next"
 							android:layout_margin="10dip"
 							android:layout_height="wrap_content">
-							<ImageView
+							<Button
 								android:layout_width="wrap_content"
-								android:layout_alignParentRight="true"
-								android:src="@drawable/next"
+								android:layout_centerInParent="true"
+								android:background="#186B8F"
+								android:textColor="#FFF"
+								android:id="@+id/sign_up"
+								android:padding="10dp"
+								android:text="Sign Up"
 								android:layout_height="wrap_content" />
 						</RelativeLayout>
 					</LinearLayout>
@@ -188,6 +214,7 @@
 						<EditText
 							android:id="@+id/login_height"
 							android:layout_margin="10dip"
+
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 
@@ -200,6 +227,7 @@
 						<EditText
 							android:id="@+id/login_weight"
 							android:layout_margin="10dip"
+
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 						<TextView
@@ -210,6 +238,7 @@
 							android:textColor="@color/login_page_content_text_color" />
 						<EditText
 							android:id="@+id/login_waist"
+
 							android:layout_margin="10dip"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
@@ -221,6 +250,7 @@
 							android:textColor="@color/login_page_content_text_color" />
 						<EditText
 							android:id="@+id/login_hip"
+
 							android:layout_margin="10dip"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
@@ -239,203 +269,118 @@
 							android:layout_height="wrap_content" />
 					</RelativeLayout>
 				</LinearLayout>
-				<!-- login with current detail end-->
-				
-				    <!-- login with target detail start -->
-                <LinearLayout
-                    android:id="@+id/login_with_target_detail"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:id="@+id/LOGIN_TITLE"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dip"
-                        android:layout_alignParentLeft="true"
-                        android:layout_toLeftOf="@+id/image"
-                        android:text="@string/LOGIN_TITLE_TEXT" />
-                    <ImageView
-                        android:id="@+id/image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/login_screen_toy" />
-                </RelativeLayout>
-                <!-- login default description wit image end -->
-                <!-- editbox group start -->
-                <LinearLayout
-                    android:layout_below="@+id/LOGIN_TITLE"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dip"
-                    android:layout_marginRight="20dip"
-                    android:layout_marginTop="-5dip"
-                    android:background="@drawable/trancparent_curve_all_page"
-                    android:id="@+id/editbox_group"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/TARGET_HEIGHT"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <EditText
-                        android:id="@+id/TARGET_HEIGHT"
-                        android:layout_margin="10dip"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
+				<!-- login with current detail end -->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/TARGET_WEIGHT"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <EditText
-                        android:id="@+id/TARGET_WEIGHT"
-                        android:layout_margin="10dip"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/TARGET_HIP"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <EditText
-                        android:id="@+id/TARGET_HIP"
-                        android:layout_margin="10dip"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/CURRENT_BMI"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <EditText
-                        android:id="@+id/CURRENT_BMI"
-                        android:layout_margin="10dip"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <!-- editbox group end -->
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:padding="10dip"
-                    android:id="@+id/target_detail_next"
-                    android:layout_margin="10dip"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/next"
-                        android:layout_height="wrap_content" />
-                </RelativeLayout>
-            </LinearLayout>
-        <!-- login with target detail end -->
-        
-        <!-- login with maveric ID start -->
-                <LinearLayout
-                    android:id="@+id/login_with_maveric_id"
-                    android:orientation="vertical"
-                    android:visibility="visible"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:id="@+id/LOGIN_TITLE"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="10dip"
-                        android:layout_alignParentLeft="true"
-                        android:layout_toLeftOf="@+id/image"
-                        android:text="@string/LOGIN_TITLE_TEXT" />
-                    <ImageView
-                        android:id="@+id/image"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/login_screen_toy" />
-                </RelativeLayout>
-                <!-- login default description wit image end -->
-                <!-- editbox group start -->
-                <LinearLayout
-                    android:layout_below="@+id/LOGIN_TITLE"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dip"
-                    android:layout_marginRight="20dip"
-                    android:layout_marginTop="-5dip"
-                    android:background="@drawable/trancparent_curve_all_page"
-                    android:id="@+id/editbox_group"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/MAVERIC_MEMBER"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/redio_yes"
-                            android:text="Yes" />
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_toRightOf="@+id/redio_yes"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dip"
-                            android:id="@+id/radio_no"
-                            android:text="No" />
-                    </RelativeLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dip"
-                        android:text="@string/MAVERIC_MEMBER_ID"
-                        android:textColor="@color/login_page_content_text_color" />
-                    <EditText
-                        android:id="@+id/CURRENT_BMI"
-                        android:layout_margin="10dip"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-                <!-- editbox group end -->
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:padding="10dip"
-                    android:id="@+id/mavric_id_next"
-                    android:layout_margin="10dip"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/next"
-                        android:layout_height="wrap_content" />
-                </RelativeLayout>
-            </LinearLayout>
-            <!--  login with maveric ID end -->
-				
-				
+				<!-- login with target detail start -->
+				<LinearLayout
+					android:id="@+id/login_with_target_detail"
+					android:orientation="vertical"
+					android:visibility="gone"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
+					<RelativeLayout
+						android:id="@+id/LOGIN_TITLE"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content">
+						<TextView
+							android:id="@+id/textView1"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="10dip"
+							android:layout_alignParentLeft="true"
+							android:layout_toLeftOf="@+id/image"
+							android:text="@string/LOGIN_TITLE_TEXT" />
+						<ImageView
+							android:id="@+id/image"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_alignParentRight="true"
+							android:background="@drawable/login_screen_toy" />
+					</RelativeLayout>
+					<!-- login default description wit image end -->
+					<!-- editbox group start -->
+					<LinearLayout
+						android:layout_below="@+id/LOGIN_TITLE"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="20dip"
+						android:layout_marginRight="20dip"
+						android:layout_marginTop="-5dip"
+						android:background="@drawable/trancparent_curve_all_page"
+						android:id="@+id/editbox_group"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="@string/TARGET_HEIGHT"
+							android:textColor="@color/login_page_content_text_color" />
+						<EditText
+							android:id="@+id/TARGET_HEIGHT"
+							android:layout_margin="10dip"
+
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="@string/TARGET_WEIGHT"
+							android:textColor="@color/login_page_content_text_color" />
+						<EditText
+							android:id="@+id/TARGET_WEIGHT"
+
+							android:layout_margin="10dip"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="@string/TARGET_HIP"
+							android:textColor="@color/login_page_content_text_color" />
+						<EditText
+							android:id="@+id/TARGET_HIP"
+							android:layout_margin="10dip"
+
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:padding="5dip"
+							android:text="@string/CURRENT_BMI"
+							android:textColor="@color/login_page_content_text_color" />
+						<EditText
+							android:id="@+id/CURRENT_BMI"
+							android:layout_margin="10dip"
+
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content" />
+					</LinearLayout>
+					<!-- editbox group end -->
+					<RelativeLayout
+						android:layout_width="fill_parent"
+						android:padding="10dip"
+						android:id="@+id/target_detail_next"
+						android:layout_margin="10dip"
+						android:layout_height="wrap_content">
+						<ImageView
+							android:layout_width="wrap_content"
+							android:layout_alignParentRight="true"
+							android:src="@drawable/next"
+							android:layout_height="wrap_content" />
+					</RelativeLayout>
+				</LinearLayout>
+				<!-- login with target detail end -->
+
 			</LinearLayout>
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="50dip"
-			android:visibility="invisible"></LinearLayout>
-	</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="50dip"
+				android:visibility="invisible"></LinearLayout>
+		</LinearLayout>
 	</ScrollView>
 	<RelativeLayout
 		android:layout_width="fill_parent"

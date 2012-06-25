@@ -25,11 +25,10 @@
 
 			</RelativeLayout>
 			<LinearLayout
-				android:layout_height="wrap_content"
+				android:layout_height="fill_parent"
 				android:layout_width="fill_parent"
 				android:orientation="vertical"
-				android:background="@drawable/workout_tracker"
-				android:layout_marginRight="15dp">
+				android:background="@drawable/workout_tracker">
 				<RelativeLayout
 					android:layout_width="fill_parent"
 					android:layout_marginTop="20dp"
@@ -68,7 +67,9 @@
 				<EditText
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
+					android:minHeight="40dip"
 					android:id="@+id/select_excerise"
+					android:textColor="@color/Editbox_text_color"
 					android:background="@drawable/trancparent_curve_all_page"
 					android:layout_margin="10dip" />
 				<TextView
@@ -79,7 +80,9 @@
 					android:text="workout" />
 				<EditText
 					android:layout_width="fill_parent"
-					android:layout_height="100dip"
+					android:textColor="@color/Editbox_text_color"
+					android:layout_height="wrap_content"
+					android:minHeight="40dip"
 					android:background="@drawable/trancparent_curve_all_page"
 					android:id="@+id/workout"
 					android:layout_margin="10dip" />
