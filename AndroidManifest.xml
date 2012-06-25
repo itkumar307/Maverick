@@ -18,8 +18,8 @@
 			</intent-filter>
 		</activity>
 		<provider
-            android:name=".MaverickProvider"
-            android:authorities=".MaverickProvider" />
+            android:name="com.maveric.contentprovider.MaverickProvider"
+            android:authorities="com.maveric.contentprovider.MaverickProvider" />
 		<activity
 			android:name=".MavericHomeActivity"
 			android:windowSoftInputMode="stateHidden">
