@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.maveric.obj.type.Profile;
+import com.maveric.util.MSWSClient;
+
 public class LoginActivity extends MavericBaseActiity {
 
 	@Override
@@ -18,8 +21,10 @@ public class LoginActivity extends MavericBaseActiity {
 
 	}
 
-	LinearLayout loginWithEmail, loginWithCurrentDetail, loginWithTargetDetail;
-	Button signUp;
+	private LinearLayout loginWithEmail, loginWithCurrentDetail,
+			loginWithTargetDetail;
+	private Button signUp;
+	private Profile profile;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,8 @@ public class LoginActivity extends MavericBaseActiity {
 
 		loginWithCurrentDetail.setVisibility(View.VISIBLE);
 
+		profile = new Profile();
+
 		signUp.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -53,8 +60,19 @@ public class LoginActivity extends MavericBaseActiity {
 				signUp.setBackgroundColor(R.color.signup_pressed);
 				signUp.setClickable(false);
 				if (isAllFilled(userName, conformPwd, emailId, passWord)) {
-					Intent home = new Intent(context, MavericHomeActivity.class);
-					startActivity(home);
+					profile.setEmailId(emailId.getText().toString());
+					profile.setUserName(userName.getText().toString());
+					profile.setPassword(passWord.getText().toString());
+					if (signUp()) {
+						Intent home = new Intent(context,
+								MavericHomeActivity.class);
+						home.putExtra("currentBmi", getCurrentBmi());
+						home.putExtra("recommendedBmi", getRecommendedBmi());
+						home.putExtra("waterLog", getWaterLog());
+						startActivity(home);
+					} else
+						toast(getString(R.string.SIGNUP_FAILURE));
+
 				} else
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
 			}
@@ -64,9 +82,17 @@ public class LoginActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				if (isAllFilled(currentHeight, currentWeight, currentHip,
-						currentWaist))
+						currentWaist)) {
+					profile.setCurrentHeight(Float.valueOf(currentHeight
+							.getText().toString()));
+					profile.setCurrentWeight(Float.valueOf(currentWeight
+							.getText().toString()));
+					profile.setCurrentHip(Float.valueOf(currentHip.getText()
+							.toString()));
+					profile.setWaist(Float.valueOf(currentWaist.getText()
+							.toString()));
 					setLoginScreen(loginWithTargetDetail);
-				else
+				} else
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
 			}
 		});
@@ -75,9 +101,18 @@ public class LoginActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				if (isAllFilled(targetHeight, targettWeight, targetHip,
-						currentBmi))
+						currentBmi)) {
+
+					profile.setTargetHeight(Float.valueOf(targetHeight
+							.getText().toString()));
+					profile.setTargetWeight(Float.valueOf(targettWeight
+							.getText().toString()));
+					profile.setTargetHip(Float.valueOf(targetHip.getText()
+							.toString()));
+					profile.setBmi(Float.valueOf(currentBmi.getText()
+							.toString()));
 					setLoginScreen(loginWithEmail);
-				else
+				} else
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
 			}
 		});
@@ -133,5 +168,27 @@ public class LoginActivity extends MavericBaseActiity {
 			return true;
 		else
 			return false;
+	}
+
+	private Boolean signUp() {
+		String signUpUrl = getString(R.string.SERVERNAME)
+				+ getString(R.string.RELATIVE_URL)
+				+ getString(R.string.PROJECT_NAME)
+				+ getString(R.string.PROFILE_SIGNUP_API);
+		MSWSClient client = new MSWSClient(signUpUrl, context,
+				profile.toJsonArray());
+		return client.isPostSuccessfully;
+	}
+	private Float getCurrentBmi()
+	{
+		return profile.getCurrentHeight()-100;
+	}
+	private Float getRecommendedBmi()
+	{
+		return profile.getCurrentHeight()-100;
+	}
+	private Float getWaterLog() {
+		// TODO Auto-generated method stub
+		return (float) 2.3;
 	}
 }

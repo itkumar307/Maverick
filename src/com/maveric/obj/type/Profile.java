@@ -1,8 +1,16 @@
-package com.maveric.object.type;
+package com.maveric.obj.type;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.maveric.R;
+import com.maveric.database.model.ProfileTable;
 
 import android.content.Context;
+import android.util.Log;
 
-public class profile {
+public class Profile {
 
 	private Context ctx;
 	private String userName;
@@ -17,8 +25,7 @@ public class profile {
 	private Float targetWeight;
 	private Float targetHip;
 
-	public profile(Context ctx) {
-		this.ctx = ctx;
+	public Profile() {
 	}
 
 	public void setUserName(String userName) {
@@ -107,5 +114,40 @@ public class profile {
 
 	public String getEmailId() {
 		return emailId;
+	}
+
+	public JSONArray toJsonArray() {
+		JSONObject jobj = new JSONObject();
+		try {
+			if (userName != null) {
+				jobj.put(ProfileTable.Column.USER_NAME, userName);
+				jobj.put(ProfileTable.Column.EMAIL_ID, emailId);
+				jobj.put(ProfileTable.Column.PASSWORD, passWord);
+				jobj.put(ProfileTable.Column.CURRENT_HEIGHT, currentHeight);
+				jobj.put(ProfileTable.Column.CURRENT_HIP, currentHip);
+				jobj.put(ProfileTable.Column.CURRENT_WEIGHT, currentWeight);
+				jobj.put(ProfileTable.Column.CURRENT_WAIST, waist);
+				jobj.put(ProfileTable.Column.CURRENT_BMI, currentBmi);
+				jobj.put(ProfileTable.Column.TARGET_HEIGHT, targetHeight);
+				jobj.put(ProfileTable.Column.TARGET_WEIGHT, targetWeight);
+				jobj.put(ProfileTable.Column.TARGET_HIP, targetHip);
+			}
+			return new JSONArray().put(jobj);
+
+		} catch (JSONException e) {
+			Log.e(ctx.getString(R.string.app_name), e.getMessage(), e);
+			return null;
+		}
+
+	}
+
+	public String toString() {
+		return "[ UserName :" + userName + "; " + "EmailId :" + emailId + "; "
+				+ "Password :" + passWord + "; " + "CurrentHeight :"
+				+ currentHeight + "; " + "CurrentWeight :" + currentWeight
+				+ "; " + "CurrentBmi :" + currentBmi + ": " + "CurrentHip :"
+				+ currentHip + "; " + "Waist :" + waist + "; "
+				+ "TargetHeight :" + targetHeight + "; " + "TargetWeight : "
+				+ targetWeight + "; " + "TargetHip : " + targetHip + "]";
 	}
 }

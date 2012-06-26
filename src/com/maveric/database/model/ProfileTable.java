@@ -1,9 +1,9 @@
-package com.maveric.table;
+package com.maveric.database.model;
 
 import android.database.sqlite.SQLiteDatabase;
 
 public class ProfileTable {
-	public static String TABLE = "profile";
+	public static String TABLE = "Profile";
 
 	public static class Column {
 

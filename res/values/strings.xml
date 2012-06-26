@@ -36,5 +36,13 @@
 	<string name="CONFORM_PWD">conform password</string>
 	<string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
 	<string name="REQUIRE_FIELD_TOAST">Please fill all the values</string>
+	<!-- url -->
+	<string name="SERVERNAME"></string>
+	<string name="RELATIVE_URL"></string>
+	<string name="PROJECT_NAME">maveric</string>
+	<string name="PROFILE_SIGNUP_API"></string>
+	<!-- signup failure -->
+	<string name="SIGNUP_FAILURE">Signup failure for due to some network problem
+		please try again later</string>
 </resources> 
 
