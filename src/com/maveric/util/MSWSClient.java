@@ -31,6 +31,7 @@ public class MSWSClient {
 
 	public MSWSClient(String url, Context ctx, JSONArray jArray) {
 		JSONObject jObject = new JSONObject();
+		this.ctx = ctx;
 		if (jArray != null) {
 			try {
 				HttpPost request = new HttpPost(url);
@@ -54,13 +55,18 @@ public class MSWSClient {
 	}
 
 	private void getHttpResponse(HttpPost request) {
+		Log.d(ctx.getString(R.string.app_name), "getHttpResponseEnter" +(request!=null));
 		InputStream is = null;
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpResponse response;
 		try {
+			Log.d(ctx.getString(R.string.app_name), "requet" +(request!=null));
+			if(request != null)
+			{
 			response = httpclient.execute(request);
 			HttpEntity entity = response.getEntity();
 			is = entity.getContent();
+			}
 		} catch (ClientProtocolException e) {
 			Log.e(ctx.getString(R.string.app_name),
 					"getResponse failure " + e.getMessage(), e);
@@ -82,8 +88,10 @@ public class MSWSClient {
 
 			Log.d(ctx.getString(R.string.app_name),
 					"API response : " + str.toString());
-			if (str.toString().equals("Success"))
+			if (str.toString().trim().equalsIgnoreCase("suecces"))
+			{
 				isPostSuccessfully = true;
+			}
 		} catch (Exception ex) {
 
 			Log.e(ctx.getString(R.string.app_name),

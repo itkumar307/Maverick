@@ -2,6 +2,7 @@ package com.maveric;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,6 +26,7 @@ public class LoginActivity extends MavericBaseActiity {
 			loginWithTargetDetail;
 	private Button signUp;
 	private Profile profile;
+	private Apppref appPref;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,30 +53,69 @@ public class LoginActivity extends MavericBaseActiity {
 
 		loginWithCurrentDetail.setVisibility(View.VISIBLE);
 
-		profile = new Profile();
-
+		profile = new Profile(context);
+		appPref = new Apppref(context);
+		if (!appPref.isStartUp())
+			gotoHomeActivity();
 		signUp.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				signUp.setBackgroundColor(R.color.signup_pressed);
+				signUp.setBackgroundResource(R.color.signup_pressed);
 				signUp.setClickable(false);
 				if (isAllFilled(userName, conformPwd, emailId, passWord)) {
-					profile.setEmailId(emailId.getText().toString());
-					profile.setUserName(userName.getText().toString());
-					profile.setPassword(passWord.getText().toString());
-					if (signUp()) {
-						Intent home = new Intent(context,
-								MavericHomeActivity.class);
-						home.putExtra("currentBmi", getCurrentBmi());
-						home.putExtra("recommendedBmi", getRecommendedBmi());
-						home.putExtra("waterLog", getWaterLog());
-						startActivity(home);
-					} else
-						toast(getString(R.string.SIGNUP_FAILURE));
+					if (passWord.getText().toString()
+							.equals(conformPwd.getText().toString())) {
+						profile.setEmailId(emailId.getText().toString());
+						profile.setUserName(userName.getText().toString());
+						profile.setPassword(passWord.getText().toString());
 
-				} else
+						if (isNetworkAvailable()) {
+							if (signUp()) {
+
+								Log.d(getString(R.string.app_name),
+										"current Weight = "
+												+ profile.getCurrentWeight());
+								profile.flush();
+								float currentBmi = getBmi(Float
+										.valueOf(currentWeight.getText()
+												.toString()), Float
+										.valueOf(currentHeight.getText()
+												.toString()));
+								float recWeight = recWeight(Float
+										.valueOf(currentWeight.getText()
+												.toString()), Float
+										.valueOf(currentHeight.getText()
+												.toString()));
+								float recWater = getRecWater(Float
+										.valueOf(currentWeight.getText()
+												.toString()));
+
+								appPref.setStartup(false);
+								appPref.setBmi(currentBmi);
+								appPref.setRecWater(recWater);
+								appPref.setRecWeight(recWeight);
+								gotoHomeActivity();
+							} else {
+								signUp.setClickable(true);
+								signUp.setBackgroundResource(R.color.signup_unpressed);
+								toast(getString(R.string.SIGNUP_FAILURE));
+							}
+						} else {
+							signUp.setClickable(true);
+							signUp.setBackgroundColor(R.color.signup_unpressed);
+							toast(getString(R.string.NO_INTERNET_CONNECTION));
+						}
+					} else {
+						signUp.setClickable(true);
+						signUp.setBackgroundColor(R.color.signup_unpressed);
+						toast("password and conform password mismatched");
+					}
+				} else {
+					signUp.setClickable(true);
+					signUp.setBackgroundColor(R.color.signup_unpressed);
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
+				}
 			}
 		});
 		loginWithCurrentDetailNext.setOnClickListener(new OnClickListener() {
@@ -171,24 +212,21 @@ public class LoginActivity extends MavericBaseActiity {
 	}
 
 	private Boolean signUp() {
-		String signUpUrl = getString(R.string.SERVERNAME)
-				+ getString(R.string.RELATIVE_URL)
-				+ getString(R.string.PROJECT_NAME)
-				+ getString(R.string.PROFILE_SIGNUP_API);
-		MSWSClient client = new MSWSClient(signUpUrl, context,
-				profile.toJsonArray());
+		// String signUpUrl = getString(R.string.SERVERNAME)
+		// + getString(R.string.RELATIVE_URL)
+		// + getString(R.string.PROJECT_NAME)
+		// + getString(R.string.PROFILE_SIGNUP_API);
+		MSWSClient client = new MSWSClient(
+				"http://122.165.34.103/maveric/web/app_dev.php/m/details/add",
+				context, profile.toJsonArray());
+		Log.d(getString(R.string.app_name), "signup = "
+				+ client.isPostSuccessfully);
 		return client.isPostSuccessfully;
 	}
-	private Float getCurrentBmi()
-	{
-		return profile.getCurrentHeight()-100;
-	}
-	private Float getRecommendedBmi()
-	{
-		return profile.getCurrentHeight()-100;
-	}
-	private Float getWaterLog() {
-		// TODO Auto-generated method stub
-		return (float) 2.3;
+
+	private void gotoHomeActivity() {
+		Intent home = new Intent(context, MavericHomeActivity.class);
+		startActivity(home);
+		this.finish();
 	}
 }

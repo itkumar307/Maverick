@@ -2,6 +2,8 @@
 <resources>
 	<string name="hello">Hello World, MavericActivity!</string>
 	<string name="app_name">Maveric</string>
+	<!-- Apppref string -->
+	<string name ="APP_PREF_NAME">MavericAppPreferencesString</string>
 	<string name="LOGIN">LOGIN</string>
 	<string name="LOGIN_TITLE_TEXT">Please enter your physical statics in the fields
 		below
@@ -37,12 +39,15 @@
 	<string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
 	<string name="REQUIRE_FIELD_TOAST">Please fill all the values</string>
 	<!-- url -->
-	<string name="SERVERNAME"></string>
-	<string name="RELATIVE_URL"></string>
-	<string name="PROJECT_NAME">maveric</string>
-	<string name="PROFILE_SIGNUP_API"></string>
+	<string name="SERVERNAME">http://122.165.34.103</string>
+	<string name="RELATIVE_URL">/</string>
+	<string name="PROJECT_NAME">maveric/web/app_dev.php/</string>
+	<string name="PROFILE_SIGNUP_API">m/details/add</string>
 	<!-- signup failure -->
 	<string name="SIGNUP_FAILURE">Signup failure for due to some network problem
-		please try again later</string>
+		please try again later
+	</string>
+	<!-- check internet connection -->
+	<string name="NO_INTERNET_CONNECTION">No internet connection Available</string>
 </resources> 
 

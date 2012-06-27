@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class WaterTracker {
 
-	public static final String TABLE = "Product";
+	public static final String TABLE = "WaterTracker";
 
 	public static class Column {
 

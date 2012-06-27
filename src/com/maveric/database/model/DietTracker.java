@@ -4,10 +4,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class DietTracker {
 
-	public static final String TABLE = "Image";
+	public static final String TABLE = "Diet";
 
 	public static class Column {
-		public static final String ID = "_id";
+		public static final String ID = "id";
 		public static final String DATE = "date";
 		public static final String BREAKFAST = "breakfast";
 		public static final String LUNCH = "luch";

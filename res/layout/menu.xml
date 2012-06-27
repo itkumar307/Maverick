@@ -24,33 +24,6 @@
 		android:layout_alignParentBottom="true"
 		android:gravity="center_horizontal">
 
-		<!-- member zone start -->
-
-		<RelativeLayout
-			android:id="@+id/member_zone_layout "
-			android:layout_width="wrap_content"
-			android:layout_height="fill_parent"
-			android:layout_weight="1"
-			android:paddingTop="2dip">
-
-			<TextView
-				android:id="@+id/member_zone"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_centerHorizontal="true"
-				android:background="@drawable/menu_member_zone"
-				android:paddingTop="1dip" />
-		</RelativeLayout>
-
-		<View
-			android:id="@+id/realhomeview"
-			android:layout_width="1dip"
-			android:layout_height="fill_parent"
-			android:layout_toRightOf="@+id/realhome"
-			android:background="@color/menu_view_line" />
-
-		<!-- member zone End -->
-
 		<!-- Diet tracker Menu Start -->
 
 		<RelativeLayout

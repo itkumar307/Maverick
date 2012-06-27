@@ -11,7 +11,7 @@
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content">
+			android:layout_height="fill_parent">
 			<RelativeLayout
 				android:layout_height="wrap_content"
 				android:layout_width="fill_parent"
@@ -25,7 +25,7 @@
 			<LinearLayout
 				android:layout_width="fill_parent"
 				android:orientation="vertical"
-				android:layout_height="wrap_content"
+				android:layout_height="fill_parent"
 				android:background="@drawable/login_screen">
 				<ImageView
 					android:layout_width="wrap_content"
@@ -214,7 +214,7 @@
 						<EditText
 							android:id="@+id/login_height"
 							android:layout_margin="10dip"
-
+							android:inputType="number"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 
@@ -227,7 +227,7 @@
 						<EditText
 							android:id="@+id/login_weight"
 							android:layout_margin="10dip"
-
+							android:inputType="number"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 						<TextView
@@ -238,7 +238,7 @@
 							android:textColor="@color/login_page_content_text_color" />
 						<EditText
 							android:id="@+id/login_waist"
-
+							android:inputType="number"
 							android:layout_margin="10dip"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
@@ -250,7 +250,7 @@
 							android:textColor="@color/login_page_content_text_color" />
 						<EditText
 							android:id="@+id/login_hip"
-
+							android:inputType="number"
 							android:layout_margin="10dip"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
@@ -318,7 +318,7 @@
 						<EditText
 							android:id="@+id/TARGET_HEIGHT"
 							android:layout_margin="10dip"
-
+							android:inputType="number"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 
@@ -330,7 +330,7 @@
 							android:textColor="@color/login_page_content_text_color" />
 						<EditText
 							android:id="@+id/TARGET_WEIGHT"
-
+							android:inputType="number"
 							android:layout_margin="10dip"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
@@ -343,7 +343,7 @@
 						<EditText
 							android:id="@+id/TARGET_HIP"
 							android:layout_margin="10dip"
-
+							android:inputType="number"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 						<TextView
@@ -355,7 +355,7 @@
 						<EditText
 							android:id="@+id/CURRENT_BMI"
 							android:layout_margin="10dip"
-
+							android:inputType="number"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content" />
 					</LinearLayout>
@@ -376,13 +376,13 @@
 				<!-- login with target detail end -->
 
 			</LinearLayout>
-			<LinearLayout
+			<!-- <LinearLayout
 				android:layout_width="fill_parent"
 				android:layout_height="50dip"
-				android:visibility="invisible"></LinearLayout>
+				android:visibility="invisible"></LinearLayout> -->
 		</LinearLayout>
 	</ScrollView>
-	<RelativeLayout
+	<!-- <RelativeLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true">
@@ -394,5 +394,5 @@
 			android:layout_alignParentLeft="true"
 			android:layout_alignParentTop="true"
 			layout="@layout/menu" />
-	</RelativeLayout>
+	</RelativeLayout> -->
 </RelativeLayout>

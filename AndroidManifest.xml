@@ -5,7 +5,8 @@
 	android:versionCode="1"
 	android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="8" />
-
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<application
 		android:icon="@drawable/iphone_icon"
 		android:label="@string/app_name">
@@ -18,8 +19,11 @@
 			</intent-filter>
 		</activity>
 		<provider
-            android:name="com.maveric.contentprovider.MaverickProvider"
-            android:authorities="com.maveric.contentprovider.MaverickProvider" />
+			android:name="com.maveric.contentprovider.MaverickProvider"
+			android:authorities="com.maveric.contentprovider.MaverickProvider" />
+		<provider
+            android:name="com.maveric.contentprovider.ProfileProvider"
+            android:authorities="com.maveric.contentprovider.ProfileProvider" />
 		<activity
 			android:name=".MavericHomeActivity"
 			android:windowSoftInputMode="stateHidden">

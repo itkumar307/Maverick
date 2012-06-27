@@ -7,18 +7,18 @@ public class ProfileTable {
 
 	public static class Column {
 
-		public static String CURRENT_HEIGHT = "current_height";
-		public static String CURRENT_WEIGHT = "current_weight";
-		public static String CURRENT_HIP = "current_hip";
-		public static String CURRENT_WAIST = "current_waist";
+		public static String CURRENT_HEIGHT = "currentHeight";
+		public static String CURRENT_WEIGHT = "currentWeight";
+		public static String CURRENT_HIP = "hip";
+		public static String CURRENT_WAIST = "waist";
 
-		public static String TARGET_HEIGHT = "target_height";
-		public static String TARGET_WEIGHT = "target_weight";
-		public static String TARGET_HIP = "target_hip";
-		public static String CURRENT_BMI = "current_bmi";
+		public static String TARGET_HEIGHT = "recomBmi";
+		public static String TARGET_WEIGHT = "targetWeight";
+		public static String TARGET_HIP = "actualWH";
+		public static String CURRENT_BMI = "actualBmi";
 
-		public static String USER_NAME = "user_name";
-		public static String EMAIL_ID = "email_id";
+		public static String USER_NAME = "recomWater";
+		public static String EMAIL_ID = "Email";
 		public static String PASSWORD = "password";
 
 	}
@@ -30,16 +30,16 @@ public class ProfileTable {
 				Column.USER_NAME, Column.EMAIL_ID, Column.PASSWORD };
 		return columns;
 	}
-
+	
 	private static final String DATABASE_CREATE = "CREATE TABLE " + TABLE
 			+ " (_id INTEGER PRIMARY KEY AUTOINCREMENT," + Column.EMAIL_ID
-			+ "TEXT UNIQUE," + Column.PASSWORD + "TEXT,"
-			+ Column.CURRENT_HEIGHT + "REAL," + Column.CURRENT_WEIGHT
-			+ "REAL," + Column.CURRENT_HIP + "REAL,"
-			+ Column.CURRENT_WAIST + "REAL," + Column.TARGET_HEIGHT
-			+ "REAL," + Column.TARGET_WEIGHT + "REAL,"
-			+ Column.TARGET_HIP + "REAL," + Column.CURRENT_BMI + "REAL,"
-			+ Column.USER_NAME + "TEXT ); ";
+			+ " TEXT UNIQUE, " + Column.PASSWORD + " TEXT, "
+			+ Column.CURRENT_HEIGHT + " REAL, " + Column.CURRENT_WEIGHT
+			+ " REAL, " + Column.CURRENT_HIP + " REAL, "
+			+ Column.CURRENT_WAIST + " REAL, " + Column.TARGET_HEIGHT
+			+ " REAL, " + Column.TARGET_WEIGHT + " REAL, "
+			+ Column.TARGET_HIP + " REAL, " + Column.CURRENT_BMI + " REAL, "
+			+ Column.USER_NAME + " TEXT ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
 		database.execSQL(DATABASE_CREATE);

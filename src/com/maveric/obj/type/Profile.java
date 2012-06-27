@@ -4,11 +4,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maveric.R;
-import com.maveric.database.model.ProfileTable;
-
+import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
+
+import com.maveric.R;
+import com.maveric.contentprovider.ProfileProvider;
+import com.maveric.database.model.ProfileTable;
 
 public class Profile {
 
@@ -25,7 +27,8 @@ public class Profile {
 	private Float targetWeight;
 	private Float targetHip;
 
-	public Profile() {
+	public Profile(Context ctx) {
+		this.ctx = ctx;
 	}
 
 	public void setUserName(String userName) {
@@ -139,6 +142,34 @@ public class Profile {
 			return null;
 		}
 
+	}
+
+	public ContentValues toContentValues() {
+		ContentValues values = new ContentValues();
+		Log.d(ctx.getString(R.string.app_name), "CURRENT_HEIGHT = "
+				+ currentHeight + " EMAIL_ID = " + emailId);
+		values.put(ProfileTable.Column.CURRENT_HEIGHT, currentHeight);
+		values.put(ProfileTable.Column.CURRENT_WEIGHT, currentWeight);
+		values.put(ProfileTable.Column.CURRENT_HIP, currentHip);
+		values.put(ProfileTable.Column.CURRENT_WAIST, waist);
+		values.put(ProfileTable.Column.CURRENT_BMI, currentBmi);
+		values.put(ProfileTable.Column.TARGET_HEIGHT, targetHeight);
+		values.put(ProfileTable.Column.TARGET_WEIGHT, targetWeight);
+		values.put(ProfileTable.Column.TARGET_HIP, targetHip);
+		values.put(ProfileTable.Column.EMAIL_ID, emailId);
+		values.put(ProfileTable.Column.PASSWORD, passWord);
+		values.put(ProfileTable.Column.USER_NAME, userName);
+		return values;
+	}
+
+	public void flush() {
+		try {
+			this.ctx.getContentResolver().insert(ProfileProvider.INSERT_URI,
+					this.toContentValues());
+		} catch (Exception e) {
+			Log.e(ctx.getString(R.string.app_name), "profile insert failed "
+					+ e.getMessage(), e);
+		}
 	}
 
 	public String toString() {
