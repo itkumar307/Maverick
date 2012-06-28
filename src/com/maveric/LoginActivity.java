@@ -1,5 +1,6 @@
 package com.maveric;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.maveric.contentprovider.ExceriseProvider;
+import com.maveric.database.model.ExceriseValue;
 import com.maveric.obj.type.Profile;
 import com.maveric.util.MSWSClient;
 
@@ -31,6 +34,14 @@ public class LoginActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		// TODO delete this below code just add test condition
+		ContentValues values = new ContentValues();
+		values.put(ExceriseValue.Column.EXCERISE_TYPE, "hai");
+		values.put(ExceriseValue.Column.CALORIES, "5");
+		values.put(ExceriseValue.Column.UPDATED, "5");
+		values.put(ExceriseValue.Column.CREATED, "5");
+		getContentResolver().insert(ExceriseProvider.EXCERISETYPE_URI, values);
+
 		signUp = (Button) findViewById(R.id.sign_up);
 		RelativeLayout loginWithCurrentDetailNext = (RelativeLayout) findViewById(R.id.current_detail_next);
 		RelativeLayout loginWithTargetDetailNext = (RelativeLayout) findViewById(R.id.target_detail_next);
@@ -52,9 +63,10 @@ public class LoginActivity extends MavericBaseActiity {
 		loginWithTargetDetail = (LinearLayout) findViewById(R.id.login_with_target_detail);
 
 		loginWithCurrentDetail.setVisibility(View.VISIBLE);
-		
+
 		profile = new Profile(context);
 		appPref = new Apppref(context);
+		// TODO add not equal condition
 		if (appPref.isStartUp())
 			gotoHomeActivity();
 		signUp.setOnClickListener(new OnClickListener() {
