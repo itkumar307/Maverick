@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="PauseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        <item name="android:windowBackground">@color/popupdialogheadcolor</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/alertfadeout</item>
+        <item name="android:windowExitAnimation">@anim/alertfadein</item>
+    </style>
+    
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">#323331</item>
+    </style>
+
+    <style name="CustomTheme" parent="android:Theme">
+        <item name="android:windowTitleSize">50dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+        <item name="android:textSize">17dip</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+   
+
+</resources>

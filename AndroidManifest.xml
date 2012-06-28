@@ -23,6 +23,9 @@
             android:name=".contentprovider.WorkoutProvider"
             android:authorities="com.maveric.WorkoutProvider" />
 		<provider
+            android:name=".contentprovider.ExceriseProvider"
+            android:authorities="com.maveric.exceriseprovider" />
+		<provider
             android:name="com.maveric.contentprovider.ProfileProvider"
             android:authorities="com.maveric.contentprovider.ProfileProvider" />
 		<activity
@@ -31,6 +34,7 @@
 		</activity>
 		<activity
 			android:name=".WorkoutTrackerActivity"
+			android:theme="@style/CustomTheme"
 			android:windowSoftInputMode="stateHidden">
 		</activity>
 		<activity

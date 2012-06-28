@@ -10,4 +10,7 @@
 	<color name="Editbox_text_color">#ffffff</color>
 	<color name="signup_pressed">#2E09FC</color>
 	<color name="signup_unpressed">#186B8F</color>
+	<color name="popupdialogtextcolor">#0A0A0A</color>
+    <color name="black">#000000</color>
+    <color name="popupdialogheadcolor">#3366cc</color>
 </resources>
