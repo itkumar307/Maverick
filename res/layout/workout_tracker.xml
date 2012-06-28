@@ -1,129 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<ScrollView
-	    xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content">
-		<LinearLayout
-			android:layout_height="wrap_content"
-			android:layout_width="fill_parent"
-			android:orientation="vertical">
-			<RelativeLayout
-				android:layout_height="wrap_content"
-				android:layout_width="fill_parent"
-				android:layout_margin="10dp">
-				<ImageView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:background="@drawable/maveric_logo"
-					android:layout_alignParentRight="true" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none" >
 
-			</RelativeLayout>
-			<LinearLayout
-				android:layout_height="fill_parent"
-				android:layout_width="fill_parent"
-				android:orientation="vertical"
-				android:background="@drawable/workout_tracker">
-				<RelativeLayout
-					android:layout_width="fill_parent"
-					android:layout_marginTop="20dp"
-					android:layout_height="wrap_content">
-					<ImageView
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:src="@drawable/workout_trackerside"
-						android:id="@+id/workout_tracker_side" />
-					<Button
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:layout_marginLeft="20dip"
-						android:id="@+id/favourite"
-						android:padding="5dip"
-						android:textColor="#fff"
-						android:layout_alignParentRight="true"
-						android:layout_below="@+id/workout_tracker_side"
-						android:text="See Previous Log"
-                        android:paddingLeft="10dip"
-						android:background="@drawable/add_fav"
-						android:layout_marginTop="30dip" />
-				</RelativeLayout>
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:layout_marginLeft="10dip"
-					android:textColor="@color/subtitle_answer_text_color"
-					android:text="Select excerise" />
-			  	<EditText
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:minHeight="40dip"
-					android:id="@+id/select_excerise"
-					android:textColor="@color/Editbox_text_color"
-					android:background="@drawable/trancparent_curve_all_page"
-					android:layout_margin="10dip" /> 
-					
-					<Spinner
-                        android:id="@+id/selectexercisevalue"
-                        android:layout_marginLeft="10dip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:prompt="@string/selectexcerise" />
-					
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:layout_marginLeft="10dip"
-					android:textColor="@color/subtitle_answer_text_color"
-					android:text="workout" />
-			<!--  	<EditText
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/maveric_logo" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/workout_tracker"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:id="@+id/workout_tracker_side"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/workout_trackerside" />
+
+                <Button
+                    android:id="@+id/favourite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/workout_tracker_side"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="30dip"
+                    android:background="@drawable/add_fav"
+                    android:padding="5dip"
+                    android:paddingLeft="10dip"
+                    android:text="See Previous Log"
+                    android:textColor="#fff" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:text="Select excerise"
+                android:textColor="@color/subtitle_answer_text_color" />
+
+         <!--   <EditText
+                android:id="@+id/select_excerise"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:background="@drawable/trancparent_curve_all_page"
+                android:minHeight="40dip"
+                android:textColor="@color/Editbox_text_color" /> -->
+
+            <Spinner
+                android:id="@+id/selectexercisevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:prompt="@string/selectexcerise" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:text="workout"
+                android:textColor="@color/subtitle_answer_text_color" />
+            <!--
+                  	<EditText
 					android:layout_width="fill_parent"
 					android:textColor="@color/Editbox_text_color"
 					android:layout_height="wrap_content"
 					android:minHeight="40dip"
 					android:background="@drawable/trancparent_curve_all_page"
 					android:id="@+id/workout"
-					android:layout_margin="10dip" />-->
-					
-					<Spinner
-                        android:id="@+id/selectworkoutvalue"
-                        android:layout_marginLeft="10dip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:prompt="@string/selectexcerise" />
-					
-					<Button
-                    android:layout_height="wrap_content"
+					android:layout_margin="10dip" />
+            -->
+
+            <Spinner
+                android:id="@+id/selectworkoutvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:prompt="@string/selectexcerise" />
+
+            <Button
+                android:id="@+id/workoutsave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:text="Save" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:text="Calories Burned Today"
+                android:textColor="@color/subtitle_answer_text_color" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/Calories_burned_today"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="10dip"
-                    android:id="@+id/workoutsave"
-                    android:text="Save" />
-					
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:layout_marginLeft="10dip"
-					android:textColor="@color/subtitle_answer_text_color"
-					android:text="Calories Burned Today" />
-				<RelativeLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content">
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:id="@+id/Calories_burned_today"
-						android:paddingLeft="25dip"
-						android:paddingRight="25dip"
-						android:paddingTop="5dip"
-						android:paddingBottom="5dip"
-						android:background="@color/subtitle_answer_text_backgroud"
-						android:textColor="@color/subtitle_answer_text_color"
-						android:text="76cal"
-						android:layout_margin="10dip" />
-					<ImageView
-						android:layout_height="wrap_content"
-						android:layout_width="wrap_content"
-						android:src="@drawable/workout_tracker_right"
-						android:layout_alignParentRight="true" />
-				</RelativeLayout>
-			</LinearLayout>
-			</LinearLayout>
-	</ScrollView>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:background="@color/subtitle_answer_text_backgroud"
+                    android:paddingBottom="5dip"
+                    android:paddingLeft="25dip"
+                    android:paddingRight="25dip"
+                    android:paddingTop="5dip"
+                    android:text="76cal"
+                    android:textColor="@color/subtitle_answer_text_color" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/workout_tracker_right" />
+            </RelativeLayout>
+        </LinearLayout>
+        </LinearLayout>
+</ScrollView>
