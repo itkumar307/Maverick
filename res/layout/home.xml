@@ -48,7 +48,9 @@
 					android:layout_marginLeft="20dip"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="@string/DUMMY_STRING" />
+					android:text="Physical fitness is to the human body what fine-tuning is to an engine. It enables us to
+perform up to our potential. Fitness can be described as a condition that helps us look,
+feel and do our best." />
 				<TextView
 					android:id="@+id/calories_born"
 					android:layout_marginTop="15dip"

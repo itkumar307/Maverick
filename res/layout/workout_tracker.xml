@@ -29,65 +29,89 @@
 					android:src="@drawable/workout_trackerside" />
 
 				<Button
-					android:id="@+id/favourite"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_alignParentRight="true"
-					android:layout_below="@+id/workout_tracker_side"
-					android:layout_marginLeft="20dip"
-					android:layout_marginTop="30dip"
-					android:background="@drawable/add_fav"
+					android:id="@+id/workout_date_logs"
+					android:text="View Logs"
+					android:background="@drawable/logs"
+					android:textColor="#fff"
 					android:padding="5dip"
-					android:paddingLeft="10dip"
-					android:text="See Previous Log"
-					android:textColor="#fff" />
+					android:layout_margin="20dip" />
 			</RelativeLayout>
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
-				android:text="Select excerise"
-				android:textColor="@color/subtitle_answer_text_color" />
-
-			<!-- <EditText
-				android:id="@+id/select_excerise"
+			<LinearLayout
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:layout_margin="10dip"
-				android:background="@drawable/trancparent_curve_all_page"
-				android:minHeight="40dip"
-				android:textColor="@color/Editbox_text_color" /> -->
+				android:background="#fff"
+				android:orientation="vertical">
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:padding="20dip"
+					android:id="@+id/selectexercisevalue">
 
-			<Spinner
-				android:id="@+id/selectexercisevalue"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
-				android:prompt="@string/selectexcerise" />
+					<TextView
+					    
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dip"
+						android:layout_alignParentLeft="true"
+						android:layout_centerVertical="true"
+						android:text="Select excerise"
+						android:textColor="#000" />
 
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
-				android:text="workout"
-				android:textColor="@color/subtitle_answer_text_color" />
-			<!-- <EditText android:layout_width="fill_parent" android:textColor="@color/Editbox_text_color" 
-				android:layout_height="wrap_content" android:minHeight="40dip" android:background="@drawable/trancparent_curve_all_page" 
-				android:id="@+id/workout" android:layout_margin="10dip" /> -->
+					<!-- <EditText android:id="@+id/select_excerise" android:layout_width="fill_parent" 
+						android:layout_height="wrap_content" android:layout_margin="10dip" android:background="@drawable/trancparent_curve_all_page" 
+						android:minHeight="40dip" android:textColor="@color/Editbox_text_color" /> -->
 
-			<Spinner
-				android:id="@+id/selectworkoutvalue"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
-				android:prompt="@string/selectexcerise" />
+					<TextView
+						android:id="@+id/selected_exercise_text"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginRight="10dip"
+						android:layout_centerVertical="true"
+						android:layout_alignParentRight="true"
+						android:textColor="#000"
+						android:text="dummy" />
+				</RelativeLayout>
+				<View android:layout_width="fill_parent"
+				    android:layout_height="1dip"
+				    android:background="#BDBDBD"/>
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:padding="20dip"
+					android:id="@+id/selectworkoutvalue">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10dip"
+						android:layout_alignParentLeft="true"
+						android:text="workout"
+						android:textColor="#000" />
+					<!-- <EditText android:layout_width="fill_parent" android:textColor="@color/Editbox_text_color" 
+						android:layout_height="wrap_content" android:minHeight="40dip" android:background="@drawable/trancparent_curve_all_page" 
+						android:id="@+id/workout" android:layout_margin="10dip" /> -->
 
+					<TextView
+						android:id="@+id/selectworkouttext"
+						android:layout_width="wrap_content"
+						android:layout_alignParentRight="true"
+						android:layout_height="wrap_content"
+						android:layout_marginRight="10dip"
+						android:text="dummy" 
+						android:textColor="#000"/>
+				</RelativeLayout>
+			</LinearLayout>
 			<Button
 				android:id="@+id/workoutsave"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
+				android:layout_margin="10dip"
+				android:padding="10dip"
+				android:textColor="#fff"
+				android:background="@drawable/add_fav"
 				android:text="Save" />
 
 			<TextView

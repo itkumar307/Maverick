@@ -7,21 +7,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.RelativeLayout;
 
 import com.maveric.contentprovider.WorkoutProvider;
 import com.maveric.database.model.WorkOutTrackerTable;
-import com.maveric.enums.ExceriseType;
 import com.maveric.obj.type.MaverickDataOrganize;
 
 public class WorkoutTrackerActivity extends MavericBaseActiity {
 
-	Spinner exceriseSelect;
-	Spinner exceriseTime;
+	RelativeLayout exceriseSelect;
+	RelativeLayout exceriseTime;
 	MaverickDataOrganize maverickData;
 	Context ctx;
 	Button addFavourite;
@@ -41,15 +37,15 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 		maverickData = new MaverickDataOrganize(ctx);
 
-		exceriseSelect = (Spinner) findViewById(R.id.selectexercisevalue);
-		exceriseTime = (Spinner) findViewById(R.id.selectworkoutvalue);
+		exceriseSelect = (RelativeLayout) findViewById(R.id.selectexercisevalue);
+		exceriseTime = (RelativeLayout) findViewById(R.id.selectworkoutvalue);
 
-		addFavourite = (Button) findViewById(R.id.favourite);
+		addFavourite = (Button) findViewById(R.id.workoutsave);
 
 		try {
 			workoutInfo = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
 					null, null);
-			
+
 			workoutInfo.moveToFirst();
 
 			Log.i("kumar",
@@ -61,51 +57,65 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 			e1.printStackTrace();
 		}
 
-		exeriseTypeAdapter();
-		exeriseWorkoutAdapter();
+		// exeriseTypeAdapter();
+		// exeriseWorkoutAdapter();
 
-		exceriseSelect.setOnItemSelectedListener(new OnItemSelectedListener() {
-
-			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int arg2, long arg3) {
-				String exceriseData = exceriseSelect.getSelectedItem()
-						.toString();
-				maverickData.setExceriseType(exceriseData);
-				Log.i("kumar:" + this.getClass(), "Input of FExceriseTypedata:"
-						+ exceriseData);
-
-			}
+		exceriseSelect.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
 			}
-
 		});
+		// (new OnItemSelectedListener() {
+		//
+		// @Override
+		// public void onItemSelected(AdapterView<?> arg0, View arg1,
+		// int arg2, long arg3) {
+		// String exceriseData = exceriseSelect.getSelectedItem()
+		// .toString();
+		// maverickData.setExceriseType(exceriseData);
+		// Log.i("kumar:" + this.getClass(), "Input of FExceriseTypedata:"
+		// + exceriseData);
+		//
+		// }
+		//
+		// @Override
+		// public void onNothingSelected(AdapterView<?> arg0) {
+		// // TODO Auto-generated method stub
+		//
+		// }
+		//
+		// });
 
-		exceriseTime.setOnItemSelectedListener(new OnItemSelectedListener() {
+		exceriseTime.setOnClickListener(new OnClickListener() {
 
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int arg2, long arg3) {
-				String exceriseTimeData = exceriseTime.getSelectedItem()
-						.toString();
-				maverickData.setExceriseTimeWorking(Integer
-						.parseInt(exceriseTimeData));
-				Log.i("kumar:" + this.getClass(),
-						"Input of ExceriseworkoutTime:" + exceriseTimeData);
-
-			}
-
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
 			}
-
 		});
+		// })(new OnItemSelectedListener() {
+		//
+		// @Override
+		// public void onItemSelected(AdapterView<?> arg0, View arg1,
+		// int arg2, long arg3) {
+		// String exceriseTimeData = exceriseTime.getSelectedItem()
+		// .toString();
+		// maverickData.setExceriseTimeWorking(Integer
+		// .parseInt(exceriseTimeData));
+		// Log.i("kumar:" + this.getClass(),
+		// "Input of ExceriseworkoutTime:" + exceriseTimeData);
+		//
+		// }
+		//
+		// @Override
+		// public void onNothingSelected(AdapterView<?> arg0) {
+		// // TODO Auto-generated method stub
+		//
+		// }
 
 		addFavourite.setOnClickListener(new OnClickListener() {
 			@Override
@@ -128,31 +138,31 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		});
 	}
 
-	private void exeriseTypeAdapter() {
-		ArrayAdapter<CharSequence> exceriseType = new ArrayAdapter<CharSequence>(
-				this, android.R.layout.simple_spinner_item);
-		exceriseType
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		for (String msg : ExceriseType.exceriseMessages()) {
-			exceriseType.add(msg);
-		}
-		exceriseSelect.setAdapter(exceriseType);
-
-	}
-
-	private void exeriseWorkoutAdapter() {
-		ArrayAdapter<Integer> exceriseTimeAdapter = new ArrayAdapter<Integer>(
-				this, android.R.layout.simple_spinner_item);
-		exceriseTimeAdapter
-				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-		for (int i = 1; i < 25; i++) {
-			exceriseTimeAdapter.add(i);
-		}
-
-		exceriseTime.setAdapter(exceriseTimeAdapter);
-
-	}
+	// private void exeriseTypeAdapter() {
+	// ArrayAdapter<CharSequence> exceriseType = new ArrayAdapter<CharSequence>(
+	// this, android.R.layout.simple_spinner_item);
+	// exceriseType
+	// .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	//
+	// for (String msg : ExceriseType.exceriseMessages()) {
+	// exceriseType.add(msg);
+	// }
+	// exceriseSelect.setAdapter(exceriseType);
+	//
+	// }
+	//
+	// private void exeriseWorkoutAdapter() {
+	// ArrayAdapter<Integer> exceriseTimeAdapter = new ArrayAdapter<Integer>(
+	// this, android.R.layout.simple_spinner_item);
+	// exceriseTimeAdapter
+	// .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+	//
+	// for (int i = 1; i < 25; i++) {
+	// exceriseTimeAdapter.add(i);
+	// }
+	//
+	// exceriseTime.setAdapter(exceriseTimeAdapter);
+	//
+	// }
 
 }

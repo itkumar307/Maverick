@@ -18,36 +18,17 @@
 				android:layout_width="wrap_content"
 				android:src="@drawable/diet_trcker_side"
 				android:id="@+id/workout_tracker_side" />
-			<TextView
-				android:id="@+id/diet_prev_date"
-				android:layout_width="wrap_content"
-				android:background="@drawable/prev"
-				android:layout_height="wrap_content"
-				android:layout_alignLeft="@+id/favourite" />
-			<TextView
-				android:id="@+id/date"
+			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="30dip"
-				android:layout_toRightOf="@+id/diet_prev_date"
-				android:text="date" />
-			<TextView
-				android:id="@+id/diet_next_date"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:background="@drawable/next_date"
-				android:layout_alignRight="@+id/favourite" />
-			<TextView
-				android:layout_height="wrap_content"
-				android:layout_width="wrap_content"
-				android:layout_marginLeft="20dip"
-				android:id="@+id/favourite"
-				android:layout_below="@+id/date"
-				android:layout_toRightOf="@+id/workout_tracker_side"
-				android:text="Add and save as favourite"
-				android:background="@drawable/add_fav"
-				android:textColor="#fff"
-				android:layout_marginTop="30dip" />
+				android:layout_alignParentRight="true"
+				android:id="@+id/diet_date_logs"
+				android:text="View Logs"
+				android:background="@drawable/logs"
+				android:textColor="#fff" 
+				android:padding="5dip"
+				android:layout_margin="20dip"/>
+
 
 		</RelativeLayout>
 		<TextView
@@ -110,6 +91,16 @@
 			android:background="@drawable/trancparent_curve_all_page"
 			android:id="@+id/snacks"
 			android:layout_margin="10dip" />
+		<Button
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="right"
+			android:id="@+id/favourite"
+			android:layout_margin="20dip"
+			android:text="Save"
+			android:padding="10dip"
+			android:background="@drawable/add_fav"
+			android:textColor="#fff" />
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
@@ -196,6 +187,7 @@
 					android:text="286" />
 			</RelativeLayout>
 		</LinearLayout>
+
 		<LinearLayout
 			android:layout_height="50dip"
 			android:layout_width="fill_parent"
