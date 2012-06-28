@@ -19,8 +19,8 @@
 			</intent-filter>
 		</activity>
 		<provider
-			android:name="com.maveric.contentprovider.MaverickProvider"
-			android:authorities="com.maveric.contentprovider.MaverickProvider" />
+            android:name=".contentprovider.WorkoutProvider"
+            android:authorities="com.maveric.WorkoutProvider" />
 		<provider
             android:name="com.maveric.contentprovider.ProfileProvider"
             android:authorities="com.maveric.contentprovider.ProfileProvider" />
