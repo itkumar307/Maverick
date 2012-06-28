@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.ConnectException;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -55,24 +56,32 @@ public class MSWSClient {
 	}
 
 	private void getHttpResponse(HttpPost request) {
-		Log.d(ctx.getString(R.string.app_name), "getHttpResponseEnter" +(request!=null));
+		Log.d(ctx.getString(R.string.app_name), "getHttpResponseEnter"
+				+ (request != null));
 		InputStream is = null;
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpResponse response;
 		try {
-			Log.d(ctx.getString(R.string.app_name), "requet" +(request!=null));
-			if(request != null)
-			{
-			response = httpclient.execute(request);
-			HttpEntity entity = response.getEntity();
-			is = entity.getContent();
+			Log.d(ctx.getString(R.string.app_name), "requet"
+					+ (request != null));
+			if (request != null) {
+				response = httpclient.execute(request);
+				HttpEntity entity = response.getEntity();
+				is = entity.getContent();
 			}
 		} catch (ClientProtocolException e) {
 			Log.e(ctx.getString(R.string.app_name),
 					"getResponse failure " + e.getMessage(), e);
+			return;
+		} catch (ConnectException e) {
+			Log.e(ctx.getString(R.string.app_name),
+					"getResponse read failure ConnectException "
+							+ e.getMessage(), e);
+			return;
 		} catch (IOException e) {
-			Log.e(ctx.getString(R.string.app_name), "getResponse read failure "
-					+ e.getMessage(), e);
+			Log.e(ctx.getString(R.string.app_name),
+					"getResponse read failure IOException " + e.getMessage(), e);
+			return;
 		}
 
 		try {
@@ -88,8 +97,7 @@ public class MSWSClient {
 
 			Log.d(ctx.getString(R.string.app_name),
 					"API response : " + str.toString());
-			if (str.toString().trim().equalsIgnoreCase("suecces"))
-			{
+			if (str.toString().trim().equalsIgnoreCase("suecces")) {
 				isPostSuccessfully = true;
 			}
 		} catch (Exception ex) {

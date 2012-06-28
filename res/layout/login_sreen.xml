@@ -109,6 +109,7 @@
 							<EditText
 								android:id="@+id/user_name"
 								android:layout_margin="10dip"
+								android:inputType="text"
 								android:layout_width="fill_parent"
 								android:layout_height="wrap_content" />
 							<TextView
@@ -120,6 +121,7 @@
 							<EditText
 								android:id="@+id/email_id"
 								android:layout_margin="10dip"
+								android:inputType="textEmailAddress"
 								android:layout_width="fill_parent"
 								android:layout_height="wrap_content" />
 							<TextView

@@ -52,7 +52,7 @@ public class LoginActivity extends MavericBaseActiity {
 		loginWithTargetDetail = (LinearLayout) findViewById(R.id.login_with_target_detail);
 
 		loginWithCurrentDetail.setVisibility(View.VISIBLE);
-
+		
 		profile = new Profile(context);
 		appPref = new Apppref(context);
 		if (!appPref.isStartUp())
@@ -132,6 +132,11 @@ public class LoginActivity extends MavericBaseActiity {
 							.toString()));
 					profile.setWaist(Float.valueOf(currentWaist.getText()
 							.toString()));
+					currentBmi.setText(""
+							+ getBmi(Float.valueOf(currentWeight.getText()
+									.toString()), Float.valueOf(currentHeight
+									.getText().toString())));
+					currentBmi.setFocusable(false);
 					setLoginScreen(loginWithTargetDetail);
 				} else
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
