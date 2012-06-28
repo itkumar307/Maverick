@@ -86,14 +86,16 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+
+				exceriseTypeInput();
 
 			}
 		});
 		exceriseTime.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+
+				workTimeInput();
 
 			}
 		});
@@ -221,7 +223,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 						Log.i("kumar:" + this.getClass(),
 								"Input of ExceriseworkoutTime:" + arrayValue);
-						workoutText.setText(arrayValue);
+						workoutText.setText("" + arrayValue);
 						listDialog.dismiss();
 						overridePendingTransition(R.anim.prev_slidein,
 								R.anim.prev_slideout);
