@@ -6,7 +6,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	
 	@Override
 	protected void setContentToLayout() {
-		setContentView(R.layout.diet_tracker);
+		setContentView(R.layout.diet_tracker_container);
 
 	}
     @Override
