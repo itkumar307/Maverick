@@ -40,7 +40,7 @@ public class FoodTrackerProvider extends ContentProvider {
 		sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sURIMatcher.addURI(PROVIDER_NAME, "insertOrUpdatefood",
 				INSERT_FOOD_DETAILS);
-		sURIMatcher.addURI(PROVIDER_NAME, "takevaluefood", FOOD_BY_DATE);
+		sURIMatcher.addURI(PROVIDER_NAME, "takevaluefood", GET_FOOD_DETAILS);
 		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*", FOOD_BY_DATE);
 
 	}

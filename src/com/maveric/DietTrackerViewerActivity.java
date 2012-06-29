@@ -13,16 +13,14 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.maveric.contentprovider.WorkoutProvider;
-import com.maveric.database.model.WorkOutTrackerTable;
-import com.maveric.obj.type.MaverickDataOrganize;
+import com.maveric.contentprovider.FoodTrackerProvider;
+import com.maveric.database.model.FoodTrackerTable;
 
 public class DietTrackerViewerActivity extends MavericListBaseActiity {
 
 	TextView previous;
 	TextView next;
 	TextView date;
-	MaverickDataOrganize maverickData;
 	Context ctx;
 	Button close;
 	Cursor cursorDate;
@@ -43,16 +41,14 @@ public class DietTrackerViewerActivity extends MavericListBaseActiity {
 
 		ctx = getApplicationContext();
 
-		maverickData = new MaverickDataOrganize(ctx);
-
 		previous = (TextView) findViewById(R.id.prev_date);
 		next = (TextView) findViewById(R.id.next_date);
 		next.setVisibility(View.INVISIBLE);
 		date = (TextView) findViewById(R.id.date);
 
 		try {
-			cursorDate = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
-					null, null);
+			cursorDate = managedQuery(FoodTrackerProvider.GET_FOOD_DETAILS_URI,
+					null, null, null, null);
 			constantCont = cursorDate.getCount();
 			Log.i("kumar" + this.getClass(), "constantCont:" + constantCont);
 			count = 0;
@@ -62,7 +58,7 @@ public class DietTrackerViewerActivity extends MavericListBaseActiity {
 				do {
 
 					allDate.add(cursorDate.getString(cursorDate
-							.getColumnIndex(WorkOutTrackerTable.Column.DATE)));
+							.getColumnIndex(FoodTrackerTable.Column.DATE)));
 
 				} while (cursorDate.moveToNext());
 
@@ -142,7 +138,7 @@ public class DietTrackerViewerActivity extends MavericListBaseActiity {
 		try {
 			Log.i("kumar" + this.getClass(), "date" + presentDate);
 			Uri name = Uri.withAppendedPath(
-					WorkoutProvider.WORKOUT_BY_DATE_URI, presentDate);
+					FoodTrackerProvider.FOOD_BY_DATE_URI, presentDate);
 
 			cursorDetails = managedQuery(name, null, null, null, null);
 
@@ -150,8 +146,8 @@ public class DietTrackerViewerActivity extends MavericListBaseActiity {
 					+ cursorDetails.getCount());
 			cursorDetails.moveToFirst();
 
-			ListAdapter adapter = new WorkoutAdapter(this, cursorDetails,
-					new String[] { WorkOutTrackerTable.Column.DATE },
+			ListAdapter adapter = new DietTrackerAdapter(this, cursorDetails,
+					new String[] { FoodTrackerTable.Column.DATE },
 					new int[] { R.id.listexcerisetype });
 			setListAdapter(adapter);
 		} catch (Exception e1) {

@@ -7,28 +7,79 @@
     android:gravity="center_vertical" >
 
     <TextView
-        android:id="@+id/listexcerisetype"
+        android:id="@+id/breakfastview"
         android:layout_width="wrap_content"
         android:layout_height="48dip"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dip"
         android:gravity="center"
+        android:text="BreakFast: "
         android:textColor="#000" />
 
     <TextView
-        android:id="@+id/listworkouttime"
+        android:id="@+id/breakfastlist"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_toRightOf="@+id/breakfastview"
+        android:gravity="center"
+        android:text="kumar"
+        android:textColor="#000" />
+
+    <View
+        android:id="@+id/breaklistvie"
+        android:layout_width="5dip"
+        android:layout_height="5dip"
+        android:layout_toRightOf="@+id/breakfastlist" />
+
+    <TextView
+        android:id="@+id/lunchview"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_toRightOf="@+id/breaklistvie"
+        android:gravity="center"
+        android:text="Lunch: "
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/lunchlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/lunchview"
         android:textColor="#ff000000" />
 
     <TextView
-        android:id="@+id/listcalories"
-        android:layout_width="48dip"
+        android:id="@+id/dinnerview"
+        android:layout_width="wrap_content"
         android:layout_height="48dip"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dip"
+        android:layout_toRightOf="@+id/lunchlist"
         android:gravity="center"
+        android:text="Dinner: "
         android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/dinnerlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/dinnerview"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:id="@+id/snackview"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_toRightOf="@+id/dinnerlist"
+        android:gravity="center"
+        android:text="Snack: "
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/snacklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/snackview"
+        android:textColor="#ff000000" />
 
 </RelativeLayout>

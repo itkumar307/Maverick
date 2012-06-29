@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
@@ -147,8 +148,8 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View arg0) {
-				// startActivity(new Intent(WorkoutTrackerActivity.this,
-				// WorkoutTrackerViewerActivity.class));
+				startActivity(new Intent(DietTrackerActivity.this,
+						DietTrackerViewerActivity.class));
 
 			}
 		});
