@@ -2,6 +2,7 @@ package com.maveric;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.maveric.util.MUpdateClient;
@@ -27,7 +28,11 @@ public class MavericHomeActivity extends MavericBaseActiity {
         /*
          * check new updates
          */
+        try{
         MUpdateClient mc = new MUpdateClient();
         mc.insertNewDataIfAvailabe(ctx);
+        }catch (Exception e) {
+			Log.i("MavericHomeActivity","Error in update app");
+		}
     }
 }

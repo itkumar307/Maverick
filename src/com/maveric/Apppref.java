@@ -62,4 +62,13 @@ public class Apppref {
 	public Boolean isStartUp() {
 		return appSharedPrefs.getBoolean(STARTUP, true);
 	}
+	
+	public void setLastTime(String yes) {
+		prefsEditor.putString("time", yes);
+		prefsEditor.commit();
+	}
+
+	public String getLastTime() {
+		return appSharedPrefs.getString("time","0");
+	}
 }
