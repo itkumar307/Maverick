@@ -7,6 +7,7 @@ public class MaverickDataOrganize {
 	private Context ctx;
 	private String exceriseType;
 	private Integer exceriseTimeWorking;
+	int calories = 0;
 
 	public MaverickDataOrganize(Context ctx) {
 		this.ctx = ctx;
@@ -26,5 +27,13 @@ public class MaverickDataOrganize {
 
 	public Integer getExceriseTimeWorking() {
 		return exceriseTimeWorking;
+	}
+
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+
+	public int getCalories() {
+		return calories;
 	}
 }
