@@ -7,4 +7,5 @@
 	android:layout_alignParentTop="true"
 	android:background="@drawable/selector_list"
 	android:gravity="center"
+	android:textColor="#000"
 	android:padding="8dip" />

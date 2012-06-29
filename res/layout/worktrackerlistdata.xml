@@ -8,10 +8,11 @@
 
     <TextView
         android:id="@+id/listexcerisetype"
-        android:layout_width="48dip"
+        android:layout_width="wrap_content"
         android:layout_height="48dip"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dip"
+       	android:textColor="#000"
         android:gravity="center"
         android:text="hai" />
 
@@ -19,8 +20,7 @@
         android:id="@+id/listworkouttime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@+id/listexcerisetype"
+        android:layout_centerInParent="true"     
         android:text="hai"
         android:textColor="#ff000000" />
 
@@ -30,7 +30,8 @@
         android:layout_height="48dip"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dip"
+        android:textColor="#000"
         android:gravity="center"
-        android:text="hai" />
+        android:text="Today" />
 
 </RelativeLayout>
