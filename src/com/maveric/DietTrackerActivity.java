@@ -46,7 +46,10 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	TextView snacksValue;
 
 	DietDataOrganize maverickData;
-
+	private int bColories = 0, lColories = 0, dColories = 0, sColories = 0,
+			bCorbos = 0, lCorbos = 0, dCorbos = 0, sCorbos = 0, bFat = 0,
+			lFat = 0, dFat = 0, sFat = 0, bProtien = 0, lProtien = 0,
+			dProtien = 0, sProtien = 0;
 	int width;
 	Context ctx;
 
@@ -111,6 +114,15 @@ public class DietTrackerActivity extends MavericBaseActiity {
 									maverickData.getDinner());
 							values.put(FoodTrackerTable.Column.FOOD_SNACK,
 									maverickData.getSnacks());
+							values.put(FoodTrackerTable.Column.CALORIES,
+									bColories + lColories + dColories
+											+ sColories);
+							values.put(FoodTrackerTable.Column.CARBOS, bCorbos
+									+ lCorbos + dCorbos + sCorbos);
+							values.put(FoodTrackerTable.Column.FAT, bFat + lFat
+									+ dFat + sFat);
+							values.put(FoodTrackerTable.Column.PROTIN, bProtien
+									+ lProtien + dProtien + sProtien);
 							getContentResolver()
 									.insert(FoodTrackerProvider.INSERT_FOOD_DETAILS_URI,
 											values);
@@ -176,9 +188,12 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		try {
 			final Cursor foodCursor = managedQuery(ExceriseProvider.FOOD_URI,
 					null, null, null, null);
-			Log.i("mohan","food cur count"+foodCursor.getCount());
+			Log.i("mohan", "food cur count" + foodCursor.getCount());
 			foodCursor.moveToFirst();
-			Log.i("mohan","food colories no"+foodCursor.getString(foodCursor.getColumnIndex(FoodTable.Column.CARBOS)));
+			Log.i("mohan",
+					"food colories no"
+							+ foodCursor.getString(foodCursor
+									.getColumnIndex(FoodTable.Column.CARBOS)));
 			if (foodCursor.getCount() > 0) {
 				final Dialog listDialog = new Dialog(DietTrackerActivity.this,
 						R.style.PauseDialog);
@@ -202,13 +217,13 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 				ListView list = (ListView) listDialog
 						.findViewById(R.id.alertlist);
-				
+
 				list.setAdapter(new SimpleCursorAdapter(
 						DietTrackerActivity.this,
 						R.layout.data_select_input_cardatat, foodCursor,
 						new String[] { FoodTable.Column.NAME },
 						new int[] { R.id.titlename }));
-				
+
 				listDialog.show();
 				list.setOnItemClickListener(new OnItemClickListener() {
 
@@ -217,27 +232,48 @@ public class DietTrackerActivity extends MavericBaseActiity {
 							int id, long position) {
 						String foodValue = foodCursor.getString(foodCursor
 								.getColumnIndex(FoodTable.Column.NAME));
+						int selectedCalories = foodCursor.getInt(foodCursor
+								.getColumnIndex(FoodTable.Column.CALORIES));
+						int selectedCorbos = foodCursor.getInt(foodCursor
+								.getColumnIndex(FoodTable.Column.CARBOS));
+						int selectedFat = foodCursor.getInt(foodCursor
+								.getColumnIndex(FoodTable.Column.FAT));
+						int selectedProtien = foodCursor.getInt(foodCursor
+								.getColumnIndex(FoodTable.Column.PROTIN));
 						Log.i("kumar:" + this.getClass(), "Input of foodValue:"
 								+ foodValue);
 						if (HeadMsg.equalsIgnoreCase("Breakfast")) {
 							maverickData.setBreakFast(foodValue);
 							breakFastValue.setText(foodValue);
-
+							bColories = selectedCalories;
+							bCorbos = selectedCorbos;
+							bFat = selectedFat;
+							bProtien = selectedProtien;
 						} else if (HeadMsg.equalsIgnoreCase("Lunch")) {
 							maverickData.setLunch(foodValue);
 							lunchValue.setText(foodValue);
-
+							lColories = selectedCalories;
+							lCorbos = selectedCorbos;
+							lFat = selectedFat;
+							lProtien = selectedProtien;
 						} else if (HeadMsg.equalsIgnoreCase("Dinner")) {
 							maverickData.setDinner(foodValue);
 							dinnerValue.setText(foodValue);
-
+							dColories = selectedCalories;
+							dCorbos = selectedCorbos;
+							dFat = selectedFat;
+							dProtien = selectedProtien;
 						} else if (HeadMsg.equalsIgnoreCase("Snacks")) {
 							maverickData.setSnacks(foodValue);
 							snacksValue.setText(foodValue);
-
+							sColories = selectedCalories;
+							sCorbos = selectedCorbos;
+							sFat = selectedFat;
+							sProtien = selectedProtien;
 						} else {
 							// TODO
 						}
+						setGoal();
 						listDialog.dismiss();
 						overridePendingTransition(R.anim.prev_slidein,
 								R.anim.prev_slideout);
@@ -266,4 +302,21 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		}
 
 	};
+
+	private void setGoal() {
+		TextView calories_answer = (TextView) findViewById(R.id.calories_answer);
+		TextView carbos_answer = (TextView) findViewById(R.id.Carbos_answer);
+		TextView fat_answer = (TextView) findViewById(R.id.fat_answer);
+		TextView protein_answer = (TextView) findViewById(R.id.protein_answer);
+
+		calories_answer.setText(""
+				+ (bColories + lColories + dColories + sColories));
+		Log.d(getString(R.string.app_name), "calories = "
+				+ (bColories + lColories + dColories + sColories));
+		carbos_answer.setText("" + (bCorbos + lCorbos + dCorbos + sCorbos));
+		fat_answer.setText("" + (bFat + lFat + dFat + sFat));
+		protein_answer
+				.setText("" + (bProtien + lProtien + dProtien + sProtien));
+
+	}
 }

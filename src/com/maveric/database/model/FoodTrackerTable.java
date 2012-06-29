@@ -32,9 +32,9 @@ public class FoodTrackerTable {
 			+ " ( " + Column.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ Column.DATE + " TEXT, " + Column.FOOD_BREAKFAST + " TEXT,"
 			+ Column.FOOD_LUNCH + " TEXT, " + Column.FOOD_DINNER + " TEXT, "
-			+ Column.FOOD_SNACK + " TEXT, " + Column.FAT + " TEXT, "
-			+ Column.PROTIN + " TEXT, " + Column.CALORIES + " TEXT, "
-			+ Column.CARBOS + " TEXT ); ";
+			+ Column.FOOD_SNACK + " TEXT, " + Column.FAT + " INTEGER, "
+			+ Column.PROTIN + " INTEGER, " + Column.CALORIES + " INTEGER, "
+			+ Column.CARBOS + " INTEGER ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
 		database.execSQL(DATABASE_CREATE);

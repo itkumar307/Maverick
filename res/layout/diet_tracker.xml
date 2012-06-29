@@ -1,271 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/diet_trcker"
-    android:scrollbars="none" >
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/diet_trcker"
+	android:scrollbars="none">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" >
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp">
 
-            <ImageView
-                android:id="@+id/workout_tracker_side"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/diet_trcker_side" />
+			<ImageView
+				android:id="@+id/workout_tracker_side"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/diet_trcker_side" />
 
-            <Button
-                android:id="@+id/diet_date_logs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="20dip"
-                android:background="@drawable/logs"
-                android:padding="5dip"
-                android:text="View Logs"
-                android:textColor="#fff" />
-        </RelativeLayout>
+			<Button
+				android:id="@+id/diet_date_logs"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_margin="20dip"
+				android:background="@drawable/logs"
+				android:padding="5dip"
+				android:text="View Logs"
+				android:textColor="#fff" />
+		</RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dip"
-            android:background="#fff"
-            android:orientation="vertical" >
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dip"
+			android:background="#fff"
+			android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/selectbreakfast"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dip" >
+			<RelativeLayout
+				android:id="@+id/selectbreakfast"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dip">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dip"
-                    android:text="Breakfast"
-                    android:textColor="#000" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10dip"
+					android:text="Breakfast"
+					android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/breakfast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dip"
-                    android:textColor="#000" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/breakfast"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:layout_marginRight="10dip"
+					android:textColor="#000" />
+			</RelativeLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="#BDBDBD" />
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:background="#BDBDBD" />
 
-            <RelativeLayout
-                android:id="@+id/selectlunch"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dip" >
+			<RelativeLayout
+				android:id="@+id/selectlunch"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dip">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dip"
-                    android:text="Lunch"
-                    android:textColor="#000" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_marginLeft="10dip"
+					android:text="Lunch"
+					android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/lunch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dip"
-                    android:textColor="#000" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/lunch"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="10dip"
+					android:textColor="#000" />
+			</RelativeLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="#BDBDBD" />
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:background="#BDBDBD" />
 
-            <RelativeLayout
-                android:id="@+id/selectdinner"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dip" >
+			<RelativeLayout
+				android:id="@+id/selectdinner"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dip">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dip"
-                    android:text="Dinner"
-                    android:textColor="#000" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_marginLeft="10dip"
+					android:text="Dinner"
+					android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/dinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dip"
-                    android:textColor="#000" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/dinner"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="10dip"
+					android:textColor="#000" />
+			</RelativeLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="#BDBDBD" />
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:background="#BDBDBD" />
 
-            <RelativeLayout
-                android:id="@+id/selectsnack"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dip" >
+			<RelativeLayout
+				android:id="@+id/selectsnack"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dip">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dip"
-                    android:text="Snacks"
-                    android:textColor="#000" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_marginLeft="10dip"
+					android:text="Snacks"
+					android:textColor="#000" />
 
-                <TextView
-                    android:id="@+id/snack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dip"
-                    android:textColor="#000" />
-            </RelativeLayout>
-        </LinearLayout>
+				<TextView
+					android:id="@+id/snack"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_marginRight="10dip"
+					android:textColor="#000" />
+			</RelativeLayout>
+		</LinearLayout>
 
-        <Button
-            android:id="@+id/savediet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_margin="20dip"
-            android:background="@drawable/add_fav"
-            android:padding="10dip"
-            android:text="Save"
-            android:textColor="#fff" />
+		<Button
+			android:id="@+id/savediet"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="right"
+			android:layout_margin="20dip"
+			android:background="@drawable/add_fav"
+			android:padding="10dip"
+			android:text="Save"
+			android:textColor="#fff" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_margin="10dip"
-            android:orientation="horizontal"
-            android:padding="20dip" >
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_margin="10dip"
+			android:orientation="horizontal"
+			android:padding="20dip">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_weight="1"
-                android:text="Daily goal:"
-                android:textColor="@color/subtitle_answer_text_color" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dip"
+				android:layout_weight="1"
+				android:text="Daily goal:"
+				android:textColor="@color/subtitle_answer_text_color" />
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/calories_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calories"
-                    android:textColor="@color/subtitle_answer_text_color" />
+				<TextView
+					android:id="@+id/calories_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Calories"
+					android:textColor="@color/subtitle_answer_text_color" />
 
-                <TextView
-                    android:id="@+id/calories_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/calories_title"
-                    android:text="286"
-                    android:textColor="@color/subtitle_answer_text_color" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/calories_answer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/calories_title"
+					android:text="0"
+					android:textColor="@color/subtitle_answer_text_color" />
+			</RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/Carbos_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Carbos"
-                    android:textColor="@color/subtitle_answer_text_color" />
+				<TextView
+					android:id="@+id/Carbos_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Carbos"
+					android:textColor="@color/subtitle_answer_text_color" />
 
-                <TextView
-                    android:id="@+id/Carbos_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/Carbos_title"
-                    android:text="286"
-                    android:textColor="@color/subtitle_answer_text_color" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/Carbos_answer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/Carbos_title"
+					android:text="0"
+					android:textColor="@color/subtitle_answer_text_color" />
+			</RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/fat_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fat"
-                    android:textColor="@color/subtitle_answer_text_color" />
+				<TextView
+					android:id="@+id/fat_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Fat"
+					android:textColor="@color/subtitle_answer_text_color" />
 
-                <TextView
-                    android:id="@+id/fat_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fat_title"
-                    android:text="286"
-                    android:textColor="@color/subtitle_answer_text_color" />
-            </RelativeLayout>
+				<TextView
+					android:id="@+id/fat_answer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/fat_title"
+					android:text="0"
+					android:textColor="@color/subtitle_answer_text_color" />
+			</RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" >
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
 
-                <TextView
-                    android:id="@+id/protein_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Protein"
-                    android:textColor="@color/subtitle_answer_text_color" />
+				<TextView
+					android:id="@+id/protein_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Protein"
+					android:textColor="@color/subtitle_answer_text_color" />
 
-                <TextView
-                    android:id="@+id/protein_answer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/protein_title"
-                    android:text="286"
-                    android:textColor="@color/subtitle_answer_text_color" />
-            </RelativeLayout>
-        </LinearLayout>
+				<TextView
+					android:id="@+id/protein_answer"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/protein_title"
+					android:text="0"
+					android:textColor="@color/subtitle_answer_text_color" />
+			</RelativeLayout>
+		</LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="50dip"
-            android:visibility="invisible" >
-        </LinearLayout>
-    </LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="50dip"
+			android:visibility="invisible">
+		</LinearLayout>
+	</LinearLayout>
 
 </ScrollView>
