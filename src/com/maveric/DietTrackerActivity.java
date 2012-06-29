@@ -176,6 +176,9 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		try {
 			final Cursor foodCursor = managedQuery(ExceriseProvider.FOOD_URI,
 					null, null, null, null);
+			Log.i("mohan","food cur count"+foodCursor.getCount());
+			foodCursor.moveToFirst();
+			Log.i("mohan","food colories no"+foodCursor.getString(foodCursor.getColumnIndex(FoodTable.Column.CARBOS)));
 			if (foodCursor.getCount() > 0) {
 				final Dialog listDialog = new Dialog(DietTrackerActivity.this,
 						R.style.PauseDialog);
@@ -199,11 +202,13 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 				ListView list = (ListView) listDialog
 						.findViewById(R.id.alertlist);
+				
 				list.setAdapter(new SimpleCursorAdapter(
 						DietTrackerActivity.this,
 						R.layout.data_select_input_cardatat, foodCursor,
 						new String[] { FoodTable.Column.NAME },
 						new int[] { R.id.titlename }));
+				
 				listDialog.show();
 				list.setOnItemClickListener(new OnItemClickListener() {
 

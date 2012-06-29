@@ -49,20 +49,22 @@ public class ExceriseProvider extends ContentProvider {
 
 		Log.d("kumar" + this.getClass(), "Query: " + url.getPath());
 
-		qb.setTables(ExceriseValue.TABLE);
+		
 		SQLiteDatabase db = database.getWritableDatabase();
 		switch (MATCHER.match(url)) {
 
 		case EXCERISETYPE:
+			qb.setTables(ExceriseValue.TABLE);
 			checkColumns(projection);
 			selection = "1) GROUP BY (" + ExceriseValue.Column._ID;
 			sortOrder = ExceriseValue.Column._ID + " DESC ";
 			break;
 
 		case FOODTYPE:
+			qb.setTables(FoodTable.TABLE);
 			checkFoodColumns(projection);
-			selection = "1) GROUP BY (" + ExceriseValue.Column._ID;
-			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			selection = "1) GROUP BY (" + FoodTable.Column._ID;
+			sortOrder = FoodTable.Column._ID + " DESC ";
 			break;
 		default:
 			throw new IllegalArgumentException("Unknown URI " + url);

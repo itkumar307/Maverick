@@ -7,6 +7,7 @@ public class FoodTable {
 	public static final String TABLE = "Food";
 
 	public static class Column {
+		public static final String _ID = "_id";
 		public static final String NAME = "name";
 		public static final String PROTIN = "protin";
 		public static final String CARBOS = "carbos";
@@ -17,7 +18,7 @@ public class FoodTable {
 	}
 
 	public static String[] getColumns() {
-		String[] columns = { Column.NAME, Column.PROTIN, Column.CARBOS,
+		String[] columns = { Column._ID,Column.NAME, Column.PROTIN, Column.CARBOS,
 				Column.FAT, Column.CALORIES };
 		return columns;
 	}

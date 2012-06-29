@@ -3,6 +3,7 @@ package com.maveric.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.maveric.database.model.DietTracker;
 import com.maveric.database.model.ExceriseValue;
@@ -23,12 +24,16 @@ public class MaverickHelper extends SQLiteOpenHelper {
 	// Method is called during creation of the database
 	@Override
 	public void onCreate(SQLiteDatabase database) {
+		try{
 		ProfileTable.onCreate(database);
 		WorkOutTrackerTable.onCreate(database);
 		WaterTracker.onCreate(database);
 		DietTracker.onCreate(database);
 		ExceriseValue.onCreate(database);
 		FoodTable.onCreate(database);
+		}catch (Exception e) {
+			Log.e("mohan","error in create db");
+		}
 	}
 
 	// Method is called during an upgrade of the database,
