@@ -13,22 +13,26 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.maveric.database.MaverickHelper;
-import com.maveric.database.model.WaterTracker;
 import com.maveric.database.model.WorkOutTrackerTable;
 
 public class WorkoutProvider extends ContentProvider {
 	private MaverickHelper database;
 	private static final int GET_WORKOUT_DETAILS = 1;
 	private static final int INSERT_WORKOUT_DETAILS = 2;
+	private static final int WORKOUT_BY_DATE = 3;
 
 	public static final String PROVIDER_NAME = "com.maveric.WorkoutProvider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
 
-	public static final Uri INSERT_WORKOUT_DETAILS_URI = Uri
-			.parse("content://" + PROVIDER_NAME + "/insertOrUpdateWorkout");
-	
+	public static final Uri INSERT_WORKOUT_DETAILS_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/insertOrUpdateWorkout");
+
 	public static final Uri WORKOUT_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/takevalueworkout");
+
+	public static final Uri WORKOUT_BY_DATE_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/takevaluebydate");
+
 	private static final UriMatcher sURIMatcher;
 
 	static {
@@ -37,6 +41,7 @@ public class WorkoutProvider extends ContentProvider {
 				INSERT_WORKOUT_DETAILS);
 		sURIMatcher.addURI(PROVIDER_NAME, "takevalueworkout",
 				GET_WORKOUT_DETAILS);
+		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*", WORKOUT_BY_DATE);
 
 	}
 
@@ -60,8 +65,15 @@ public class WorkoutProvider extends ContentProvider {
 		case GET_WORKOUT_DETAILS:
 			queryBuilder.setTables(WorkOutTrackerTable.TABLE);
 			sortOrder = WorkOutTrackerTable.Column.ID + " DESC ";
-//			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "="
-//					+ url.getPathSegments().get(1));
+			selection = "1) GROUP BY (" + WorkOutTrackerTable.Column.DATE;
+			// queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "="
+			// + url.getPathSegments().get(1));
+			break;
+		case WORKOUT_BY_DATE:
+			queryBuilder.setTables(WorkOutTrackerTable.TABLE);
+			sortOrder = WorkOutTrackerTable.Column.ID + " DESC ";
+			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "='"
+					+ url.getPathSegments().get(1) + "'");
 			break;
 
 		default:

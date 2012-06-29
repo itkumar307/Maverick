@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/workout_tracker"
+    android:orientation="vertical"
+    android:scrollbars="none" >
 
+    <LinearLayout
+        android:id="@+id/date_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-<LinearLayout
-	android:layout_width="fill_parent"
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_height="fill_parent"
-	android:background="@drawable/workout_tracker"
-	android:orientation="vertical"
-	android:scrollbars="none">
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:id="@+id/date_title"
-		android:layout_height="wrap_content"
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
 
-		android:orientation="vertical">
-		<RelativeLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="20dp">
+            <ImageView
+                android:id="@+id/workout_tracker_side"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/workout_trackerside" />
+        </RelativeLayout>
 
-			<ImageView
-				android:id="@+id/workout_tracker_side"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:src="@drawable/workout_trackerside" />
-		</RelativeLayout>
-		<RelativeLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:gravity="center_horizontal">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" >
 
-			<TextView
-				android:id="@+id/prev_date"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:background="@drawable/prev" />
-			<View
-				android:id="@+id/prevview"
-				android:layout_width="20dip"
-				android:layout_height="10dip"
-				android:layout_toRightOf="@+id/prev_date" />
+            <TextView
+                android:id="@+id/prev_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/prev" />
 
-			<TextView
-				android:id="@+id/date"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_centerInParent="true"
-				android:layout_toRightOf="@+id/prevview"
-				android:text="date" />
+            <View
+                android:id="@+id/prevview"
+                android:layout_width="20dip"
+                android:layout_height="10dip"
+                android:layout_toRightOf="@+id/prev_date" />
 
-			<View
-				android:id="@+id/nextview"
-				android:layout_width="20dip"
-				android:layout_height="10dip"
-				android:layout_toRightOf="@+id/date" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/prevview"
+                android:text="date" />
 
-			<TextView
-				android:id="@+id/next_date"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_toRightOf="@+id/nextview"
-				android:background="@drawable/next_date" />
-		</RelativeLayout>
+            <View
+                android:id="@+id/nextview"
+                android:layout_width="20dip"
+                android:layout_height="10dip"
+                android:layout_toRightOf="@+id/date" />
 
-	</LinearLayout>
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_margin="10dip"
-		android:background="#fff">
+            <TextView
+                android:id="@+id/next_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/nextview"
+                android:background="@drawable/next_date" />
+        </RelativeLayout>
+    </LinearLayout>
 
-		<ListView
-			android:id="@+id/android:list"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:dividerHeight="1dip" />
-	</LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="#fff" >
 
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="50dip"
-		android:visibility="invisible">
-	</LinearLayout>
+        <ListView
+            android:id="@+id/android:list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:visibility="invisible" >
+    </LinearLayout>
+
 </LinearLayout>
-

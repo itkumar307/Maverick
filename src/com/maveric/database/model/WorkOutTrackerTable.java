@@ -22,7 +22,7 @@ public class WorkOutTrackerTable {
 	// Database creation SQL statement
 	private static final String DATABASE_CREATE = "CREATE TABLE " + TABLE
 			+ " ( " + Column.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ Column.DATE + " INTEGER, " + Column.SELECT_EXCERISE + " TEXT,"
+			+ Column.DATE + " TEXT, " + Column.SELECT_EXCERISE + " TEXT,"
 			+ Column.WORKOUT + " TEXT ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
