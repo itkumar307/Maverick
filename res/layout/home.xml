@@ -97,7 +97,7 @@ feel and do our best." />
 						android:layout_below="@+id/diet_summary_string"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="Daily water Requirement for your body"
+						android:text="Daily water Requirement"
 						android:textColor="@color/allpage_subtitle" />
 					<TextView
 						android:id="@+id/diet_answer"
