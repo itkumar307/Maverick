@@ -52,6 +52,11 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 					new String[] { WorkOutTrackerTable.Column.DATE },
 					new int[] { R.id.listexcerisetype });
 			ListView listView = getListView();
+			View footer = getLayoutInflater().inflate(R.layout.listviewfooter,
+					null);
+			listView.addFooterView(footer);
+			setListAdapter(adapter);
+			footer.setVisibility(View.INVISIBLE);
 			setListAdapter(adapter);
 		} catch (Exception e1) {
 			Log.e("kumar" + this.getClass(), "cursor error" + e1.getMessage(),
