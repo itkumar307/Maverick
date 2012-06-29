@@ -33,8 +33,11 @@
 			android:windowSoftInputMode="stateHidden">
 		</activity>
 		<activity
+            android:name=".WorkoutTrackerViewerActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+		<activity
 			android:name=".WorkoutTrackerActivity"
-			android:theme="@style/CustomTheme"
 			android:windowSoftInputMode="stateHidden">
 		</activity>
 		<activity

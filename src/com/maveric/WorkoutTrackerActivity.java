@@ -1,10 +1,17 @@
 package com.maveric;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -68,20 +75,15 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 		workoutText = (TextView) findViewById(R.id.selectworkouttext);
 
-		// try {
-		// workoutInfo = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
-		// null, null);
-		//
-		// workoutInfo.moveToFirst();
-		//
-		// Log.i("kumar",
-		// "date details"
-		// + workoutInfo.getString(workoutInfo
-		// .getColumnIndex(WorkOutTrackerTable.Column.DATE)));
-		// } catch (Exception e1) {
-		// // TODO Auto-generated catch block
-		// e1.printStackTrace();
-		// }
+		previousLog.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				startActivity(new Intent(WorkoutTrackerActivity.this,
+						WorkoutTrackerViewerActivity.class));
+
+			}
+		});
 
 		exceriseSelect.setOnClickListener(new OnClickListener() {
 
@@ -104,20 +106,48 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		saveWorkoutData.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				try {
-					ContentValues values = new ContentValues();
-					values.put(WorkOutTrackerTable.Column.SELECT_EXCERISE,
-							maverickData.getExceriseType());
-					values.put(WorkOutTrackerTable.Column.WORKOUT,
-							maverickData.getExceriseTimeWorking());
+				final ProgressDialog progressDialog = ProgressDialog.show(
+						WorkoutTrackerActivity.this, "Saving...",
+						"Wait a few sec your data is saving");
 
-					getContentResolver().insert(
-							WorkoutProvider.INSERT_WORKOUT_DETAILS_URI, values);
-				} catch (Exception e) {
-					Log.i("kumar:" + this.getClass(),
-							"error in sve data into workout table"
-									+ e.getMessage());
-				}
+				new Thread() {
+					public void run() {
+						try {
+
+							Calendar c = Calendar.getInstance();
+							SimpleDateFormat format = new SimpleDateFormat(
+									"dd-MM-yyyy");
+							String cureentDate = format.format(c.getTime());
+
+							Log.i("kumar" + this.getClass(), "date"
+									+ cureentDate);
+							ContentValues values = new ContentValues();
+
+							values.put(WorkOutTrackerTable.Column.DATE,
+									cureentDate);
+							values.put(
+									WorkOutTrackerTable.Column.SELECT_EXCERISE,
+									maverickData.getExceriseType());
+							values.put(WorkOutTrackerTable.Column.WORKOUT,
+									maverickData.getExceriseTimeWorking());
+
+							getContentResolver().insert(
+									WorkoutProvider.INSERT_WORKOUT_DETAILS_URI,
+									values);
+							handler.sendEmptyMessage(0);
+						} catch (Exception e) {
+							if (progressDialog != null) {
+								progressDialog.dismiss();
+							}
+							Log.i("kumar:" + this.getClass(),
+									"error in sve data into workout table"
+											+ e.getMessage(), e);
+							WorkoutTrackerActivity.this.finish();
+						}
+						progressDialog.dismiss();
+					}
+				}.start();
+
 			}
 		});
 	}
@@ -180,7 +210,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 		} catch (Exception e) {
 			Log.e("kumar" + this.getClass(), "excerise input function failed."
-					+ e.getMessage(),e);
+					+ e.getMessage(), e);
 		}
 
 	}
@@ -247,6 +277,18 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 			Log.e("kumar" + this.getClass(),
 					"selectthevaluefromdialogue failed." + e.getMessage());
 		}
-
 	}
+
+	Handler handler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+
+			switch (msg.what) {
+			case 0:
+				WorkoutTrackerActivity.this.finish();
+				break;
+			}
+		}
+
+	};
 }

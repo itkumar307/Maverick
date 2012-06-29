@@ -35,7 +35,7 @@ public class WorkoutProvider extends ContentProvider {
 		sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sURIMatcher.addURI(PROVIDER_NAME, "insertOrUpdateWorkout",
 				INSERT_WORKOUT_DETAILS);
-		sURIMatcher.addURI(PROVIDER_NAME, "takevalueworkout/*",
+		sURIMatcher.addURI(PROVIDER_NAME, "takevalueworkout",
 				GET_WORKOUT_DETAILS);
 
 	}
@@ -55,14 +55,13 @@ public class WorkoutProvider extends ContentProvider {
 		int uriType = sURIMatcher.match(url);
 		SQLiteDatabase db = database.getWritableDatabase();
 		String groupBy = null;
-		Log.i("kumar", "date in provider" + url.getPathSegments().get(1));
 		switch (uriType) {
 
 		case GET_WORKOUT_DETAILS:
-			queryBuilder.setTables(WaterTracker.TABLE);
+			queryBuilder.setTables(WorkOutTrackerTable.TABLE);
 			sortOrder = WorkOutTrackerTable.Column.ID + " DESC ";
-			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "="
-					+ url.getPathSegments().get(1));
+//			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "="
+//					+ url.getPathSegments().get(1));
 			break;
 
 		default:
