@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -46,6 +47,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 	int width;
 	TextView exceriseText;
 	TextView workoutText;
+	private int selectedColories = 0;
 
 	@Override
 	protected void setContentToLayout() {
@@ -106,48 +108,52 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		saveWorkoutData.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				final ProgressDialog progressDialog = ProgressDialog.show(
-						WorkoutTrackerActivity.this, "Saving...",
-						"Wait a few sec your data is saving");
+				if (!(TextUtils.isEmpty(workoutText.getText().toString()) && TextUtils
+						.isEmpty(exceriseText.getText().toString()))) {
 
-				new Thread() {
-					public void run() {
-						try {
+					final ProgressDialog progressDialog = ProgressDialog.show(
+							WorkoutTrackerActivity.this, "Saving...",
+							"Wait a few sec your data is saving");
 
-							Calendar c = Calendar.getInstance();
-							SimpleDateFormat format = new SimpleDateFormat(
-									"dd-MM-yyyy");
-							String cureentDate = format.format(c.getTime());
+					new Thread() {
+						public void run() {
+							try {
 
-							Log.i("kumar" + this.getClass(), "date"
-									+ cureentDate);
-							ContentValues values = new ContentValues();
+								Calendar c = Calendar.getInstance();
+								SimpleDateFormat format = new SimpleDateFormat(
+										"dd-MM-yyyy");
+								String cureentDate = format.format(c.getTime());
 
-							values.put(WorkOutTrackerTable.Column.DATE,
-									cureentDate);
-							values.put(
-									WorkOutTrackerTable.Column.SELECT_EXCERISE,
-									maverickData.getExceriseType());
-							values.put(WorkOutTrackerTable.Column.WORKOUT,
-									maverickData.getExceriseTimeWorking());
+								Log.i("kumar" + this.getClass(), "date"
+										+ cureentDate);
+								ContentValues values = new ContentValues();
 
-							getContentResolver().insert(
-									WorkoutProvider.INSERT_WORKOUT_DETAILS_URI,
-									values);
-							handler.sendEmptyMessage(0);
-						} catch (Exception e) {
-							if (progressDialog != null) {
-								progressDialog.dismiss();
+								values.put(WorkOutTrackerTable.Column.DATE,
+										cureentDate);
+								values.put(
+										WorkOutTrackerTable.Column.SELECT_EXCERISE,
+										maverickData.getExceriseType());
+								values.put(WorkOutTrackerTable.Column.WORKOUT,
+										maverickData.getExceriseTimeWorking());
+
+								getContentResolver()
+										.insert(WorkoutProvider.INSERT_WORKOUT_DETAILS_URI,
+												values);
+								handler.sendEmptyMessage(0);
+							} catch (Exception e) {
+								if (progressDialog != null) {
+									progressDialog.dismiss();
+								}
+								Log.i("kumar:" + this.getClass(),
+										"error in sve data into workout table"
+												+ e.getMessage(), e);
+								WorkoutTrackerActivity.this.finish();
 							}
-							Log.i("kumar:" + this.getClass(),
-									"error in sve data into workout table"
-											+ e.getMessage(), e);
-							WorkoutTrackerActivity.this.finish();
+							progressDialog.dismiss();
 						}
-						progressDialog.dismiss();
-					}
-				}.start();
-
+					}.start();
+				} else
+					toast(getString(R.string.REQUIRE_FIELD_TOAST));
 			}
 		});
 	}
@@ -193,7 +199,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 							int id, long position) {
 						String exceriseTypeValue = exceriseCursor.getString(exceriseCursor
 								.getColumnIndex(ExceriseValue.Column.EXCERISE_TYPE));
-
+						selectedColories = exceriseCursor.getInt(exceriseCursor
+								.getColumnIndex(ExceriseValue.Column.CALORIES));
 						maverickData.setExceriseType(exceriseTypeValue);
 						Log.i("kumar:" + this.getClass(),
 								"Input of ExceriseTypedata:"
@@ -202,6 +209,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 						listDialog.dismiss();
 						overridePendingTransition(R.anim.prev_slidein,
 								R.anim.prev_slideout);
+						if (!TextUtils.isEmpty(workoutText.getText().toString()))
+							setColories();
 					}
 				});
 			} else {
@@ -265,6 +274,9 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 						listDialog.dismiss();
 						overridePendingTransition(R.anim.prev_slidein,
 								R.anim.prev_slideout);
+						if (!TextUtils.isEmpty(exceriseText.getText()
+								.toString()))
+							setColories();
 					} catch (Exception e) {
 						Log.e("kumar" + this.getClass(),
 								"excerise input function failed."
@@ -291,4 +303,10 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		}
 
 	};
+
+	private void setColories() {
+		TextView Calories_burned_today = (TextView) findViewById(R.id.Calories_burned_today);
+		Calories_burned_today
+				.setText((Integer.valueOf(workoutText.getText().toString()) * selectedColories)+" cal");
+	}
 }

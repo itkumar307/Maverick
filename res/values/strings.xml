@@ -35,7 +35,7 @@
 	<string name="USER_NAME">user name</string>
 	<string name="EMAIL_ID">email id</string>
 	<string name="PASSWORD">password</string>
-	<string name="CONFORM_PWD">conform password</string>
+	<string name="CONFORM_PWD">confirm password</string>
 	<string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
 	<string name="REQUIRE_FIELD_TOAST">Please fill all the values</string>
 	<!-- url -->

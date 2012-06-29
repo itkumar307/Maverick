@@ -89,7 +89,10 @@ feel and do our best." />
 						android:layout_alignParentLeft="true"
 						android:layout_toLeftOf="@+id/maveric_cycle"
 						android:layout_height="wrap_content"
-						android:text="@string/DUMMY_STRING" />
+						android:text="Physical fitness involves the performance of the heart and lungs, and
+the muscles of body. And, since what we do with our bodies also
+affects what we can do with our minds, fitness influences to some
+degree qualities such as mental alertness and emotional stability." />
 					<TextView
 						android:id="@+id/temp"
 						android:layout_marginTop="15dip"
