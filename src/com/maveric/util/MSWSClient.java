@@ -29,7 +29,7 @@ public class MSWSClient {
 	private static final String DATA = "data";
 	private static final String CONTENT_TYPE_JSON = "application/json";
 	public Boolean isPostSuccessfully = false;
-
+		
 	public MSWSClient(String url, Context ctx, JSONArray jArray) {
 		JSONObject jObject = new JSONObject();
 		this.ctx = ctx;
@@ -107,4 +107,5 @@ public class MSWSClient {
 		}
 
 	}
+	
 }
