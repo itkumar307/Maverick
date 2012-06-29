@@ -22,12 +22,12 @@ public class ExceriseProvider extends ContentProvider {
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
 	public static final Uri EXCERISETYPE_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/excerisetype");
-	public static final Uri FOOD_URI = Uri.parse("content://"
-			+ PROVIDER_NAME + "/food");
-	
+	public static final Uri FOOD_URI = Uri.parse("content://" + PROVIDER_NAME
+			+ "/food");
+
 	private SQLiteDatabase db;
 	private static final int EXCERISETYPE = 1;
-	private static final int FOODTYPE= 2;
+	private static final int FOODTYPE = 2;
 	private static final UriMatcher MATCHER;
 
 	static {
@@ -48,13 +48,19 @@ public class ExceriseProvider extends ContentProvider {
 		SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
 		Log.d("kumar" + this.getClass(), "Query: " + url.getPath());
-		checkColumns(projection);
+
 		qb.setTables(ExceriseValue.TABLE);
 		SQLiteDatabase db = database.getWritableDatabase();
 		switch (MATCHER.match(url)) {
 
 		case EXCERISETYPE:
+			checkColumns(projection);
+			selection = "1) GROUP BY (" + ExceriseValue.Column._ID;
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			break;
 
+		case FOODTYPE:
+			checkFoodColumns(projection);
 			selection = "1) GROUP BY (" + ExceriseValue.Column._ID;
 			sortOrder = ExceriseValue.Column._ID + " DESC ";
 			break;
@@ -132,6 +138,21 @@ public class ExceriseProvider extends ContentProvider {
 
 	private void checkColumns(String[] projection) {
 		String[] available = ExceriseValue.getColumns();
+		if (projection != null) {
+			HashSet<String> requestedColumns = new HashSet<String>(
+					Arrays.asList(projection));
+			HashSet<String> availableColumns = new HashSet<String>(
+					Arrays.asList(available));
+			// Check if all columns which are requested are available
+			if (!availableColumns.containsAll(requestedColumns)) {
+				throw new IllegalArgumentException(
+						"Unknown columns in projection");
+			}
+		}
+	}
+
+	private void checkFoodColumns(String[] projection) {
+		String[] available = FoodTable.getColumns();
 		if (projection != null) {
 			HashSet<String> requestedColumns = new HashSet<String>(
 					Arrays.asList(projection));

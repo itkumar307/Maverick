@@ -29,6 +29,11 @@
         <provider
             android:name=".contentprovider.ExceriseProvider"
             android:authorities="com.maveric.exceriseprovider" />
+        
+         <provider
+            android:name=".contentprovider.FoodTrackerProvider"
+            android:authorities="com.maveric.FoodTrackerProvider" />
+         
         <provider
             android:name="com.maveric.contentprovider.ProfileProvider"
             android:authorities="com.maveric.contentprovider.ProfileProvider" />
