@@ -135,6 +135,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 										maverickData.getExceriseType());
 								values.put(WorkOutTrackerTable.Column.WORKOUT,
 										maverickData.getExceriseTimeWorking());
+								values.put(WorkOutTrackerTable.Column.CALORIES,
+										maverickData.getCalories());
 
 								getContentResolver()
 										.insert(WorkoutProvider.INSERT_WORKOUT_DETAILS_URI,
@@ -209,7 +211,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 						listDialog.dismiss();
 						overridePendingTransition(R.anim.prev_slidein,
 								R.anim.prev_slideout);
-						if (!TextUtils.isEmpty(workoutText.getText().toString()))
+						if (!TextUtils
+								.isEmpty(workoutText.getText().toString()))
 							setColories();
 					}
 				});
@@ -306,7 +309,9 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 	private void setColories() {
 		TextView Calories_burned_today = (TextView) findViewById(R.id.Calories_burned_today);
-		Calories_burned_today
-				.setText((Integer.valueOf(workoutText.getText().toString()) * selectedColories)+" cal");
+		int calories = Integer.valueOf(workoutText.getText().toString())
+				* selectedColories;
+		maverickData.setCalories(calories);
+		Calories_burned_today.setText(calories + " cal");
 	}
 }

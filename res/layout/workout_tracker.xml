@@ -31,9 +31,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_below="@+id/workout_tracker_side"
                     android:layout_margin="20dip"
                     android:background="@drawable/logs"
-                    android:layout_below="@+id/workout_tracker_side"
                     android:padding="5dip"
                     android:text="View Logs"
                     android:textColor="#fff" />
@@ -53,6 +53,7 @@
                     android:padding="20dip" >
 
                     <TextView
+                        android:id="@+id/exceriseview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -60,12 +61,6 @@
                         android:layout_marginLeft="10dip"
                         android:text="Select excerise"
                         android:textColor="#000" />
-
-                    <!--
-                         <EditText android:id="@+id/select_excerise" android:layout_width="fill_parent" 
-                        android:layout_height="wrap_content" android:layout_margin="10dip" android:background="@drawable/trancparent_curve_all_page" 
-                        android:minHeight="40dip" android:textColor="@color/Editbox_text_color" />
-                    -->
 
                     <TextView
                         android:id="@+id/selected_exercise_text"

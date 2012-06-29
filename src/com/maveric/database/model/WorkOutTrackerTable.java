@@ -11,11 +11,12 @@ public class WorkOutTrackerTable {
 		public static final String DATE = "date";
 		public static final String SELECT_EXCERISE = "excerise";
 		public static final String WORKOUT = "workout";
+		public static final String CALORIES = "calories";
 	}
 
 	public static String[] getColumns() {
 		String[] columns = { Column.ID, Column.DATE, Column.SELECT_EXCERISE,
-				Column.WORKOUT };
+				Column.WORKOUT, Column.CALORIES };
 		return columns;
 	}
 
@@ -23,7 +24,7 @@ public class WorkOutTrackerTable {
 	private static final String DATABASE_CREATE = "CREATE TABLE " + TABLE
 			+ " ( " + Column.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
 			+ Column.DATE + " TEXT, " + Column.SELECT_EXCERISE + " TEXT,"
-			+ Column.WORKOUT + " TEXT ); ";
+			+ Column.WORKOUT + " TEXT, " + Column.CALORIES + " INTEGER ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
 		database.execSQL(DATABASE_CREATE);
