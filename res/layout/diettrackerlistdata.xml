@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lineItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center_vertical" >
+
+    <TextView
+        android:id="@+id/listexcerisetype"
+        android:layout_width="wrap_content"
+        android:layout_height="48dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dip"
+        android:gravity="center"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/listworkouttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:id="@+id/listcalories"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:textColor="#000" />
+
+</RelativeLayout>

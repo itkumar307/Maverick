@@ -195,6 +195,8 @@ public class DietTrackerActivity extends MavericBaseActiity {
 							+ foodCursor.getString(foodCursor
 									.getColumnIndex(FoodTable.Column.CARBOS)));
 			if (foodCursor.getCount() > 0) {
+				Log.i("kumar" + this.getClass(),
+						"foodcursor" + foodCursor.getCount());
 				final Dialog listDialog = new Dialog(DietTrackerActivity.this,
 						R.style.PauseDialog);
 
