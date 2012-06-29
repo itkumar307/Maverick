@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.maveric.database.model.DietTracker;
 import com.maveric.database.model.ExceriseValue;
+import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.ProfileTable;
 import com.maveric.database.model.WaterTracker;
 import com.maveric.database.model.WorkOutTrackerTable;
@@ -27,6 +28,7 @@ public class MaverickHelper extends SQLiteOpenHelper {
 		WaterTracker.onCreate(database);
 		DietTracker.onCreate(database);
 		ExceriseValue.onCreate(database);
+		FoodTable.onCreate(database);
 	}
 
 	// Method is called during an upgrade of the database,

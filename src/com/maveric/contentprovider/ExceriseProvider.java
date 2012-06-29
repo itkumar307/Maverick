@@ -14,6 +14,7 @@ import android.util.Log;
 
 import com.maveric.database.MaverickHelper;
 import com.maveric.database.model.ExceriseValue;
+import com.maveric.database.model.FoodTable;
 
 public class ExceriseProvider extends ContentProvider {
 	private MaverickHelper database;
@@ -21,14 +22,18 @@ public class ExceriseProvider extends ContentProvider {
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
 	public static final Uri EXCERISETYPE_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/excerisetype");
+	public static final Uri FOOD_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/food");
+	
 	private SQLiteDatabase db;
 	private static final int EXCERISETYPE = 1;
-
+	private static final int FOODTYPE= 2;
 	private static final UriMatcher MATCHER;
 
 	static {
 		MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
 		MATCHER.addURI(PROVIDER_NAME, "excerisetype", EXCERISETYPE);
+		MATCHER.addURI(PROVIDER_NAME, "food", FOODTYPE);
 	}
 
 	@Override
@@ -82,6 +87,9 @@ public class ExceriseProvider extends ContentProvider {
 		switch (uriType) {
 		case EXCERISETYPE:
 			id = sqlDB.replaceOrThrow(ExceriseValue.TABLE, null, initialValues);
+			break;
+		case FOODTYPE:
+			id = sqlDB.replaceOrThrow(FoodTable.TABLE, null, initialValues);
 			break;
 		default:
 			throw new IllegalArgumentException("Insert Unknown URI: " + uri);

@@ -71,4 +71,13 @@ public class Apppref {
 	public String getLastTime() {
 		return appSharedPrefs.getString("time","0");
 	}
+	
+	public void setLastTime1(String yes) {
+		prefsEditor.putString("time1", yes);
+		prefsEditor.commit();
+	}
+
+	public String getLastTime1() {
+		return appSharedPrefs.getString("time1","0");
+	}
 }
