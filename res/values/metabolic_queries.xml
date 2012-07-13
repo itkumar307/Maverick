@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="metabolic_questions">
+		<item>1. I sleep best:</item>
+		<item>2. I sleep best if:</item>
+		<item>3. I sleep best and wake up feeling most rested if I:</item>
+		<item>4. After vigorous exercise, I tend to crave:</item>
+		<item>5. In order to last 4 hours between meals and maintain mental
+			clarity and a sense of well-being, I prefer to eat:
+		</item>
+		<item>6. Which best describes your reaction to sugar or sweet foods
+			such
+			as jelly donuts, candy or sweetened drinks:
+		</item>
+		<item>7. My body shape is closest to:</item>
+		<item>8. Which statement best describes your disposition toward food
+			in general:
+		</item>
+		<item>9. In general, I prefer:   </item>
+		<item>10. Instinctually, I prefer to eat:</item>
+		<item>11. Which list of fish most appeals to your taste without
+			concern for calories or fat content:
+		</item>
+		<item>12. When eating dairy products, do you feel best after eating:
+		</item>
+		<item>13. With regard to snacking, do you:</item>
+		<item>14. Which characteristics best describe you:</item>
+	</string-array>
+	<string-array name="OPTION_A">
+		<item>A. when I eat 1-2 hours before going to sleep</item>
+		<item>A. my dinner is composed of mainly meat with some vegetables or
+			other carbohydrates
+		</item>
+		<item>don’t eat sweet desserts like cakes, candy or cookies. If I eat
+			rich dessert that is not overly sweet, such as high quality full fat
+			ice cream, I tend to sleep okay.
+		</item>
+		<item>A. foods or drinks with higher protein and/or fat content such
+			as a bodybuilder’s high-protein shake
+		</item>
+		<item>A. a meal predominately meat based, high in protein and fat
+			(such as roast beef, pork, salmon…) with a carbohydrate as a
+			supplement to the meal
+		</item>
+		<item>A. I get a rush of energy, may get the jitters or may feel good
+			for a short time but then I am likely to have a blood sugar crash,
+			resulting in the need for more of the same or having to eat some real
+			food to normalize myself.
+		</item>
+		<item>A. Mesamorphic or “V” shaped, like a typical wrestler, gymnast
+			or weight lifter type; Endomorphic or more naturally round shape but
+			I am naturally quite strong and respond very well to anaerobic sports
+			or strength training type exercises.
+		</item>
+		<item>A. I love food and live to eat!</item>
+		<item>A. to salt my foods most of the time</item>
+		<item>A. dark meat, such as the chicken or turkey legs and thighs over
+			the white breast meat
+		</item>
+		<item>A. anchovy, caviar, herring, mussels, sardines, abalone, clams,
+			crab, crayfish, lobster, mackerel, octopus, oyster, salmon, scallops,
+			shrimp, snail, squid, tune (dark meat)
+		</item>
+		<item>A. richer, full fat yogurts and cheeses or desserts</item>
+		<item>A. tend to do better with snacks between meals</item>
+		<item>A. creative, digest food well in general, have a strong immune
+			system and don’t get sick often, have an appetite for proteins, feel
+			good when eating fats or fatty foods, more muscular or inclined to
+			gain muscle and/or strength easily
+		</item>
+	</string-array>
+	<string-array name="OPTION_B">
+		<item>B. when I eat as much as 3 or 4 hours before going to sleep
+		</item>
+		<item>B. my dinner is composed mainly of vegetables or other
+			carbohydrates and a comparatively small serving of meat
+		</item>
+		<item>B. even if I should eat a sweet dessert now and then</item>
+		<item>B. foods or drinks higher in carbohydrate (sweetener), such as
+			Gatorade, soda, or fruit juice
+		</item>
+		<item>B. a meal predominately carbohydrate based, such as a salad or
+			vegetables with some bread, and a small amount of protein
+		</item>
+		<item>B. I can do quite well on sweet things and I don’t seem to be
+			negatively affected, even though I know that too much is not good for
+			me.
+		</item>
+		<item>B. Ectomorphic or long and lean like a rower or triathlete;
+			Endomorphic or more naturally round shaped but I respond better to
+			endurance athletics than to strength training or anaerobic sports.
+		</item>
+		<item>B. I am not fussed over food in general and I eat to live in
+			general.</item>
+		<item>B. to taste my foods and apply salt once in a while, but am not
+			particularly attracted to salty foods</item>
+		<item>B. light meat such as the chicken or turkey breast over the dark
+			leg and thigh meat</item>
+		<item>B. light fish, catfish, cod, flounder, haddock, perch, scrod,
+			sole, trout, tune (white), turbot</item>
+		<item>B. lighter low fat yogurt and cheeses or desserts</item>
+		<item>B. tend to last between meals easily in general</item>
+		<item>B. logical, more lithe of build, tend to be sensitive to
+			temperature changes and flu season and wouldn’t really consider your
+			immune system one of your stronger attributes, prefer light meats and
+			lower fat foods, are more inclined toward endurance athletics</item>
+	</string-array>
+</resources> 

@@ -3,7 +3,7 @@
 	<string name="hello">Hello World, MavericActivity!</string>
 	<string name="app_name">Maveric</string>
 	<!-- Apppref string -->
-	<string name ="APP_PREF_NAME">MavericAppPreferencesString</string>
+	<string name="APP_PREF_NAME">MavericAppPreferencesString</string>
 	<string name="LOGIN">LOGIN</string>
 	<string name="LOGIN_TITLE_TEXT">Please enter your physical statics in the fields
 		below
@@ -51,5 +51,31 @@
 	<string name="NO_INTERNET_CONNECTION">No internet connection Available</string>
 	<string name="EXCERISE_TYPE_DIALOG_HEAD"> Excerise Type</string>
 	<string name="CALORIES_DIALOG_HEAD"> Calories</string>
+	<string name="CENTIMETER">cm</string>
+	<string name="KILOGRAMS">kg</string>
+	<!-- introduction for Metabolic Typing Questionnaire -->
+	
+	<string name="INTRO_METABOLIC_QUES">This questionnaire is designed to help you
+		determine the optimal macronutrient ratio (fats, proteins,
+		carbohydrates) to begin the process of fine-tuning your body’s
+		feedback mechanisms. For those of you who are not sure what a fat,
+		protein, or carbohydrate is, let me simplify that for you. If the food
+		comes from something that has a set of eyes, it is going to be higher
+		in fats and proteins; fats and proteins most often come together in
+		nature. Foods like vegetables, breads and cereals do not come from a
+		source that has a set of eyes and are generally much higher in
+		carbohydrates and lower in fat and protein. There are a few exceptions
+		to this rule, such as nuts and avocados, which have no eyes, yet are
+		high fat foods.
+
+		When answering the questions, circle the answer that best describes the
+		way you feel, not the way you think you should eat! If none of the
+		answers suit you with regard to a particular question, simply don’t
+		answer that question. If answer A suits you some of the time (in the
+		morning but not the evening for example), and answer B suits you other
+		times, you may circle both provided that the answers refer to how you
+		may feel on any given day, not within a period of 24 hours.
+	</string>
+	<string name="MATABOLIC_QUERIES_TITLE">Metabolic Typing Questionnaire</string>
 </resources> 
 

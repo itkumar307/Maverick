@@ -31,7 +31,7 @@ public class LoginActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		signUp = (Button) findViewById(R.id.sign_up);
 		RelativeLayout loginWithCurrentDetailNext = (RelativeLayout) findViewById(R.id.current_detail_next);
 		RelativeLayout loginWithTargetDetailNext = (RelativeLayout) findViewById(R.id.target_detail_next);
@@ -88,13 +88,13 @@ public class LoginActivity extends MavericBaseActiity {
 												.toString()), Float
 										.valueOf(currentHeight.getText()
 												.toString()));
-								float recWater = getRecWater(Float
-										.valueOf(currentWeight.getText()
-												.toString()));
+								// float recWater = getRecWater(Float
+								// .valueOf(currentWeight.getText()
+								// .toString()));
 
 								appPref.setStartup(false);
 								appPref.setBmi(currentBmi);
-								appPref.setRecWater(recWater);
+								// appPref.setRecWater(recWater);
 								appPref.setRecWeight(recWeight);
 								gotoHomeActivity();
 							} else {
@@ -110,7 +110,7 @@ public class LoginActivity extends MavericBaseActiity {
 					} else {
 						signUp.setClickable(true);
 						signUp.setBackgroundColor(R.color.signup_unpressed);
-						toast("password and conform password mismatched");
+						toast("password and confirm password mismatched");
 					}
 				} else {
 					signUp.setClickable(true);
@@ -147,11 +147,12 @@ public class LoginActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				if (isAllFilled(targetHeight, targettWeight, targetHip,
+				// target weight useing double time bec nw we fix temp for
+				// remove target height thts y
+				if (isAllFilled(targettWeight, targettWeight, targetHip,
 						currentBmi)) {
 
-					profile.setTargetHeight(Float.valueOf(targetHeight
-							.getText().toString()));
+					profile.setTargetHeight((float) 180);
 					profile.setTargetWeight(Float.valueOf(targettWeight
 							.getText().toString()));
 					profile.setTargetHip(Float.valueOf(targetHip.getText()

@@ -10,7 +10,7 @@ public class Apppref {
 	private Editor prefsEditor;
 	private Context context;
 	private static final String BMI = "bmi";
-	private static final String REC_WATER = "recWater";
+	// private static final String REC_WATER = "recWater";
 	private static final String REC_WEIGHT = "recWeight";
 	private static final String STARTUP = "startUp";
 
@@ -45,14 +45,14 @@ public class Apppref {
 		return appSharedPrefs.getFloat(REC_WEIGHT, 60);
 	}
 
-	public void setRecWater(float water) {
-		prefsEditor.putFloat(REC_WATER, water);
-		prefsEditor.commit();
-	}
-
-	public float getRecWater() {
-		return appSharedPrefs.getFloat(REC_WATER, 3);
-	}
+	// public void setRecWater(float water) {
+	// prefsEditor.putFloat(REC_WATER, water);
+	// prefsEditor.commit();
+	// }
+	//
+	// public float getRecWater() {
+	// return appSharedPrefs.getFloat(REC_WATER, 3);
+	// }
 
 	public void setStartup(Boolean yes) {
 		prefsEditor.putBoolean(STARTUP, yes);
@@ -62,22 +62,22 @@ public class Apppref {
 	public Boolean isStartUp() {
 		return appSharedPrefs.getBoolean(STARTUP, true);
 	}
-	
+
 	public void setLastTime(String yes) {
 		prefsEditor.putString("time", yes);
 		prefsEditor.commit();
 	}
 
 	public String getLastTime() {
-		return appSharedPrefs.getString("time","0");
+		return appSharedPrefs.getString("time", "0");
 	}
-	
+
 	public void setLastTime1(String yes) {
 		prefsEditor.putString("time1", yes);
 		prefsEditor.commit();
 	}
 
 	public String getLastTime1() {
-		return appSharedPrefs.getString("time1","0");
+		return appSharedPrefs.getString("time1", "0");
 	}
 }

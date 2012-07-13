@@ -171,7 +171,7 @@
 			<LinearLayout
 				android:id="@+id/login_with_current_detail"
 				android:orientation="vertical"
-				android:visibility="gone"
+				android:visibility="visible"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content">
 				<RelativeLayout
@@ -215,6 +215,7 @@
 						android:id="@+id/login_height"
 						android:layout_margin="10dip"
 						android:inputType="number"
+						android:hint="@string/CENTIMETER"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
 
@@ -228,6 +229,7 @@
 						android:id="@+id/login_weight"
 						android:layout_margin="10dip"
 						android:inputType="number"
+						android:hint="@string/KILOGRAMS"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
 					<TextView
@@ -239,6 +241,7 @@
 					<EditText
 						android:id="@+id/login_waist"
 						android:inputType="number"
+						android:hint="@string/CENTIMETER"
 						android:layout_margin="10dip"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
@@ -246,12 +249,13 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="5dip"
-						android:text="@string/HIP"
+						android:text="@string/HIP"						
 						android:textColor="@color/login_page_content_text_color" />
 					<EditText
 						android:id="@+id/login_hip"
 						android:inputType="number"
 						android:layout_margin="10dip"
+						android:hint="@string/CENTIMETER"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
 				</LinearLayout>
@@ -310,30 +314,20 @@
 					android:id="@+id/editbox_group"
 					android:orientation="vertical">
 					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="5dip"
-						android:text="@string/TARGET_HEIGHT"
-						android:textColor="@color/login_page_content_text_color" />
-					<EditText
-						android:id="@+id/TARGET_HEIGHT"
-						android:layout_margin="10dip"
-						android:inputType="number"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="@string/TARGET_WEIGHT"
+                        android:textColor="@color/login_page_content_text_color" />
+                    <EditText
+                        android:id="@+id/TARGET_WEIGHT"
+                        android:inputType="number"
+                        android:layout_margin="10dip"
+                        android:hint="kg"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+					
 
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="5dip"
-						android:text="@string/TARGET_WEIGHT"
-						android:textColor="@color/login_page_content_text_color" />
-					<EditText
-						android:id="@+id/TARGET_WEIGHT"
-						android:inputType="number"
-						android:layout_margin="10dip"
-						android:layout_width="fill_parent"
-						android:layout_height="wrap_content" />
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -344,6 +338,7 @@
 						android:id="@+id/TARGET_HIP"
 						android:layout_margin="10dip"
 						android:inputType="number"
+						android:hint="@string/CENTIMETER"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
 					<TextView
@@ -358,6 +353,21 @@
 						android:inputType="number"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content" />
+					<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dip"
+                        android:text="@string/TARGET_HEIGHT"
+                        android:visibility="gone"
+                        android:textColor="@color/login_page_content_text_color" />
+                    <EditText
+                        android:id="@+id/TARGET_HEIGHT"
+                        android:layout_margin="10dip"
+                        android:inputType="number"
+                        android:hint="cm"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
 				</LinearLayout>
 				<!-- editbox group end -->
 				<RelativeLayout

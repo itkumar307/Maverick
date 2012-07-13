@@ -57,9 +57,9 @@ public abstract class MavericBaseActiity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					Toast.makeText(context,
-							"This menu not yet associated with any page !",
-							1500).show();
+					Intent singup = new Intent(context,
+							metabolicQueries.class);
+					startActivity(singup);
 				}
 			});
 			inter.setOnClickListener(new OnClickListener() {

@@ -93,7 +93,9 @@ feel and do our best." />
 the muscles of body. And, since what we do with our bodies also
 affects what we can do with our minds, fitness influences to some
 degree qualities such as mental alertness and emotional stability." />
-					<TextView
+					
+					<!-- water log remove from summary page -->
+					<!-- <TextView
 						android:id="@+id/temp"
 						android:layout_marginTop="15dip"
 						android:layout_marginLeft="20dip"
@@ -112,7 +114,7 @@ degree qualities such as mental alertness and emotional stability." />
 						android:padding="5dip"
 						android:textColor="@color/subtitle_answer_text_color"
 						android:background="@color/subtitle_answer_text_backgroud"
-						android:text="1200cal" />
+						android:text="1200cal" /> -->
 
 					<ImageView
 						android:id="@+id/maveric_cycle"

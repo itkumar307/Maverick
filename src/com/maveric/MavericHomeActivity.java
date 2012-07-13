@@ -20,10 +20,10 @@ public class MavericHomeActivity extends MavericBaseActiity {
         Context ctx;
         ctx = this.getApplicationContext();     		
         TextView bmiText = (TextView) findViewById(R.id.calories_born_answer);
-        TextView waterReq =(TextView) findViewById(R.id.diet_answer);
+//        TextView waterReq =(TextView) findViewById(R.id.diet_answer);
         Apppref appPref = new Apppref(context);
         bmiText.setText(appPref.getRecWeight()+" kg");
-        waterReq.setText(appPref.getRecWater()+" L");
+//        waterReq.setText(appPref.getRecWater()+" L");
         
         /*
          * check new updates

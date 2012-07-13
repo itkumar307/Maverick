@@ -60,6 +60,11 @@
             android:name=".DietTrackerActivity"
             android:windowSoftInputMode="stateHidden" >
         </activity>
+        
+            <activity
+            android:name=".metabolicQueries"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
     </application>
 
 </manifest>
