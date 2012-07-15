@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.maveric.database.model.DietTracker;
 import com.maveric.database.model.ExceriseValue;
+import com.maveric.database.model.FavWorkoutTracterTable;
 import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
 import com.maveric.database.model.ProfileTable;
@@ -33,6 +34,7 @@ public class MaverickHelper extends SQLiteOpenHelper {
 			ExceriseValue.onCreate(database);
 			FoodTable.onCreate(database);
 			FoodTrackerTable.onCreate(database);
+			FavWorkoutTracterTable.onCreate(database);
 		} catch (Exception e) {
 			Log.e("mohan", "error in create db");
 		}

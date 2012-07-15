@@ -28,7 +28,7 @@
 			android:layout_height="wrap_content"
 			android:text="CARBOHYDRATES:PROTEINS:FATS"
 			android:textStyle="bold"
-            android:textColor="@color/allpage_subtitle"
+			android:textColor="@color/allpage_subtitle"
 			android:layout_marginTop="10dip"
 			android:gravity="center" />
 		<TextView
@@ -75,7 +75,7 @@
 					android:layout_below="@+id/protine_type_ratio"
 					android:id="@+id/protine_type_chart"
 					android:layout_centerHorizontal="true"
-					android:src="@drawable/ic_launcher"></ImageView>
+					android:src="@drawable/m2"></ImageView>
 			</RelativeLayout>
 			<RelativeLayout
 				android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
 					android:id="@+id/mixed_type_chart"
 					android:layout_centerHorizontal="true"
 					android:layout_below="@+id/mixed_type_ratio"
-					android:src="@drawable/ic_launcher"></ImageView>
+					android:src="@drawable/m1"></ImageView>
 			</RelativeLayout>
 			<RelativeLayout
 				android:layout_width="wrap_content"
@@ -139,9 +139,60 @@
 					android:layout_below="@+id/corbo_type_ratio"
 					android:id="@+id/corbo_type_chart"
 					android:layout_centerHorizontal="true"
-					android:src="@drawable/ic_launcher"></ImageView>
+					android:src="@drawable/m3"></ImageView>
 			</RelativeLayout>
 		</LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_marginLeft="20dip"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+			<ImageView
+				android:layout_width="21dp"
+				android:layout_height="21dp"
+				android:src="@drawable/protine_color" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingTop="5dip"
+				android:paddingLeft="10dip"
+				android:textStyle="bold"
+				android:text="Protins" />
+		</LinearLayout>
+		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="20dip"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/fat_color" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dip"
+                android:paddingLeft="10dip"
+                android:textStyle="bold"
+                android:text="Fat" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="20dip"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:src="@drawable/carbo_color" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dip"
+                android:paddingLeft="10dip"
+                android:textStyle="bold"
+                android:text="Corbohydrate" />
+        </LinearLayout>
 		<Button
 			android:id="@+id/matabolic_queries"
 			android:layout_width="wrap_content"

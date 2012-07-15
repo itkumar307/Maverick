@@ -37,6 +37,17 @@
                     android:padding="5dip"
                     android:text="View Logs"
                     android:textColor="#fff" />
+                <Button
+                    android:id="@+id/load_fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/workout_date_logs"
+                    android:layout_below="@+id/workout_tracker_side"
+                    android:layout_margin="20dip"
+                    android:background="@drawable/logs"
+                    android:padding="5dip"
+                    android:text="Load from Favorites"
+                    android:textColor="#fff" />
             </RelativeLayout>
 
             <LinearLayout
@@ -105,17 +116,29 @@
                         android:textColor="#000" />
                 </RelativeLayout>
             </LinearLayout>
-
+    <RelativeLayout android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+         android:layout_margin="10dip">
             <Button
                 android:id="@+id/workoutsave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dip"
+               
                 android:background="@drawable/add_fav"
                 android:padding="10dip"
                 android:text="Save"
                 android:textColor="#fff" />
-
+             <Button
+                android:id="@+id/add_as_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_toRightOf="@+id/workoutsave"
+                android:background="@drawable/add_fav"
+                android:padding="10dip"
+                android:layout_marginLeft="5dip"
+                android:text="Save As Favorite"
+                android:textColor="#fff" />
+    </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

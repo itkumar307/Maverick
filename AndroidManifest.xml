@@ -38,6 +38,10 @@
 		<provider
 			android:name="com.maveric.contentprovider.ProfileProvider"
 			android:authorities="com.maveric.contentprovider.ProfileProvider" />
+		
+		<provider
+            android:name="com.maveric.contentprovider.FavoriteProvider"
+            android:authorities="com.maveric.contentprovider.FavoriteProvider" />
 
 		<activity
 			android:name=".MavericHomeActivity"

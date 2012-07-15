@@ -1,17 +1,22 @@
 package com.maveric;
 
+import java.security.KeyStore.LoadStoreParameter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
@@ -24,15 +29,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.maveric.contentprovider.ExceriseProvider;
+import com.maveric.contentprovider.FavoriteProvider;
 import com.maveric.contentprovider.WorkoutProvider;
 import com.maveric.database.model.ExceriseValue;
+import com.maveric.database.model.FavWorkoutTracterTable;
 import com.maveric.database.model.WorkOutTrackerTable;
+import com.maveric.enums.FavEnums;
 import com.maveric.obj.type.MaverickDataOrganize;
 
 public class WorkoutTrackerActivity extends MavericBaseActiity {
@@ -65,7 +74,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		ctx = getApplicationContext();
 
 		maverickData = new MaverickDataOrganize(ctx);
-
+		Button loadFromFav = (Button) findViewById(R.id.load_fav);
+		Button saveAsFav = (Button) findViewById(R.id.add_as_fav);
 		exceriseSelect = (RelativeLayout) findViewById(R.id.selectexercisevalue);
 		exceriseTime = (RelativeLayout) findViewById(R.id.selectworkoutvalue);
 
@@ -108,8 +118,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		saveWorkoutData.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				if (!(TextUtils.isEmpty(workoutText.getText().toString()) && TextUtils
-						.isEmpty(exceriseText.getText().toString()))) {
+				if (isAllfilled()) {
 
 					final ProgressDialog progressDialog = ProgressDialog.show(
 							WorkoutTrackerActivity.this, "Saving...",
@@ -156,6 +165,23 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 					}.start();
 				} else
 					toast(getString(R.string.REQUIRE_FIELD_TOAST));
+			}
+		});
+		loadFromFav.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.i("manikk", "loadFromFav onClick");
+				getFavName(FavEnums.LOAD_FAV);
+
+			}
+		});
+		saveAsFav.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				getFavName(FavEnums.ADD_FAV);
+
 			}
 		});
 	}
@@ -309,9 +335,134 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 
 	private void setColories() {
 		TextView Calories_burned_today = (TextView) findViewById(R.id.Calories_burned_today);
-		int calories = Integer.valueOf(workoutText.getText().toString())
+		int calories = Integer.valueOf(workoutText.getText().toString().trim())
 				* selectedColories;
 		maverickData.setCalories(calories);
 		Calories_burned_today.setText(calories + " cal");
 	}
+
+	private Boolean isAllfilled() {
+		return !(TextUtils.isEmpty(workoutText.getText().toString()) && TextUtils
+				.isEmpty(exceriseText.getText().toString()));
+	}
+
+	private void addFav(final String name) {
+		if (isAllfilled()) {
+
+			final ProgressDialog progressDialog = ProgressDialog.show(
+					WorkoutTrackerActivity.this, "Saving...",
+					"Wait a few sec your data is saving");
+
+			new Thread() {
+				public void run() {
+					try {
+						ContentValues values = new ContentValues();
+						values.put(FavWorkoutTracterTable.Column.NAME, name);
+						values.put(FavWorkoutTracterTable.Column.EXERCISE,
+								maverickData.getExceriseType());
+						values.put(FavWorkoutTracterTable.Column.WORKOUT,
+								maverickData.getExceriseTimeWorking());
+						values.put(FavWorkoutTracterTable.Column.CALORIES,
+								maverickData.getCalories());
+
+						getContentResolver()
+								.insert(FavoriteProvider.WORKTRACKER_FAV_INSERT,
+										values);
+						handler.sendEmptyMessage(0);
+					} catch (Exception e) {
+						if (progressDialog != null) {
+							progressDialog.dismiss();
+						}
+						Log.e("kumar:" + this.getClass(),
+								"error in sve data into fav_workout table"
+										+ e.getMessage(), e);
+						WorkoutTrackerActivity.this.finish();
+					}
+					progressDialog.dismiss();
+				}
+			}.start();
+		} else
+			toast(getString(R.string.REQUIRE_FIELD_TOAST));
+
+	};
+
+	private void getFavName(final FavEnums option) {
+		String positive = "OK", nagative = "CANCEL";
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+		final EditText input = new EditText(this);
+		input.setInputType(InputType.TYPE_CLASS_TEXT
+				| InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		alert.setMessage("Favourite Name");
+		alert.setView(input);
+
+		alert.setPositiveButton(positive,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						String value = input.getText().toString().trim();
+						switch (option) {
+						case ADD_FAV:
+							if (!TextUtils.isEmpty(value))
+								addFav(value);
+							else
+								toast("must type your favorite name");
+							break;
+						case LOAD_FAV:
+							if (!TextUtils.isEmpty(value))
+								loadFav(value);
+							else
+								toast("must type your favorite name");
+						}
+
+					}
+				});
+		alert.setNegativeButton(nagative,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						dialog.cancel();
+					}
+				});
+		alert.show();
+	}
+
+	private void loadFav(final String name) {
+
+		Uri getFav = Uri.withAppendedPath(
+				FavoriteProvider.WORKTRACKER_FAV, name);
+		Cursor loadFavWorkoutTracker = managedQuery(getFav, null,
+				null, null, null);
+		Log.i("manikk", "loadFavWorkoutTracker = "+loadFavWorkoutTracker.getCount());
+		if (loadFavWorkoutTracker.moveToFirst()) {
+			workoutText
+					.setText(loadFavWorkoutTracker.getInt(loadFavWorkoutTracker
+							.getColumnIndex(FavWorkoutTracterTable.Column.WORKOUT))+" ");
+			exceriseText
+					.setText(loadFavWorkoutTracker.getString(loadFavWorkoutTracker
+							.getColumnIndex(FavWorkoutTracterTable.Column.EXERCISE)));
+			Log.i("manikk", "fav name = "+loadFavWorkoutTracker.getString(loadFavWorkoutTracker
+					.getColumnIndex(FavWorkoutTracterTable.Column.NAME)));
+			setColories();
+//		final ProgressDialog progressDialog = ProgressDialog.show(
+//				WorkoutTrackerActivity.this, "Loading...",
+//				"Wait a few sec your data is Loading");
+//
+//		new Thread() {
+//			public void run() {
+//				try {
+//					
+//					}
+//				catch (Exception e) {
+//					if (progressDialog != null) {
+//						progressDialog.dismiss();
+//					}
+//					Log.i("kumar:" + this.getClass(),
+//							"error in load data into fav_workout table"
+//									+ e.getMessage(), e);
+//
+//				}
+//				progressDialog.dismiss();
+//			}
+//		}.start();
+	}
+	}
 }
+
