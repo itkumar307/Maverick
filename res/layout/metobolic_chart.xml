@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/home_screen">
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/lastQueriesAnswer"
+			android:text="PROTINE TYPE"
+			android:layout_marginTop="10dip"
+			android:textStyle="bold"
+			android:textColor="@color/allpage_subtitle"
+			android:gravity="center" />
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Your Macro  Nutrient Ratio for every meal for"
+			android:layout_marginTop="25dip"
+			android:gravity="center" />
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="CARBOHYDRATES:PROTEINS:FATS"
+			android:textStyle="bold"
+            android:textColor="@color/allpage_subtitle"
+			android:layout_marginTop="10dip"
+			android:gravity="center" />
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="is as selected below:"
+			android:layout_marginTop="10dip"
+			android:gravity="center" />
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginLeft="5dip"
+			android:layout_marginRight="5dip"
+			android:layout_marginTop="10dip">
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="PROTINE TYPE"
+					android:layout_centerHorizontal="true"
+					android:id="@+id/protine_type_title"
+
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_marginBottom="10dip" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="35:45:20"
+					android:id="@+id/protine_type_ratio"
+					android:layout_marginTop="2dip"
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_centerHorizontal="true"
+					android:layout_below="@+id/protine_type_title" />
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="15dip"
+					android:layout_below="@+id/protine_type_ratio"
+					android:id="@+id/protine_type_chart"
+					android:layout_centerHorizontal="true"
+					android:src="@drawable/ic_launcher"></ImageView>
+			</RelativeLayout>
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="MIXED TYPE"
+					android:layout_centerHorizontal="true"
+					android:layout_marginBottom="10dip"
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:id="@+id/mixed_type_title" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="50:40:10"
+					android:id="@+id/mixed_type_ratio"
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_marginTop="2dip"
+					android:layout_centerHorizontal="true"
+					android:layout_below="@+id/mixed_type_title" />
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="15dip"
+					android:id="@+id/mixed_type_chart"
+					android:layout_centerHorizontal="true"
+					android:layout_below="@+id/mixed_type_ratio"
+					android:src="@drawable/ic_launcher"></ImageView>
+			</RelativeLayout>
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="CARBO TYPE"
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_centerHorizontal="true"
+					android:id="@+id/corbo_type_title"
+					android:layout_marginBottom="10dip" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="70:20:10"
+					android:id="@+id/corbo_type_ratio"
+					android:textStyle="bold"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_marginTop="2dip"
+					android:layout_centerHorizontal="true"
+					android:layout_below="@+id/corbo_type_title" />
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="15dip"
+					android:layout_below="@+id/corbo_type_ratio"
+					android:id="@+id/corbo_type_chart"
+					android:layout_centerHorizontal="true"
+					android:src="@drawable/ic_launcher"></ImageView>
+			</RelativeLayout>
+		</LinearLayout>
+		<Button
+			android:id="@+id/matabolic_queries"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Do you want move to questions"
+			android:layout_marginTop="10dip"
+			android:layout_gravity="center_horizontal" />
+	</LinearLayout>
+</ScrollView>

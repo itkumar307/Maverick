@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -57,9 +58,17 @@ public abstract class MavericBaseActiity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent singup = new Intent(context,
-							metabolicQueries.class);
-					startActivity(singup);
+					Log.i("manikk",
+							"new Apppref(context).isQueriesAlreadyAnswerd() ="
+									+ new Apppref(context)
+											.isQueriesAlreadyAnswerd());
+					if (!new Apppref(context).isQueriesAlreadyAnswerd())
+						metabolicQueries();
+					else {
+						Intent metabolicChart = new Intent(context,
+								MetobolicChartActivity.class);
+						startActivity(metabolicChart);
+					}
 				}
 			});
 			inter.setOnClickListener(new OnClickListener() {
@@ -100,5 +109,10 @@ public abstract class MavericBaseActiity extends Activity {
 		NetworkInfo activeNetworkInfo = connectivityManager
 				.getActiveNetworkInfo();
 		return activeNetworkInfo != null;
+	}
+
+	protected void metabolicQueries() {
+		Intent singup = new Intent(context, metabolicQueries.class);
+		startActivity(singup);
 	}
 }

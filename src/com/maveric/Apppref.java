@@ -80,4 +80,23 @@ public class Apppref {
 	public String getLastTime1() {
 		return appSharedPrefs.getString("time1", "0");
 	}
+	public void setLastMetabolicQueriesResult(String result)
+	{
+		prefsEditor.putString("metabolicQueries", result);
+		prefsEditor.commit();
+	}
+	
+	public String getLastMetabolicQueriesResult() {
+		return appSharedPrefs.getString("metabolicQueries", " ");
+	}
+	
+	public void setIsQueriesAlreadyAnswerd(Boolean answer)
+	{
+		prefsEditor.putBoolean("isQueriesAlreadyAnswerd", answer);
+		prefsEditor.commit();
+	}
+	public Boolean isQueriesAlreadyAnswerd()
+	{
+		return appSharedPrefs.getBoolean("isQueriesAlreadyAnswerd", false);
+	}
 }

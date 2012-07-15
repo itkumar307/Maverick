@@ -164,6 +164,8 @@ public class metabolicQueries extends MavericBaseActiity {
 		introLayout.setVisibility(View.GONE);
 		TextView resultText = (TextView) findViewById(R.id.result);
 		int optionA = 0, optionB = 0;
+		Apppref appref = new Apppref(context);
+		appref.setIsQueriesAlreadyAnswerd(true);
 		for (Integer i : result) {
 			if (i == 0)
 				optionA++;
@@ -172,11 +174,19 @@ public class metabolicQueries extends MavericBaseActiity {
 		}
 		resultText.setVisibility(View.VISIBLE);
 		questionNo = 0;
-		if (optionA > optionB || optionA == 3)
+		if (optionA > optionB || optionA == 3){
 			resultText.setText("You are a Protein Type");
+			appref.setLastMetabolicQueriesResult("You are a Protein Type");
+		}
 		else if (optionA < optionB || optionB == 3)
+		{
 			resultText.setText("You are a Mixed Type");
+			appref.setLastMetabolicQueriesResult("You are a Mixed Type");
+		}
 		else if (optionA == optionB)
+		{
 			resultText.setText("You are a Carbo Type");
+			appref.setLastMetabolicQueriesResult("You are a Carbo Type");
+		}
 	}
 }
