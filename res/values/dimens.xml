@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-		<dimen name="count_value">16dip</dimen>
+
+    <!-- workout tracker view -->
+    <dimen name="count_value">16dip</dimen>
+    <dimen name="food_time_head_text_size">16dip</dimen>
+    <dimen name="food_time_head_padding">6dip</dimen>
+
 </resources>

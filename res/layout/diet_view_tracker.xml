@@ -27,7 +27,7 @@
                     android:id="@+id/workout_tracker_side"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/workout_trackerside" />
+                    android:src="@drawable/diet_trcker_side" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -96,9 +96,11 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/all_page_side_curve"
+                        android:background="@drawable/head_curve"
+                        android:padding="@dimen/food_time_head_padding"
                         android:text="Breakfast"
-                        android:textColor="#000" />
+                        android:textColor="@color/food_time_head_color"
+                        android:textSize="@dimen/food_time_head_text_size" />
                 </RelativeLayout>
 
                 <!-- breakfast head line end -->
@@ -221,9 +223,11 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/all_page_side_curve"
+                        android:background="@drawable/head_curve"
+                        android:padding="@dimen/food_time_head_padding"
                         android:text="Lunch"
-                        android:textColor="#000" />
+                        android:textColor="@color/food_time_head_color"
+                        android:textSize="@dimen/food_time_head_text_size" />
                 </RelativeLayout>
 
                 <!-- lunch head line end -->
@@ -346,9 +350,11 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/all_page_side_curve"
+                        android:background="@drawable/head_curve"
+                        android:padding="@dimen/food_time_head_padding"
                         android:text="Dinner"
-                        android:textColor="#000" />
+                        android:textColor="@color/food_time_head_color"
+                        android:textSize="@dimen/food_time_head_text_size" />
                 </RelativeLayout>
 
                 <!-- dinner head line end -->
@@ -470,9 +476,11 @@
                         android:layout_below="@+id/foodparenttop"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/all_page_side_curve"
+                        android:background="@drawable/head_curve"
+                        android:padding="@dimen/food_time_head_padding"
                         android:text="Snacks"
-                        android:textColor="#000" />
+                        android:textColor="@color/food_time_head_color"
+                        android:textSize="@dimen/food_time_head_text_size" />
                 </RelativeLayout>
 
                 <!-- lunch head line end -->

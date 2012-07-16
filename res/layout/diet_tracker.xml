@@ -54,9 +54,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:background="@drawable/all_page_side_curve"
+                    android:background="@drawable/head_curve"
+                    android:padding="@dimen/food_time_head_padding"
                     android:text="Breakfast"
-                    android:textColor="#000" />
+                    android:textColor="@color/food_time_head_color"
+                    android:textSize="@dimen/food_time_head_text_size" />
             </RelativeLayout>
 
             <!-- breakfast head line end -->
@@ -96,7 +98,7 @@
                             android:id="@+id/breakfastselecteditem1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/breakfastselecteditemcount1"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -105,6 +107,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="10dip"
+                            android:text="5"
                             android:textColor="@color/countitemforfoodcolor"
                             android:textSize="@dimen/count_value" />
                     </RelativeLayout>
@@ -132,7 +135,7 @@
                             android:id="@+id/breakfastselecteditem2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/breakfastselecteditemcount2"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -168,7 +171,7 @@
                             android:id="@+id/breakfastselecteditem3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/breakfastselecteditemcount3"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -200,9 +203,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:background="@drawable/all_page_side_curve"
+                    android:background="@drawable/head_curve"
+                    android:padding="@dimen/food_time_head_padding"
                     android:text="Lunch"
-                    android:textColor="#000" />
+                    android:textColor="@color/food_time_head_color"
+                    android:textSize="@dimen/food_time_head_text_size" />
             </RelativeLayout>
 
             <!-- lunch head line end -->
@@ -242,7 +247,7 @@
                             android:id="@+id/lunchselecteditem1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/lunchselecteditemcount1"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -278,7 +283,7 @@
                             android:id="@+id/lunchselecteditem2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/lunchselecteditemcount2"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -314,7 +319,7 @@
                             android:id="@+id/lunchselecteditem3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/lunchselecteditemcount3"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -346,9 +351,11 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:background="@drawable/all_page_side_curve"
+                    android:background="@drawable/head_curve"
+                    android:padding="@dimen/food_time_head_padding"
                     android:text="Dinner"
-                    android:textColor="#000" />
+                    android:textColor="@color/food_time_head_color"
+                    android:textSize="@dimen/food_time_head_text_size" />
             </RelativeLayout>
 
             <!-- dinner head line end -->
@@ -388,7 +395,7 @@
                             android:id="@+id/dinnerselecteditem1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/dinnerselecteditemcount1"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -424,7 +431,7 @@
                             android:id="@+id/dinnerselecteditem2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/dinnerselecteditemcount2"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -460,7 +467,7 @@
                             android:id="@+id/dinnerselecteditem3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/dinnerselecteditemcount3"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -491,9 +498,11 @@
                     android:layout_below="@+id/foodparenttop"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dip"
-                    android:background="@drawable/all_page_side_curve"
+                    android:background="@drawable/head_curve"
+                    android:padding="@dimen/food_time_head_padding"
                     android:text="Snacks"
-                    android:textColor="#000" />
+                    android:textColor="@color/food_time_head_color"
+                    android:textSize="@dimen/food_time_head_text_size" />
             </RelativeLayout>
 
             <!-- lunch head line end -->
@@ -533,7 +542,7 @@
                             android:id="@+id/snackselecteditem1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/snackselecteditemcount1"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -569,7 +578,7 @@
                             android:id="@+id/snackselecteditem2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/snackselecteditemcount2"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
@@ -605,7 +614,7 @@
                             android:id="@+id/snackselecteditem3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/snackselecteditemcount3"
+                            android:layout_centerInParent="true"
                             android:textColor="@color/fooditemcolor" />
 
                         <TextView
