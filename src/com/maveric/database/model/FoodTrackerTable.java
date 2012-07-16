@@ -30,7 +30,7 @@ public class FoodTrackerTable {
 	// Database creation SQL statement
 	private static final String DATABASE_CREATE = "CREATE TABLE " + TABLE
 			+ " ( " + Column.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ Column.DATE + " TEXT, " + Column.FOOD_BREAKFAST + " TEXT,"
+			+ Column.DATE + " TEXT UNIQUE, " + Column.FOOD_BREAKFAST + " TEXT,"
 			+ Column.FOOD_LUNCH + " TEXT, " + Column.FOOD_DINNER + " TEXT, "
 			+ Column.FOOD_SNACK + " TEXT, " + Column.FAT + " INTEGER, "
 			+ Column.PROTIN + " INTEGER, " + Column.CALORIES + " INTEGER, "

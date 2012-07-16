@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/home_screen">
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
-		<LinearLayout
-			android:id="@+id/intro_layout"
-			android:orientation="vertical"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-			<TextView
-				android:id="@+id/intro"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_screen" >
 
-				android:text="@string/INTRO_METABOLIC_QUES"
-				android:layout_margin="5dip"></TextView>
-			<Button
-				android:id="@+id/start"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center_horizontal"
-				android:text="Start"
-				android:padding="15dip" />
-		</LinearLayout>
-		<LinearLayout
-			android:id="@+id/queries_layout"
-			android:orientation="vertical"
-			android:visibility="gone"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-			<TextView
-				android:id="@+id/question"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:layout_margin="5dip" />
-			
-				<RadioButton
-					android:id="@+id/ratio_button_1"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content" />
-				<RadioButton
-					android:id="@+id/ratio_button_2"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"></RadioButton>
-			<Button
-            android:id="@+id/submit"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/intro_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:text="@string/INTRO_METABOLIC_QUES" >
+            </TextView>
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/all_page_side_curve"
+                android:padding="5dip"
+                android:text="Start" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/queries_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip" />
+
+            <RadioButton
+                android:id="@+id/ratio_button_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/ratio_button_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </RadioButton>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dip"
+                android:text="Submit"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Submit"
-            android:padding="5dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dip"
+            android:textColor="@color/allpage_subtitle"
             android:visibility="gone" />
-		</LinearLayout>
-		<TextView android:id="@+id/result"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_gravity="center"
-		    android:layout_marginTop="30dip"
-		    android:textColor="@color/allpage_subtitle"
-		    android:visibility="gone"/>	</LinearLayout>
+    </LinearLayout>
+
 </ScrollView>

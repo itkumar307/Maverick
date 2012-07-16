@@ -1,272 +1,747 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/diet_trcker"
-	android:scrollbars="none">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/diet_trcker"
+    android:scrollbars="none" >
 
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-		<RelativeLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
 
-			<ImageView
-				android:id="@+id/workout_tracker_side"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:src="@drawable/diet_trcker_side" />
+            <ImageView
+                android:id="@+id/workout_tracker_side"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/diet_trcker_side" />
 
-			<Button
-				android:id="@+id/diet_date_logs"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignParentRight="true"
-				android:layout_margin="20dip"
-				android:background="@drawable/logs"
-				android:padding="5dip"
-				android:text="View Logs"
-				android:textColor="#fff" />
-		</RelativeLayout>
+            <Button
+                android:id="@+id/diet_date_logs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dip"
+                android:background="@drawable/logs"
+                android:padding="5dip"
+                android:text="View Logs"
+                android:textColor="#fff" />
+        </RelativeLayout>
 
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:layout_margin="10dip"
-			android:background="#fff"
-			android:orientation="vertical">
+        <!-- food top start -->
 
-			<RelativeLayout
-				android:id="@+id/selectbreakfast"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:padding="20dip">
+        <RelativeLayout
+            android:id="@+id/foodparenttop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" >
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentLeft="true"
-					android:layout_centerVertical="true"
-					android:layout_marginLeft="10dip"
-					android:text="Breakfast"
-					android:textColor="#000" />
+            <!-- breakfast head line Start -->
 
-				<TextView
-					android:id="@+id/breakfast"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true"
-					android:layout_centerVertical="true"
-					android:layout_marginRight="10dip"
-					android:textColor="#000" />
-			</RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/breakfastheadline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
 
-			<View
-				android:layout_width="fill_parent"
-				android:layout_height="1dip"
-				android:background="#BDBDBD" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:text="Breakfast"
+                    android:textColor="#000" />
+            </RelativeLayout>
 
-			<RelativeLayout
-				android:id="@+id/selectlunch"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:padding="20dip">
+            <!-- breakfast head line end -->
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentLeft="true"
-					android:layout_marginLeft="10dip"
-					android:text="Lunch"
-					android:textColor="#000" />
 
-				<TextView
-					android:id="@+id/lunch"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true"
-					android:layout_marginRight="10dip"
-					android:textColor="#000" />
-			</RelativeLayout>
+            <!-- breakfast food item Start -->
 
-			<View
-				android:layout_width="fill_parent"
-				android:layout_height="1dip"
-				android:background="#BDBDBD" />
+            <RelativeLayout
+                android:id="@+id/breakfastparenttop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/breakfastheadline" >
 
-			<RelativeLayout
-				android:id="@+id/selectdinner"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:padding="20dip">
+                <LinearLayout
+                    android:id="@+id/selectbreakfast"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:orientation="vertical" >
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentLeft="true"
-					android:layout_marginLeft="10dip"
-					android:text="Dinner"
-					android:textColor="#000" />
+                    <RelativeLayout
+                        android:id="@+id/selectbreakitem1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
 
-				<TextView
-					android:id="@+id/dinner"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true"
-					android:layout_marginRight="10dip"
-					android:textColor="#000" />
-			</RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM1"
+                            android:textColor="#000" />
 
-			<View
-				android:layout_width="fill_parent"
-				android:layout_height="1dip"
-				android:background="#BDBDBD" />
+                        <TextView
+                            android:id="@+id/breakfastselecteditem1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/breakfastselecteditemcount1"
+                            android:textColor="@color/fooditemcolor" />
 
-			<RelativeLayout
-				android:id="@+id/selectsnack"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:padding="20dip">
+                        <TextView
+                            android:id="@+id/breakfastselecteditemcount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
 
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentLeft="true"
-					android:layout_marginLeft="10dip"
-					android:text="Snacks"
-					android:textColor="#000" />
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
 
-				<TextView
-					android:id="@+id/snack"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true"
-					android:layout_marginRight="10dip"
-					android:textColor="#000" />
-			</RelativeLayout>
-		</LinearLayout>
+                    <RelativeLayout
+                        android:id="@+id/selectbreakitem2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
 
-		<Button
-			android:id="@+id/savediet"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="right"
-			android:layout_margin="20dip"
-			android:background="@drawable/add_fav"
-			android:padding="10dip"
-			android:text="Save"
-			android:textColor="#fff" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM2"
+                            android:textColor="#000" />
 
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:layout_margin="10dip"
-			android:orientation="horizontal"
-			android:padding="20dip">
+                        <TextView
+                            android:id="@+id/breakfastselecteditem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/breakfastselecteditemcount2"
+                            android:textColor="@color/fooditemcolor" />
 
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="10dip"
-				android:layout_weight="1"
-				android:text="Daily goal:"
-				android:textColor="@color/subtitle_answer_text_color" />
+                        <TextView
+                            android:id="@+id/breakfastselecteditemcount2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
 
-			<RelativeLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1">
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
 
-				<TextView
-					android:id="@+id/calories_title"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Calories"
-					android:textColor="@color/subtitle_answer_text_color" />
+                    <RelativeLayout
+                        android:id="@+id/selectbreakitem3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
 
-				<TextView
-					android:id="@+id/calories_answer"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/calories_title"
-					android:text="0"
-					android:textColor="@color/subtitle_answer_text_color" />
-			</RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM3"
+                            android:textColor="#000" />
 
-			<RelativeLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1">
+                        <TextView
+                            android:id="@+id/breakfastselecteditem3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/breakfastselecteditemcount3"
+                            android:textColor="@color/fooditemcolor" />
 
-				<TextView
-					android:id="@+id/Carbos_title"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Carbos"
-					android:textColor="@color/subtitle_answer_text_color" />
+                        <TextView
+                            android:id="@+id/breakfastselecteditemcount3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- breakfast food item end -->
 
-				<TextView
-					android:id="@+id/Carbos_answer"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/Carbos_title"
-					android:text="0"
-					android:textColor="@color/subtitle_answer_text_color" />
-			</RelativeLayout>
 
-			<RelativeLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1">
+            <!-- lunch head line Start -->
 
-				<TextView
-					android:id="@+id/fat_title"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Fat"
-					android:textColor="@color/subtitle_answer_text_color" />
+            <RelativeLayout
+                android:id="@+id/lunchheadline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/breakfastparenttop"
+                android:layout_marginTop="20dip" >
 
-				<TextView
-					android:id="@+id/fat_answer"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/fat_title"
-					android:text="0"
-					android:textColor="@color/subtitle_answer_text_color" />
-			</RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:text="Lunch"
+                    android:textColor="#000" />
+            </RelativeLayout>
 
-			<RelativeLayout
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1">
+            <!-- lunch head line end -->
 
-				<TextView
-					android:id="@+id/protein_title"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Protein"
-					android:textColor="@color/subtitle_answer_text_color" />
 
-				<TextView
-					android:id="@+id/protein_answer"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@+id/protein_title"
-					android:text="0"
-					android:textColor="@color/subtitle_answer_text_color" />
-			</RelativeLayout>
-		</LinearLayout>
+            <!-- lunch food item end -->
 
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="50dip"
-			android:visibility="invisible">
-		</LinearLayout>
-	</LinearLayout>
+            <RelativeLayout
+                android:id="@+id/lunchparenttop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lunchheadline" >
+
+                <LinearLayout
+                    android:id="@+id/selectlunch"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/selectlunchitem1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM1"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditem1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/lunchselecteditemcount1"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditemcount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectlunchitem2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM2"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/lunchselecteditemcount2"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditemcount2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectlunchitem3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM3"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditem3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/lunchselecteditemcount3"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/lunchselecteditemcount3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- lunch end -->
+
+
+            <!-- dinner head line Start -->
+
+            <RelativeLayout
+                android:id="@+id/dinnerheadline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lunchparenttop"
+                android:layout_marginTop="20dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:text="Dinner"
+                    android:textColor="#000" />
+            </RelativeLayout>
+
+            <!-- dinner head line end -->
+
+
+            <!-- dinner food item end -->
+
+            <RelativeLayout
+                android:id="@+id/dinnerparenttop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dinnerheadline" >
+
+                <LinearLayout
+                    android:id="@+id/selectdinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/selectdinneritem1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM1"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditem1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/dinnerselecteditemcount1"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditemcount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectdinneritem2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM2"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/dinnerselecteditemcount2"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditemcount2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectdinneritem3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM3"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditem3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/dinnerselecteditemcount3"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/dinnerselecteditemcount3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- dinner end -->
+            <!-- snacks head line Start -->
+
+            <RelativeLayout
+                android:id="@+id/snackheadline"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dinnerparenttop"
+                android:layout_marginTop="20dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/foodparenttop"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:text="Snacks"
+                    android:textColor="#000" />
+            </RelativeLayout>
+
+            <!-- lunch head line end -->
+
+
+            <!-- lunch food item end -->
+
+            <RelativeLayout
+                android:id="@+id/snackparenttop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/snackheadline" >
+
+                <LinearLayout
+                    android:id="@+id/selectsnack"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:background="@drawable/all_page_side_curve"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/selectsnackitem1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM1"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditem1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/snackselecteditemcount1"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditemcount1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectsnackitem2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM2"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditem2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/snackselecteditemcount2"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditemcount2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dip"
+                        android:background="#BDBDBD" />
+
+                    <RelativeLayout
+                        android:id="@+id/selectsnackitem3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dip" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="10dip"
+                            android:text="@string/FOOD_ITEM3"
+                            android:textColor="#000" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditem3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/snackselecteditemcount3"
+                            android:textColor="@color/fooditemcolor" />
+
+                        <TextView
+                            android:id="@+id/snackselecteditemcount3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dip"
+                            android:textColor="@color/countitemforfoodcolor"
+                            android:textSize="@dimen/count_value" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <!-- snacks end -->
+            </RelativeLayout>
+            <!-- snacks food item end -->
+        </RelativeLayout>
+        <!-- food end -->
+
+        <Button
+            android:id="@+id/savediet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="20dip"
+            android:background="@drawable/add_fav"
+            android:padding="10dip"
+            android:text="Save"
+            android:textColor="#fff" />
+
+        <!-- calculation part adding -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dip"
+            android:orientation="horizontal"
+            android:padding="20dip" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_weight="1"
+                android:text="Daily goal:"
+                android:textColor="@color/subtitle_answer_text_color" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/calories_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories"
+                    android:textColor="@color/subtitle_answer_text_color" />
+
+                <TextView
+                    android:id="@+id/calories_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/calories_title"
+                    android:text="0"
+                    android:textColor="@color/subtitle_answer_text_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/Carbos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carbos"
+                    android:textColor="@color/subtitle_answer_text_color" />
+
+                <TextView
+                    android:id="@+id/Carbos_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Carbos_title"
+                    android:text="0"
+                    android:textColor="@color/subtitle_answer_text_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/fat_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fat"
+                    android:textColor="@color/subtitle_answer_text_color" />
+
+                <TextView
+                    android:id="@+id/fat_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fat_title"
+                    android:text="0"
+                    android:textColor="@color/subtitle_answer_text_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/protein_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Protein"
+                    android:textColor="@color/subtitle_answer_text_color" />
+
+                <TextView
+                    android:id="@+id/protein_answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/protein_title"
+                    android:text="0"
+                    android:textColor="@color/subtitle_answer_text_color" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:visibility="invisible" >
+        </LinearLayout>
+    </LinearLayout>
 
 </ScrollView>

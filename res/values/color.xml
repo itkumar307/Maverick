@@ -13,4 +13,7 @@
 	<color name="popupdialogtextcolor">#0A0A0A</color>
     <color name="black">#000000</color>
     <color name="popupdialogheadcolor">#3366cc</color>
+    <!-- color diet tracker xml food item and count -->
+    <color name="fooditemcolor">#000</color>
+    <color name="countitemforfoodcolor">#1BE06D</color>
 </resources>

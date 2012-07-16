@@ -77,5 +77,14 @@
 		may feel on any given day, not within a period of 24 hours.
 	</string>
 	<string name="MATABOLIC_QUERIES_TITLE">Metabolic Typing Questionnaire</string>
+	
+	<!-- food item input display string for number of items -->
+	<string name="FOOD_ITEM1">Item One</string>
+	<string name="FOOD_ITEM2">Item Two</string>
+	<string name="FOOD_ITEM3">Item Three</string>
+	<!-- no input given in food so we display some words in view place -->
+	<string name="NO_INPUT">No Input Given</string>
+	
+	<string name="DIALOGMESSAGE">Are you sure you want to exit Maverick?</string>
 </resources> 
 

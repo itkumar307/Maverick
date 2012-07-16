@@ -56,7 +56,7 @@ public class LoginActivity extends MavericBaseActiity {
 
 		profile = new Profile(context);
 		appPref = new Apppref(context);
-		if (!appPref.isStartUp())
+		if (appPref.isStartUp())
 			gotoHomeActivity();
 		signUp.setOnClickListener(new OnClickListener() {
 
