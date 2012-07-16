@@ -328,6 +328,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 			case 0:
 				WorkoutTrackerActivity.this.finish();
 				break;
+			case 1:
+				toast("favorite saved successfully");
 			}
 		}
 
@@ -368,7 +370,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 						getContentResolver()
 								.insert(FavoriteProvider.WORKTRACKER_FAV_INSERT,
 										values);
-						handler.sendEmptyMessage(0);
+						handler.sendEmptyMessage(1);
 					} catch (Exception e) {
 						if (progressDialog != null) {
 							progressDialog.dismiss();
@@ -376,7 +378,6 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 						Log.e("kumar:" + this.getClass(),
 								"error in sve data into fav_workout table"
 										+ e.getMessage(), e);
-						WorkoutTrackerActivity.this.finish();
 					}
 					progressDialog.dismiss();
 				}
@@ -390,8 +391,8 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 		String positive = "OK", nagative = "CANCEL";
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		final EditText input = new EditText(this);
-		input.setInputType(InputType.TYPE_CLASS_TEXT
-				| InputType.TYPE_TEXT_VARIATION_PASSWORD);
+//		input.setInputType(InputType.TYPE_CLASS_TEXT
+//				| InputType.TYPE_TEXT_VARIATION_PASSWORD);
 		alert.setMessage("Favourite Name");
 		alert.setView(input);
 
@@ -425,7 +426,7 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 	}
 
 	private void loadFav(final String name) {
-
+		TextView Calories_burned_today = (TextView) findViewById(R.id.Calories_burned_today);
 		Uri getFav = Uri.withAppendedPath(
 				FavoriteProvider.WORKTRACKER_FAV, name);
 		Cursor loadFavWorkoutTracker = managedQuery(getFav, null,
@@ -438,9 +439,12 @@ public class WorkoutTrackerActivity extends MavericBaseActiity {
 			exceriseText
 					.setText(loadFavWorkoutTracker.getString(loadFavWorkoutTracker
 							.getColumnIndex(FavWorkoutTracterTable.Column.EXERCISE)));
+			Calories_burned_today.setText(loadFavWorkoutTracker.getString(loadFavWorkoutTracker
+							.getColumnIndex(FavWorkoutTracterTable.Column.CALORIES)));
+			
 			Log.i("manikk", "fav name = "+loadFavWorkoutTracker.getString(loadFavWorkoutTracker
 					.getColumnIndex(FavWorkoutTracterTable.Column.NAME)));
-			setColories();
+			
 //		final ProgressDialog progressDialog = ProgressDialog.show(
 //				WorkoutTrackerActivity.this, "Loading...",
 //				"Wait a few sec your data is Loading");
