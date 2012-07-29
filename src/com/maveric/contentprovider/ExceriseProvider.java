@@ -25,15 +25,31 @@ public class ExceriseProvider extends ContentProvider {
 	public static final Uri FOOD_URI = Uri.parse("content://" + PROVIDER_NAME
 			+ "/food");
 
-	private SQLiteDatabase db;
+	public static final Uri WORKOUT_FAVOURITE_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/takefavourite");
+
+	public static final Uri ADD_FAVOURITE_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/addfavourite");
+	public static final Uri EXCERISETYPE_SEARCH_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/selectexceriseserach");
+
+	// private SQLiteDatabase db;
 	private static final int EXCERISETYPE = 1;
 	private static final int FOODTYPE = 2;
+	private static final int WORKOUT_FAVOURITE = 3;
+	private static final int ADD_WORKOUT_FAVOURITE = 4;
+	private static final int EXCERISETYPE_SEARCH = 5;
+
 	private static final UriMatcher MATCHER;
 
 	static {
 		MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
 		MATCHER.addURI(PROVIDER_NAME, "excerisetype", EXCERISETYPE);
 		MATCHER.addURI(PROVIDER_NAME, "food", FOODTYPE);
+		MATCHER.addURI(PROVIDER_NAME, "takefavourite", WORKOUT_FAVOURITE);
+		MATCHER.addURI(PROVIDER_NAME, "addfavourite", ADD_WORKOUT_FAVOURITE);
+		MATCHER.addURI(PROVIDER_NAME, "selectexceriseserach/*",
+				EXCERISETYPE_SEARCH);
 	}
 
 	@Override
@@ -49,7 +65,6 @@ public class ExceriseProvider extends ContentProvider {
 
 		Log.d("kumar" + this.getClass(), "Query: " + url.getPath());
 
-		
 		SQLiteDatabase db = database.getWritableDatabase();
 		switch (MATCHER.match(url)) {
 
@@ -66,6 +81,23 @@ public class ExceriseProvider extends ContentProvider {
 			selection = "1) GROUP BY (" + FoodTable.Column._ID;
 			sortOrder = FoodTable.Column._ID + " DESC ";
 			break;
+
+		case WORKOUT_FAVOURITE:
+			qb.setTables(ExceriseValue.TABLE);
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			qb.appendWhere(ExceriseValue.Column.FAVOURITE_STATUS + "= '1'");
+			break;
+
+		case EXCERISETYPE_SEARCH:
+
+			String columname = url.getPathSegments().get(1);
+			qb.setTables(ExceriseValue.TABLE);
+			checkColumns(projection);
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			qb.appendWhere(ExceriseValue.Column.EXCERISE_TYPE + " like '%"
+					+ columname + "%'");
+			break;
+
 		default:
 			throw new IllegalArgumentException("Unknown URI " + url);
 
@@ -99,6 +131,7 @@ public class ExceriseProvider extends ContentProvider {
 		case FOODTYPE:
 			id = sqlDB.replaceOrThrow(FoodTable.TABLE, null, initialValues);
 			break;
+
 		default:
 			throw new IllegalArgumentException("Insert Unknown URI: " + uri);
 		}
@@ -118,23 +151,24 @@ public class ExceriseProvider extends ContentProvider {
 	@Override
 	public int update(Uri url, ContentValues values, String where,
 			String[] whereArgs) {
+		int uriType = MATCHER.match(url);
+		SQLiteDatabase db = database.getWritableDatabase();
 		int count = 0;
-
-		// if (isCollectionUri(url)) {
-		// count = db.update(ExceriseValue.TABLE, values, where, whereArgs);
-		// } else {
-		// String segment = url.getPathSegments().get(1);
-		// count = db.update(
-		// ExceriseValue.TABLE,
-		// values,
-		// getIdColumnName()
-		// + "="
-		// + segment
-		// + (!TextUtils.isEmpty(where) ? " AND (" + where
-		// + ')' : ""), whereArgs);
-		// }
-		//
-		// getContext().getContentResolver().notifyChange(url, null);
+		switch (uriType) {
+		case ADD_WORKOUT_FAVOURITE:
+			count = db.update(ExceriseValue.TABLE, values,
+					ExceriseValue.Column.EXCERISE_TYPE + "= '" + where + "'",
+					whereArgs);
+			// count = db.update(
+			// ExceriseValue.TABLE,
+			// values,
+			// getIdColumnName()
+			// + "="
+			// + segment
+			// + (!TextUtils.isEmpty(where) ? " AND (" + where
+			// + ')' : ""), whereArgs);
+			break;
+		}
 		return count;
 	}
 

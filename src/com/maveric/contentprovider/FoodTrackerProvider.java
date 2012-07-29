@@ -90,28 +90,7 @@ public class FoodTrackerProvider extends ContentProvider {
 		return cursor;
 	}
 
-	private boolean isNotValue(String initial, String last, String uptoLast) {
-		if (initial.equals("0") && last.equals(uptoLast)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	private boolean isNotNULL(String input) {
-		if (input != null && input.equals("IS NOT NULL"))
-			return true;
-
-		return false;
-	}
-
-	private String checkIsNotNULL(String i) {
-		if (i.equals("IS NOT NULL"))
-			return i;
-		else
-			return "=" + "'" + i + "'";
-	}
-
+	
 	@Override
 	public String getType(Uri uri) {
 		return String.valueOf(sURIMatcher.match(uri));

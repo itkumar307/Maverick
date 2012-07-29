@@ -21,6 +21,7 @@ public class WorkoutProvider extends ContentProvider {
 	private static final int INSERT_WORKOUT_DETAILS = 2;
 	private static final int WORKOUT_BY_DATE = 3;
 
+
 	public static final String PROVIDER_NAME = "com.maveric.WorkoutProvider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
 
@@ -42,6 +43,7 @@ public class WorkoutProvider extends ContentProvider {
 		sURIMatcher.addURI(PROVIDER_NAME, "takevalueworkout",
 				GET_WORKOUT_DETAILS);
 		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*", WORKOUT_BY_DATE);
+		
 
 	}
 
@@ -76,6 +78,7 @@ public class WorkoutProvider extends ContentProvider {
 					+ url.getPathSegments().get(1) + "'");
 			break;
 
+
 		default:
 			throw new IllegalArgumentException("Unknown URI: " + url);
 		}
@@ -90,28 +93,7 @@ public class WorkoutProvider extends ContentProvider {
 		return cursor;
 	}
 
-	private boolean isNotValue(String initial, String last, String uptoLast) {
-		if (initial.equals("0") && last.equals(uptoLast)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	private boolean isNotNULL(String input) {
-		if (input != null && input.equals("IS NOT NULL"))
-			return true;
-
-		return false;
-	}
-
-	private String checkIsNotNULL(String i) {
-		if (i.equals("IS NOT NULL"))
-			return i;
-		else
-			return "=" + "'" + i + "'";
-	}
-
+	
 	@Override
 	public String getType(Uri uri) {
 		return String.valueOf(sURIMatcher.match(uri));

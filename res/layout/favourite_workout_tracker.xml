@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroller"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/favouriteparentblock"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/excerisetypetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="test"
+                android:textColor="#bbb456"
+                android:textSize="32dp" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="15dp" >
+            </View>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/favouritebefretext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:text="How Long?"
+                    android:textColor="#bbb456"
+                    android:textStyle="italic" />
+
+                <EditText
+                    android:id="@+id/favouritecount"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/favouriteaftertext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="minutes"
+                    android:textColor="#bbb456"
+                    android:textStyle="italic" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="12dp" >
+            </View>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#bbbff0" >
+            </View>
+
+            <TextView
+                android:id="@+id/favouritecalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="4dp"
+                android:text="Calories Burned"
+                android:textColor="#000000"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/favouritecaloriescount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="6dp"
+                android:text="0"
+                android:textColor="#F70223"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#bbbff0"
+                android:paddingTop="6dp" >
+            </View>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/favouritetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check to save as favorite"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <CheckBox
+                    android:id="@+id/favoritcheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/saveexcerisedata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp"
+                android:background="#bb00ff"
+                android:padding="5dp"
+                android:text="Save"
+                android:textSize="24dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -49,7 +49,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 				@Override
 				public void onClick(View arg0) {
 					Intent singup = new Intent(context,
-							WorkoutTrackerActivity.class);
+							WorkoutTrackerViewerActivity.class);
 					startActivity(singup);
 				}
 			});

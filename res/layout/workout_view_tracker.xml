@@ -27,40 +27,58 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal" >
+            android:background="@color/food_time_head_color" >
+
+            <RelativeLayout
+                android:id="@+id/datearrange"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/food_time_head_color"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:id="@+id/prev_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/prev"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/prevview"
+                    android:layout_width="20dip"
+                    android:layout_height="10dip"
+                    android:layout_toRightOf="@+id/prev_date" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/prevview"
+                    android:text="date" />
+
+                <View
+                    android:id="@+id/nextview"
+                    android:layout_width="20dip"
+                    android:layout_height="10dip"
+                    android:layout_toRightOf="@+id/date" />
+
+                <TextView
+                    android:id="@+id/next_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/nextview"
+                    android:background="@drawable/next_date"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
             <TextView
-                android:id="@+id/prev_date"
+                android:id="@+id/add_workout_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/prev" />
-
-            <View
-                android:id="@+id/prevview"
-                android:layout_width="20dip"
-                android:layout_height="10dip"
-                android:layout_toRightOf="@+id/prev_date" />
-
-            <TextView
-                android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/prevview"
-                android:text="date" />
-
-            <View
-                android:id="@+id/nextview"
-                android:layout_width="20dip"
-                android:layout_height="10dip"
-                android:layout_toRightOf="@+id/date" />
-
-            <TextView
-                android:id="@+id/next_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/nextview"
-                android:background="@drawable/next_date" />
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/plus" />
         </RelativeLayout>
     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.maveric;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 	Cursor cursorDate;
 	Cursor cursorDetails;;
 	ArrayList<String> allDate;
+	TextView addWorkoutData;
 	int count;
 	int constantCont;
 
@@ -49,6 +51,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		next = (TextView) findViewById(R.id.next_date);
 		next.setVisibility(View.INVISIBLE);
 		date = (TextView) findViewById(R.id.date);
+		addWorkoutData = (TextView) findViewById(R.id.add_workout_data);
 
 		try {
 			cursorDate = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
@@ -109,6 +112,21 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			}
 		});
+
+		/*
+		 * select workoutdata from new or favourite item
+		 */
+		addWorkoutData.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent addData = new Intent(context,
+						WorkoutTrackerActivity.class);
+				startActivity(addData);
+
+			}
+		});
+
 		next.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -148,7 +166,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			Log.i("kumar" + this.getClass(), "count of cursor list view"
 					+ cursorDetails.getCount());
-			cursorDetails.moveToFirst();
+			//cursorDetails.moveToFirst();
 
 			ListAdapter adapter = new WorkoutAdapter(this, cursorDetails,
 					new String[] { WorkOutTrackerTable.Column.DATE },
