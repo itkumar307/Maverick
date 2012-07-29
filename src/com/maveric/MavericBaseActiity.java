@@ -76,7 +76,7 @@ public abstract class MavericBaseActiity extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					Intent singup = new Intent(context,
-							MavericHomeActivity.class);
+							StaticKnowYourBasic.class);
 					startActivity(singup);
 				}
 			});
