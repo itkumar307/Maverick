@@ -90,10 +90,6 @@
             android:name=".WorkoutTrackerSaveActivity"
             android:windowSoftInputMode="stateHidden" >
         </activity>
-        <activity
-            android:name=".MetobolicChartActivity"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
 		<provider
 			android:name=".contentprovider.WorkoutProvider"
 			android:authorities="com.maveric.WorkoutProvider" />
@@ -158,6 +154,5 @@
             android:windowSoftInputMode="stateHidden">
         </activity>
 	</application>
-
 
 </manifest>
