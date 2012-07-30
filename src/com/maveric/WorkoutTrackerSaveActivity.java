@@ -97,7 +97,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 					countData = inputData.getText().toString();
 					caloriesCount = String.valueOf(Integer.parseInt(countData)
 							* calories);
-					if (Integer.parseInt(countData) > 5) {
+					if (Integer.parseInt(countData) > 300) {
 						toast("Hey !! Enter correct value,Are you did excerise more than five hour? dont cheat");
 						return;
 					}
