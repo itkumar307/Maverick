@@ -3,6 +3,7 @@ package com.maveric;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -111,11 +112,14 @@ public abstract class MavericListBaseActiity extends ListActivity {
 	}
 
 	protected String getCurrentDate() {
-		return null;
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat format = new SimpleDateFormat(
+				"dd-MM-yyyy");
+		return format.format(c.getTime());
 	}
 
 	private String getStringFromDate(Long date) {
-		return new SimpleDateFormat("dd/MM/yy").format(date);
+		return new SimpleDateFormat("dd-MM-yyyy").format(date);
 	}
 
 	protected String prevDate(String date) {
@@ -125,7 +129,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 	private Date getDateFromString(String date) {
 		try {
-			return (Date) new SimpleDateFormat("dd/MM/yy").parse(date);
+			return (Date) new SimpleDateFormat("dd-MM-yyyy").parse(date);
 		} catch (ParseException e) {
 			Log.e("manikk", e.getMessage());
 			return null;

@@ -39,7 +39,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		lunchTitle = (TextView) findViewById(R.id.lunch_textview);
 		dinnerTitle = (TextView) findViewById(R.id.dinner_textview);
 		Log.i("manikk", "date = " + getCurrentDate());
-		dateText.setText("2512");
+		dateText.setText(getCurrentDate());
 		ImageView next = (ImageView) findViewById(R.id.date_next);
 		ImageView prev = (ImageView) findViewById(R.id.date_prev);
 		ImageView add = (ImageView) findViewById(R.id.add_diet);

@@ -3,6 +3,7 @@ package com.maveric;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -122,7 +123,10 @@ public abstract class MavericBaseActiity extends Activity {
 		startActivity(singup);
 	}
 	protected String getCurrentDate() {
-		return null;
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat format = new SimpleDateFormat(
+				"dd-MM-yyyy");
+		return format.format(c.getTime());
 	}
 
 	private String getStringFromDate(Long date) {
