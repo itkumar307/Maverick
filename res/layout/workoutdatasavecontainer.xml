@@ -7,13 +7,14 @@
     <RelativeLayout
         android:id="@+id/maveric_title"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp" >
+        android:layout_height="wrap_content" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/maveric_logo" />
     </RelativeLayout>
 
@@ -23,12 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/maveric_title"
         layout="@layout/favourite_workout_tracker" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dip"
-        android:visibility="invisible" >
-    </LinearLayout>
 
     <include
         android:id="@+id/bottom"

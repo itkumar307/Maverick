@@ -97,8 +97,12 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 					countData = inputData.getText().toString();
 					caloriesCount = String.valueOf(Integer.parseInt(countData)
 							* calories);
+					if (Integer.parseInt(countData) > 5) {
+						toast("Hey !! Enter correct value,Are you did excerise more than five hour? dont cheat");
+						return;
+					}
 					// calculation of calories
-					caloriesCalculation.setText(countData);
+					caloriesCalculation.setText(caloriesCount);
 				} catch (NumberFormatException e) {
 					toast("Hey !! Enter Number only");
 				}
@@ -167,9 +171,9 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 								if (isCheckbox) {
 									ContentValues favoriteValues = new ContentValues();
-									favoriteValues.put(
-											ExceriseValue.Column.FAVOURITE_STATUS,
-											"1");
+									favoriteValues
+											.put(ExceriseValue.Column.FAVOURITE_STATUS,
+													"1");
 									getContentResolver().update(
 											ExceriseProvider.ADD_FAVOURITE_URI,
 											favoriteValues, exceriseType, null);

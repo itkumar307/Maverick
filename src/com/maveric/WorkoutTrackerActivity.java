@@ -13,9 +13,9 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -37,7 +37,6 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	Cursor workoutInfo;
 	Cursor exceriseCursor;
 	EditText searchText;
-	ScrollView scroll;
 	TextView msg;
 
 	@Override
@@ -53,8 +52,6 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 		ctx = getApplicationContext();
 
 		maverickData = new MaverickDataOrganize(ctx);
-
-		scroll = (ScrollView) findViewById(R.id.scroller);
 		msg = (TextView) findViewById(R.id.nolistmsg);
 
 		showFavourite = (Button) findViewById(R.id.load_fav);
@@ -72,7 +69,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 				showFavourite.setVisibility(View.GONE);
 
-				RelativeLayout exceriseBlock = (RelativeLayout) findViewById(R.id.exceriseblock);
+				LinearLayout exceriseBlock = (LinearLayout) findViewById(R.id.exceriseblock);
 				exceriseBlock.setVisibility(View.GONE);
 
 				exceriseCursor = managedQuery(
@@ -115,7 +112,6 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	private void exceriseTypeInput(Cursor exceriseCursor, kumar type) {
 		try {
 			if (exceriseCursor.getCount() > 0) {
-				scroll.setVisibility(View.GONE);
 				msg.setVisibility(View.GONE);
 				getListView().setVisibility(View.VISIBLE);
 				ListAdapter adapter = new SimpleCursorAdapter(this,
@@ -127,8 +123,6 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				setListAdapter(adapter);
 				onClickList();
 			} else {
-
-				scroll.setVisibility(View.VISIBLE);
 				msg.setVisibility(View.VISIBLE);
 				switch (type) {
 				case FAVORITE:

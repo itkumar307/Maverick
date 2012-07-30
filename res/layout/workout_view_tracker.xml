@@ -15,11 +15,11 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" >
+            android:layout_marginTop="1dp" >
 
             <ImageView
                 android:id="@+id/workout_tracker_side"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/workout_trackerside" />
         </RelativeLayout>
@@ -27,6 +27,7 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:background="@color/food_time_head_color" >
 
             <RelativeLayout
@@ -55,7 +56,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_toRightOf="@+id/prevview"
-                    android:text="date" />
+                    android:background="#0791ED"
+                    android:padding="10dip"
+                    android:text="date"
+                    android:textColor="#050505" />
 
                 <View
                     android:id="@+id/nextview"

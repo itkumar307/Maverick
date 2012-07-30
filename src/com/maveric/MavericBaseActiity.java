@@ -8,6 +8,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ public abstract class MavericBaseActiity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		context = this.getApplicationContext();
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentToLayout();
 		diet = (TextView) findViewById(R.id.Diet_tracker);
 		workOut = (TextView) findViewById(R.id.workout_tracker);

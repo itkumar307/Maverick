@@ -13,11 +13,11 @@
             android:id="@+id/favouritehead"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp" >
+            android:layout_marginTop="10dp" >
 
             <ImageView
                 android:id="@+id/workout_tracker_side"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:src="@drawable/workout_trackerside" />
 
@@ -26,23 +26,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/head_curve"
                 android:padding="5dip"
-                android:text="Favorite" />
+                android:text="Favorite"
+                android:textColor="#0AF0BE" />
         </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/exceriseblock"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal" >
 
             <EditText
                 android:id="@+id/excerisesearch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1" >
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" >
             </EditText>
 
             <View
@@ -55,32 +56,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:padding="5dip"
-                android:text="Search" />
+                android:background="@drawable/head_curve"
+                android:padding="10dip"
+                android:text="Search"
+                android:textColor="#0AF0BE" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/nolistmsg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:textColor="#0AF52D"
+            android:visibility="gone" >
+        </TextView>
 
         <ListView
             android:id="@+id/android:list"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:cacheColorHint="#00000000" />
-
-        <ScrollView
-            android:id="@+id/scroller"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:visibility="gone" >
-
-            <TextView
-                android:id="@+id/nolistmsg"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:textColor="#0AF52D"
-                android:visibility="gone" >
-            </TextView>
-        </ScrollView>
     </LinearLayout>
 
 </LinearLayout>

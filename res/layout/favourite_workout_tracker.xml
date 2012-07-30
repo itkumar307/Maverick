@@ -50,6 +50,7 @@
                     android:id="@+id/favouritecount"
                     android:layout_width="100dp"
                     android:layout_height="50dp"
+                    android:inputType="number"
                     android:layout_weight="1" />
 
                 <TextView
@@ -134,6 +135,12 @@
                 android:padding="5dp"
                 android:text="Save"
                 android:textSize="24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:visibility="invisible" >
         </LinearLayout>
     </LinearLayout>
 
