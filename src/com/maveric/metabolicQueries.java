@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -160,9 +161,11 @@ public class metabolicQueries extends MavericBaseActiity {
 	private void showResult() {
 		LinearLayout queriesLayout = (LinearLayout) findViewById(R.id.queries_layout);
 		LinearLayout introLayout = (LinearLayout) findViewById(R.id.intro_layout);
+		LinearLayout image_disc = (LinearLayout) findViewById(R.id.image_disc);
 		queriesLayout.setVisibility(View.GONE);
 		introLayout.setVisibility(View.GONE);
 		TextView resultText = (TextView) findViewById(R.id.result);
+		ImageView image = (ImageView) findViewById(R.id.image);
 		int optionA = 0, optionB = 0;
 		Apppref appref = new Apppref(context);
 		appref.setIsQueriesAlreadyAnswerd(true);
@@ -173,20 +176,21 @@ public class metabolicQueries extends MavericBaseActiity {
 				optionB++;
 		}
 		resultText.setVisibility(View.VISIBLE);
+		image.setVisibility(View.VISIBLE);
+		image_disc.setVisibility(View.VISIBLE);
 		questionNo = 0;
-		if (optionA > optionB || optionA == 3){
+		if (optionA > optionB || optionA == 3) {
 			resultText.setText("You are a Protein Type");
 			appref.setLastMetabolicQueriesResult("You are a Protein Type");
-		}
-		else if (optionA < optionB || optionB == 3)
-		{
+			image.setImageResource(R.drawable.m2);
+		} else if (optionA < optionB || optionB == 3) {
 			resultText.setText("You are a Mixed Type");
 			appref.setLastMetabolicQueriesResult("You are a Mixed Type");
-		}
-		else if (optionA == optionB)
-		{
+			image.setImageResource(R.drawable.m1);
+		} else if (optionA == optionB) {
 			resultText.setText("You are a Carbo Type");
 			appref.setLastMetabolicQueriesResult("You are a Carbo Type");
+			image.setImageResource(R.drawable.m3);
 		}
 	}
 }

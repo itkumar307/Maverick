@@ -45,8 +45,10 @@
 			android:layout_marginRight="5dip"
 			android:layout_marginTop="10dip">
 			<RelativeLayout
+			    android:id="@+id/protine_type_image"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:visibility="gone"
 				android:layout_weight="1">
 				<TextView
 					android:layout_width="wrap_content"
@@ -78,7 +80,9 @@
 					android:src="@drawable/m2"></ImageView>
 			</RelativeLayout>
 			<RelativeLayout
+			    android:id="@+id/mixed_type_image"
 				android:layout_width="wrap_content"
+				android:visibility="gone"
 				android:layout_height="wrap_content"
 				android:layout_weight="1">
 				<TextView
@@ -110,7 +114,9 @@
 					android:src="@drawable/m1"></ImageView>
 			</RelativeLayout>
 			<RelativeLayout
+			     android:id="@+id/carbo_type_image"
 				android:layout_width="wrap_content"
+				android:visibility="gone"
 				android:layout_height="wrap_content"
 				android:layout_weight="1">
 				<TextView

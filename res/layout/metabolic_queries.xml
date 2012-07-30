@@ -1,80 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/home_screen" >
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/home_screen">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/intro_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+		<LinearLayout
+			android:id="@+id/intro_layout"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/intro"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dip"
-                android:text="@string/INTRO_METABOLIC_QUES" >
-            </TextView>
+			<TextView
+				android:id="@+id/intro"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dip"
+				android:text="@string/INTRO_METABOLIC_QUES">
+			</TextView>
 
-            <Button
-                android:id="@+id/start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/all_page_side_curve"
-                android:padding="5dip"
-                android:text="Start" />
-        </LinearLayout>
+			<Button
+				android:id="@+id/start"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:background="@drawable/all_page_side_curve"
+				android:padding="5dip"
+				android:text="Start" />
+		</LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/queries_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone" >
+		<LinearLayout
+			android:id="@+id/queries_layout"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:visibility="gone">
 
-            <TextView
-                android:id="@+id/question"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dip" />
+			<TextView
+				android:id="@+id/question"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="5dip" />
 
-            <RadioButton
-                android:id="@+id/ratio_button_1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+			<RadioButton
+				android:id="@+id/ratio_button_1"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" />
 
-            <RadioButton
-                android:id="@+id/ratio_button_2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-            </RadioButton>
+			<RadioButton
+				android:id="@+id/ratio_button_2"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+			</RadioButton>
 
-            <Button
-                android:id="@+id/submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:padding="5dip"
-                android:text="Submit"
-                android:visibility="gone" />
-        </LinearLayout>
+			<Button
+				android:id="@+id/submit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:padding="5dip"
+				android:text="Submit"
+				android:visibility="gone" />
+		</LinearLayout>
 
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dip"
-            android:textColor="@color/allpage_subtitle"
-            android:visibility="gone" />
-    </LinearLayout>
+		<TextView
+			android:id="@+id/result"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:textColor="@color/allpage_subtitle"
+			android:visibility="gone" />
+		<ImageView
+			android:id="@+id/image"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="30dip"
+			android:visibility="gone" />
+		<LinearLayout
+			android:id="@+id/image_disc"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			android:orientation="vertical">
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_marginLeft="20dip"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<ImageView
+					android:layout_width="21dp"
+					android:layout_height="21dp"
+					android:src="@drawable/protine_color" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="5dip"
+					android:paddingLeft="10dip"
+					android:textStyle="bold"
+					android:text="Protins" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_marginLeft="20dip"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<ImageView
+					android:layout_width="21dp"
+					android:layout_height="21dp"
+					android:src="@drawable/fat_color" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="5dip"
+					android:paddingLeft="10dip"
+					android:textStyle="bold"
+					android:text="Fat" />
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_marginLeft="20dip"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<ImageView
+					android:layout_width="21dp"
+					android:layout_height="21dp"
+					android:src="@drawable/carbo_color" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="5dip"
+					android:paddingLeft="10dip"
+					android:textStyle="bold"
+					android:text="Corbohydrate" />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
 
 </ScrollView>
