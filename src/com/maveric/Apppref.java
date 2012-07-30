@@ -13,6 +13,9 @@ public class Apppref {
 	// private static final String REC_WATER = "recWater";
 	private static final String REC_WEIGHT = "recWeight";
 	private static final String STARTUP = "startUp";
+	private static final String SINGINOnly = "signinonly";
+	private static final String USERNAMEOnly = "usernameonly";
+	private static final String PASSWORDOnly = "passwordonly";
 
 	public Apppref(Context context) {
 		this.context = context.getApplicationContext();
@@ -80,23 +83,49 @@ public class Apppref {
 	public String getLastTime1() {
 		return appSharedPrefs.getString("time1", "0");
 	}
-	public void setLastMetabolicQueriesResult(String result)
-	{
+
+	public void setLastMetabolicQueriesResult(String result) {
 		prefsEditor.putString("metabolicQueries", result);
 		prefsEditor.commit();
 	}
-	
+
 	public String getLastMetabolicQueriesResult() {
 		return appSharedPrefs.getString("metabolicQueries", " ");
 	}
-	
-	public void setIsQueriesAlreadyAnswerd(Boolean answer)
-	{
+
+	public void setIsQueriesAlreadyAnswerd(Boolean answer) {
 		prefsEditor.putBoolean("isQueriesAlreadyAnswerd", answer);
 		prefsEditor.commit();
 	}
-	public Boolean isQueriesAlreadyAnswerd()
-	{
+
+	public Boolean isQueriesAlreadyAnswerd() {
 		return appSharedPrefs.getBoolean("isQueriesAlreadyAnswerd", false);
+	}
+
+	public void setSignInOnly(Boolean yes) {
+		prefsEditor.putBoolean(SINGINOnly, yes);
+		prefsEditor.commit();
+	}
+
+	public Boolean getSignInOnly() {
+		return appSharedPrefs.getBoolean(SINGINOnly, false);
+	}
+
+	public void setUserNameOnly(String userName) {
+		prefsEditor.putString(USERNAMEOnly, userName);
+		prefsEditor.commit();
+	}
+
+	public String getUserNameOnly() {
+		return appSharedPrefs.getString(USERNAMEOnly, "demo");
+	}
+
+	public void setPasswordonly(String password) {
+		prefsEditor.putString(PASSWORDOnly, password);
+		prefsEditor.commit();
+	}
+
+	public String getPasswordonly() {
+		return appSharedPrefs.getString(PASSWORDOnly, "demo");
 	}
 }
