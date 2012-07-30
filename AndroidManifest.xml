@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <provider
             android:name=".contentprovider.WorkoutProvider"
             android:authorities="com.maveric.WorkoutProvider" />
@@ -95,6 +94,70 @@
             android:name=".MetobolicChartActivity"
             android:windowSoftInputMode="stateHidden" >
         </activity>
-    </application>
+		<provider
+			android:name=".contentprovider.WorkoutProvider"
+			android:authorities="com.maveric.WorkoutProvider" />
+		<provider
+			android:name=".contentprovider.ExceriseProvider"
+			android:authorities="com.maveric.exceriseprovider" />
+
+		<provider
+			android:name=".contentprovider.FoodProvider"
+			android:authorities="com.maveric.FoodTrackerProvider" />
+
+		<provider
+			android:name="com.maveric.contentprovider.ProfileProvider"
+			android:authorities="com.maveric.contentprovider.ProfileProvider" />
+		
+		<provider
+            android:name="com.maveric.contentprovider.FavoriteProvider"
+            android:authorities="com.maveric.contentprovider.FavoriteProvider" />
+
+		<activity
+			android:name=".MavericHomeActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+
+		<activity
+			android:name=".DietTrackerViewerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+
+		<activity
+			android:name=".WorkoutTrackerViewerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".WorkoutTrackerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".DietTrackerActivityold"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+
+		<activity
+			android:name=".metabolicQueries"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+
+		<activity
+			android:name=".MetobolicChartActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+            android:name=".DietTrackerActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name=".DietTrackerAddActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+        <activity
+            android:name=".DietTrackerFoodSearch"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+	</application>
+
 
 </manifest>

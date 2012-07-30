@@ -8,8 +8,8 @@ import android.util.Log;
 import com.maveric.database.model.DietTracker;
 import com.maveric.database.model.ExceriseValue;
 import com.maveric.database.model.FavWorkoutTracterTable;
-import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
+import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.ProfileTable;
 import com.maveric.database.model.WaterTracker;
 import com.maveric.database.model.WorkOutTrackerTable;
@@ -32,8 +32,8 @@ public class MaverickHelper extends SQLiteOpenHelper {
 			WaterTracker.onCreate(database);
 			DietTracker.onCreate(database);
 			ExceriseValue.onCreate(database);
-			FoodTable.onCreate(database);
 			FoodTrackerTable.onCreate(database);
+			FoodTable.onCreate(database);
 			FavWorkoutTracterTable.onCreate(database);
 		} catch (Exception e) {
 			Log.e("mohan", "error in create db");

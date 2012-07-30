@@ -14,13 +14,14 @@ import android.util.Log;
 
 import com.maveric.database.MaverickHelper;
 import com.maveric.database.model.FoodTrackerTable;
+import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.WorkOutTrackerTable;
 
-public class FoodTrackerProvider extends ContentProvider {
+public class FoodProvider extends ContentProvider {
 	private MaverickHelper database;
-	private static final int GET_FOOD_DETAILS = 1;
-	private static final int INSERT_FOOD_DETAILS = 2;
-	private static final int FOOD_BY_DATE = 3;
+	private static final int INSERT_FOOD_DETAILS = 1;
+	private static final int FOOD_BY_DATE_AND_TIMING = 2;
+	private static final int FOOD_LIST_BY_SEARCH = 3;
 
 	public static final String PROVIDER_NAME = "com.maveric.FoodTrackerProvider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
@@ -28,11 +29,11 @@ public class FoodTrackerProvider extends ContentProvider {
 	public static final Uri INSERT_FOOD_DETAILS_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/insertOrUpdatefood");
 
-	public static final Uri GET_FOOD_DETAILS_URI = Uri.parse("content://"
-			+ PROVIDER_NAME + "/takevaluefood");
-
-	public static final Uri FOOD_BY_DATE_URI = Uri.parse("content://"
+	public static final Uri FOOD_BY_DATE_TIMING_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/takevaluebydate");
+
+	public static final Uri FOOD_LIST_BY_SEARCH_VALUE = Uri.parse("content://"
+			+ PROVIDER_NAME + "/food_list");
 
 	private static final UriMatcher sURIMatcher;
 
@@ -40,8 +41,9 @@ public class FoodTrackerProvider extends ContentProvider {
 		sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sURIMatcher.addURI(PROVIDER_NAME, "insertOrUpdatefood",
 				INSERT_FOOD_DETAILS);
-		sURIMatcher.addURI(PROVIDER_NAME, "takevaluefood", GET_FOOD_DETAILS);
-		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*", FOOD_BY_DATE);
+		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*/*",
+				FOOD_BY_DATE_AND_TIMING);
+		sURIMatcher.addURI(PROVIDER_NAME, "food_list/*", FOOD_LIST_BY_SEARCH);
 
 	}
 
@@ -61,21 +63,18 @@ public class FoodTrackerProvider extends ContentProvider {
 		SQLiteDatabase db = database.getWritableDatabase();
 		String groupBy = null;
 		switch (uriType) {
-
-		case GET_FOOD_DETAILS:
+		case FOOD_BY_DATE_AND_TIMING:
 			queryBuilder.setTables(FoodTrackerTable.TABLE);
-			sortOrder = FoodTrackerTable.Column.ID + " DESC ";
-			selection = "1) GROUP BY (" + FoodTrackerTable.Column.DATE;
-			// queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "="
-			// + url.getPathSegments().get(1));
+			sortOrder = FoodTrackerTable.Column._ID + " DESC ";
+			queryBuilder.appendWhere( FoodTrackerTable.Column.FOOD_TYPE + " = "
+					+ url.getPathSegments().get(2));
 			break;
-		case FOOD_BY_DATE:
-			queryBuilder.setTables(FoodTrackerTable.TABLE);
-			sortOrder = FoodTrackerTable.Column.ID + " DESC ";
-			queryBuilder.appendWhere(FoodTrackerTable.Column.DATE + "='"
-					+ url.getPathSegments().get(1) + "'");
+		case FOOD_LIST_BY_SEARCH:
+			queryBuilder.setTables(FoodTable.TABLE);
+			sortOrder = FoodTable.Column.NAME + " ASC ";
+			queryBuilder.appendWhere(FoodTable.Column.NAME + " Like '%"
+					+ url.getPathSegments().get(1) + "%'");
 			break;
-
 		default:
 			throw new IllegalArgumentException("Unknown URI: " + url);
 		}
@@ -89,8 +88,6 @@ public class FoodTrackerProvider extends ContentProvider {
 		cursor.setNotificationUri(getContext().getContentResolver(), url);
 		return cursor;
 	}
-
-	
 	@Override
 	public String getType(Uri uri) {
 		return String.valueOf(sURIMatcher.match(uri));

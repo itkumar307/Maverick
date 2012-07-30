@@ -1,11 +1,16 @@
 package com.maveric;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -15,6 +20,7 @@ import android.widget.Toast;
 public abstract class MavericListBaseActiity extends ListActivity {
 	protected Context context;
 	protected TextView diet, workOut, metaBolic, inter;
+	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -102,5 +108,32 @@ public abstract class MavericListBaseActiity extends ListActivity {
 		NetworkInfo activeNetworkInfo = connectivityManager
 				.getActiveNetworkInfo();
 		return activeNetworkInfo != null;
+	}
+
+	protected String getCurrentDate() {
+		return null;
+	}
+
+	private String getStringFromDate(Long date) {
+		return new SimpleDateFormat("dd/MM/yy").format(date);
+	}
+
+	protected String prevDate(String date) {
+		return getStringFromDate(getDateFromString(date).getTime()
+				- MILLIS_IN_DAY);
+	}
+
+	private Date getDateFromString(String date) {
+		try {
+			return (Date) new SimpleDateFormat("dd/MM/yy").parse(date);
+		} catch (ParseException e) {
+			Log.e("manikk", e.getMessage());
+			return null;
+		}
+	}
+
+	protected String nextDate(String date) {
+		return getStringFromDate(getDateFromString(date).getTime()
+				+ MILLIS_IN_DAY);
 	}
 }

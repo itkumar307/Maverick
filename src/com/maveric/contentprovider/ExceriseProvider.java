@@ -15,6 +15,7 @@ import android.util.Log;
 import com.maveric.database.MaverickHelper;
 import com.maveric.database.model.ExceriseValue;
 import com.maveric.database.model.FoodTable;
+import com.maveric.database.model.FoodTrackerTable;
 
 public class ExceriseProvider extends ContentProvider {
 	private MaverickHelper database;
@@ -76,10 +77,10 @@ public class ExceriseProvider extends ContentProvider {
 			break;
 
 		case FOODTYPE:
-			qb.setTables(FoodTable.TABLE);
+			qb.setTables(FoodTrackerTable.TABLE);
 			checkFoodColumns(projection);
-			selection = "1) GROUP BY (" + FoodTable.Column._ID;
-			sortOrder = FoodTable.Column._ID + " DESC ";
+			selection = "1) GROUP BY (" + FoodTrackerTable.Column._ID;
+			sortOrder = FoodTrackerTable.Column._ID + " DESC ";
 			break;
 
 		case WORKOUT_FAVOURITE:
@@ -188,7 +189,7 @@ public class ExceriseProvider extends ContentProvider {
 	}
 
 	private void checkFoodColumns(String[] projection) {
-		String[] available = FoodTable.getColumns();
+		String[] available = FoodTrackerTable.getColumns();
 		if (projection != null) {
 			HashSet<String> requestedColumns = new HashSet<String>(
 					Arrays.asList(projection));

@@ -1,5 +1,9 @@
 package com.maveric;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +20,7 @@ import android.widget.Toast;
 public abstract class MavericBaseActiity extends Activity {
 	protected Context context;
 	protected TextView diet, workOut, metaBolic, inter;
-
+	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -116,5 +120,31 @@ public abstract class MavericBaseActiity extends Activity {
 	protected void metabolicQueries() {
 		Intent singup = new Intent(context, metabolicQueries.class);
 		startActivity(singup);
+	}
+	protected String getCurrentDate() {
+		return null;
+	}
+
+	private String getStringFromDate(Long date) {
+		return new SimpleDateFormat("dd/MM/yy").format(date);
+	}
+
+	protected String prevDate(String date) {
+		return getStringFromDate(getDateFromString(date).getTime()
+				- MILLIS_IN_DAY);
+	}
+
+	private Date getDateFromString(String date) {
+		try {
+			return (Date) new SimpleDateFormat("dd/MM/yy").parse(date);
+		} catch (ParseException e) {
+			Log.e("manikk", e.getMessage());
+			return null;
+		}
+	}
+
+	protected String nextDate(String date) {
+		return getStringFromDate(getDateFromString(date).getTime()
+				+ MILLIS_IN_DAY);
 	}
 }
