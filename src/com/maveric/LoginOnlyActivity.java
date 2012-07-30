@@ -106,7 +106,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 					}
 					appPref.setUserNameOnly(userNameString);
 					appPref.setPasswordonly(passWordString);
-					
+					appPref.setSignInOnly(true);
 					gotoHomeActivity();
 
 //					signUpLayout.setVisibility(View.GONE);

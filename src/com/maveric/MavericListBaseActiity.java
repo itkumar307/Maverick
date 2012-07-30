@@ -67,7 +67,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 				@Override
 				public void onClick(View arg0) {
 					Intent singup = new Intent(context,
-							MavericHomeActivity.class);
+							StaticPageMainActivity.class);
 					startActivity(singup);
 				}
 			});

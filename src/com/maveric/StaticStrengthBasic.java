@@ -8,15 +8,15 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-enum KnowYour {
+enum StrengthBasi {
 
-	STRESSTEXT1(1, R.string.knowyour1), STRESSTEXT2(2, R.string.knowyour2), STRESSTEXT3(
-			3, R.string.knowyour3), STRESSTEXT4(4, R.string.knowyour4);
+	STRESSTEXT1(1, R.string.strength1), STRESSTEXT2(2, R.string.strength2), STRESSTEXT3(
+			3, R.string.strength3), STRESSTEXT4(4, R.string.strength4);
 
 	Integer str;
 	Integer index;
 
-	KnowYour(Integer index, Integer str) {
+	StrengthBasi(Integer index, Integer str) {
 		this.str = str;
 		this.index = index;
 	}
@@ -29,8 +29,8 @@ enum KnowYour {
 		return index;
 	}
 
-	public static KnowYour getStringByIndex(Integer index) {
-		for (KnowYour s : KnowYour.values()) {
+	public static StrengthBasi getStringByIndex(Integer index) {
+		for (StrengthBasi s : StrengthBasi.values()) {
 			if (s.getIndex().equals(index)) {
 				return s;
 			}
@@ -39,7 +39,7 @@ enum KnowYour {
 	}
 }
 
-public class StaticKnowYourBasic extends MavericBaseActiity {
+public class StaticStrengthBasic extends MavericBaseActiity {
 
 	@Override
 	protected void setContentToLayout() {
@@ -62,9 +62,10 @@ public class StaticKnowYourBasic extends MavericBaseActiity {
 		next = (ImageView) findViewById(R.id.nextpg);
 		staticText = (TextView) findViewById(R.id.loadstring);
 		staticText.setText(""
-				+ ctx.getResources().getString(KnowYour.STRESSTEXT1.getString()));
+				+ ctx.getResources().getString(
+						StrengthBasi.STRESSTEXT1.getString()));
 		image.setBackgroundDrawable(ctx.getResources().getDrawable(
-				R.drawable.knowurbasic));
+				R.drawable.srengthtrainingbasics));
 
 		i = 2;
 		next.setOnClickListener(new OnClickListener() {
@@ -73,7 +74,7 @@ public class StaticKnowYourBasic extends MavericBaseActiity {
 			public void onClick(View v) {
 				try {
 					if (i < 5) {
-						KnowYour s = KnowYour.getStringByIndex(i);
+						StrengthBasi s = StrengthBasi.getStringByIndex(i);
 						staticText.setText(""
 								+ ctx.getResources().getString(s.getString()));
 						if (i == 4) {
