@@ -3,6 +3,8 @@ package com.maveric;
 import java.util.HashMap;
 import java.util.List;
 
+import com.maveric.R.string;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,10 +16,12 @@ import android.widget.TextView;
 public class FoodListAdapter extends ArrayAdapter<String> {
 	private final Context context;
 	private HashMap<String, String[]> map;
-	private List<String> keys;
-	public FoodListAdapter(Context context, HashMap<String, String[]> objects, List<String> keys) {
+	private String[] keys;
 
-		super(context, R.layout.diet_tracker_list_data,keys);
+	public FoodListAdapter(Context context, HashMap<String, String[]> objects,
+			String[] keys) {
+
+		super(context, R.layout.diet_tracker_list_data, keys);
 
 		this.context = context;
 		map = objects;
@@ -30,20 +34,23 @@ public class FoodListAdapter extends ArrayAdapter<String> {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.diet_tracker_list_data,
 				parent, false);
-		TextView foodItemTextView = (TextView) rowView
-				.findViewById(R.id.diet_name);
-		TextView foodServeTextView = (TextView) rowView
-				.findViewById(R.id.diet_serve);
-		TextView foodCalTextView = (TextView) rowView
-				.findViewById(R.id.diet_colories);
-		String[] fooditem =map.get(keys.get(position));
-		foodItemTextView.setText(keys.get(position));
-		for(String s:fooditem)			
-		Log.i("manikk", "adapter = "+s);
-		String fooString = fooditem.toString();
-		foodServeTextView.setText(fooString);
-//		foodCalTextView.setText(Integer.parseInt(fooditem[1])
-//				* Integer.parseInt(fooditem[0]) + "");
+		try {
+			TextView foodItemTextView = (TextView) rowView
+					.findViewById(R.id.diet_name);
+			TextView foodServeTextView = (TextView) rowView
+					.findViewById(R.id.diet_serve);
+			TextView foodCalTextView = (TextView) rowView
+					.findViewById(R.id.diet_colories);
+			String[] fooditem = map.get(keys[position]);
+			foodItemTextView.setText(keys[position]);
+			foodServeTextView.setText(fooditem[1]+"serving");
+			foodCalTextView.setText(fooditem[0]+"cal");
+			Log.i("manikk", "food Adapter fooditem.size = " + fooditem.length
+					+ " fooditem[0]" + fooditem[0]);
+		} catch (Exception e) {
+			Log.e("food Adapter", e.getMessage(), e);
+		}
+
 		return rowView;
 	}
 }

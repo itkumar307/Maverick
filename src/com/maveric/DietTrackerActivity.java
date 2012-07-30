@@ -12,11 +12,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.maveric.contentprovider.FoodProvider;
-import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
 import com.maveric.enums.foodTiming;
 
@@ -28,30 +27,37 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	}
 
 	private TextView breakFastTitle, lunchTitle, dinnerTitle, dateText;
-	private ListView list2, list1, list3;
-	private List<String> keyValues = new ArrayList<String>();
+	private ArrayList<String> breakFastKeyValues = new ArrayList<String>(),
+			lunchKeyValues = new ArrayList<String>(),
+			dinnerKeyValues = new ArrayList<String>();
+	private HashMap<String, String[]> breakFastMap = new HashMap<String, String[]>(),
+			lunchMap = new HashMap<String, String[]>(),
+			dinnerMap = new HashMap<String, String[]>();
+	private int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		dateText = (TextView) findViewById(R.id.diet_tracker_date);
-		breakFastTitle = (TextView) findViewById(R.id.breakfast_textview);
-		lunchTitle = (TextView) findViewById(R.id.lunch_textview);
-		dinnerTitle = (TextView) findViewById(R.id.dinner_textview);
-		Log.i("manikk", "date = " + getCurrentDate());
+		breakFastTitle = (TextView) findViewById(R.id.breakfasttext);
+		lunchTitle = (TextView) findViewById(R.id.lunchtext);
+		dinnerTitle = (TextView) findViewById(R.id.dinnertext);
 		dateText.setText(getCurrentDate());
 		ImageView next = (ImageView) findViewById(R.id.date_next);
 		ImageView prev = (ImageView) findViewById(R.id.date_prev);
 		ImageView add = (ImageView) findViewById(R.id.add_diet);
-		breakFastTitle.setText("morning");
-		lunchTitle.setText("morning");
-		dinnerTitle.setText("morning");
+		RelativeLayout breakFastLayout = (RelativeLayout) findViewById(R.id.breakfastlayout);
+		RelativeLayout lunchLayout = (RelativeLayout) findViewById(R.id.lunchlayout);
+		RelativeLayout dinnerLayout = (RelativeLayout) findViewById(R.id.dinnerlayout);
+
+		setValues();
+
 		next.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				dateText.setText(nextDate(dateText.getText().toString()));
-
+				setValues();
 			}
 		});
 		prev.setOnClickListener(new OnClickListener() {
@@ -59,7 +65,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				dateText.setText(prevDate(dateText.getText().toString()));
-
+				setValues();
 			}
 		});
 		add.setOnClickListener(new OnClickListener() {
@@ -67,59 +73,128 @@ public class DietTrackerActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				Intent search = new Intent(context, DietTrackerFoodSearch.class);
+				search.putExtra("date", dateText.getText().toString());
 				startActivity(search);
 
 			}
 		});
-		setBreakFastList();
-		setLunchList();
-		setDinnerList();
+		breakFastLayout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (breakFastMap.size() > 0)
+					gotoResultActivity(breakFastMap, breakFastKeyValues,
+							"Break fast");
+				else
+					toast("please add the food for breakfast list");
+			}
+		});
+		lunchLayout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (lunchMap.size() > 0)
+					gotoResultActivity(lunchMap, lunchKeyValues, "Lunch");
+				else
+					toast("please add the food for Lunch list");
+			}
+		});
+		dinnerLayout.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (dinnerMap.size() > 0)
+					gotoResultActivity(dinnerMap, dinnerKeyValues, "Dinner");
+				else
+					toast("please add the food for Dinner list");
+			}
+		});
+
 	}
 
-	private void setBreakFastList() {
-		list1 = (ListView) findViewById(R.id.listView1);
-		list1.setAdapter(getAdapter(foodTiming.BREAKFAST));
+	private void setValues() {
+		resetAll();
+		try {
+			Uri foodListUri = Uri.withAppendedPath(
+					FoodProvider.FOOD_BY_DATE_TIMING_URI, dateText.getText()
+							.toString());
+			Cursor foodList = managedQuery(foodListUri, null, null, null, null);
+			if (foodList.moveToFirst()) {
+				do {
+
+					String name = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.NAME));
+					int food_type = Integer
+							.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.FOOD_TYPE)));
+					String calories = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.CALORIES));
+					String serving = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.SERVE));
+					
+					Log.i("manikk",
+							"name = "
+									+ name
+									+ " cal = "
+									+ calories
+									+ " foodtype = "
+									+ food_type
+									+ " fav = "
+									+ foodList.getString(foodList
+											.getColumnIndex(FoodTrackerTable.Column.FAV_STATE)));
+					if (food_type == foodTiming.BREAKFAST.getValue()) {
+						breakFastKeyValues.add(name);
+						breakFastMap.put(name,
+								new String[] { calories, serving });
+						breakfastCal += Integer.valueOf(calories);
+					} else if (food_type == foodTiming.LUNCH.getValue()) {
+						lunchKeyValues.add(name);
+						lunchMap.put(name, new String[] { calories, serving });
+						lunchCal += Integer.valueOf(calories);
+					} else if (food_type == foodTiming.DINNER.getValue()) {
+						dinnerKeyValues.add(name);
+						dinnerMap.put(name, new String[] { calories, serving });
+						dinnerCal += Integer.valueOf(calories);
+					}
+
+				} while (foodList.moveToNext());
+
+			}
+			breakFastTitle.setText(breakfastCal + "");
+			lunchTitle.setText(lunchCal + "");
+			dinnerTitle.setText(dinnerCal + "");
+			Log.i("manikk", "breakFastKeyValues = " + breakFastKeyValues.size()
+					+ " lunchKeyValues = " + lunchKeyValues.size()
+					+ " dinnerKeyValues = " + dinnerKeyValues.size());
+			Log.i("manikk", "breakFastMap = " + breakFastMap.size()
+					+ " lunchMap = " + lunchMap.size() + " dinnerMap = "
+					+ dinnerMap.size());
+			Log.i("manikk", "breakfastCal = " + breakfastCal + " lunchCal = "
+					+ lunchCal + " dinnerCal = " + dinnerCal);
+		} catch (Exception e) {
+			Log.e("DietTrackerActivity", e.getMessage(), e);
+		}
 	}
 
-	private void setLunchList() {
-		list2 = (ListView) findViewById(R.id.listView2);
-		list2.setAdapter(getAdapter(foodTiming.LUNCH));
+	private void gotoResultActivity(HashMap<String, String[]> map,
+			ArrayList<String> list, String title) {
+		Intent result = new Intent(this, DietTrackerResultActivity.class);
+		result.putExtra("map", map);
+		result.putStringArrayListExtra("keys", list);
+		result.putExtra("title", title);
+		startActivity(result);
+		overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 	}
 
-	private void setDinnerList() {
-		list3 = (ListView) findViewById(R.id.listView3);
-		list3.setAdapter(getAdapter(foodTiming.BREAKFAST));
-	}
-
-	private FoodListAdapter getAdapter(foodTiming timing) {
-		return new FoodListAdapter(context, getMap(timing), keyValues);
-	}
-
-	private HashMap<String, String[]> getMap(foodTiming timing) {
-		keyValues.clear();
-		Uri foodListUri = Uri.withAppendedPath(
-				FoodProvider.FOOD_BY_DATE_TIMING_URI, dateText.getText()
-						.toString() + "/" + timing.getValue());
-		HashMap<String, String[]> foodDetails = new HashMap<String, String[]>();
-		//foodDetails.clear();
-		Cursor foodList = managedQuery(foodListUri, null, null, null, null);
-		Log.i("manikk", "get count for insert values = " + foodList.getCount());
-		if (foodList.getCount() > 0) {
-			foodList.moveToFirst();
-			do {
-				Log.i("manikk", "123");
-				String[] setofString = {
-						foodList.getString(foodList
-								.getColumnIndex(FoodTrackerTable.Column.SERVE)),
-						foodList.getString(foodList
-								.getColumnIndex(FoodTrackerTable.Column.CARBOS)) };
-				foodDetails.put(foodList.getString(foodList
-						.getColumnIndex(FoodTable.Column.NAME)), setofString);
-				keyValues.add(foodList.getString(foodList
-						.getColumnIndex(FoodTable.Column.NAME)));
-			} while (foodList.moveToNext());
-		} 
-		Log.i("manikk", "map size = "+foodDetails.size()+" keyvalues size1 = "+keyValues.size());
-		return foodDetails;
+	private void resetAll() {
+		lunchKeyValues.clear();
+		breakFastKeyValues.clear();
+		dinnerKeyValues.clear();
+		breakFastMap.clear();
+		lunchMap.clear();
+		dinnerMap.clear();
+		breakfastCal = 0;
+		lunchCal = 0;
+		dinnerCal = 0;
 	}
 }

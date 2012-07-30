@@ -1,6 +1,6 @@
 package com.maveric;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -130,7 +130,7 @@ public abstract class MavericBaseActiity extends Activity {
 	}
 
 	private String getStringFromDate(Long date) {
-		return new SimpleDateFormat("dd/MM/yy").format(date);
+		return new SimpleDateFormat("dd-MM-yyyy").format(date);
 	}
 
 	protected String prevDate(String date) {
@@ -140,7 +140,7 @@ public abstract class MavericBaseActiity extends Activity {
 
 	private Date getDateFromString(String date) {
 		try {
-			return (Date) new SimpleDateFormat("dd/MM/yy").parse(date);
+			return (Date) new SimpleDateFormat("dd-MM-yyyy").parse(date);
 		} catch (ParseException e) {
 			Log.e("manikk", e.getMessage());
 			return null;

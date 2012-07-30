@@ -35,6 +35,7 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 		foodTiming1 = (Spinner) findViewById(R.id.foodTiming);
 		serving_count = (EditText) findViewById(R.id.serving_editbox);
 		Button savingFoodItems = (Button) findViewById(R.id.save_food);
+		Button cancel = (Button) findViewById(R.id.cancel_food);
 		Bundle bundle = getIntent().getExtras();
 		@SuppressWarnings("unchecked")
 		final HashMap<String, String> selectedFoodDetails = (HashMap<String, String>) bundle
@@ -47,6 +48,14 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				addFood(selectedFoodDetails);
+
+			}
+		});
+		cancel.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				DietTrackerAddActivity.this.finish();
 
 			}
 		});
@@ -76,6 +85,8 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 				diet_tracker_add_as_fav.isChecked() ? 1 : 0);
 		values.put(FoodTrackerTable.Column.FOOD_TYPE,
 				foodTiming.valueByMsg(foodTiming1.getSelectedItem().toString()));
+		values.put(FoodTrackerTable.Column.DATE, getIntent().getExtras()
+				.getString("date"));
 		getContentResolver().insert(FoodProvider.INSERT_FOOD_DETAILS_URI,
 				values);
 		this.finish();

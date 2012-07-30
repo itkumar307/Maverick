@@ -22,6 +22,7 @@ public class FoodProvider extends ContentProvider {
 	private static final int INSERT_FOOD_DETAILS = 1;
 	private static final int FOOD_BY_DATE_AND_TIMING = 2;
 	private static final int FOOD_LIST_BY_SEARCH = 3;
+	private static final int FAV_FOOD = 4;
 
 	public static final String PROVIDER_NAME = "com.maveric.FoodTrackerProvider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
@@ -34,6 +35,8 @@ public class FoodProvider extends ContentProvider {
 
 	public static final Uri FOOD_LIST_BY_SEARCH_VALUE = Uri.parse("content://"
 			+ PROVIDER_NAME + "/food_list");
+	public static final Uri FAV_FOOD_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/fav_food");
 
 	private static final UriMatcher sURIMatcher;
 
@@ -41,9 +44,10 @@ public class FoodProvider extends ContentProvider {
 		sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 		sURIMatcher.addURI(PROVIDER_NAME, "insertOrUpdatefood",
 				INSERT_FOOD_DETAILS);
-		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*/*",
+		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*",
 				FOOD_BY_DATE_AND_TIMING);
 		sURIMatcher.addURI(PROVIDER_NAME, "food_list/*", FOOD_LIST_BY_SEARCH);
+		sURIMatcher.addURI(PROVIDER_NAME, "fav_food", FAV_FOOD);
 
 	}
 
@@ -66,14 +70,23 @@ public class FoodProvider extends ContentProvider {
 		case FOOD_BY_DATE_AND_TIMING:
 			queryBuilder.setTables(FoodTrackerTable.TABLE);
 			sortOrder = FoodTrackerTable.Column._ID + " DESC ";
-			queryBuilder.appendWhere( FoodTrackerTable.Column.FOOD_TYPE + " = "
-					+ url.getPathSegments().get(2));
+			queryBuilder.appendWhere(FoodTrackerTable.Column.DATE + " =  '"
+					+ url.getPathSegments().get(1) + "'");
+			Log.i("manikk", "whercondition for date = "
+					+ FoodTrackerTable.Column.DATE + " =  '"
+					+ url.getPathSegments().get(1) + "'");
 			break;
 		case FOOD_LIST_BY_SEARCH:
 			queryBuilder.setTables(FoodTable.TABLE);
 			sortOrder = FoodTable.Column.NAME + " ASC ";
 			queryBuilder.appendWhere(FoodTable.Column.NAME + " Like '%"
 					+ url.getPathSegments().get(1) + "%'");
+			break;
+		case FAV_FOOD:
+			queryBuilder.setTables(FoodTrackerTable.TABLE);
+			sortOrder = FoodTable.Column.NAME + " ASC ";
+			queryBuilder.appendWhere(FoodTrackerTable.Column.FAV_STATE + " = "
+					+ 1);
 			break;
 		default:
 			throw new IllegalArgumentException("Unknown URI: " + url);
@@ -88,6 +101,7 @@ public class FoodProvider extends ContentProvider {
 		cursor.setNotificationUri(getContext().getContentResolver(), url);
 		return cursor;
 	}
+
 	@Override
 	public String getType(Uri uri) {
 		return String.valueOf(sURIMatcher.match(uri));

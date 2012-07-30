@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/diet_trcker">
+
+	<RelativeLayout
+		android:id="@+id/result_layput"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="15dip">
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:textColor="#fff"
+			android:layout_centerHorizontal="true"
+			android:text="Select Tile" />
+
+		<ListView
+			android:id="@+id/android:list"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			 android:cacheColorHint="#00000000"
+			 android:background="@drawable/white_curve_background"
+			android:layout_marginTop="35dip" />
+	</RelativeLayout>
+
+</RelativeLayout>

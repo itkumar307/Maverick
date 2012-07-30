@@ -107,6 +107,10 @@
             android:name=".DietTrackerFoodSearch"
             android:windowSoftInputMode="stateHidden">
         </activity>
+          <activity
+            android:name=".DietTrackerResultActivity"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
 	</application>
 
 </manifest>

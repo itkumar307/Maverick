@@ -1,6 +1,6 @@
 package com.maveric;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -66,9 +66,13 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					Toast.makeText(context,
-							"This menu not yet associated with any page !",
-							1500).show();
+					if (!new Apppref(context).isQueriesAlreadyAnswerd())
+						metabolicQueries();
+					else {
+						Intent metabolicChart = new Intent(context,
+								MetobolicChartActivity.class);
+						startActivity(metabolicChart);
+					}
 				}
 			});
 			inter.setOnClickListener(new OnClickListener() {
@@ -139,5 +143,9 @@ public abstract class MavericListBaseActiity extends ListActivity {
 	protected String nextDate(String date) {
 		return getStringFromDate(getDateFromString(date).getTime()
 				+ MILLIS_IN_DAY);
+	}
+	protected void metabolicQueries() {
+		Intent singup = new Intent(context, metabolicQueries.class);
+		startActivity(singup);
 	}
 }
