@@ -60,6 +60,7 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 
 		final Cursor foodList = managedQuery(uri, null, null, null, null);
 		Log.i("manikk", "search list count = " + foodList.getCount());
+		loding("Loding");
 		ListView list = getListView();
 		list.setAdapter(new SimpleCursorAdapter(DietTrackerFoodSearch.this,
 				R.layout.data_select_input_cardatat, foodList,
@@ -105,7 +106,7 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 				foodAdd.putExtra("date",
 						getIntent().getExtras().getString("date"));
 				startActivity(foodAdd);
-
+				DietTrackerFoodSearch.this.finish();
 			}
 		});
 	}

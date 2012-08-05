@@ -2,7 +2,6 @@ package com.maveric;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -49,9 +48,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		RelativeLayout breakFastLayout = (RelativeLayout) findViewById(R.id.breakfastlayout);
 		RelativeLayout lunchLayout = (RelativeLayout) findViewById(R.id.lunchlayout);
 		RelativeLayout dinnerLayout = (RelativeLayout) findViewById(R.id.dinnerlayout);
-
-		setValues();
-
+		
 		next.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -72,6 +69,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
+				loding("Loding");
 				Intent search = new Intent(context, DietTrackerFoodSearch.class);
 				search.putExtra("date", dateText.getText().toString());
 				startActivity(search);
@@ -178,6 +176,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	private void gotoResultActivity(HashMap<String, String[]> map,
 			ArrayList<String> list, String title) {
+		loding("Loding");
 		Intent result = new Intent(this, DietTrackerResultActivity.class);
 		result.putExtra("map", map);
 		result.putStringArrayListExtra("keys", list);
@@ -196,5 +195,10 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		breakfastCal = 0;
 		lunchCal = 0;
 		dinnerCal = 0;
+	}
+	@Override
+	public void onResume() {
+		super.onResume();
+		setValues();
 	}
 }

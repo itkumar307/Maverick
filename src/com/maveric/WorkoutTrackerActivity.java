@@ -68,7 +68,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 			public void onClick(View v) {
 
 				showFavourite.setVisibility(View.GONE);
-
+				loding("Loding");
 				LinearLayout exceriseBlock = (LinearLayout) findViewById(R.id.exceriseblock);
 				exceriseBlock.setVisibility(View.GONE);
 
@@ -89,7 +89,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
 				String searchData = searchText.getText().toString();
-
+				loding("Loding");
 				if (!TextUtils.isEmpty(searchData)) {
 
 					Uri name = Uri.withAppendedPath(
@@ -178,7 +178,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 					s.putExtra("type", type);
 					s.putExtra("count", count);
 					startActivity(s);
-
+					WorkoutTrackerActivity.this.finish();
 				}
 			});
 		} catch (Exception e) {

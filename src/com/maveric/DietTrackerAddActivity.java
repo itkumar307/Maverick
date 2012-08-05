@@ -74,6 +74,7 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 	}
 
 	private void addFood(HashMap<String, String> selectedFoodDetails) {
+		loding("Saving");
 		CheckBox diet_tracker_add_as_fav = (CheckBox) findViewById(R.id.diet_tracker_add_as_fav);
 		ContentValues values = new ContentValues();
 		for (Entry<String, String> foods : selectedFoodDetails.entrySet()) {

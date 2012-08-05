@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -22,6 +23,7 @@ public abstract class MavericBaseActiity extends Activity {
 	protected Context context;
 	protected TextView diet, workOut, metaBolic, inter;
 	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
+	private  ProgressDialog progressDialog;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -150,5 +152,29 @@ public abstract class MavericBaseActiity extends Activity {
 	protected String nextDate(String date) {
 		return getStringFromDate(getDateFromString(date).getTime()
 				+ MILLIS_IN_DAY);
+	}
+	protected void loding(String title) {
+		progressDialog = ProgressDialog.show(
+				MavericBaseActiity.this, title+"...",
+				"your request is Processing");
+
+		new Thread() {
+			public void run() {
+				try {
+					sleep(1000);
+				} catch (Exception e) {
+					if (progressDialog != null) {
+						progressDialog.dismiss();
+					}
+				}
+				progressDialog.dismiss();
+			}
+		}.start();
+	}
+	protected void onDestroy() {        
+	    super.onDestroy();
+	    Log.i("manikk", "Base Destroy");
+	    if(progressDialog != null)
+	    	progressDialog.dismiss();
 	}
 }

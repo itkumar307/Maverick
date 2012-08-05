@@ -53,36 +53,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		date = (TextView) findViewById(R.id.date);
 		addWorkoutData = (TextView) findViewById(R.id.add_workout_data);
 
-		try {
-			cursorDate = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
-					null, null);
-			constantCont = cursorDate.getCount();
-			Log.i("kumar" + this.getClass(), "constantCont:" + constantCont);
-			count = 0;
-			cursorDate.moveToFirst();
-			if (constantCont > 0) {
-				allDate = new ArrayList<String>();
-				do {
-
-					allDate.add(cursorDate.getString(cursorDate
-							.getColumnIndex(WorkOutTrackerTable.Column.DATE)));
-
-				} while (cursorDate.moveToNext());
-
-				date.setText(allDate.get(0));
-				if (constantCont == 1) {
-					next.setVisibility(View.INVISIBLE);
-					previous.setVisibility(View.INVISIBLE);
-				}
-				Log.i("kumar" + this.getClass(), "array count" + allDate.size());
-				listViewRefresh(allDate.get(0));
-			} else {
-
-			}
-		} catch (Exception e1) {
-			Log.e("kumar" + this.getClass(),
-					"cursor error load date" + e1.getMessage(), e1);
-		}
+		
 
 		previous.setOnClickListener(new OnClickListener() {
 
@@ -120,6 +91,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			@Override
 			public void onClick(View v) {
+				loding("Loding");
 				Intent addData = new Intent(context,
 						WorkoutTrackerActivity.class);
 				startActivity(addData);
@@ -176,6 +148,42 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 			Log.e("kumar" + this.getClass(), "cursor error" + e1.getMessage(),
 					e1);
 
+		}
+	}
+	@Override
+	public void onResume() {
+		super.onResume();
+		try {
+			cursorDate = managedQuery(WorkoutProvider.WORKOUT_URI, null, null,
+					null, null);
+			constantCont = cursorDate.getCount();
+			Log.i("kumar" + this.getClass(), "constantCont:" + constantCont);
+			count = 0;
+			cursorDate.moveToFirst();
+			if (constantCont > 0) {
+				allDate = new ArrayList<String>();
+				do {
+
+					allDate.add(cursorDate.getString(cursorDate
+							.getColumnIndex(WorkOutTrackerTable.Column.DATE)));
+
+				} while (cursorDate.moveToNext());
+
+				date.setText(allDate.get(0));
+				if (constantCont == 1) {
+					next.setVisibility(View.INVISIBLE);
+					previous.setVisibility(View.INVISIBLE);
+				}
+				else {
+					next.setVisibility(View.VISIBLE);
+					previous.setVisibility(View.VISIBLE);
+				}
+				Log.i("kumar" + this.getClass(), "array count" + allDate.size());
+				listViewRefresh(allDate.get(0));
+			}
+		} catch (Exception e1) {
+			Log.e("kumar" + this.getClass(),
+					"cursor error load date" + e1.getMessage(), e1);
 		}
 	}
 }

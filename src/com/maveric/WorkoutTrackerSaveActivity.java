@@ -44,7 +44,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 	int calories;
 	String exceriseType;
 	String countType;
-	Boolean isCheckbox;
+	Boolean isCheckbox = false;
 
 	@Override
 	protected void setContentToLayout() {
@@ -144,7 +144,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 					new Thread() {
 						public void run() {
 							try {
-
+								sleep(1000);
 								Calendar c = Calendar.getInstance();
 								SimpleDateFormat format = new SimpleDateFormat(
 										"dd-MM-yyyy");

@@ -52,6 +52,7 @@
 			android:layout_width="100dp"
 			android:layout_height="wrap_content"
 			android:id="@+id/serving_editbox"
+			android:inputType="number"
 			android:layout_gravity="center_horizontal" />
 		<CheckBox
 			android:id="@+id/diet_tracker_add_as_fav"
