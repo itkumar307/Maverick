@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -127,7 +128,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	private void setValue() {
 
 		try {
-			String value;
+			String value = "0";
 
 			welcome.setText("WELCOME" + "  " + appPref.getUserNameOnly());
 			Uri name = Uri.withAppendedPath(
@@ -136,6 +137,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 			Wrktoday = managedQuery(name, null, null, null, null);
 			Wrktoday.moveToFirst();
+			Log.i("kumar", "workcount" + Wrktoday.getCount());
+
 			if (Wrktoday.getCount() > 0) {
 				value = Wrktoday.getString(Wrktoday
 						.getColumnIndex(WorkOutTrackerTable.Column.COUNT));
@@ -144,18 +147,19 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			} else {
 				value = "0";
 			}
-			workout1200.setText(value + " /5000 cal");
-			workoutshow.setText(value + " Cal");
+			int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
+			workout1200.setText(cal + " /5000 cal");
+			workoutshow.setText(cal + " Cal");
 			pbWork.setMax(5000);
-			pbWork.setProgress(Integer.parseInt(value));
+			pbWork.setProgress(cal);
 			pbWork.setIndeterminate(false);
-			food1200.setText(value + " /5000 cal");
-			foodshow.setText(value + " Cal");
+			food1200.setText(getTotalFoodCalories() + " /5000 cal");
+			foodshow.setText(getTotalFoodCalories() + " Cal");
 			pbDiet.setMax(5000);
-			pbDiet.setProgress(1000);
+			pbDiet.setProgress(getTotalFoodCalories());
 			pbDiet.setIndeterminate(false);
 		} catch (Exception e) {
-			Log.e("kumar", "setvalue" + e.getMessage());
+			Log.e("kumar", "setvalue" + e.getMessage(), e);
 		}
 	}
 }

@@ -2,6 +2,7 @@ package com.maveric;
 
 import java.util.HashMap;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -38,6 +40,11 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 
 			@Override
 			public void onClick(View v) {
+				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+				inputManager.hideSoftInputFromWindow(getCurrentFocus()
+						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
 				if (!TextUtils.isEmpty(searchBox.getText().toString())) {
 					Uri searchList = Uri.withAppendedPath(
 							FoodProvider.FOOD_LIST_BY_SEARCH_VALUE, searchBox
