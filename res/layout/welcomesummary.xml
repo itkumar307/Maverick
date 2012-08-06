@@ -35,9 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="10dip"
-                android:background="@drawable/welcomepageonesidecurve"
+                android:background="@drawable/welcomepageonesidewhitecurve"
                 android:text="WELCOME"
-                android:textColor="#F51137"
+                android:textColor="#0071BB"
                 android:textSize="24dp"
                 android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                     android:layout_gravity="right"
                     android:layout_marginRight="15dip"
                     android:layout_marginTop="5dip"
-                    android:background="@drawable/welcomepageonesidecurve"
+                    android:background="@drawable/welcomepageonesidewhitecurve"
                     android:text="20/1200 cal"
                     android:textColor="#E90CF5" />
 
@@ -98,10 +98,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/static_trancparent_curve_all_page"
+                        android:background="#DAE2E4"
                         android:padding="3dp"
                         android:text="100 cal"
-                        android:textColor="#000000" />
+                        android:textColor="@color/allpage_subtitle" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -137,7 +137,7 @@
                     android:layout_gravity="right"
                     android:layout_marginRight="15dip"
                     android:layout_marginTop="5dip"
-                    android:background="@drawable/welcomepageonesidecurve"
+                    android:background="@drawable/welcomepageonesidewhitecurve"
                     android:text="500/1200 cal"
                     android:textColor="#E90CF5" />
 
@@ -162,10 +162,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="10dip"
-                        android:background="@drawable/static_trancparent_curve_all_page"
+                        android:background="#DAE2E4"
                         android:padding="3dp"
                         android:text="500 cal"
-                        android:textColor="#000000" />
+                        android:textColor="@color/allpage_subtitle" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -179,13 +179,13 @@
                         android:layout_marginTop="10dip" >
 
                         <LinearLayout
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical" >
 
                             <RelativeLayout
                                 android:id="@+id/tracfoodlayout"
-                                android:layout_width="fill_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" >
 
                                 <ImageView
@@ -229,21 +229,21 @@
                                     android:textSize="20dip" />
                             </RelativeLayout>
                         </LinearLayout>
+                    </RelativeLayout>
 
-                        <RelativeLayout
-                            android:id="@+id/mavericpogoimage"
+                    <RelativeLayout
+                        android:id="@+id/mavericpogoimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:layout_toRightOf="@+id/directlink" >
+
+                        <ImageView
+                            android:id="@+id/maveric_cycle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dip"
-                            android:layout_toRightOf="@+id/directlink" >
-
-                            <ImageView
-                                android:id="@+id/maveric_cycle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:src="@drawable/workout_tracker_left" />
-                        </RelativeLayout>
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/workout_tracker_left" />
                     </RelativeLayout>
                 </RelativeLayout>
 
