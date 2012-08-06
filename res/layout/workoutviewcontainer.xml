@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/allpage_side_page_color" >
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@color/allpage_side_page_color">
 
-    <RelativeLayout
-        android:id="@+id/maveric_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+	<RelativeLayout
+		android:id="@+id/maveric_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<Button
+			android:id="@+id/home_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_margin="5dip"
+			android:text="Home"></Button>
+		<ImageView
+			android:layout_width="100dp"
+			android:layout_height="35dp"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="20dp"
+			android:layout_marginTop="10dp"
+			android:background="@drawable/maveric_logo" />
+	</RelativeLayout>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/maveric_logo" />
-    </RelativeLayout>
+	<include
+		android:id="@+id/detailed"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/maveric_title"
+		layout="@layout/workout_view_tracker" />
 
-    <include
-        android:id="@+id/detailed"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/maveric_title"
-        layout="@layout/workout_view_tracker" />
-
-    <include
-        android:id="@+id/bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        layout="@layout/menu" />
+	<include
+		android:id="@+id/bottom"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		layout="@layout/menu" />
 
 </RelativeLayout>

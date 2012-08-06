@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public abstract class MavericBaseActiity extends Activity {
 			lunchMap = new HashMap<String, String[]>(),
 			dinnerMap = new HashMap<String, String[]>();
 	protected int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
+	protected Button home;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public abstract class MavericBaseActiity extends Activity {
 		workOut = (TextView) findViewById(R.id.workout_tracker);
 		metaBolic = (TextView) findViewById(R.id.metapolic_typing);
 		inter = (TextView) findViewById(R.id.intract);
-
+		home = (Button) findViewById(R.id.home_button);
 		/* login Activity not use for nw via menu */
 		// member.setOnClickListener(new OnClickListener() {
 		//
@@ -107,6 +109,17 @@ public abstract class MavericBaseActiity extends Activity {
 				}
 			});
 		}
+		if (home != null)
+			home.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+					loding("Loding");
+					Intent home = new Intent(context, WorkSummeryActivity.class)
+							.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(home);
+				}
+			});
 	}
 
 	protected abstract void setContentToLayout();

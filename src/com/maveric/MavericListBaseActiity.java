@@ -16,14 +16,17 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public abstract class MavericListBaseActiity extends ListActivity {
 	protected Context context;
 	protected TextView diet, workOut, metaBolic, inter;
+	protected Button home;
 	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
-	private  ProgressDialog progressDialog;
+	private ProgressDialog progressDialog;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,7 +37,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 		workOut = (TextView) findViewById(R.id.workout_tracker);
 		metaBolic = (TextView) findViewById(R.id.metapolic_typing);
 		inter = (TextView) findViewById(R.id.intract);
-
+		home = (Button) findViewById(R.id.home_button);
 		/* login Activity not use for nw via menu */
 		// member.setOnClickListener(new OnClickListener() {
 		//
@@ -86,6 +89,18 @@ public abstract class MavericListBaseActiity extends ListActivity {
 				}
 			});
 		}
+		if (home != null)
+			home.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+					loding("Loding");
+					Intent home = new Intent(context, WorkSummeryActivity.class)
+							.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+					startActivity(home);
+				}
+			});
 	}
 
 	protected abstract void setContentToLayout();
@@ -118,8 +133,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 	protected String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat(
-				"dd-MM-yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		return format.format(c.getTime());
 	}
 
@@ -145,14 +159,15 @@ public abstract class MavericListBaseActiity extends ListActivity {
 		return getStringFromDate(getDateFromString(date).getTime()
 				+ MILLIS_IN_DAY);
 	}
+
 	protected void metabolicQueries() {
 		Intent singup = new Intent(context, metabolicQueries.class);
 		startActivity(singup);
 	}
+
 	protected void loding(String title) {
-		progressDialog = ProgressDialog.show(
-				MavericListBaseActiity.this, title+"...",
-				"your request is Processing");
+		progressDialog = ProgressDialog.show(MavericListBaseActiity.this, title
+				+ "...", "your request is Processing");
 
 		new Thread() {
 			public void run() {
@@ -167,11 +182,11 @@ public abstract class MavericListBaseActiity extends ListActivity {
 			}
 		}.start();
 	}
-	
-	protected void onDestroy() {        
-	    super.onDestroy();
-	    Log.i("manikk", "List Destroy");
-	    if(progressDialog != null)
-	    	progressDialog.dismiss();
+
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.i("manikk", "List Destroy");
+		if (progressDialog != null)
+			progressDialog.dismiss();
 	}
 }

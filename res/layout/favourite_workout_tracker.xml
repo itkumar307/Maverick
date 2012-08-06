@@ -10,7 +10,13 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         android:orientation="vertical" >
-
+    <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dip"
+            android:text="Home"></Button>
         <LinearLayout
             android:id="@+id/favouriteparentblock"
             android:layout_width="fill_parent"

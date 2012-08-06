@@ -11,6 +11,13 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="15dip">
+	   <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dip"
+            android:text="Home"></Button>
 		<TextView
 			android:id="@+id/title"
 			android:layout_width="wrap_content"
@@ -25,8 +32,9 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			 android:cacheColorHint="#00000000"
+			 android:layout_below="@+id/home_button"
 			 android:background="@drawable/white_curve_background"
-			android:layout_marginTop="35dip" />
+			android:layout_marginTop="15dip" />
 	</RelativeLayout>
 
 </RelativeLayout>
