@@ -12,7 +12,7 @@ public class WorkOutTrackerTable {
 		public static final String SELECT_EXCERISE = "excerise";
 		public static final String WORKOUT = "workout";
 		public static final String CALORIES = "calories";
-		
+		public static String COUNT = "count";
 	}
 
 	public static String[] getColumns() {

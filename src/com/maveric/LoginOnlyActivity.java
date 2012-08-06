@@ -139,7 +139,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 	}
 
 	private void gotoHomeActivity() {
-		Intent home = new Intent(context, MavericHomeActivity.class);
+		Intent home = new Intent(context, WorkSummeryActivity.class);
 		startActivity(home);
 		this.finish();
 	}

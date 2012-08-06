@@ -34,6 +34,10 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
+            android:name=".WorkSummeryActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
             android:name=".StaticStressManagement"
             android:windowSoftInputMode="stateHidden" >
         </activity>

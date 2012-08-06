@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/allpage_side_page_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/maveric_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/maveric_logo" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/maveric_title"
+        android:background="@drawable/home_screen" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/welcometext"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/welcomepageonesidecurve"
+                android:text="WELCOME"
+                android:textColor="#F51137"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/Diet_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="15dip"
+                    android:text="Diet Summary"
+                    android:textColor="@color/allpage_subtitle" />
+
+                <ProgressBar
+                    android:id="@+id/progressbardiet"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/progressbarbg"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/Diet_currentvalues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/welcomepageonesidecurve"
+                    android:text="20/1200 cal"
+                    android:textColor="#E90CF5" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="5dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/todayeatencaloriestext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="20dip"
+                        android:text="Calories Eaten Today"
+                        android:textColor="@color/allpage_subtitle" />
+
+                    <TextView
+                        android:id="@+id/todayeatenValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/static_trancparent_curve_all_page"
+                        android:padding="3dp"
+                        android:text="100 cal"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/workout_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="20dip"
+                    android:text="Workout Summary"
+                    android:textColor="@color/allpage_subtitle" />
+
+                <ProgressBar
+                    android:id="@+id/progressbarworkout"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:progress="30"
+                    android:progressDrawable="@drawable/progressbarbg"
+                    android:secondaryProgress="0" />
+
+                <TextView
+                    android:id="@+id/workout_currentvalue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/welcomepageonesidecurve"
+                    android:text="500/1200 cal"
+                    android:textColor="#E90CF5" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/todayworkoutcaloriestext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="20dip"
+                        android:text="Calories Burn Today"
+                        android:textColor="@color/allpage_subtitle" />
+
+                    <TextView
+                        android:id="@+id/todayworkoutValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/static_trancparent_curve_all_page"
+                        android:padding="3dp"
+                        android:text="500 cal"
+                        android:textColor="#000000" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <RelativeLayout
+                        android:id="@+id/directlink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:id="@+id/tracfoodlayout"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content" >
+
+                                <ImageView
+                                    android:id="@+id/trackfoodimage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dip"
+                                    android:src="@drawable/menu_dieat_tracker" />
+
+                                <TextView
+                                    android:id="@+id/trackfoodtext"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/trackfoodimage"
+                                    android:layout_toRightOf="@+id/trackfoodimage"
+                                    android:text="Track Food"
+                                    android:textColor="@color/allpage_subtitle"
+                                    android:textSize="20dip" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/trackworkoutlayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <ImageView
+                                    android:id="@+id/trackworkoutimage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dip"
+                                    android:src="@drawable/menu_workout_tracker" />
+
+                                <TextView
+                                    android:id="@+id/trackworkouttext"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBottom="@+id/trackworkoutimage"
+                                    android:layout_toRightOf="@+id/trackworkoutimage"
+                                    android:text="Track Workout"
+                                    android:textColor="@color/allpage_subtitle"
+                                    android:textSize="20dip" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/mavericpogoimage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dip"
+                            android:layout_toRightOf="@+id/directlink" >
+
+                            <ImageView
+                                android:id="@+id/maveric_cycle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/workout_tracker_left" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/footer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="15dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <include
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            layout="@layout/menu" />
+    </RelativeLayout>
+
+</RelativeLayout>

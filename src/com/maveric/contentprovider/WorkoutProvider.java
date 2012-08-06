@@ -20,7 +20,7 @@ public class WorkoutProvider extends ContentProvider {
 	private static final int GET_WORKOUT_DETAILS = 1;
 	private static final int INSERT_WORKOUT_DETAILS = 2;
 	private static final int WORKOUT_BY_DATE = 3;
-
+	private static final int WORKOUT_BY_DATE_SUM_VALUE = 4;
 
 	public static final String PROVIDER_NAME = "com.maveric.WorkoutProvider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
@@ -33,6 +33,8 @@ public class WorkoutProvider extends ContentProvider {
 
 	public static final Uri WORKOUT_BY_DATE_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/takevaluebydate");
+	public static final Uri WORKOUT_BY_DATE_SOMEVALUE_URI = Uri
+			.parse("content://" + PROVIDER_NAME + "/takesumbydate");
 
 	private static final UriMatcher sURIMatcher;
 
@@ -43,7 +45,8 @@ public class WorkoutProvider extends ContentProvider {
 		sURIMatcher.addURI(PROVIDER_NAME, "takevalueworkout",
 				GET_WORKOUT_DETAILS);
 		sURIMatcher.addURI(PROVIDER_NAME, "takevaluebydate/*", WORKOUT_BY_DATE);
-		
+		sURIMatcher.addURI(PROVIDER_NAME, "takesumbydate/*",
+				WORKOUT_BY_DATE_SUM_VALUE);
 
 	}
 
@@ -78,6 +81,14 @@ public class WorkoutProvider extends ContentProvider {
 					+ url.getPathSegments().get(1) + "'");
 			break;
 
+		case WORKOUT_BY_DATE_SUM_VALUE:
+			queryBuilder.setTables(WorkOutTrackerTable.TABLE);
+			sortOrder = WorkOutTrackerTable.Column.ID + " DESC ";
+			projection = new String[] { "sum(calories) as "
+					+ WorkOutTrackerTable.Column.COUNT };
+			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "='"
+					+ url.getPathSegments().get(1) + "'");
+			break;
 
 		default:
 			throw new IllegalArgumentException("Unknown URI: " + url);
@@ -93,7 +104,6 @@ public class WorkoutProvider extends ContentProvider {
 		return cursor;
 	}
 
-	
 	@Override
 	public String getType(Uri uri) {
 		return String.valueOf(sURIMatcher.match(uri));
