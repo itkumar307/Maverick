@@ -26,13 +26,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	}
 
 	private TextView breakFastTitle, lunchTitle, dinnerTitle, dateText;
-	private ArrayList<String> breakFastKeyValues = new ArrayList<String>(),
-			lunchKeyValues = new ArrayList<String>(),
-			dinnerKeyValues = new ArrayList<String>();
-	private HashMap<String, String[]> breakFastMap = new HashMap<String, String[]>(),
-			lunchMap = new HashMap<String, String[]>(),
-			dinnerMap = new HashMap<String, String[]>();
-	private int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,7 +48,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				dateText.setText(nextDate(dateText.getText().toString()));
-				setValues();
+				setTextValues();
 			}
 		});
 		prev.setOnClickListener(new OnClickListener() {
@@ -62,7 +56,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				dateText.setText(prevDate(dateText.getText().toString()));
-				setValues();
+				setTextValues();
 			}
 		});
 		add.setOnClickListener(new OnClickListener() {
@@ -110,69 +104,6 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	}
 
-	private void setValues() {
-		resetAll();
-		try {
-			Uri foodListUri = Uri.withAppendedPath(
-					FoodProvider.FOOD_BY_DATE_TIMING_URI, dateText.getText()
-							.toString());
-			Cursor foodList = managedQuery(foodListUri, null, null, null, null);
-			if (foodList.moveToFirst()) {
-				do {
-
-					String name = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.NAME));
-					int food_type = Integer
-							.valueOf(foodList.getString(foodList
-									.getColumnIndex(FoodTrackerTable.Column.FOOD_TYPE)));
-					String calories = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.CALORIES));
-					String serving = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.SERVE));
-					
-					Log.i("manikk",
-							"name = "
-									+ name
-									+ " cal = "
-									+ calories
-									+ " foodtype = "
-									+ food_type
-									+ " fav = "
-									+ foodList.getString(foodList
-											.getColumnIndex(FoodTrackerTable.Column.FAV_STATE)));
-					if (food_type == foodTiming.BREAKFAST.getValue()) {
-						breakFastKeyValues.add(name);
-						breakFastMap.put(name,
-								new String[] { calories, serving });
-						breakfastCal += Integer.valueOf(calories);
-					} else if (food_type == foodTiming.LUNCH.getValue()) {
-						lunchKeyValues.add(name);
-						lunchMap.put(name, new String[] { calories, serving });
-						lunchCal += Integer.valueOf(calories);
-					} else if (food_type == foodTiming.DINNER.getValue()) {
-						dinnerKeyValues.add(name);
-						dinnerMap.put(name, new String[] { calories, serving });
-						dinnerCal += Integer.valueOf(calories);
-					}
-
-				} while (foodList.moveToNext());
-
-			}
-			breakFastTitle.setText(breakfastCal + "");
-			lunchTitle.setText(lunchCal + "");
-			dinnerTitle.setText(dinnerCal + "");
-			Log.i("manikk", "breakFastKeyValues = " + breakFastKeyValues.size()
-					+ " lunchKeyValues = " + lunchKeyValues.size()
-					+ " dinnerKeyValues = " + dinnerKeyValues.size());
-			Log.i("manikk", "breakFastMap = " + breakFastMap.size()
-					+ " lunchMap = " + lunchMap.size() + " dinnerMap = "
-					+ dinnerMap.size());
-			Log.i("manikk", "breakfastCal = " + breakfastCal + " lunchCal = "
-					+ lunchCal + " dinnerCal = " + dinnerCal);
-		} catch (Exception e) {
-			Log.e("DietTrackerActivity", e.getMessage(), e);
-		}
-	}
 
 	private void gotoResultActivity(HashMap<String, String[]> map,
 			ArrayList<String> list, String title) {
@@ -185,20 +116,17 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 	}
 
-	private void resetAll() {
-		lunchKeyValues.clear();
-		breakFastKeyValues.clear();
-		dinnerKeyValues.clear();
-		breakFastMap.clear();
-		lunchMap.clear();
-		dinnerMap.clear();
-		breakfastCal = 0;
-		lunchCal = 0;
-		dinnerCal = 0;
-	}
 	@Override
 	public void onResume() {
 		super.onResume();
-		setValues();
+		setTextValues();
+		
+	}
+	private void setTextValues()
+	{
+		setValues(dateText.getText().toString());
+		breakFastTitle.setText(breakfastCal + "");
+		lunchTitle.setText(lunchCal + "");
+		dinnerTitle.setText(dinnerCal + "");
 	}
 }

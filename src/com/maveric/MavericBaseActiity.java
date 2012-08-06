@@ -1,16 +1,24 @@
 package com.maveric;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import com.maveric.contentprovider.FoodProvider;
+import com.maveric.database.model.FoodTrackerTable;
+import com.maveric.enums.foodTiming;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +31,16 @@ public abstract class MavericBaseActiity extends Activity {
 	protected Context context;
 	protected TextView diet, workOut, metaBolic, inter;
 	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
-	private  ProgressDialog progressDialog;
+	private ProgressDialog progressDialog;
+
+	protected ArrayList<String> breakFastKeyValues = new ArrayList<String>(),
+			lunchKeyValues = new ArrayList<String>(),
+			dinnerKeyValues = new ArrayList<String>();
+	protected HashMap<String, String[]> breakFastMap = new HashMap<String, String[]>(),
+			lunchMap = new HashMap<String, String[]>(),
+			dinnerMap = new HashMap<String, String[]>();
+	protected int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -124,10 +141,10 @@ public abstract class MavericBaseActiity extends Activity {
 		Intent singup = new Intent(context, metabolicQueries.class);
 		startActivity(singup);
 	}
+
 	protected String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat(
-				"dd-MM-yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		return format.format(c.getTime());
 	}
 
@@ -153,10 +170,10 @@ public abstract class MavericBaseActiity extends Activity {
 		return getStringFromDate(getDateFromString(date).getTime()
 				+ MILLIS_IN_DAY);
 	}
+
 	protected void loding(String title) {
-		progressDialog = ProgressDialog.show(
-				MavericBaseActiity.this, title+"...",
-				"your request is Processing");
+		progressDialog = ProgressDialog.show(MavericBaseActiity.this, title
+				+ "...", "your request is Processing");
 
 		new Thread() {
 			public void run() {
@@ -171,10 +188,88 @@ public abstract class MavericBaseActiity extends Activity {
 			}
 		}.start();
 	}
-	protected void onDestroy() {        
-	    super.onDestroy();
-	    Log.i("manikk", "Base Destroy");
-	    if(progressDialog != null)
-	    	progressDialog.dismiss();
+
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.i("manikk", "Base Destroy");
+		if (progressDialog != null)
+			progressDialog.dismiss();
+	}
+
+	protected void setValues(String date) {
+		resetAll();
+		try {
+			Uri foodListUri = Uri.withAppendedPath(
+					FoodProvider.FOOD_BY_DATE_TIMING_URI, date);
+			Cursor foodList = managedQuery(foodListUri, null, null, null, null);
+			if (foodList.moveToFirst()) {
+				do {
+
+					String name = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.NAME));
+					int food_type = Integer
+							.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.FOOD_TYPE)));
+					String calories = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.CALORIES));
+					String serving = foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.SERVE));
+
+					Log.i("manikk",
+							"name = "
+									+ name
+									+ " cal = "
+									+ calories
+									+ " foodtype = "
+									+ food_type
+									+ " fav = "
+									+ foodList.getString(foodList
+											.getColumnIndex(FoodTrackerTable.Column.FAV_STATE)));
+					if (food_type == foodTiming.BREAKFAST.getValue()) {
+						breakFastKeyValues.add(name);
+						breakFastMap.put(name,
+								new String[] { calories, serving });
+						breakfastCal += Integer.valueOf(calories);
+					} else if (food_type == foodTiming.LUNCH.getValue()) {
+						lunchKeyValues.add(name);
+						lunchMap.put(name, new String[] { calories, serving });
+						lunchCal += Integer.valueOf(calories);
+					} else if (food_type == foodTiming.DINNER.getValue()) {
+						dinnerKeyValues.add(name);
+						dinnerMap.put(name, new String[] { calories, serving });
+						dinnerCal += Integer.valueOf(calories);
+					}
+
+				} while (foodList.moveToNext());
+
+			}
+			Log.i("manikk", "breakFastKeyValues = " + breakFastKeyValues.size()
+					+ " lunchKeyValues = " + lunchKeyValues.size()
+					+ " dinnerKeyValues = " + dinnerKeyValues.size());
+			Log.i("manikk", "breakFastMap = " + breakFastMap.size()
+					+ " lunchMap = " + lunchMap.size() + " dinnerMap = "
+					+ dinnerMap.size());
+			Log.i("manikk", "breakfastCal = " + breakfastCal + " lunchCal = "
+					+ lunchCal + " dinnerCal = " + dinnerCal);
+		} catch (Exception e) {
+			Log.e("DietTrackerActivity", e.getMessage(), e);
+		}
+	}
+
+	private void resetAll() {
+		lunchKeyValues.clear();
+		breakFastKeyValues.clear();
+		dinnerKeyValues.clear();
+		breakFastMap.clear();
+		lunchMap.clear();
+		dinnerMap.clear();
+		breakfastCal = 0;
+		lunchCal = 0;
+		dinnerCal = 0;
+	}
+
+	protected int getTotalFoodCalories() {
+		setValues(getCurrentDate());
+		return breakfastCal + dinnerCal + lunchCal;
 	}
 }
