@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,6 +54,30 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		foodTrack = (RelativeLayout) findViewById(R.id.tracfoodlayout);
 		workoutTrack = (RelativeLayout) findViewById(R.id.trackworkoutlayout);
+		// RelativeLayout howHappyUR = (RelativeLayout)
+		// findViewById(R.id.how_happy_u_r);
+
+		foodTrack.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Log.i("manikk", "foodTrack");
+				Intent home = new Intent(context, DietTrackerFoodSearch.class);
+				home.putExtra("date", getCurrentDate());
+				startActivity(home);
+			}
+		});
+
+		workoutTrack.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Log.i("manikk", "workoutTrack");
+				Intent home = new Intent(context, WorkoutTrackerActivity.class);
+				startActivity(home);
+
+			}
+		});
 
 		/*
 		 * check new updates
@@ -63,27 +88,6 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		} catch (Exception e) {
 			Log.i("MavericHomeActivity", "Error in update app");
 
-			foodTrack.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View arg0) {
-					Intent home = new Intent(context,
-							DietTrackerFoodSearch.class);
-					home.putExtra("date", getCurrentDate());
-					startActivity(home);
-				}
-			});
-
-			workoutTrack.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View arg0) {
-					Intent home = new Intent(context,
-							WorkoutTrackerActivity.class);
-					startActivity(home);
-
-				}
-			});
 		}
 	}
 
@@ -123,6 +127,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		super.onResume();
 
 		setValue();
+			setImage(appPref.getHowHappyUR(getCurrentDate()));
 	}
 
 	private void setValue() {
@@ -160,6 +165,31 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			pbDiet.setIndeterminate(false);
 		} catch (Exception e) {
 			Log.e("kumar", "setvalue" + e.getMessage(), e);
+		}
+	}
+
+	private void setImage(int value) {
+		Log.i("manikk", "WorkSummeryActivity img= "+value);
+		ImageView selectedImg = (ImageView) findViewById(R.id.how_happy_img);
+
+		switch (value) {
+		case 1:
+			selectedImg.setBackgroundResource(R.drawable.normal);
+			break;
+		case 2:
+			Log.i("manikk", "WorkSummeryActivity case= "+value);
+			selectedImg.setBackgroundResource(R.drawable.smile);
+			break;
+		case 3:
+			selectedImg.setBackgroundResource(R.drawable.sad);
+			break;
+		case 4:
+			selectedImg.setBackgroundResource(R.drawable.angry);
+			break;
+
+		default:
+			selectedImg.setBackgroundResource(R.drawable.normal);
+			break;
 		}
 	}
 }

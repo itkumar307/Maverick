@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public abstract class MavericBaseActiity extends Activity {
 			dinnerMap = new HashMap<String, String[]>();
 	protected int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
 	protected Button home;
-
+	protected RelativeLayout howHappyUR;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,6 +55,7 @@ public abstract class MavericBaseActiity extends Activity {
 		metaBolic = (TextView) findViewById(R.id.metapolic_typing);
 		inter = (TextView) findViewById(R.id.intract);
 		home = (Button) findViewById(R.id.home_button);
+		howHappyUR = (RelativeLayout) findViewById(R.id.how_happy_u_r);
 		/* login Activity not use for nw via menu */
 		// member.setOnClickListener(new OnClickListener() {
 		//
@@ -120,6 +122,17 @@ public abstract class MavericBaseActiity extends Activity {
 					startActivity(home);
 				}
 			});
+		if(howHappyUR!=null)
+		howHappyUR.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.i("manikk", "howHappyUR");
+				Intent home = new Intent(context, HowHappyUR.class);
+				startActivity(home);
+
+			}
+		});
 	}
 
 	protected abstract void setContentToLayout();

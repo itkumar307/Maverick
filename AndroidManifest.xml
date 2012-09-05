@@ -1,66 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.maveric"
-    android:versionCode="1"
-    android:versionName="1.0" >
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.maveric"
+	android:versionCode="1"
+	android:versionName="1.0">
 
-    <uses-sdk android:minSdkVersion="8" />
+	<uses-sdk android:minSdkVersion="8" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <application
-        android:icon="@drawable/iphone_icon"
-        android:label="@string/app_name" >
-        <activity
-            android:name=".LoginOnlyActivity"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+	<application
+		android:icon="@drawable/iphone_icon"
+		android:label="@string/app_name">
+		<activity
+			android:name=".LoginOnlyActivity"
+			android:label="@string/app_name"
+			android:windowSoftInputMode="stateHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <provider
-            android:name="com.maveric.contentprovider.FavoriteProvider"
-            android:authorities="com.maveric.contentprovider.FavoriteProvider" />
-        <activity
-            android:name=".metabolicQueries"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticPageMainActivity"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".WorkSummeryActivity"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticStressManagement"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticKnowYourBasic"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticWhyMaverick"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticStrengthBasic"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".StaticWarmUp"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
-        <activity
-            android:name=".WorkoutTrackerSaveActivity"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<provider
+			android:name="com.maveric.contentprovider.FavoriteProvider"
+			android:authorities="com.maveric.contentprovider.FavoriteProvider" />
+		<activity
+			android:name=".metabolicQueries"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticPageMainActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".WorkSummeryActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticStressManagement"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticKnowYourBasic"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticWhyMaverick"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticStrengthBasic"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".StaticWarmUp"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".WorkoutTrackerSaveActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
 		<provider
 			android:name=".contentprovider.WorkoutProvider"
 			android:authorities="com.maveric.WorkoutProvider" />
@@ -100,21 +101,24 @@
 			android:windowSoftInputMode="stateHidden">
 		</activity>
 		<activity
-            android:name=".DietTrackerActivity"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-        <activity
-            android:name=".DietTrackerAddActivity"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-        <activity
-            android:name=".DietTrackerFoodSearch"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
-          <activity
-            android:name=".DietTrackerResultActivity"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
+			android:name=".DietTrackerActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".DietTrackerAddActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".DietTrackerFoodSearch"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".DietTrackerResultActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		<activity
+			android:name=".HowHappyUR"
+			android:windowSoftInputMode="stateHidden"></activity>
 	</application>
 
 </manifest>

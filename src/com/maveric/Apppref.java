@@ -128,4 +128,13 @@ public class Apppref {
 	public String getPasswordonly() {
 		return appSharedPrefs.getString(PASSWORDOnly, "demo");
 	}
+
+	public void setHowHappyUR(String date, int selectedToy) {
+		prefsEditor.putInt(date, selectedToy);
+		prefsEditor.commit();
+	}
+
+	public int getHowHappyUR(String date) {
+		return appSharedPrefs.getInt(date, 0);
+	}
 }
