@@ -18,6 +18,7 @@ import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.WorkOutTrackerTable;
 
 public class FoodProvider extends ContentProvider {
+	public static final String FOOD_DB = "ConsumerDB";
 	private MaverickHelper database;
 	private static final int INSERT_FOOD_DETAILS = 1;
 	private static final int FOOD_BY_DATE_AND_TIMING = 2;
@@ -53,7 +54,7 @@ public class FoodProvider extends ContentProvider {
 
 	@Override
 	public boolean onCreate() {
-		database = new MaverickHelper(getContext());
+		database = new MaverickHelper(getContext(),FOOD_DB);
 		return true;
 	}
 

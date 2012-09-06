@@ -18,6 +18,7 @@ import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
 
 public class ExceriseProvider extends ContentProvider {
+	public static final String WORKOUT_DB = "WorkoutDB";
 	private MaverickHelper database;
 	public static final String PROVIDER_NAME = "com.maveric.exceriseprovider";
 	public static final Uri BASE_URI = Uri.parse("content://" + PROVIDER_NAME);
@@ -55,7 +56,7 @@ public class ExceriseProvider extends ContentProvider {
 
 	@Override
 	public boolean onCreate() {
-		database = new MaverickHelper(getContext());
+		database = new MaverickHelper(getContext(),WORKOUT_DB);
 		return true;
 	}
 

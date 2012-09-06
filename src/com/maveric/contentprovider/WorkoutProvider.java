@@ -16,6 +16,7 @@ import com.maveric.database.MaverickHelper;
 import com.maveric.database.model.WorkOutTrackerTable;
 
 public class WorkoutProvider extends ContentProvider {
+	public static final String WORKOUT_DB = "WorkoutDB";
 	private MaverickHelper database;
 	private static final int GET_WORKOUT_DETAILS = 1;
 	private static final int INSERT_WORKOUT_DETAILS = 2;

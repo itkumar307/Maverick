@@ -21,15 +21,20 @@ import com.maveric.database.model.WorkOutTrackerTable;
 
 public class MaverickHelper extends SQLiteOpenHelper {
 
-	public static final String DATABASE_NAME = "ConsumerDB";
+	
 	public static final int DATABASE_VERSION = 1;
+	
 	public Context ctx;
-	public MaverickHelper(Context context) {
+	public MaverickHelper(Context context){
+		super(context, "sudden", null, DATABASE_VERSION);
+	}
+	
+	public MaverickHelper(Context context,String DATABASE_NAME) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		ctx = context;
-		if (!isModelDBExists()) {
+		if (!isModelDBExists(DATABASE_NAME)) {
 			try {
-				copyDataBase();
+				copyDataBase(DATABASE_NAME);
 			} catch (IOException e) {
 				Log.e("tag",
 						"Error copying model database", e);
@@ -40,7 +45,7 @@ public class MaverickHelper extends SQLiteOpenHelper {
 					"Initial model database is created");
 		}
 	}
-	private void copyDataBase() throws IOException {
+	private void copyDataBase(String DATABASE_NAME) throws IOException {
 		InputStream myInput = ctx.getAssets().open(DATABASE_NAME);
 		File db = ctx.getDatabasePath(DATABASE_NAME);
 		if (!db.exists()) {
@@ -62,7 +67,7 @@ public class MaverickHelper extends SQLiteOpenHelper {
 		myInput.close();
 	}
 
-	private boolean isModelDBExists() {
+	private boolean isModelDBExists(String DATABASE_NAME) {
 
 		SQLiteDatabase checkDB = null;
 		boolean exist = false;
@@ -97,7 +102,6 @@ public class MaverickHelper extends SQLiteOpenHelper {
 			WorkOutTrackerTable.onCreate(database);
 			WaterTracker.onCreate(database);
 			DietTracker.onCreate(database);
-			ExceriseValue.onCreate(database);
 			FoodTrackerTable.onCreate(database);
 			//FoodTable.onCreate(database);
 			FavWorkoutTracterTable.onCreate(database);

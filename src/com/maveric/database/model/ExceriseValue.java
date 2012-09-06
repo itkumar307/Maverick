@@ -1,10 +1,11 @@
 package com.maveric.database.model;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class ExceriseValue {
 
-	public static final String TABLE = "excerise";
+	public static final String TABLE = "workoutdb";
 
 	public static class Column {
 		public static final String _ID = "_id";
@@ -39,12 +40,14 @@ public class ExceriseValue {
 			+ " TEXT DEFAULT \'0\' ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
-		database.execSQL(DATABASE_CREATE);
+		//database.execSQL(DATABASE_CREATE);
 	}
 
 	public static void onUpgrade(SQLiteDatabase database, int oldVersion,
 			int newVersion) {
-
+		Log.i("kumar", "Upgrading database from version " + oldVersion + " to "
+				+ newVersion
+				+ ", which will destroy all old data in the table " + TABLE);
 		// TODO Version check has to done here to avoid old version database
 		// crack while upgrading new version database
 	}
