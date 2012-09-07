@@ -70,13 +70,8 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					if (!new Apppref(context).isQueriesAlreadyAnswerd())
-						metabolicQueries();
-					else {
-						Intent metabolicChart = new Intent(context,
-								MetobolicChartActivity.class);
-						startActivity(metabolicChart);
-					}
+					Intent queries = new Intent(context, Queries.class);
+					startActivity(queries);
 				}
 			});
 			inter.setOnClickListener(new OnClickListener() {

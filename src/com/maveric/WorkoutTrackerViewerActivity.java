@@ -59,7 +59,10 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 			public void onClick(View v) {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
-					prof.putExtra("url", getString(R.string.WORKOUT_API));
+					prof.putExtra("url", getString(R.string.HTTP)
+							+ getString(R.string.HTTP_DOMAIN)
+							+ getString(R.string.HTTP_SUB)
+							+ getString(R.string.HTTP_WORKOUT));
 					prof.putExtra("title", "Workout");
 					startActivity(prof);
 				} else

@@ -42,7 +42,10 @@ public class DietTrackerActivity extends MavericBaseActiity {
 			public void onClick(View v) {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
-					prof.putExtra("url", getString(R.string.FOOD_API));
+					prof.putExtra("url", getString(R.string.HTTP)
+							+ getString(R.string.HTTP_DOMAIN)
+							+ getString(R.string.HTTP_SUB)
+							+ getString(R.string.HTTP_FOOD));
 					prof.putExtra("title", "Diet");
 					startActivity(prof);
 				} else

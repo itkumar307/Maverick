@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.webkit.HttpAuthHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,11 +22,11 @@ public class Webview extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Apppref app = new Apppref(context);
+		final Apppref app = new Apppref(context);
 		Bundle web = getIntent().getExtras();
 		loding(web.getString("title"), 2000);
-		String url = "http://" + app.getUserNameOnly() + ":"
-				+ app.getPasswordonly() + web.getString("url");
+		String url = web.getString("url");
+		Log.i("manikk", url);
 		try {
 			webView = (WebView) findViewById(R.id.webview);
 			webView.getSettings().setJavaScriptEnabled(true);
@@ -40,9 +41,10 @@ public class Webview extends MavericBaseActiity {
 			});
 			webView.setWebViewClient(new WebViewClient() {
 				@Override
-				public void onReceivedError(WebView view, int errorCode,
-						String description, String failingUrl) {
-					// Handle the error
+				public void onReceivedHttpAuthRequest(WebView view,
+						HttpAuthHandler handler, String host, String realm) {
+					handler.proceed(app.getUserNameOnly(),
+							app.getPasswordonly());
 				}
 
 				@Override

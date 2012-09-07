@@ -623,13 +623,12 @@
 	</string>
 	<string name="METABOLIC_QUERIES">Metapolic Queries</string>
 	<string name="WORKIN_QUERIES">Workin and workout Queries</string>
-	<string name="PROFILE_API">122.165.9.41/app/WS/web/app.php/user/profile </string>
-	<string name="FOOD_API">192.168.1.109:8888/kmm/web/app_dev.php/user/food/add
-	</string>
-	<string name="WORKOUT_API">192.168.1.109:8888/kmm/web/app_dev.php/user/excersice/add</string>
-	<string name="HTTP">http://</string>
+    	<string name="HTTP">http://</string>
 	<string name="HTTP_DOMAIN">122.165.9.41</string> 
 	<string name="HTTP_SUB">/app/WS/web/app.php/</string> 
 	<string name="HTTP_USER_LOGIN">reg/login/</string>  
-	<string name="HTTP_USER_ADD">reg/add/</string>     
+	<string name="HTTP_USER_ADD">reg/add/</string>    
+	<string name="HTTP_PROFILE">user/profile</string> 
+	<string name="HTTP_FOOD">user/food/add</string>
+	<string name="HTTP_WORKOUT">user/excersice/add</string>
 </resources>

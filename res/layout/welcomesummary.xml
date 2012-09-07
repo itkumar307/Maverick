@@ -12,8 +12,8 @@
 		android:layout_height="wrap_content">
 
 		<ImageView
-			android:layout_width="100dp"
-			android:layout_height="35dp"
+			android:layout_width="150dp"
+			android:layout_height="50dp"
 			android:layout_alignParentRight="true"
 			android:layout_marginRight="20dp"
 			android:layout_marginTop="10dp"
@@ -47,6 +47,7 @@
 				<Button
 					android:id="@+id/profile"
 					android:layout_margin="10dip"
+					android:layout_below="@+id/welcometext"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_alignParentRight="true"

@@ -18,17 +18,10 @@
 			android:layout_alignParentLeft="true"
 			android:layout_marginLeft="5dip"
 			android:text="Home"></Button>
-		<Button
-            android:id="@+id/user_food"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/home_button"
-            android:layout_marginLeft="5dip"
-            android:text="Your Food"></Button>
 		<ImageView
 			android:id="@+id/img"
-			android:layout_width="100dp"
-			android:layout_height="35dp"
+			android:layout_width="150dp"
+			android:layout_height="50dp"
 			android:layout_alignParentRight="true"
 			android:background="@drawable/maveric_logo" />
 	</RelativeLayout>
@@ -45,6 +38,13 @@
 			android:layout_marginLeft="-10dp"
 			android:layout_height="wrap_content"
 			android:src="@drawable/diet_trcker_side" />
+		  <Button
+            android:id="@+id/user_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/workout_tracker_side"
+            android:layout_marginLeft="5dip"
+            android:text="Your Food"></Button>
 
 		<ImageView
 			android:id="@+id/add_diet"

@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 import com.maveric.contentprovider.WorkoutProvider;
 import com.maveric.database.model.WorkOutTrackerTable;
-import com.maveric.util.MUpdateClient;
 
 public class WorkSummeryActivity extends MavericBaseActiity {
 	Cursor Wrktoday;
@@ -62,7 +61,14 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			public void onClick(View v) {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
-					prof.putExtra("url", getString(R.string.PROFILE_API));
+					Log.i("manikk", "profile = " + getString(R.string.HTTP)
+							+ getString(R.string.HTTP_DOMAIN)
+							+ getString(R.string.HTTP_SUB)
+							+ getString(R.string.HTTP_PROFILE));
+					prof.putExtra("url", getString(R.string.HTTP)
+							+ getString(R.string.HTTP_DOMAIN)
+							+ getString(R.string.HTTP_SUB)
+							+ getString(R.string.HTTP_PROFILE));
 					prof.putExtra("title", "profile");
 					startActivity(prof);
 				} else
@@ -99,8 +105,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		 * check new updates
 		 */
 		try {
-//			MUpdateClient mc = new MUpdateClient();
-//			mc.insertNewDataIfAvailabe(context);
+			// MUpdateClient mc = new MUpdateClient();
+			// mc.insertNewDataIfAvailabe(context);
 		} catch (Exception e) {
 			Log.i("MavericHomeActivity", "Error in update app");
 
