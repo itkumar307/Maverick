@@ -94,7 +94,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					loding("Loding");
+					loding("Loding",1000);
 					Intent home = new Intent(context, WorkSummeryActivity.class)
 							.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -165,14 +165,14 @@ public abstract class MavericListBaseActiity extends ListActivity {
 		startActivity(singup);
 	}
 
-	protected void loding(String title) {
+	protected void loding(String title, final int time) {
 		progressDialog = ProgressDialog.show(MavericListBaseActiity.this, title
 				+ "...", "your request is Processing");
 
 		new Thread() {
 			public void run() {
 				try {
-					sleep(1000);
+					sleep(time);
 				} catch (Exception e) {
 					if (progressDialog != null) {
 						progressDialog.dismiss();

@@ -4,20 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.maveric.contentprovider.FoodProvider;
-import com.maveric.database.model.FoodTrackerTable;
-import com.maveric.enums.foodTiming;
 
 public class DietTrackerActivity extends MavericBaseActiity {
 
@@ -50,6 +43,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
 					prof.putExtra("url", getString(R.string.FOOD_API));
+					prof.putExtra("title", "Diet");
 					startActivity(prof);
 				} else
 					toast(getString(R.string.NO_INTERNET_CONNECTION));
@@ -76,7 +70,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				loding("Loding");
+				loding("Loding", 1000);
 				Intent search = new Intent(context, DietTrackerFoodSearch.class);
 				search.putExtra("date", dateText.getText().toString());
 				startActivity(search);
@@ -119,7 +113,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	private void gotoResultActivity(HashMap<String, String[]> map,
 			ArrayList<String> list, String title) {
-		loding("Loding");
+		loding("Loding", 1000);
 		Intent result = new Intent(this, DietTrackerResultActivity.class);
 		result.putExtra("map", map);
 		result.putStringArrayListExtra("keys", list);

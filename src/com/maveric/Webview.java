@@ -21,8 +21,11 @@ public class Webview extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Apppref app = new Apppref(context);
 		Bundle web = getIntent().getExtras();
-		String url = "http://new:new@" + web.getString("url");
+		loding(web.getString("title"), 2000);
+		String url = "http://" + app.getUserNameOnly() + ":"
+				+ app.getPasswordonly() + web.getString("url");
 		try {
 			webView = (WebView) findViewById(R.id.webview);
 			webView.getSettings().setJavaScriptEnabled(true);

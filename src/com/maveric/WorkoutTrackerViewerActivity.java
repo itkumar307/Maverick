@@ -60,6 +60,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
 					prof.putExtra("url", getString(R.string.WORKOUT_API));
+					prof.putExtra("title", "Workout");
 					startActivity(prof);
 				} else
 					toast(getString(R.string.NO_INTERNET_CONNECTION));
@@ -103,7 +104,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				loding("Loding");
+				loding("Loding",1000);
 				Intent addData = new Intent(context,
 						WorkoutTrackerActivity.class);
 				startActivity(addData);

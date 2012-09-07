@@ -68,7 +68,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 			public void onClick(View v) {
 
 				showFavourite.setVisibility(View.GONE);
-				loding("Loding");
+				loding("Loding", 1000);
 				LinearLayout exceriseBlock = (LinearLayout) findViewById(R.id.exceriseblock);
 				exceriseBlock.setVisibility(View.GONE);
 
@@ -89,7 +89,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
 				String searchData = searchText.getText().toString();
-				loding("Loding");
+				loding("Loding", 1000);
 				if (!TextUtils.isEmpty(searchData)) {
 
 					Uri name = Uri.withAppendedPath(

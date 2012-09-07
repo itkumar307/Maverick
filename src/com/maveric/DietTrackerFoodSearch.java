@@ -67,7 +67,7 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 
 		final Cursor foodList = managedQuery(uri, null, null, null, null);
 		Log.i("manikk", "search list count = " + foodList.getCount());
-		loding("Loding");
+		loding("Loding", 1000);
 		ListView list = getListView();
 		list.setAdapter(new SimpleCursorAdapter(DietTrackerFoodSearch.this,
 				R.layout.data_select_input_cardatat, foodList,

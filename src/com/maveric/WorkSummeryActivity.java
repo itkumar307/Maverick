@@ -63,6 +63,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 				if (isNetworkAvailable()) {
 					Intent prof = new Intent(context, Webview.class);
 					prof.putExtra("url", getString(R.string.PROFILE_API));
+					prof.putExtra("title", "profile");
 					startActivity(prof);
 				} else
 					toast(getString(R.string.NO_INTERNET_CONNECTION));
