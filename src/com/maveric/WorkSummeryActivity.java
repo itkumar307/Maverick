@@ -83,8 +83,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		 * check new updates
 		 */
 		try {
-			MUpdateClient mc = new MUpdateClient();
-			mc.insertNewDataIfAvailabe(context);
+//			MUpdateClient mc = new MUpdateClient();
+//			mc.insertNewDataIfAvailabe(context);
 		} catch (Exception e) {
 			Log.i("MavericHomeActivity", "Error in update app");
 

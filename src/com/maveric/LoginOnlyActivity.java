@@ -1,12 +1,20 @@
 package com.maveric;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+
+import com.maveric.util.SUtil;
+import com.maveric.util.WSclient;
 
 public class LoginOnlyActivity extends MavericBaseActiity {
 
@@ -19,6 +27,10 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 	private LinearLayout signInLayout, signUpLayout;
 	private Button signUp, signIn, ok, cancel;
 	private Apppref appPref;
+	Context ctx;
+	private ProgressDialog progressDialog;
+	String userNameString;
+	String passWordString;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,13 +40,13 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 		signIn = (Button) findViewById(R.id.signin_signin);
 		ok = (Button) findViewById(R.id.signup_ok);
 		cancel = (Button) findViewById(R.id.signup_cancel);
+		ctx = getApplicationContext();
 
 		final EditText userNameIn = (EditText) findViewById(R.id.signin_user_name);
 		final EditText passWordIn = (EditText) findViewById(R.id.signin_password);
 		final EditText userNameUp = (EditText) findViewById(R.id.signup_user_name);
 		final EditText passWordUp = (EditText) findViewById(R.id.signup_password);
 		final EditText conformPwdUp = (EditText) findViewById(R.id.signup_confrm_pwd);
-		final EditText emailIdUp = (EditText) findViewById(R.id.signup_email_id);
 
 		signInLayout = (LinearLayout) findViewById(R.id.signinlayout);
 		signUpLayout = (LinearLayout) findViewById(R.id.signuplayout);
@@ -47,25 +59,47 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				String userNameString = userNameIn.getText().toString();
-				String passWordString = passWordIn.getText().toString();
+				userNameString = userNameIn.getText().toString();
+				passWordString = passWordIn.getText().toString();
 
-				if (userNameString.length() > 0 && passWordString.length() > 0) {
-
-					if (appPref.getUserNameOnly().equalsIgnoreCase(
-							userNameString)
-							&& appPref.getPasswordonly().equalsIgnoreCase(
-									passWordString)) {
-						appPref.setSignInOnly(true);
-						gotoHomeActivity();
-					} else {
-						toast("Hey Your userName and password didnt match");
-						userNameIn.setText("");
-						passWordIn.setText("");
-					}
-				} else {
+				if (!isAllFilled(userNameString, passWordString, "checkdata")) {
 					toast("Hey Please fill all fields");
+					return;
 				}
+
+				if (!SUtil.hasRegularExpressionMatch(
+						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
+						userNameString)) {
+					toast("Hey enter valid email address!!!");
+					return;
+				}
+
+				if (!isNetworkAvailable()) {
+					toast("Hey Please check your internet connection");
+					return;
+				}
+				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
+						"Loading...", "Wait a few sec your data is checking");
+				new Thread() {
+					public void run() {
+						try {
+							String registerUrl = "http://192.168.1.109:8888/kmm/web/app_dev.php/reg/login/"
+									+ userNameString + "/" + passWordString;
+							WSclient registerResponse = new WSclient(
+									registerUrl, ctx);
+							registerResponse.getMeta();
+							if (registerResponse.isApiCallSuccessful()) {
+								handlerMsg.sendEmptyMessage(3);
+							} else {
+								handlerMsg.sendEmptyMessage(2);
+							}
+						} catch (Exception e) {
+							Log.i("kumar", "loginerror" + e.getMessage(), e);
+							handlerMsg.sendEmptyMessage(1);
+
+						}
+					}
+				}.start();
 			}
 		});
 
@@ -91,12 +125,12 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 		ok.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String userNameString = userNameUp.getText().toString();
-				String emailIdString = emailIdUp.getText().toString();
-				String passWordString = passWordUp.getText().toString();
+
+				userNameString = userNameUp.getText().toString();
+				passWordString = passWordUp.getText().toString();
 				String conformPassString = conformPwdUp.getText().toString();
 
-				if (isAllFilled(userNameString, emailIdString, passWordString,
+				if (isAllFilled(userNameString, passWordString,
 						conformPassString)) {
 					if (!checkPassWord(passWordString, conformPassString)) {
 						toast("Hey Password is didnot match please five once again");
@@ -104,22 +138,75 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 						conformPwdUp.setText(" ");
 						return;
 					}
-					appPref.setUserNameOnly(userNameString);
-					appPref.setPasswordonly(passWordString);
-					appPref.setSignInOnly(true);
-					gotoHomeActivity();
-
-//					signUpLayout.setVisibility(View.GONE);
-//					signInLayout.setVisibility(View.VISIBLE);
 
 				} else {
 					toast("Hey Please fill all fields");
+					return;
 				}
 
+				if (!SUtil.hasRegularExpressionMatch(
+						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
+						userNameString)) {
+
+					toast("Hey enter valid email address!!!");
+					return;
+				}
+
+				if (!isNetworkAvailable()) {
+					toast("Hey Please check your internet connection");
+					return;
+				}
+
+				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
+						"Loading...", "Wait a few sec your data is saving");
+				new Thread() {
+					public void run() {
+						try {
+							String registerUrl = "http://192.168.1.109:8888/kmm/web/app_dev.php/reg/add/"
+									+ userNameString + "/" + passWordString;
+							WSclient registerResponse = new WSclient(
+									registerUrl, ctx);
+							registerResponse.getMeta();
+							if (registerResponse.isApiCallSuccessful()) {
+								handlerMsg.sendEmptyMessage(3);
+							} else {
+								handlerMsg.sendEmptyMessage(0);
+							}
+						} catch (Exception e) {
+							Log.i("kumar", "loginerror" + e.getMessage(), e);
+							handlerMsg.sendEmptyMessage(1);
+
+						}
+					}
+				}.start();
 			}
 		});
 
 	}
+
+	Handler handlerMsg = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			progressDialog.dismiss();
+			switch (msg.what) {
+			case 0:
+				toast("ID is duplicate.Please will you go ahead using another ID");
+				break;
+			case 1:
+				toast("oh Sorry got unexpectedcondition please try some time");
+				break;
+			case 2:
+				toast("Hey username and password is not matched");
+				break;
+			case 3:
+				appPref.setUserNameOnly(userNameString);
+				appPref.setPasswordonly(passWordString);
+				appPref.setSignInOnly(true);
+				gotoHomeActivity();
+				break;
+			}
+		}
+	};
 
 	protected boolean checkPassWord(String passWordString,
 			String conformPassString) {
@@ -129,10 +216,8 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 		return false;
 	}
 
-	private Boolean isAllFilled(String first, String second, String third,
-			String Fourth) {
-		if (first.length() > 0 && second.length() > 0 && third.length() > 0
-				&& Fourth.length() > 0)
+	private Boolean isAllFilled(String first, String third, String Fourth) {
+		if (first.length() > 0 && third.length() > 0 && Fourth.length() > 0)
 			return true;
 		else
 			return false;

@@ -31,7 +31,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dip"
-                android:inputType="text" />
+                 android:inputType="textEmailAddress"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,20 +98,6 @@
 
             <EditText
                 android:id="@+id/signup_user_name"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dip"
-                android:inputType="text" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dip"
-                android:text="@string/EMAIL_ID"
-                android:textColor="@color/login_page_content_text_color" />
-
-            <EditText
-                android:id="@+id/signup_email_id"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dip"
