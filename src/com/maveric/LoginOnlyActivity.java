@@ -83,7 +83,14 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				new Thread() {
 					public void run() {
 						try {
-							String registerUrl = "http://192.168.1.109:8888/kmm/web/app_dev.php/reg/login/"
+							String registerUrl = ctx.getResources().getString(
+									R.string.HTTP)
+									+ ctx.getResources().getString(
+											R.string.HTTP_DOMAIN)
+									+ ctx.getResources().getString(
+											R.string.HTTP_SUB)
+									+ ctx.getResources().getString(
+											R.string.HTTP_USER_LOGIN)
 									+ userNameString + "/" + passWordString;
 							WSclient registerResponse = new WSclient(
 									registerUrl, ctx);
@@ -162,7 +169,14 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				new Thread() {
 					public void run() {
 						try {
-							String registerUrl = "http://192.168.1.109:8888/kmm/web/app_dev.php/reg/add/"
+							String registerUrl = ctx.getResources().getString(
+									R.string.HTTP)
+									+ ctx.getResources().getString(
+											R.string.HTTP_DOMAIN)
+									+ ctx.getResources().getString(
+											R.string.HTTP_SUB)
+									+ ctx.getResources().getString(
+											R.string.HTTP_USER_ADD)
 									+ userNameString + "/" + passWordString;
 							WSclient registerResponse = new WSclient(
 									registerUrl, ctx);
