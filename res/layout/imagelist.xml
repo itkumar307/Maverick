@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/allpage_side_page_color" >
+
+    <RelativeLayout
+        android:id="@+id/maveric_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/maveric_logo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/spinnerlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maveric_title" >
+
+        <Spinner
+            android:id="@+id/excerisespinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/excerise_array"
+            android:prompt="@string/excerise_prompt" >
+        </Spinner>
+
+        <RelativeLayout
+            android:id="@+id/weblayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/excerisespinner"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <WebView
+                android:id="@+id/exceriseimag"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="4dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/menu" />
+
+</RelativeLayout>

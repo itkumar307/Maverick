@@ -1,14 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-		<string-array
-				name="COUNT">
-				<item>1</item>
-				<item>2</item>
-				<item>3</item>
-				<item>4</item>
-				<item>5</item>
-				<item>6</item>
-				<item>7</item>
-				<item>8</item>
-		</string-array>
+
+    <string-array name="COUNT">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="excerise_array">
+        <item>Ab-crunch-machine</item>
+        <item>Ab-crunch with Mediball</item>
+        <item>Abdominal-bicycle</item>
+        <item>Arm-swing-ab-crunch</item>
+        <item>Back-Squats-Machine</item>
+        <item>Benchpress barbell</item>
+        <item>Bent-over-row</item>
+        <item>Bicep-curl-barbell</item>
+        <item>Bicep-curl-swissball</item>
+        <item>Bicep-hammer-curls</item>
+        <item>Bicep-stretch</item>
+        <item>Breathing-squats</item>
+        <item>Butt-Blaster</item>
+        <item>Chest-press-on -cable-machine</item>
+        <item>Cable-Tri-pushdown</item>
+        <item>calf-raise-single-leg</item>
+        <item>Cat-stretch</item>
+        <item>Chest-stretch</item>
+        <item>Dead-lift</item>
+        <item>Diagonal-lunges</item>
+        <item>Dog-bird</item>
+        <item>Dumbell-bent-arm-pull-over</item>
+        <item>Dumbell-front-raise</item>
+        <item>Dumbell-preacher-curl</item>
+        <item>Dumbell-shoulder-press</item>
+        <item>Dumbell-step-up</item>
+        <item>Flat-dumbell-chest-press</item>
+        <item>Flat-dumbell-flys</item>
+        <item>Gastrocnemius-stretch</item>
+        <item>Hip-Abduction</item>
+        <item>Hip-Adduction</item>
+        <item>Hip-extn-floor</item>
+        <item>Inclined-push-up</item>
+        <item>Inclined-chest-press</item>
+        <item>Inverted-row</item>
+        <item>Ironman</item>
+        <item>Lat-pulldown</item>
+        <item>Lateral-raise-dumbell</item>
+        <item>Lateral-raise-on-swissball</item>
+        <item>Leg-curl</item>
+        <item>Leg-extension</item>
+        <item>Leg-press</item>
+        <item>Leg-tuck</item>
+        <item>Lunge</item>
+        <item>Modified-Ironman</item>
+        <item>Modified-T-stand</item>
+        <item>Neck-ext-flexion</item>
+        <item>Neck-rotation</item>
+        <item>Oblique-crunches</item>
+        <item>One-arm-dumbell-row</item>
+        <item>One-arm-tricep-dumbell-ext</item>
+        <item>Overhead-tricep-on-swissball</item>
+        <item>Pelvic-bridging-one-leg</item>
+        <item>Pelvic-rock</item>
+        <item>Posterior-shoulder-stretch</item>
+        <item>Prone-cobra</item>
+        <item>Pullup-machine</item>
+        <item>Pushup-2</item>
+        <item>Reverse-curl-knees-bent</item>
+        <item>Reverse-curl-straight-leg</item>
+        <item>Seated Chest-press-machine</item>
+        <item>Seated-Row-machine</item>
+        <item>Shoulder-shrugs</item>
+        <item>Skier-twist</item>
+        <item>spinal-extn-floor</item>
+        <item>split-squats</item>
+        <item>squats</item>
+        <item>Squat-with-support</item>
+        <item>Squatting-lat-stretch</item>
+        <item>Standing-hamstring-stretch</item>
+        <item>Standing-Quads-stretch</item>
+        <item>Stepboard-modified-push-up</item>
+        <item>Step-calf-raise</item>
+        <item>Swissball-ab-crunch</item>
+        <item>Swissball-arm-leg-raise</item>
+        <item>Swissball-elbow-drive-modified</item>
+        <item>Swissball-lateral-roll</item>
+        <item>swissball-marching</item>
+        <item>Swissball-pelvic-bridging</item>
+        <item>80-Swissball-push-up</item>
+        <item>Swissball-reverse-hyper-extension</item>
+        <item>swissball Suppine-arm-leg-lift</item>
+        <item>T-stand</item>
+        <item>TA-activation</item>
+        <item>Tricep-towel-stretch</item>
+        <item>Tri-dip</item>
+        <item>Trunk-twist-excerball</item>
+        <item>Wall-squat-excerball</item>
+    </string-array>
+
 </resources>
