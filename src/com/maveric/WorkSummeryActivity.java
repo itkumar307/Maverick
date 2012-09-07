@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -54,6 +55,20 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		foodTrack = (RelativeLayout) findViewById(R.id.tracfoodlayout);
 		workoutTrack = (RelativeLayout) findViewById(R.id.trackworkoutlayout);
+		Button profile = (Button) findViewById(R.id.profile);
+		profile.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (isNetworkAvailable()) {
+					Intent prof = new Intent(context, Webview.class);
+					prof.putExtra("url", getString(R.string.PROFILE_API));
+					startActivity(prof);
+				} else
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
+
+			}
+		});
 		// RelativeLayout howHappyUR = (RelativeLayout)
 		// findViewById(R.id.how_happy_u_r);
 
@@ -127,7 +142,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		super.onResume();
 
 		setValue();
-			setImage(appPref.getHowHappyUR(getCurrentDate()));
+		setImage(appPref.getHowHappyUR(getCurrentDate()));
 	}
 
 	private void setValue() {
@@ -169,7 +184,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	}
 
 	private void setImage(int value) {
-		Log.i("manikk", "WorkSummeryActivity img= "+value);
+		Log.i("manikk", "WorkSummeryActivity img= " + value);
 		ImageView selectedImg = (ImageView) findViewById(R.id.how_happy_img);
 
 		switch (value) {
@@ -177,14 +192,17 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			selectedImg.setBackgroundResource(R.drawable.normal);
 			break;
 		case 2:
-			Log.i("manikk", "WorkSummeryActivity case= "+value);
+			Log.i("manikk", "WorkSummeryActivity case= " + value);
 			selectedImg.setBackgroundResource(R.drawable.smile);
 			break;
 		case 3:
 			selectedImg.setBackgroundResource(R.drawable.sad);
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.angry);
+			selectedImg.setBackgroundResource(R.drawable.normal_sad);
+			break;
+		case 5:
+			selectedImg.setBackgroundResource(R.drawable.very_smile);
 			break;
 
 		default:

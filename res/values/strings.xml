@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MavericActivity!</string>
-    <string name="app_name">Maveric</string>
-    <!-- Apppref string -->
-    <string name="APP_PREF_NAME">MavericAppPreferencesString</string>
-    <string name="LOGIN">LOGIN</string>
-    <string name="LOGIN_TITLE_TEXT">Please enter your physical statics in the fields
-		below</string>
-    <!-- login screen 2 -->
-    <string name="CURRENT_HEIGHT">Current height</string>
-    <string name="CURRENT_WEIGHT">Current Weight</string>
-    <string name="WAIST">Waist</string>
-    <string name="HIP">Hip</string>
-    <!-- all page -->
-    <string name="DUMMY_STRING">Lorem Ipsum is simply dummy text of the printing
+	<string name="hello">Hello World, MavericActivity!</string>
+	<string name="app_name">Maveric</string>
+	<!-- Apppref string -->
+	<string name="APP_PREF_NAME">MavericAppPreferencesString</string>
+	<string name="LOGIN">LOGIN</string>
+	<string name="LOGIN_TITLE_TEXT">Please enter your physical statics in the fields
+		below
+	</string>
+	<!-- login screen 2 -->
+	<string name="CURRENT_HEIGHT">Current height</string>
+	<string name="CURRENT_WEIGHT">Current Weight</string>
+	<string name="WAIST">Waist</string>
+	<string name="HIP">Hip</string>
+	<!-- all page -->
+	<string name="DUMMY_STRING">Lorem Ipsum is simply dummy text of the printing
 		and typesetting industry. Lorem Ipsum has been the industry s standard
-		dummy text ever since the 1500s,</string>
-    <!-- login screen 3 -->
-    <string name="TARGET_HEIGHT">Target height</string>
-    <string name="TARGET_WEIGHT">Target Weight</string>
-    <string name="TARGET_HIP">Target Hip</string>
-    <string name="CURRENT_BMI">Current BMI</string>
-    <!-- login screen 3 -->
-    <string name="MAVERIC_MEMBER">Maveric member</string>
-    <string name="MAVERIC_MEMBER_ID">Maveric Id</string>
-    <string name="WELCOME_LOGINSCREEN">Welcome to my Maverick,the on-the-go assistant for
+		dummy text ever since the 1500s,
+	</string>
+	<!-- login screen 3 -->
+	<string name="TARGET_HEIGHT">Target height</string>
+	<string name="TARGET_WEIGHT">Target Weight</string>
+	<string name="TARGET_HIP">Target Hip</string>
+	<string name="CURRENT_BMI">Current BMI</string>
+	<!-- login screen 3 -->
+	<string name="MAVERIC_MEMBER">Maveric member</string>
+	<string name="MAVERIC_MEMBER_ID">Maveric Id</string>
+	<string name="WELCOME_LOGINSCREEN">Welcome to my Maverick,the on-the-go assistant for
 		all your fitness needs.your workouts,your diet and your fitness
-		plans-all in the palm of your hand</string>
-    <string name="SIGNUP_LOGINSCREEN">To get started,enter your login details below</string>
-    <string name="USER_NAME">user name(Email-Id)</string>
-    <string name="EMAIL_ID">email id</string>
-    <string name="PASSWORD">password</string>
-    <string name="CONFORM_PWD">confirm password</string>
-    <string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
-    <string name="REQUIRE_FIELD_TOAST">Please fill all the values</string>
-    <!-- url -->
-    <string name="SERVERNAME">http://122.165.34.103</string>
-    <string name="RELATIVE_URL">/</string>
-    <string name="PROJECT_NAME">maveric/web/app_dev.php/</string>
-    <string name="PROFILE_SIGNUP_API">m/details/add</string>
-    <!-- signup failure -->
-    <string name="SIGNUP_FAILURE">Signup failure for due to some network problem
-		please try again later</string>
-    <!-- check internet connection -->
-    <string name="NO_INTERNET_CONNECTION">No internet connection Available</string>
-    <string name="EXCERISE_TYPE_DIALOG_HEAD"> Excerise Type</string>
-    <string name="CALORIES_DIALOG_HEAD"> Calories</string>
-    <string name="CENTIMETER">cm</string>
-    <string name="KILOGRAMS">kg</string>
-    <!-- introduction for Metabolic Typing Questionnaire -->
+		plans-all in the palm of your hand
+	</string>
+	<string name="SIGNUP_LOGINSCREEN">To get started,enter your login details below
+	</string>
+	<string name="USER_NAME">user name(Email-Id)</string>
+	<string name="EMAIL_ID">email id</string>
+	<string name="PASSWORD">password</string>
+	<string name="CONFORM_PWD">confirm password</string>
+	<string name="DIET_TRACKER_EDITBOX_HINT">enter the food you had today</string>
+	<string name="REQUIRE_FIELD_TOAST">Please fill all the values</string>
+	<!-- url -->
+	<string name="SERVERNAME">http://122.165.34.103</string>
+	<string name="RELATIVE_URL">/</string>
+	<string name="PROJECT_NAME">maveric/web/app_dev.php/</string>
+	<string name="PROFILE_SIGNUP_API">m/details/add</string>
+	<!-- signup failure -->
+	<string name="SIGNUP_FAILURE">Signup failure for due to some network problem
+		please try again later
+	</string>
+	<!-- check internet connection -->
+	<string name="NO_INTERNET_CONNECTION">No internet connection Available</string>
+	<string name="EXCERISE_TYPE_DIALOG_HEAD"> Excerise Type</string>
+	<string name="CALORIES_DIALOG_HEAD"> Calories</string>
+	<string name="CENTIMETER">cm</string>
+	<string name="KILOGRAMS">kg</string>
+	<!-- introduction for Metabolic Typing Questionnaire -->
 
-    <string name="INTRO_METABOLIC_QUES">This questionnaire is designed to help you
+	<string name="INTRO_METABOLIC_QUES">This questionnaire is designed to help you
 		determine the optimal macronutrient ratio (fats, proteins,
 		carbohydrates) to begin the process of fine-tuning your body’s
 		feedback mechanisms. For those of you who are not sure what a fat,
@@ -64,169 +69,564 @@
 		to this rule, such as nuts and avocados, which have no eyes, yet are
 		high fat foods.
 
-		When answering the questions, circle the answer that best describes the
-		way you feel, not the way you think you should eat! If none of the
-		answers suit you with regard to a particular question, simply don’t
-		answer that question. If answer A suits you some of the time (in the
-		morning but not the evening for example), and answer B suits you other
-		times, you may circle both provided that the answers refer to how you
-		may feel on any given day, not within a period of 24 hours.</string>
-    <string name="MATABOLIC_QUERIES_TITLE">Metabolic Typing Questionnaire</string>
+		When answering the questions, circle the answer that
+		best describes the
+		way you feel, not the way you think you should eat!
+		If none of the
+		answers suit you with regard to a particular question,
+		simply don’t
+		answer that question. If answer A suits you some of the
+		time (in the
+		morning but not the evening for example), and answer B
+		suits you other
+		times, you may circle both provided that the answers
+		refer to how you
+		may feel on any given day, not within a period of 24
+		hours.
+	</string>
 
-    <!-- food item input display string for number of items -->
-    <string name="FOOD_ITEM1">Item One</string>
-    <string name="FOOD_ITEM2">Item Two</string>
-    <string name="FOOD_ITEM3">Item Three</string>
-    <!-- no input given in food so we display some words in view place -->
-    <string name="NO_INPUT">No Input Given</string>
-    <string name="DIALOGMESSAGE">Are you sure you want to exit Maverick?</string>
+	<!-- introduction for workin Typing Questionnaire -->
+	<string name="INTRO_WORKIN_QUES">Life is paradox! On the one
 
-    <!-- stress management static value -->
+		hand \'Movement is
+		life!\'
+		So
 
-    <string name="streesmanagement1">Human beings can go without food for several days; but nobody can go without sleep! Our body keeps
-oscillating between a sympathetic and parasympathetic response right through the day. Your sympathetic
-response is your ‘fight or flight’ response - the one that makes you stressed and active. Not all stress is
-bad! We need a certain amount of stress and drive to keep us growing. But the periods of sympathetic
-dominance should be backed by enough periods of parasympathetic response time. Parasympathetic
-refers to the ‘rest and recoup’ response of the body.</string>
-    <string name="streesmanagement2"> It is the time for the daily routine work of the body -
-all your organs do their given jobs. However, if you go for long periods on a sympathetic dominant state,you are denying your body an opportunity to perform its daily routine work.
-Your sleeping hours are very important to ensure a healthy body. Your body takes its cues from the sun,
-like most living things on this planet. With the morning light, cortisol (the wake-up hormone) levels rise in
-the human body and, as the sun goes down, melatonin (the sleep hormone) levels rise. However, today’s
-lifestyle prompts many people to go to bed much later into the night. Your body does all physiological
-repairs between 10 PM and</string>
-    <string name="streesmanagement3">2 AM. From 2 AM to 6 AM is the time for psychological repairs. So, unless you perform meditation
-regularly, your body needs to rest from 10 PM to 6 AM to perform all its daily chores. Also, if you ensure
-that you perform some kind of meditative exercises or some passive rest periods like listening to music
-or painting during each day, you will be giving your body enough time to recoup from the ravages of daily
-stress.</string>
-    <string name="streesmanagement4">Breathing plays a very important role in ensuring your body gets enough oxygen. During times of stress,
-a deep breath will help calm your nerves. Take the effort to learn proper breathing techniques - not just
-when you exercise but right through your daily waking hours.
-Research shows that your DNA is nothing but potential that can get expressed only through the process
-of thinking. So, you should ensure that you always have positive thoughts. Counter any negative thinking
-with a positive approach.</string>
+		exercising is important.
 
-    <!-- know your basic -->
+		But equally true, the body
 
-    <string name="knowyour1">Physical fitness is to the human body what fine-tuning is to an engine. It enables us to perform up to
-our potential. Fitness can be described as a condition that helps us look, feel and do our best. More
-specifically, it is:<i>“The ability to perform daily tasks vigorously and alertly, with energy left over for enjoying leisure-time
-activities and meeting emergency demands. It is the ability to endure, to bear up, to withstand stress,
-to carry on in circumstances where an unfit person could not continue, and is a major basis of good
-health and well-being.” </i></string>
-    <string name="knowyour2">Physical fitness involves the performance of the heart and lungs, and the muscles of the body. And,
-since what we do with our bodies also affects what we can do with our minds, fitness influences to
-some degree qualities such as mental alertness and emotional stability. As you undertake your fitness
-program, it is important to remember that fitness is an individual quality that varies from person to
-person. It is influenced by age, sex, heredity, personal habits, exercise and eating practices. You cannot
-do anything about the first three factors; however, it is within your power to change and improve the
-others where needed. Physical fitness is most easily understood by examining its components:-</string>
-    <string name="knowyour3"><b>Cardio-Respiratory Endurance</b> - the ability to deliver oxygen and nutrients to tissues and to remove
-wastes over sustained periods of time. Long runs and swims are among the methods employed in
-measuring this component.<b>Muscular Strength</b> - the ability of a muscle to exert force for a brief period of time. Upper-body strength,
-for example, can be measured by various weight- lifting exercises.<b>Muscular Endurance </b>- the ability of a muscle, or a group of muscles, to sustain repeated contractions
-or to continue applying force against a fixed object. Pushups are often used to test endurance of arm
-and shoulder muscles.</string>
-    <string name="knowyour4"><b>Flexibility</b> - the ability to move joints and use muscles through their full range of motion.
-The sit-and-reach test is a good measure of flexibility of the lower back and the backs of the
-upper legs.<b>Body Composition</b> - is often considered a component of fitness. It refers to the makeup
-of the body in terms of lean mass (muscle, bone, vital tissue and organs) and fat mass. An
-optimal ratio of fat to lean mass is an indication of fitness, and the right types of exercise will
-help you decrease body fat and increase/maintain muscle mass.</string>
+		will
+		process every
+		stimuli
 
-    <!-- Why of Warming-up -->
-    <string name="warmup1"><b>The Warm-Up and Cool-Down</b>\nBefore you start strength training, do five minutes of any activity that uses the muscles you\'ll be
-exercising, such as riding a stationary bike to warm up your legs or rowing for an all-body workout.
-Another alternative is to do a few repetitions of the exercises you\’ll be doing later with lighter weights.
-Five to ten minutes should be enough to increase the temperature of your muscles, making them more
-flexible and less susceptible to injury. If your heart rate goes above 100 beats per minute after you
-workout with weights, and you plan to do some floor exercises such as sit-ups and leg lifts, you need a
-cool-down to keep from getting dizzy or faint. Walk around or pedal slowly on a stationary bike until your
-heart rate slows down. Otherwise, you donot need a cool-down; just go ahead and stretch your muscles.</string>
-    <string name="warmup2"><b>Full Warm-Up </b>\nThis usually involves doing some low-intensity cardio work for five to ten minutes until you break a sweat.
-It gets blood flowing and prepares the body for work to come. Some light stretching follows, and then a
-few light sets of whatever exercises are going to be done. Keep in mind not to do too much or it will affect
-your energy levels for the actual workout. This type of warm-up is particularly appropriate for novice,
-injured or older trainers, though anyone can use it.</string>
-    <string name="warmup3"><b>Light Set Warm-Up </b>\nThis involves doing a number of progressively heavier sets (starting lightly) of the exercise you are about
-to do. This prepares the specific muscle group for the work sets. Don\'t do too much here or your work
-sets will suffer. These light sets are often done before each new exercise, particularly if you are moving
-on to a different body part. If you are doing a different exercise for the same body part, a warm-up for that
-exercise is usually not necessary.</string>
-    <string name="warmup4">Limited Warm-UpThis type of warm-up is for advanced trainers only. Do a set of ten reps with 50% of the weight that
-you are going to be using for that exercise. That\'s it. Your body can be trained to work well with this
-type of limited warm-up. If you usually do an extended warm-up, work down to this level slowly. This
-method has the advantage of conserving energy for work sets. For exercises where you will be using
-low reps and very heavy weights (close to your maximum), you may want to do a low-rep progressive
-warm-up. For example, if you are doing deadlifts with 405 pounds, do 5 reps with one plate per side, 2
-reps with two plates, 1 rep with three plates, and maybe 1 rep with three and a quarter, if you feel you
-need it. This type of pyramid warm-up doesnot exhaust you but still prepares your body for heavy work.
-This type of warm-up is used when you go for a one-rep maximum attempt. It conditions your body to
-be able to handle sudden physical activity without injury.</string>
+		from the outer world only
 
-    <!-- why maverick -->
-    <string name="whymaverick1">Human beings are funny creatures. We know smoking is injurious to health and yet yield to the
-temptation. We understand exercising is good for wellness and yet need enormous motivation to be
-consistent. Well, it is not surprising for the very word exercise means ‘to exert energy’. With current
-lifestyle trends being stressful on various counts, an additional stress called ‘exercise’ does indeed
-need enormous external motivation. Looks like we need to redefine our fitness regime from one
-of ‘exerting energy’ to one of ‘energizing’ ourselves to be a human dynamo. As you probably know, a
-dynamo or an electric generator is where mechanical energy is converted into electric energy. I use
-this simile to say the purpose of a fitness program is justified only when the mechanical energy lost in
-exercise (or exertion) is converted into ‘electric’ energy here to energize the whole bodily functioning.</string>
-    <string name="whymaverick2">Else such exercise will have long term adverse repercussions.\n
-What gives humanity energy? Our personal primary source of energy is the food we eat. The very
-purpose of eating is to get energy though most often the food we eat drains away our energy. This is
-primarily because each individual has a unique biochemistry and need to identify what food actually
-provides you with energy. In order to identify your unique energy source in foods, Maverick has
-adapted Metabolic typing, a specialized system evolved by William Wolcott and advocated by the
-C.H.E.K institute. Our dietitians will help identify your metabolic type and suggest dietary charts that
-will energize you.</string>
-    <string name="whymaverick3">Another source of energy to the human body is the oxygen we inhale. Recently, scientists have found
-the dark side of oxygen - the free radicals that actually are responsible for aging. Proper breathing
-techniques have to be adapted not just while you exercise but always to ensure oxygen gives you the
-energy it is meant to give. Maverick teaches inhalation-exhalation techniques with every exercise that
-is performed.</string>
-    <string name="whymaverick4">What is the use of filling a bucket that has a hole in the bottom? Similarly, of what use will the energy
-generated be when there is a constant depletion by way of stress? In a mechanical world, by replacing
-one defective part, the whole machine will be rectified. But the human body is a holistic system
-of compensations. Be it emotional stress, physical stress, digestive stress, lack of sleep, parasite
-infection or any other form of disease, the body will simply process it as \‘stress\’. Unless this ‘hole’ at
-the bottom of the bucket is sealed, no point filling up the bucket. Maverick helps identify</string>
+		as a chemical process. So
 
-    <!-- strength basic -->
-    <string name="strength1">There are two reasons for the dwindling of strength in a healthy adult. One is the
-aging process - the number of muscle cells starts to decline after the age of 30. A
-far greater cause of fading vitality is the use-it-or-lose-it principle. However, there
-is ample evidence that strength loss is mostly reversible. Experts recommend that
-adults have at least two strength workouts each week, in addition to three sessions
-of aerobic exercise. You can restore loss of muscle function at almost any age by
-starting a strength-training program.</string>
-    <string name="strength2">Whatever muscle may be left at age 80 is just as responsive as it was at age 20. You just need to be
-sure that there is some left. No workout program would be complete without strength training. Although
-you need to do aerobics to keep your heart and lungs in good working order, you need to do resistance
-training to maintain your muscular strength and endurance, boost your metabolism and strengthen your
-bones.</string>
-    <string name="strength3">Maverick trainers will help you determine how much and how often to lift. In general, if you can\'t maintain
-good form for at least eight repetitions while lifting a weight, it\'s too heavy; and, if you can perform more
-than 12, it\'s too light. Schedule two to three strength training sessions a week, allowing a rest day in
-between sessions to give your muscles time to repair and recover. If you want to lift weights every day,
-work out your upper body (arms, shoulders and upper back) one day and your lower body (calves,
-gluteus muscles, hamstrings, quadriceps) the next.</string>
-    <string name="strength4">ifting weights can lift your spirits. A recent study found that strength training improved moods in people
-suffering from depression. It also seemed to help them sleep better. Other studies show that people
-tend to become more physically active once they start weight training; perhaps because their increased
-strength makes other activities easier to do and more enjoyable.
-It takes 3500 Kcal to burn one pound of fat and only 580 Kcal to burn one pound of muscle. So, if you
-starve your body without enough nutrition and do heavy cardio workouts alone, you are burning muscle
-tissue instead of fat. When the body feels threatened in such a manner, it will burn healthy tissue and
-store fat. This is why muscle training is the most important component of your fitness regime.</string>
+		it is
+		important to give
 
-    <!-- Regex for email -->
- <string name="EMAIL_ID_FORMAT_EXPRESSION">^\\s*[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\@[\\w\\-\\+_]+\\.[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\s*$</string>
-    <!-- authentication username and password -->
-    <string name="HTTP_ACCESSS_NAME">maveric</string>
-    <string name="HTTP_ACCESSS_PASSWORD">mavericpass</string>
+		time to the body to \'Rest
+
+		and recoup\' from the
+
+		ravages
+		of the day. That is
+
+		why in Maverick we insist
+
+		on working IN as
+		much as
+
+		working OUT.
+
+		The very word exercise
+
+		means to exert energy. You
+
+		can exert
+		energy only if
+
+		you have energy. So if
+
+		working out is a way of
+
+		exercising, working in is a
+
+		method of energy builiding.
+
+		Please take the
+		time to
+
+		learn the Zone exercises
+
+		recommended for you. These
+
+		are available
+		both in
+
+		pictorial cards as well as
+
+		videos on the touchscreen.
+
+		All
+		Maverick trainers are
+
+		equipped to teach you these
+
+		exercises.
+
+		When do you
+		work in and when
+
+		do you work out?
+
+		If you have been feeling
+
+		less energetic
+		in the last
+
+		few days, please take a few
+
+		minutes to answer the
+
+		following
+		questions BEFORE
+
+		you begin your work out!
+	</string>
+	<string name="MATABOLIC_QUERIES_TITLE">Metabolic Typing Questionnaire</string>
+	<!-- result of WORKIN_QUES -->
+	<string name="YES_4">DO NOY EXERCISE TODAY!</string>
+	<string name="YES_3"> DO NOT DO any strenuous Cardio or heavy lifting!
+	</string>
+	<string name="YES_2">Take a few moments to perform some Work-In
+		exercises before you begin Work-Out.
+	</string>
+	<string name="YES_1">Listen to your body! If you feel the issue is only
+		transient, try to address it before going full throttle with your
+		exercise routine.
+	</string>
+
+	<!-- food item input display string for number of items -->
+	<string name="FOOD_ITEM1">Item One</string>
+	<string name="FOOD_ITEM2">Item Two</string>
+	<string name="FOOD_ITEM3">Item Three</string>
+	<!-- no input given in food so we display some words in view place -->
+	<string name="NO_INPUT">No Input Given</string>
+	<string name="DIALOGMESSAGE">Are you sure you want to exit Maverick?</string>
+
+	<!-- stress management static value -->
+
+	<string name="streesmanagement1">Human beings can go without food for several days;
+		but nobody can go without sleep! Our body keeps
+		oscillating between a
+		sympathetic and parasympathetic response right through the
+		day. Your
+		sympathetic
+		response is your ‘fight or flight’ response - the one that
+		makes you stressed
+		and active. Not all stress is
+		bad! We need a certain
+		amount of stress and drive to keep us growing. But
+		the periods of
+		sympathetic
+		dominance should be backed by enough periods of
+		parasympathetic response time.
+		Parasympathetic
+		refers to the ‘rest and
+		recoup’ response of the body.
+	</string>
+	<string name="streesmanagement2"> It is the time for the daily routine work of the
+		body -
+		all your organs do their given jobs. However, if you go for long
+		periods
+		on a sympathetic dominant state,you are denying your body an
+		opportunity to perform its daily routine work.
+		Your sleeping hours are
+		very important to ensure a healthy body. Your body
+		takes its cues from
+		the sun,
+		like most living things on this planet. With the morning
+		light, cortisol
+		(the wake-up hormone) levels rise in
+		the human body and,
+		as the sun goes down, melatonin (the sleep hormone)
+		levels rise.
+		However, today’s
+		lifestyle prompts many people to go to bed much later
+		into the night. Your body
+		does all physiological
+		repairs between 10 PM
+		and
+	</string>
+	<string name="streesmanagement3">2 AM. From 2 AM to 6 AM is the time for
+		psychological repairs. So, unless you perform meditation
+		regularly,
+		your body needs to rest from 10 PM to 6 AM to perform all its daily
+		chores. Also, if you ensure
+		that you perform some kind of meditative
+		exercises or some passive rest
+		periods like listening to music
+		or
+		painting during each day, you will be giving your body enough time to
+		recoup from the ravages of daily
+		stress.
+	</string>
+	<string name="streesmanagement4">Breathing plays a very important role in ensuring
+		your body gets enough oxygen. During times of stress,
+		a deep breath
+		will help calm your nerves. Take the effort to learn
+		proper breathing
+		techniques - not just
+		when you exercise but right through your daily
+		waking hours.
+		Research shows that your DNA is nothing but potential
+		that can get expressed
+		only through the process
+		of thinking. So, you
+		should ensure that you always have positive
+		thoughts. Counter any
+		negative thinking
+		with a positive approach.
+	</string>
+
+	<!-- know your basic -->
+
+	<string name="knowyour1">
+		Physical fitness is to the human body what fine-tuning is to an
+		engine. It enables us to perform up to
+		our potential. Fitness can be
+		described as a condition that helps us
+		look, feel and do our best. More
+		specifically, it is:
+		<i>“The ability to perform daily tasks vigorously and alertly, with
+			energy left over for enjoying leisure-time
+			activities and meeting
+			emergency demands. It is the ability to endure, to bear
+			up, to
+			withstand stress,
+			to carry on in circumstances where an unfit person
+			could not continue,
+			and is a major basis of good
+			health and
+			well-being.”
+		</i>
+	</string>
+	<string name="knowyour2">Physical fitness involves the performance of the
+		heart and lungs, and the muscles of the body. And,
+		since what we do
+		with our bodies also affects what we can do with our
+		minds, fitness
+		influences to
+		some degree qualities such as mental alertness and
+		emotional stability. As
+		you undertake your fitness
+		program, it is
+		important to remember that fitness is an individual quality
+		that varies
+		from person to
+		person. It is influenced by age, sex, heredity, personal
+		habits, exercise and
+		eating practices. You cannot
+		do anything about the
+		first three factors; however, it is within your
+		power to change and
+		improve the
+		others where needed. Physical fitness is most easily
+		understood by examining
+		its components:-
+	</string>
+	<string name="knowyour3">
+		<b>Cardio-Respiratory Endurance</b>
+		- the ability to deliver oxygen and nutrients to tissues and to remove
+		wastes over sustained periods of time. Long runs and swims are among
+		the methods employed in
+		measuring this component.
+		<b>Muscular Strength</b>
+		- the ability of a muscle to exert force for a brief period of time.
+		Upper-body strength,
+		for example, can be measured by various weight-
+		lifting exercises.
+		<b>Muscular Endurance </b>
+		- the ability of a muscle, or a group of muscles, to sustain repeated
+		contractions
+		or to continue applying force against a fixed object.
+		Pushups are often
+		used to test endurance of arm
+		and shoulder muscles.
+	</string>
+	<string name="knowyour4">
+		<b>Flexibility</b>
+		- the ability to move joints and use muscles through their full range
+		of motion.
+		The sit-and-reach test is a good measure of flexibility of
+		the lower back
+		and the backs of the
+		upper legs.
+		<b>Body Composition</b>
+		- is often considered a component of fitness. It refers to the makeup
+		of the body in terms of lean mass (muscle, bone, vital tissue and
+		organs) and fat mass. An
+		optimal ratio of fat to lean mass is an
+		indication of fitness, and the right
+		types of exercise will
+		help you
+		decrease body fat and increase/maintain muscle mass.
+	</string>
+
+	<!-- Why of Warming-up -->
+	<string name="warmup1">
+		<b>The Warm-Up and Cool-Down</b>
+		\nBefore you start strength training, do five minutes of any activity
+		that uses the muscles you\'ll be
+		exercising, such as riding a
+		stationary bike to warm up your legs or rowing for
+		an all-body workout.
+		Another alternative is to do a few repetitions of the exercises
+		you\’ll be
+		doing later with lighter weights.
+		Five to ten minutes should
+		be enough to increase the temperature of your
+		muscles, making them more
+		flexible and less susceptible to injury. If your heart rate goes above
+		100
+		beats per minute after you
+		workout with weights, and you plan to do
+		some floor exercises such as sit-ups
+		and leg lifts, you need a
+		cool-down to keep from getting dizzy or faint. Walk around or pedal
+		slowly on a
+		stationary bike until your
+		heart rate slows down. Otherwise,
+		you donot need a cool-down; just go ahead
+		and stretch your muscles.
+	</string>
+	<string name="warmup2">
+		<b>Full Warm-Up </b>
+		\nThis usually involves doing some low-intensity cardio work for five
+		to ten minutes until you break a sweat.
+		It gets blood flowing and
+		prepares the body for work to come. Some light
+		stretching follows, and
+		then a
+		few light sets of whatever exercises are going to be done. Keep
+		in mind
+		not to do too much or it will affect
+		your energy levels for the
+		actual workout. This type of warm-up is
+		particularly appropriate for
+		novice,
+		injured or older trainers, though anyone can use it.
+	</string>
+	<string name="warmup3">
+		<b>Light Set Warm-Up </b>
+		\nThis involves doing a number of progressively heavier sets (starting
+		lightly) of the exercise you are about
+		to do. This prepares the
+		specific muscle group for the work sets. Don\'t
+		do too much here or
+		your work
+		sets will suffer. These light sets are often done before each
+		new
+		exercise, particularly if you are moving
+		on to a different body
+		part. If you are doing a different exercise for
+		the same body part, a
+		warm-up for that
+		exercise is usually not necessary.
+	</string>
+	<string name="warmup4">Limited Warm-UpThis type of warm-up is for advanced
+		trainers only. Do a set of ten reps with 50% of the weight that
+		you are
+		going to be using for that exercise. That\'s it. Your body can be
+		trained to work well with this
+		type of limited warm-up. If you usually
+		do an extended warm-up, work down
+		to this level slowly. This
+		method has
+		the advantage of conserving energy for work sets. For exercises
+		where
+		you will be using
+		low reps and very heavy weights (close to your
+		maximum), you may want to
+		do a low-rep progressive
+		warm-up. For example,
+		if you are doing deadlifts with 405 pounds, do 5 reps
+		with one plate
+		per side, 2
+		reps with two plates, 1 rep with three plates, and maybe 1
+		rep with three
+		and a quarter, if you feel you
+		need it. This type of
+		pyramid warm-up doesnot exhaust you but still
+		prepares your body for
+		heavy work.
+		This type of warm-up is used when you go for a one-rep
+		maximum attempt. It
+		conditions your body to
+		be able to handle sudden
+		physical activity without injury.
+	</string>
+
+	<!-- why maverick -->
+	<string name="whymaverick1">Human beings are funny creatures. We know smoking
+		is injurious to health and yet yield to the
+		temptation. We understand
+		exercising is good for wellness and yet need enormous
+		motivation to be
+		consistent. Well, it is not surprising for the very word exercise
+		means ‘to exert
+		energy’. With current
+		lifestyle trends being stressful
+		on various counts, an additional stress called
+		‘exercise’ does indeed
+		need enormous external motivation. Looks like we need to redefine our
+		fitness regime from one
+		of ‘exerting energy’ to one of ‘energizing’
+		ourselves to be a human
+		dynamo. As you probably know, a
+		dynamo or an
+		electric generator is where mechanical energy is converted into
+		electric energy. I use
+		this simile to say the purpose of a fitness
+		program is justified only when
+		the mechanical energy lost in
+		exercise
+		(or exertion) is converted into ‘electric’ energy here to energize
+		the
+		whole bodily functioning.
+	</string>
+	<string name="whymaverick2">Else such exercise will have long term adverse
+		repercussions.\n
+		What gives humanity energy? Our personal primary
+		source of energy is the
+		food we eat. The very
+		purpose of eating is to
+		get energy though most often the food we eat drains
+		away our energy.
+		This is
+		primarily because each individual has a unique biochemistry and
+		need to
+		identify what food actually
+		provides you with energy. In order
+		to identify your unique energy source in
+		foods, Maverick has
+		adapted
+		Metabolic typing, a specialized system evolved by William Wolcott and
+		advocated by the
+		C.H.E.K institute. Our dietitians will help identify
+		your metabolic type and
+		suggest dietary charts that
+		will energize you.
+	</string>
+	<string name="whymaverick3">Another source of energy to the human body is the
+		oxygen we inhale. Recently, scientists have found
+		the dark side of
+		oxygen - the free radicals that actually are responsible
+		for aging.
+		Proper breathing
+		techniques have to be adapted not just while you
+		exercise but always to ensure
+		oxygen gives you the
+		energy it is meant to
+		give. Maverick teaches inhalation-exhalation
+		techniques with every
+		exercise that
+		is performed.
+	</string>
+	<string name="whymaverick4">What is the use of filling a bucket that has a hole
+		in the bottom? Similarly, of what use will the energy
+		generated be when
+		there is a constant depletion by way of stress? In a
+		mechanical world,
+		by replacing
+		one defective part, the whole machine will be rectified.
+		But the human
+		body is a holistic system
+		of compensations. Be it
+		emotional stress, physical stress, digestive
+		stress, lack of sleep,
+		parasite
+		infection or any other form of disease, the body will simply
+		process it as
+		\‘stress\’. Unless this ‘hole’ at
+		the bottom of the bucket
+		is sealed, no point filling up the bucket.
+		Maverick helps identify
+	</string>
+	<!-- Regex for email -->
+	<string name="EMAIL_ID_FORMAT_EXPRESSION">^\\s*[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\@[\\w\\-\\+_]+\\.[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\s*$
+	</string>
+	<!-- authentication username and password -->
+	<string name="HTTP_ACCESSS_NAME">maveric</string>
+	<string name="HTTP_ACCESSS_PASSWORD">mavericpass</string>
+	<!-- strength basic -->
+	<string name="strength1">There are two reasons for the dwindling of strength
+		in a healthy adult. One is the
+		aging process - the number of muscle
+		cells starts to decline after the age
+		of 30. A
+		far greater cause of
+		fading vitality is the use-it-or-lose-it principle.
+		However, there
+		is
+		ample evidence that strength loss is mostly reversible. Experts
+		recommend that
+		adults have at least two strength workouts each week, in
+		addition to three
+		sessions
+		of aerobic exercise. You can restore loss of
+		muscle function at almost
+		any age by
+		starting a strength-training
+		program.
+	</string>
+	<string name="strength2">Whatever muscle may be left at age 80 is just as
+		responsive as it was at age 20. You just need to be
+		sure that there is
+		some left. No workout program would be complete without
+		strength
+		training. Although
+		you need to do aerobics to keep your heart and lungs
+		in good working
+		order, you need to do resistance
+		training to maintain
+		your muscular strength and endurance, boost your
+		metabolism and
+		strengthen your
+		bones.
+	</string>
+	<string name="strength3">Maverick trainers will help you determine how much
+		and how often to lift. In general, if you can\'t maintain
+		good form for
+		at least eight repetitions while lifting a weight, it\'s too
+		heavy;
+		and, if you can perform more
+		than 12, it\'s too light. Schedule two to
+		three strength training sessions
+		a week, allowing a rest day in
+		between
+		sessions to give your muscles time to repair and recover. If you want
+		to lift weights every day,
+		work out your upper body (arms, shoulders
+		and upper back) one day and your
+		lower body (calves,
+		gluteus muscles,
+		hamstrings, quadriceps) the next.
+	</string>
+	<string name="strength4">ifting weights can lift your spirits. A recent
+		study found that strength training improved moods in people
+		suffering
+		from depression. It also seemed to help them sleep better. Other
+		studies show that people
+		tend to become more physically active once
+		they start weight training;
+		perhaps because their increased
+		strength
+		makes other activities easier to do and more enjoyable.
+		It takes 3500
+		Kcal to burn one pound of fat and only 580 Kcal to burn
+		one pound of
+		muscle. So, if you
+		starve your body without enough nutrition and do
+		heavy cardio workouts
+		alone, you are burning muscle
+		tissue instead of
+		fat. When the body feels threatened in such a manner, it
+		will burn
+		healthy tissue and
+		store fat. This is why muscle training is the most
+		important component of
+		your fitness regime.
+	</string>
+	<string name="METABOLIC_QUERIES">Metapolic Queries</string>
+	<string name="WORKIN_QUERIES">Workin and workout Queries</string>
+	<string name="PROFILE_API">192.168.1.109:8888/kmm/web/app_dev.php/user/profile
+	</string>
+	<string name="FOOD_API">192.168.1.109:8888/kmm/web/app_dev.php/user/food/add
+	</string>
+	<string name="WORKOUT_API">192.168.1.109:8888/kmm/web/app_dev.php/user/excersice/add
+	</string>
 </resources>

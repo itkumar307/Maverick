@@ -2,7 +2,6 @@ package com.maveric;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -26,7 +25,8 @@ public class HowHappyUR extends MavericBaseActiity {
 		ImageView normal = (ImageView) findViewById(R.id.normal);
 		ImageView smile = (ImageView) findViewById(R.id.smile);
 		ImageView sad = (ImageView) findViewById(R.id.sad);
-		ImageView angry = (ImageView) findViewById(R.id.angry);
+		ImageView normal_sad = (ImageView) findViewById(R.id.normal_sad);
+		ImageView very_smile = (ImageView) findViewById(R.id.very_smile);
 
 		pref = new Apppref(getApplicationContext());
 		if (pref.getHowHappyUR(getCurrentDate()) == 0) {
@@ -64,12 +64,21 @@ public class HowHappyUR extends MavericBaseActiity {
 
 			}
 		});
-		angry.setOnClickListener(new OnClickListener() {
+		normal_sad.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				pref.setHowHappyUR(getCurrentDate(), 4);
 				setValues(default1, selected, 4);
+
+			}
+		});
+		very_smile.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				pref.setHowHappyUR(getCurrentDate(), 5);
+				setValues(default1, selected, 5);
 
 			}
 		});
@@ -101,7 +110,10 @@ public class HowHappyUR extends MavericBaseActiity {
 			selectedImg.setBackgroundResource(R.drawable.sad);
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.angry);
+			selectedImg.setBackgroundResource(R.drawable.normal_sad);
+			break;
+		case 5:
+			selectedImg.setBackgroundResource(R.drawable.very_smile);
 			break;
 
 		default:

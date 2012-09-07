@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<string-array name="workin_questions">
+		<item>1. Is your body deprived of proper nutrition?</item>
+		<item>2. Have you been skipping meals? </item>
+		<item>3. Is the quality of your sleep poor?</item>
+		<item>4. Are you currently very highly stressed?</item>
+		<item>5. Are you having any major digestive issues?</item>
+		<item>6. Are the number of inhalations per minute above 22?</item>
+		<item>7. Is your heart rate above 100 bpm?</item>
+
+	</string-array>
+</resources>

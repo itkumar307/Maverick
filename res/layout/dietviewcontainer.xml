@@ -18,6 +18,13 @@
 			android:layout_alignParentLeft="true"
 			android:layout_marginLeft="5dip"
 			android:text="Home"></Button>
+		<Button
+            android:id="@+id/user_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/home_button"
+            android:layout_marginLeft="5dip"
+            android:text="Your Food"></Button>
 		<ImageView
 			android:id="@+id/img"
 			android:layout_width="100dp"

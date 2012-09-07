@@ -44,6 +44,7 @@ public abstract class MavericBaseActiity extends Activity {
 	protected int breakfastCal = 0, lunchCal = 0, dinnerCal = 0;
 	protected Button home;
 	protected RelativeLayout howHappyUR;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -88,17 +89,8 @@ public abstract class MavericBaseActiity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					Log.i("manikk",
-							"new Apppref(context).isQueriesAlreadyAnswerd() ="
-									+ new Apppref(context)
-											.isQueriesAlreadyAnswerd());
-					if (!new Apppref(context).isQueriesAlreadyAnswerd())
-						metabolicQueries();
-					else {
-						Intent metabolicChart = new Intent(context,
-								MetobolicChartActivity.class);
-						startActivity(metabolicChart);
-					}
+					Intent queries = new Intent(context, Queries.class);
+					startActivity(queries);
 				}
 			});
 			inter.setOnClickListener(new OnClickListener() {
@@ -122,17 +114,17 @@ public abstract class MavericBaseActiity extends Activity {
 					startActivity(home);
 				}
 			});
-		if(howHappyUR!=null)
-		howHappyUR.setOnClickListener(new OnClickListener() {
+		if (howHappyUR != null)
+			howHappyUR.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				Log.i("manikk", "howHappyUR");
-				Intent home = new Intent(context, HowHappyUR.class);
-				startActivity(home);
+				@Override
+				public void onClick(View v) {
+					Log.i("manikk", "howHappyUR");
+					Intent home = new Intent(context, HowHappyUR.class);
+					startActivity(home);
 
-			}
-		});
+				}
+			});
 	}
 
 	protected abstract void setContentToLayout();

@@ -16,6 +16,13 @@
 			android:layout_alignParentLeft="true"
 			android:layout_margin="5dip"
 			android:text="Home"></Button>
+		<Button
+			android:id="@+id/user_excercise"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/home_button"
+			android:layout_margin="5dip"
+			android:text="Your Workouts"></Button>
 		<ImageView
 			android:layout_width="100dp"
 			android:layout_height="35dp"

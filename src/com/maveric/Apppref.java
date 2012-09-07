@@ -102,6 +102,24 @@ public class Apppref {
 		return appSharedPrefs.getBoolean("isQueriesAlreadyAnswerd", false);
 	}
 
+	public void setIsWorkQueriesAlreadyAnswerd(Boolean answer) {
+		prefsEditor.putBoolean("isWorkQueriesAlreadyAnswerd", answer);
+		prefsEditor.commit();
+	}
+
+	public Boolean isWorkQueriesAlreadyAnswerd() {
+		return appSharedPrefs.getBoolean("isWorkQueriesAlreadyAnswerd", false);
+	}
+
+	public void setLastWorkQueriesResult(String result) {
+		prefsEditor.putString("WorkQueries", result);
+		prefsEditor.commit();
+	}
+
+	public String getLastWorkQueriesResult() {
+		return appSharedPrefs.getString("WorkQueries", " ");
+	}
+
 	public void setSignInOnly(Boolean yes) {
 		prefsEditor.putBoolean(SINGINOnly, yes);
 		prefsEditor.commit();

@@ -24,7 +24,7 @@ public class MetobolicChartActivity extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				metabolicQueries();
-
+				MetobolicChartActivity.this.finish();
 			}
 		});
 		TextView lastQueriesAnswer = (TextView) findViewById(R.id.lastQueriesAnswer);

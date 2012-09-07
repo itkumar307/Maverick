@@ -119,6 +119,18 @@
 		<activity
 			android:name=".HowHappyUR"
 			android:windowSoftInputMode="stateHidden"></activity>
+		<activity
+			android:name=".Workin_workout"
+			android:windowSoftInputMode="stateHidden"></activity>
+		<activity
+			android:name=".Queries"
+			android:windowSoftInputMode="stateHidden"></activity>
+		<activity
+			android:name=".WorkinChart"
+			android:windowSoftInputMode="stateHidden"></activity>
+		<activity
+			android:name=".Webview"
+			android:windowSoftInputMode="stateHidden"></activity>
 	</application>
 
 </manifest>

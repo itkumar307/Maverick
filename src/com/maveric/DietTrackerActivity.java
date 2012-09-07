@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,7 +28,6 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	private TextView breakFastTitle, lunchTitle, dinnerTitle, dateText;
 
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,7 +42,20 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		RelativeLayout breakFastLayout = (RelativeLayout) findViewById(R.id.breakfastlayout);
 		RelativeLayout lunchLayout = (RelativeLayout) findViewById(R.id.lunchlayout);
 		RelativeLayout dinnerLayout = (RelativeLayout) findViewById(R.id.dinnerlayout);
-		
+		Button user_food = (Button) findViewById(R.id.user_food);
+		user_food.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (isNetworkAvailable()) {
+					Intent prof = new Intent(context, Webview.class);
+					prof.putExtra("url", getString(R.string.FOOD_API));
+					startActivity(prof);
+				} else
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
+
+			}
+		});
 		next.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -104,7 +117,6 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	}
 
-
 	private void gotoResultActivity(HashMap<String, String[]> map,
 			ArrayList<String> list, String title) {
 		loding("Loding");
@@ -120,10 +132,10 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	public void onResume() {
 		super.onResume();
 		setTextValues();
-		
+
 	}
-	private void setTextValues()
-	{
+
+	private void setTextValues() {
 		setValues(dateText.getText().toString());
 		breakFastTitle.setText(breakfastCal + "");
 		lunchTitle.setText(lunchCal + "");

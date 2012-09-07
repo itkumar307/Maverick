@@ -52,8 +52,20 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		next.setVisibility(View.INVISIBLE);
 		date = (TextView) findViewById(R.id.date);
 		addWorkoutData = (TextView) findViewById(R.id.add_workout_data);
+		Button user_exercise = (Button) findViewById(R.id.user_excercise);
+		user_exercise.setOnClickListener(new OnClickListener() {
 
-		
+			@Override
+			public void onClick(View v) {
+				if (isNetworkAvailable()) {
+					Intent prof = new Intent(context, Webview.class);
+					prof.putExtra("url", getString(R.string.WORKOUT_API));
+					startActivity(prof);
+				} else
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
+
+			}
+		});
 
 		previous.setOnClickListener(new OnClickListener() {
 
@@ -138,7 +150,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			Log.i("kumar" + this.getClass(), "count of cursor list view"
 					+ cursorDetails.getCount());
-			//cursorDetails.moveToFirst();
+			// cursorDetails.moveToFirst();
 
 			ListAdapter adapter = new WorkoutAdapter(this, cursorDetails,
 					new String[] { WorkOutTrackerTable.Column.DATE },
@@ -150,6 +162,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 		}
 	}
+
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -173,8 +186,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 				if (constantCont == 1) {
 					next.setVisibility(View.INVISIBLE);
 					previous.setVisibility(View.INVISIBLE);
-				}
-				else {
+				} else {
 					next.setVisibility(View.VISIBLE);
 					previous.setVisibility(View.VISIBLE);
 				}

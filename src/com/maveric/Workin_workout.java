@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class metabolicQueries extends MavericBaseActiity {
+public class Workin_workout extends MavericBaseActiity {
 	int questionNo;
 	int[] result;
 	RadioButton optionA, optionB;
@@ -27,12 +27,12 @@ public class metabolicQueries extends MavericBaseActiity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Button start = (Button) findViewById(R.id.start);
-		// final RadioGroup optionGroup = (RadioGroup)
-		// findViewById(R.id.selected_option);
+		TextView intro = (TextView) findViewById(R.id.intro);
 		optionA = (RadioButton) findViewById(R.id.ratio_button_1);
 		optionB = (RadioButton) findViewById(R.id.ratio_button_2);
-		result = new int[14];
+		result = new int[7];
 		submit = (Button) findViewById(R.id.submit);
+		intro.setText(getString(R.string.INTRO_WORKIN_QUES));
 		start.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -77,13 +77,13 @@ public class metabolicQueries extends MavericBaseActiity {
 
 	private void showQuestionWithOptions() {
 		TextView question = (TextView) findViewById(R.id.question);
-		question.setText(getResources().getStringArray(
-				R.array.metabolic_questions)[questionNo]);
+		question.setText(getResources()
+				.getStringArray(R.array.workin_questions)[questionNo]);
 		Log.i("manikk", "showQuestionWithOptions");
 
-		optionA.setText(getResources().getStringArray(R.array.OPTION_A)[questionNo]);
-		optionB.setText(getResources().getStringArray(R.array.OPTION_B)[questionNo]);
-		if (questionNo == 13)
+		optionA.setText("yes");
+		optionB.setText("No");
+		if (questionNo == 6)
 			submit.setVisibility(View.VISIBLE);
 		else
 			submit.setVisibility(View.GONE);
@@ -96,7 +96,7 @@ public class metabolicQueries extends MavericBaseActiity {
 			optionB.setChecked(false);
 			Log.i("manikk", "R.id.ratio_button_1");
 			result[questionNo] = 0;
-			if (questionNo < 13) {
+			if (questionNo < 6) {
 				questionNo++;
 				optionA.setChecked(false);
 				optionB.setChecked(false);
@@ -107,7 +107,7 @@ public class metabolicQueries extends MavericBaseActiity {
 			optionA.setChecked(false);
 			Log.i("manikk", "R.id.ratio_button_2");
 			result[questionNo] = 1;
-			if (questionNo < 13) {
+			if (questionNo < 6) {
 				optionA.setChecked(false);
 				optionB.setChecked(false);
 				questionNo++;
@@ -168,7 +168,7 @@ public class metabolicQueries extends MavericBaseActiity {
 		ImageView image = (ImageView) findViewById(R.id.image);
 		int optionA = 0, optionB = 0;
 		Apppref appref = new Apppref(context);
-		appref.setIsQueriesAlreadyAnswerd(true);
+		appref.setIsWorkQueriesAlreadyAnswerd(true);
 		for (Integer i : result) {
 			if (i == 0)
 				optionA++;
@@ -176,22 +176,26 @@ public class metabolicQueries extends MavericBaseActiity {
 				optionB++;
 		}
 		resultText.setVisibility(View.VISIBLE);
-		image.setVisibility(View.VISIBLE);
-		image_disc.setVisibility(View.VISIBLE);
+		image.setVisibility(View.GONE);
+		image_disc.setVisibility(View.GONE);
 		questionNo = 0;
-		Log.i("manikk", "metabolicQueries = " + optionA);
-		if (optionA == 3 || optionA > optionB) {
-			resultText.setText("You are a Protein Type");
-			appref.setLastMetabolicQueriesResult("You are a Protein Type");
-			image.setImageResource(R.drawable.m2);
-		} else if (optionB == 3 || optionA < optionB) {
-			resultText.setText("You are a Mixed Type");
-			appref.setLastMetabolicQueriesResult("You are a Mixed Type");
-			image.setImageResource(R.drawable.m1);
-		} else if (optionA == optionB) {
-			resultText.setText("You are a Carbo Type");
-			appref.setLastMetabolicQueriesResult("You are a Carbo Type");
-			image.setImageResource(R.drawable.m3);
+		Log.i("manikk", "workin_workout = " + optionA);
+		if (optionA >= 4) {
+			resultText.setText(getString(R.string.YES_4));
+			appref.setLastWorkQueriesResult(getString(R.string.YES_4));
+			// image.setImageResource(R.drawable.m2);
+		} else if (optionA == 3) {
+			resultText.setText(getString(R.string.YES_3));
+			appref.setLastWorkQueriesResult(getString(R.string.YES_3));
+			// image.setImageResource(R.drawable.m1);
+		} else if (optionA == 2) {
+			resultText.setText(getString(R.string.YES_2));
+			appref.setLastWorkQueriesResult(getString(R.string.YES_2));
+			// image.setImageResource(R.drawable.m3);
+		} else if (optionA == 1) {
+			resultText.setText(getString(R.string.YES_1));
+			appref.setLastWorkQueriesResult(getString(R.string.YES_1));
+			// image.setImageResource(R.drawable.m3);
 		}
 	}
 }

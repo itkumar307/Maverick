@@ -51,11 +51,20 @@
 				android:layout_height="5dp"
 				android:layout_width="5dp" />
 			<ImageView
-				android:id="@+id/angry"
+				android:id="@+id/normal_sad"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
-				android:src="@drawable/angry" />
+				android:src="@drawable/normal_sad" />
+			<View
+                android:layout_height="5dp"
+                android:layout_width="5dp" />
+            <ImageView
+                android:id="@+id/very_smile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/very_smile" />
 		</LinearLayout>
 	</LinearLayout>
 	<LinearLayout
