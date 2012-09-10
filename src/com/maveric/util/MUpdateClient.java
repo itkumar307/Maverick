@@ -62,8 +62,8 @@ public class MUpdateClient {
 					time1 = jo.getString(ExceriseValue.Column.UPDATED);
 
 					Log.i("mohan", "food values" + values);
-//					ctx.getContentResolver().insert(ExceriseProvider.FOOD_URI,
-//							values);
+					// ctx.getContentResolver().insert(ExceriseProvider.FOOD_URI,
+					// values);
 
 				}
 				appPref.setLastTime1(time1);
@@ -90,8 +90,6 @@ public class MUpdateClient {
 					ContentValues values = new ContentValues();
 					values.put(ExceriseValue.Column.EXCERISE_TYPE,
 							jo.getString("name"));
-					values.put(ExceriseValue.Column.CALORIES,
-							jo.getString("calories"));
 					values.put(ExceriseValue.Column.UPDATED,
 							jo.getString(ExceriseValue.Column.UPDATED));
 					values.put(ExceriseValue.Column.CREATED,

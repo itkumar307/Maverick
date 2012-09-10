@@ -75,12 +75,14 @@
                 android:layout_height="12dp" >
             </View>
 
+            
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2dp"
                 android:background="#bbbff0" >
             </View>
 
+            <!--  
             <TextView
                 android:id="@+id/favouritecalories"
                 android:layout_width="wrap_content"
@@ -108,7 +110,8 @@
                 android:layout_height="2dp"
                 android:background="#bbbff0"
                 android:paddingTop="6dp" >
-            </View>
+            </View>  
+            -->
 
             <LinearLayout
                 android:layout_width="fill_parent"

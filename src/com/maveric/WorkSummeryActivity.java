@@ -176,9 +176,9 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 				value = "0";
 			}
 			int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
-			workout1200.setText(cal + " /5000 cal");
-			workoutshow.setText(cal + " Cal");
-			pbWork.setMax(5000);
+			workout1200.setText(cal + " /300 Mins");
+			workoutshow.setText(cal + " Minutes");
+			pbWork.setMax(300);
 			pbWork.setProgress(cal);
 			pbWork.setIndeterminate(false);
 			food1200.setText(getTotalFoodCalories() + " /5000 cal");

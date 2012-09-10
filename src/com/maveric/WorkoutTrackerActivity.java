@@ -164,19 +164,10 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View view,
 						int position, long id) {
-
-					int calories = exceriseCursor.getInt(exceriseCursor
-							.getColumnIndex(ExceriseValue.Column.CALORIES));
 					String type = exceriseCursor.getString(exceriseCursor
 							.getColumnIndex(ExceriseValue.Column.EXCERISE_TYPE));
-					String count = exceriseCursor.getString(exceriseCursor
-							.getColumnIndex(ExceriseValue.Column.EXCERISE_COUNT));
 					Intent s = new Intent(ctx, WorkoutTrackerSaveActivity.class);
-					Log.i("kumar", "value" + calories + ":" + type + ":"
-							+ count);
-					s.putExtra("calories", calories);
 					s.putExtra("type", type);
-					s.putExtra("count", count);
 					startActivity(s);
 					WorkoutTrackerActivity.this.finish();
 				}
