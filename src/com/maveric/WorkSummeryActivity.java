@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -23,7 +22,7 @@ import com.maveric.database.model.WorkOutTrackerTable;
 
 public class WorkSummeryActivity extends MavericBaseActiity {
 	Cursor Wrktoday;
-	TextView welcome, workout1200, workoutshow, food1200, foodshow;
+	TextView welcome, workout1200, food1200, foodshow;
 	Apppref appPref;
 	RelativeLayout foodTrack, workoutTrack;
 	ProgressBar pbWork, pbDiet;
@@ -48,7 +47,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		pbDiet = (ProgressBar) findViewById(R.id.progressbardiet);
 
 		workout1200 = (TextView) findViewById(R.id.workout_currentvalue);
-		workoutshow = (TextView) findViewById(R.id.todayworkoutValue);
+	
 		food1200 = (TextView) findViewById(R.id.Diet_currentvalues);
 		foodshow = (TextView) findViewById(R.id.todayeatenValue);
 
@@ -179,7 +178,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 			if (Wrktoday.getCount() > 0) {
 				value = Wrktoday.getString(Wrktoday
-						.getColumnIndex(WorkOutTrackerTable.Column.COUNT));
+						.getColumnIndex(WorkOutTrackerTable.Column.WORKOUT));
 				Log.i("kumartotalcalories", "value" + value);
 
 			} else {
@@ -187,7 +186,6 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			}
 			int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
 			workout1200.setText(cal + " /300 Mins");
-			workoutshow.setText(cal + " Minutes");
 			pbWork.setMax(300);
 			pbWork.setProgress(cal);
 			pbWork.setIndeterminate(false);

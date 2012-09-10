@@ -12,6 +12,7 @@
         <item>8</item>
     </string-array>
     <string-array name="excerise_array">
+         <item>-- Please select --</item>
         <item>Ab-crunch-machine</item>
         <item>Ab-crunch with Mediball</item>
         <item>Abdominal-bicycle</item>

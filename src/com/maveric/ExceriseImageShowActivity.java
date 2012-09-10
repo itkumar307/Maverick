@@ -1,7 +1,6 @@
 package com.maveric;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,8 +35,11 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 					long arg3) {
 				try {
 					String data = list.getItemAtPosition(pos).toString();
+					
+					if(!data.equalsIgnoreCase("-- Please select --")){
 					exceriseImage.loadUrl("file:///android_asset/excerisegif/" + data
 							+ ".gif");
+					}
 				} catch (Exception e) {
 					Log.i("kumar", "error in webview" + e.getMessage());
 				}
