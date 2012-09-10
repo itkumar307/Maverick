@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class Queries extends MavericBaseActiity {
 
@@ -16,8 +17,8 @@ public class Queries extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Button metabolic = (Button) findViewById(R.id.metapolic_queries1);
-		Button workin = (Button) findViewById(R.id.workin_queries);
+		LinearLayout metabolic = (LinearLayout) findViewById(R.id.metapolic_queries1);
+		LinearLayout workin = (LinearLayout) findViewById(R.id.workin_queries);
 		final Apppref app = new Apppref(context);
 		metabolic.setOnClickListener(new OnClickListener() {
 
@@ -49,7 +50,7 @@ public class Queries extends MavericBaseActiity {
 	}
 
 	private void workinQueries() {
-		Intent Workin_workoutIntent= new Intent(context, Workin_workout.class);
+		Intent Workin_workoutIntent = new Intent(context, Workin_workout.class);
 		startActivity(Workin_workoutIntent);
 	}
 }

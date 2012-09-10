@@ -655,4 +655,26 @@
 			</b>
 		</u>
 	</string>
+	<string name="metabolic_ques">
+		<u>
+			<b>
+				<i>Metabolic Quies</i>
+			</b>
+		</u>
+	</string>
+	<string name="workout_ques">
+		<u>
+			<b>
+				<i>Workout and Workin Quies</i>
+			</b>
+		</u>
+	</string>
+	<string name="water">
+		<u>
+			<b>
+				<i>Water consumption >></i>
+			</b>
+		</u>
+	</string>
+	<string name="WATER_CONSUME_BEFORE">Today your water consume</string>
 </resources>

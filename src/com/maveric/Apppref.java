@@ -155,4 +155,13 @@ public class Apppref {
 	public int getHowHappyUR(String date) {
 		return appSharedPrefs.getInt(date, 0);
 	}
+
+	public void setWaterConsume(String date, String value) {
+		prefsEditor.putString("water_" + date, value);
+		prefsEditor.commit();
+	}
+
+	public String getWaterConsume(String date) {
+		return appSharedPrefs.getString("water_" + date, "");
+	}
 }

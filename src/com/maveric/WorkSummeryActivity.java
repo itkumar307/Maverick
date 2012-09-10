@@ -56,6 +56,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		workoutTrack = (RelativeLayout) findViewById(R.id.trackworkoutlayout);
 
 		TextView profile = (TextView) findViewById(R.id.profile);
+		TextView water_link = (TextView) findViewById(R.id.water);
 		profile.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -79,6 +80,15 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		});
 		// RelativeLayout howHappyUR = (RelativeLayout)
 		// findViewById(R.id.how_happy_u_r);
+		water_link.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent wat = new Intent(WorkSummeryActivity.this, Water.class);
+				startActivity(wat);
+
+			}
+		});
 
 		foodTrack.setOnClickListener(new OnClickListener() {
 

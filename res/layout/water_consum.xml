@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/home_screen"
+	android:orientation="vertical">
+	<Button
+		android:id="@+id/home_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_margin="5dip"
+		android:text="Home"></Button>
+	<LinearLayout
+		android:id="@+id/befor_fill"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/allpage_subtitle"
+			android:text="@string/WATER_CONSUME_BEFORE" />
+		<EditText
+			android:id="@+id/water_editbox"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:inputType="number"
+			android:hint="liter" />
+		<Button
+			android:id="@+id/enter"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_height="wrap_content"
+			android:text="Submit" />
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/after_fill"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:visibility="visible">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/water_result"
+			android:textColor="@color/allpage_subtitle"
+			android:text="@string/WATER_CONSUME_BEFORE" />
+		<Button
+			android:id="@+id/water_edit"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center_horizontal"
+			android:layout_height="wrap_content"
+			android:text="Edit" />
+	</LinearLayout>
+</LinearLayout>

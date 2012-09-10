@@ -134,6 +134,9 @@
 		<activity
 			android:name=".ExceriseImageShowActivity"
 			android:windowSoftInputMode="stateHidden"></activity>
+		<activity
+            android:name=".Water"
+            android:windowSoftInputMode="stateHidden"></activity>
 	</application>
 
 </manifest>

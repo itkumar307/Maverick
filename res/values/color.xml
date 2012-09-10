@@ -20,5 +20,5 @@
 	<!-- workout tracker view -->
 	<color name="food_time_head_color">#fff</color>
 	<!-- Link color -->
-	<color name="link_color">#FF0000</color>
+	<color name="link_color">#F38F2F</color>
 </resources>
