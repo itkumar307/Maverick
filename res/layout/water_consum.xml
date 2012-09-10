@@ -20,6 +20,7 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:textSize="15dip"
 			android:textColor="@color/allpage_subtitle"
 			android:text="@string/WATER_CONSUME_BEFORE" />
 		<EditText
@@ -45,8 +46,15 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:id="@+id/water_result"
+			android:textSize="15dip"
 			android:textColor="@color/allpage_subtitle"
 			android:text="@string/WATER_CONSUME_BEFORE" />
+		<TextView
+			android:id="@+id/result_text"
+			android:layout_width="wrap_content"
+			android:textSize="15dip"
+			android:textColor="@color/allpage_subtitle"
+			android:layout_height="wrap_content" />
 		<Button
 			android:id="@+id/water_edit"
 			android:layout_width="wrap_content"

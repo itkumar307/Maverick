@@ -631,6 +631,8 @@
 	<string name="HTTP_FOOD">user/food/add</string>
 	<string name="HTTP_WORKOUT">user/excersice/add</string>
 	<string name="HTTP_USER_ADD">reg/add/</string>
+	<string name="HTTP_USER_ASK">user/ask</string>
+	<string name="HTTP_USER_TALK">user/talk</string>
 	<!-- Dropdown prompt value -->
 	<string name="excerise_prompt">Choose a Excerise</string>
 	<!-- underline -->
@@ -676,5 +678,5 @@
 			</b>
 		</u>
 	</string>
-	<string name="WATER_CONSUME_BEFORE">Today your water consume</string>
+	<string name="WATER_CONSUME_BEFORE">Enter your today\'s water consumption</string>
 </resources>

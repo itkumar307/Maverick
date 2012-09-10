@@ -49,23 +49,25 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 					Uri searchList = Uri.withAppendedPath(
 							FoodProvider.FOOD_LIST_BY_SEARCH_VALUE, searchBox
 									.getText().toString());
-					displayFoods(searchList);
+					displayFoods(searchList, false);
 				} else
-					toast("please enter your search food letter");
+					toast("Please enter a food type to search for");
 			}
 		});
 		loadFav.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				displayFoods(FoodProvider.FAV_FOOD_URI);
+				displayFoods(FoodProvider.FAV_FOOD_URI, true);
 			}
 		});
 	}
 
-	private void displayFoods(Uri uri) {
+	private void displayFoods(Uri uri, Boolean t) {
 
 		final Cursor foodList = managedQuery(uri, null, null, null, null);
+		if (foodList.getCount() == 0 && t)
+			toast("No favourites entered");
 		Log.i("manikk", "search list count = " + foodList.getCount());
 		loding("Loding", 1000);
 		ListView list = getListView();

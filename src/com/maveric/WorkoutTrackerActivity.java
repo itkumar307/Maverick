@@ -99,7 +99,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 					Log.i("kumar", "ha");
 					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
 				} else {
-					toast("Hey !! Enter text, Then go search");
+					toast("Please enter a workout to search for");
 				}
 			}
 		});

@@ -78,6 +78,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		});
 		// RelativeLayout howHappyUR = (RelativeLayout)
 		// findViewById(R.id.how_happy_u_r);
+		try{
+			if(water_link != null)
 		water_link.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -86,7 +88,10 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 				startActivity(wat);
 
 			}
-		});
+		});}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 
 		foodTrack.setOnClickListener(new OnClickListener() {
 

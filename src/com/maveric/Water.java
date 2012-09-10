@@ -30,8 +30,11 @@ public class Water extends MavericBaseActiity {
 			goneVisible(aftFill, beforeFill);
 		else {
 			goneVisible(beforeFill, aftFill);
-			water_result.setText("Today your water consume is "
-					+ app.getWaterConsume(getCurrentDate()) + " liter");
+			setResultText(Integer
+					.valueOf(app.getWaterConsume(getCurrentDate())));
+			water_result.setText("Today you have consumed"
+					+ app.getWaterConsume(getCurrentDate())
+					+ " liters of water");
 		}
 		submit.setOnClickListener(new OnClickListener() {
 
@@ -40,6 +43,8 @@ public class Water extends MavericBaseActiity {
 				goneVisible(beforeFill, aftFill);
 				app.setWaterConsume(getCurrentDate(), editText.getText()
 						.toString());
+				setResultText(Integer.valueOf(app
+						.getWaterConsume(getCurrentDate())));
 				water_result.setText("Today your water consume is "
 						+ app.getWaterConsume(getCurrentDate()) + " liter");
 
@@ -58,5 +63,13 @@ public class Water extends MavericBaseActiity {
 	private void goneVisible(LinearLayout gone, LinearLayout visible) {
 		gone.setVisibility(View.GONE);
 		visible.setVisibility(View.VISIBLE);
+	}
+
+	private void setResultText(int value) {
+		TextView result = (TextView) findViewById(R.id.result_text);
+		if (value < 3) {
+			result.setText("Need to improve your water intake. Recommended water intake is 3 liters per day");
+		} else if (value >= 3)
+			result.setText("Good. Keep it up");
 	}
 }

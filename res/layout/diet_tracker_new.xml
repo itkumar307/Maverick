@@ -32,7 +32,7 @@
 					android:paddingBottom="5dip"
 					android:paddingTop="5dip"
 					android:textColor="#fff"
-					android:text="Break fast" />
+					android:text="Breakfast" />
 
 				<TextView
 					android:id="@+id/breakfasttext"
