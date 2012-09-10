@@ -36,8 +36,8 @@ public class WorkoutAdapter extends SimpleCursorAdapter {
 			String exceriseType = cursor
 					.getString(cursor
 							.getColumnIndex(WorkOutTrackerTable.Column.SELECT_EXCERISE));
-			int calories = cursor.getInt(cursor
-					.getColumnIndex(WorkOutTrackerTable.Column.CALORIES));
+//			int calories = cursor.getInt(cursor
+//					.getColumnIndex(WorkOutTrackerTable.Column.CALORIES));
 			int workoutTime = cursor.getInt(cursor
 					.getColumnIndex(WorkOutTrackerTable.Column.WORKOUT));
 			TextView exceriseTypeValue = (TextView) view
@@ -46,11 +46,11 @@ public class WorkoutAdapter extends SimpleCursorAdapter {
 
 			TextView workoutValue = (TextView) view
 					.findViewById(R.id.listworkouttime);
-			workoutValue.setText("hr:" + workoutTime);
+			workoutValue.setText("Min:" + workoutTime);
 
-			TextView caloriesValue = (TextView) view
-					.findViewById(R.id.listcalories);
-			caloriesValue.setText("cal:" + calories);
+//			TextView caloriesValue = (TextView) view
+//					.findViewById(R.id.listcalories);
+			//caloriesValue.setText("cal:" + calories);
 
 		} catch (Exception e) {
 			Log.e("kumar" + this.getClass(),

@@ -85,8 +85,8 @@ public class WorkoutProvider extends ContentProvider {
 		case WORKOUT_BY_DATE_SUM_VALUE:
 			queryBuilder.setTables(WorkOutTrackerTable.TABLE);
 			sortOrder = WorkOutTrackerTable.Column.ID + " DESC ";
-			projection = new String[] { "sum(calories) as "
-					+ WorkOutTrackerTable.Column.COUNT };
+			projection = new String[] { "sum(workout) as "
+					+ WorkOutTrackerTable.Column.WORKOUT };
 			queryBuilder.appendWhere(WorkOutTrackerTable.Column.DATE + "='"
 					+ url.getPathSegments().get(1) + "'");
 			break;

@@ -33,7 +33,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 	TextView countTypeText;
 	TextView countTypeTime;
 	TextView exceriseTypeText;
-	TextView woroutCalories;
+//	TextView woroutCalories;
 	EditText inputData;
 	Button saveData;
 	String countData;

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -165,7 +164,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	private void setValue() {
 
 		try {
-			String value = "0";
+			int value = 0;
 
 			welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
 			Uri name = Uri.withAppendedPath(
@@ -177,17 +176,18 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			Log.i("kumar", "workcount" + Wrktoday.getCount());
 
 			if (Wrktoday.getCount() > 0) {
-				value = Wrktoday.getString(Wrktoday
+				value = Wrktoday.getInt(Wrktoday
 						.getColumnIndex(WorkOutTrackerTable.Column.WORKOUT));
 				Log.i("kumartotalcalories", "value" + value);
 
 			} else {
-				value = "0";
+				value = 0;
 			}
-			int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
-			workout1200.setText(cal + " /300 Mins");
+			
+			//int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
+			workout1200.setText(value + " /300 Mins");
 			pbWork.setMax(300);
-			pbWork.setProgress(cal);
+			pbWork.setProgress(value);
 			pbWork.setIndeterminate(false);
 			food1200.setText(getTotalFoodCalories() + " /5000 cal");
 			foodshow.setText(getTotalFoodCalories() + " Cal");

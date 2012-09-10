@@ -22,7 +22,7 @@
         android:layout_centerInParent="true"
         android:textColor="#ff000000" />
 
-    <TextView
+ <!--    <TextView
         android:id="@+id/listcalories"
         android:layout_width="48dip"
         android:layout_height="48dip"
@@ -30,5 +30,5 @@
         android:layout_marginRight="10dip"
         android:gravity="center"
         android:textColor="#000" />
-
+-->
 </RelativeLayout>

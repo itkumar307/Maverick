@@ -75,7 +75,7 @@
 					android:layout_width="fill_parent"
 					android:layout_height="30dp"
 					android:layout_marginTop="10dp"
-					android:progress="30"
+					android:progress="0"
 					android:progressDrawable="@drawable/progressbarbg"
 					android:secondaryProgress="0" />
 
@@ -87,7 +87,7 @@
 					android:layout_marginRight="15dip"
 					android:layout_marginTop="5dip"
 					android:background="@drawable/welcomepageonesidewhitecurve"
-					android:text="20/1200 cal"
+					android:text="0/1200 cal"
 					android:textColor="#E90CF5" />
 
 				<LinearLayout
@@ -139,7 +139,7 @@
 					android:layout_width="fill_parent"
 					android:layout_height="30dp"
 					android:layout_marginTop="10dp"
-					android:progress="30"
+					android:progress="0"
 					android:progressDrawable="@drawable/progressbarbg"
 					android:secondaryProgress="0" />
 
@@ -151,7 +151,7 @@
 					android:layout_marginRight="15dip"
 					android:layout_marginTop="5dip"
 					android:background="@drawable/welcomepageonesidewhitecurve"
-					android:text="500/1200 cal"
+					android:text="0/1200 cal"
 					android:textColor="#E90CF5" />
 
 				<LinearLayout
@@ -160,7 +160,7 @@
 					android:layout_marginTop="10dip"
 					android:orientation="horizontal">
 
-					<TextView
+			<!-- 		<TextView
 						android:id="@+id/todayworkoutcaloriestext"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
 						android:background="#DAE2E4"
 						android:padding="3dp"
 						android:text="500 cal"
-						android:textColor="@color/allpage_subtitle" />
+						android:textColor="@color/allpage_subtitle" /> -->
 				</LinearLayout>
 
 				<RelativeLayout
@@ -262,6 +262,18 @@
 									android:textColor="@color/allpage_subtitle"
 									android:textSize="20dip" />
 							</RelativeLayout>
+							
+							<TextView
+								android:id="@+id/water"
+								android:layout_margin="10dip"
+								android:layout_below="@+id/welcometext"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_alignParentRight="true"
+								android:textColor="@color/link_color"
+								android:textSize="20dip"
+								android:text="@string/water" />
+							
 						</LinearLayout>
 					</RelativeLayout>
 
