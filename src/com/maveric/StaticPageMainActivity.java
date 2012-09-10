@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,14 +32,38 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 		warmup = (ImageView) findViewById(R.id.warmupact);
 
 		TextView gifImage = (TextView) findViewById(R.id.gif);
+		TextView askOurExpert = (TextView) findViewById(R.id.ask_our_expert);
+		TextView expertTalk = (TextView) findViewById(R.id.expert_talk);
 
 		gifImage.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				Intent singup = new Intent(context,
+				Intent gif = new Intent(context,
 						ExceriseImageShowActivity.class);
-				startActivity(singup);
+				startActivity(gif);
+
+			}
+		});
+		askOurExpert.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				callUrl(getString(R.string.HTTP)
+						+ getString(R.string.HTTP_DOMAIN)
+						+ getString(R.string.HTTP_SUB)
+						+ getString(R.string.HTTP_PROFILE), "Ask our expert");
+
+			}
+		});
+		expertTalk.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				callUrl(getString(R.string.HTTP)
+						+ getString(R.string.HTTP_DOMAIN)
+						+ getString(R.string.HTTP_SUB)
+						+ getString(R.string.HTTP_PROFILE), "Expert talk");
 
 			}
 		});
@@ -101,6 +124,15 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 			}
 		});
 
+	}
+
+	private void callUrl(String url, String title) {
+		if (isNetworkAvailable()) {
+			Intent prof = new Intent(context, Webview.class);
+			prof.putExtra("url", url);
+			prof.putExtra("title", title);
+		} else
+			toast(getString(R.string.NO_INTERNET_CONNECTION));
 	}
 
 }

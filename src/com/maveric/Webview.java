@@ -24,7 +24,7 @@ public class Webview extends MavericBaseActiity {
 		super.onCreate(savedInstanceState);
 		final Apppref app = new Apppref(context);
 		Bundle web = getIntent().getExtras();
-		loding(web.getString("title"), 2000);
+		loding(web.getString("title"), 3000);
 		String url = web.getString("url");
 		Log.i("manikk", url);
 		try {
