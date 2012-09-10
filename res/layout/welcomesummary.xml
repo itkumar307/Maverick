@@ -161,7 +161,7 @@
 					android:layout_marginTop="10dip"
 					android:orientation="horizontal">
 
-					<TextView
+		<!-- 			<TextView
 						android:id="@+id/todayworkoutcaloriestext"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
 						android:background="#DAE2E4"
 						android:padding="3dp"
 						android:text="500 cal"
-						android:textColor="@color/allpage_subtitle" />
+						android:textColor="@color/allpage_subtitle" />  -->
 				</LinearLayout>
 
 				<RelativeLayout
