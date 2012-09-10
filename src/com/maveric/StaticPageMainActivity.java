@@ -52,7 +52,7 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 				callUrl(getString(R.string.HTTP)
 						+ getString(R.string.HTTP_DOMAIN)
 						+ getString(R.string.HTTP_SUB)
-						+ getString(R.string.HTTP_PROFILE), "Ask our expert");
+						+ getString(R.string.HTTP_USER_ASK), "Ask our expert");
 
 			}
 		});
@@ -63,7 +63,7 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 				callUrl(getString(R.string.HTTP)
 						+ getString(R.string.HTTP_DOMAIN)
 						+ getString(R.string.HTTP_SUB)
-						+ getString(R.string.HTTP_PROFILE), "Expert talk");
+						+ getString(R.string.HTTP_USER_TALK), "Expert talk");
 
 			}
 		});
@@ -131,6 +131,7 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 			Intent prof = new Intent(context, Webview.class);
 			prof.putExtra("url", url);
 			prof.putExtra("title", title);
+			startActivity(prof);
 		} else
 			toast(getString(R.string.NO_INTERNET_CONNECTION));
 	}
