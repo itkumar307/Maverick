@@ -52,7 +52,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		next.setVisibility(View.INVISIBLE);
 		date = (TextView) findViewById(R.id.date);
 		addWorkoutData = (TextView) findViewById(R.id.add_workout_data);
-		Button user_exercise = (Button) findViewById(R.id.user_excercise);
+		TextView user_exercise = (TextView) findViewById(R.id.user_excercise);
 		user_exercise.setOnClickListener(new OnClickListener() {
 
 			@Override

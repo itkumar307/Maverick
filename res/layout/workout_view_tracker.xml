@@ -1,115 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/workout_tracker"
-    android:orientation="vertical"
-    android:scrollbars="none" >
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/workout_tracker"
+	android:orientation="vertical"
+	android:scrollbars="none">
 
-    <LinearLayout
-        android:id="@+id/date_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+	<LinearLayout
+		android:id="@+id/date_title"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp" >
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="1dp">
 
-            <ImageView
-                android:id="@+id/workout_tracker_side"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/workout_trackerside" />
-                    <Button
-            android:id="@+id/user_excercise"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_height="wrap_content"
+			<ImageView
+				android:id="@+id/workout_tracker_side"
+				android:layout_width="150dp"
+				android:layout_height="wrap_content"
+				android:src="@drawable/workout_trackerside" />
+		</RelativeLayout>
+		<TextView
+			android:id="@+id/user_excercise"
+			android:layout_width="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_height="wrap_content"
+			android:textSize="20dip"
             android:layout_margin="5dip"
-            android:text="Your Workouts"></Button>
-        </RelativeLayout>
+            android:textColor="@color/link_color"
+            android:text="@string/WORK_LINK"></TextView>
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="1dp"
+			android:background="@color/food_time_head_color">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
-            android:background="@color/food_time_head_color" >
+			<RelativeLayout
+				android:id="@+id/datearrange"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/food_time_head_color"
+				android:gravity="center_horizontal">
 
-            <RelativeLayout
-                android:id="@+id/datearrange"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/food_time_head_color"
-                android:gravity="center_horizontal" >
+				<TextView
+					android:id="@+id/prev_date"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="@drawable/prev"
+					android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/prev_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/prev"
-                    android:visibility="gone" />
+				<View
+					android:id="@+id/prevview"
+					android:layout_width="20dip"
+					android:layout_height="10dip"
+					android:layout_toRightOf="@+id/prev_date" />
 
-                <View
-                    android:id="@+id/prevview"
-                    android:layout_width="20dip"
-                    android:layout_height="10dip"
-                    android:layout_toRightOf="@+id/prev_date" />
+				<TextView
+					android:id="@+id/date"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerInParent="true"
+					android:layout_toRightOf="@+id/prevview"
+					android:background="#0791ED"
+					android:padding="10dip"
+					android:text="date"
+					android:textColor="#050505" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@+id/prevview"
-                    android:background="#0791ED"
-                    android:padding="10dip"
-                    android:text="date"
-                    android:textColor="#050505" />
+				<View
+					android:id="@+id/nextview"
+					android:layout_width="20dip"
+					android:layout_height="10dip"
+					android:layout_toRightOf="@+id/date" />
 
-                <View
-                    android:id="@+id/nextview"
-                    android:layout_width="20dip"
-                    android:layout_height="10dip"
-                    android:layout_toRightOf="@+id/date" />
+				<TextView
+					android:id="@+id/next_date"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toRightOf="@+id/nextview"
+					android:background="@drawable/next_date"
+					android:visibility="gone" />
+			</RelativeLayout>
 
-                <TextView
-                    android:id="@+id/next_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/nextview"
-                    android:background="@drawable/next_date"
-                    android:visibility="gone" />
-            </RelativeLayout>
+			<TextView
+				android:id="@+id/add_workout_data"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="10dip"
+				android:background="@drawable/plus" />
+		</RelativeLayout>
+	</LinearLayout>
 
-            <TextView
-                android:id="@+id/add_workout_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/plus" />
-        </RelativeLayout>
-    </LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dip"
+		android:background="#fff">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dip"
-        android:background="#fff" >
+		<ListView
+			android:id="@+id/android:list"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:dividerHeight="1dip" />
+	</LinearLayout>
 
-        <ListView
-            android:id="@+id/android:list"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:dividerHeight="1dip" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="50dip"
-        android:visibility="invisible" >
-    </LinearLayout>
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="50dip"
+		android:visibility="invisible">
+	</LinearLayout>
 
 </LinearLayout>

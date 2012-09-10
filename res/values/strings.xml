@@ -623,14 +623,36 @@
 	</string>
 	<string name="METABOLIC_QUERIES">Metapolic Queries</string>
 	<string name="WORKIN_QUERIES">Workin and workout Queries</string>
-    	<string name="HTTP">http://</string>
-	<string name="HTTP_DOMAIN">122.165.9.41</string> 
-	<string name="HTTP_SUB">/app/WS/web/app.php/</string> 
-	<string name="HTTP_USER_LOGIN">reg/login/</string>      
-	<string name="HTTP_PROFILE">user/profile</string> 
+	<string name="HTTP">http://</string>
+	<string name="HTTP_DOMAIN">122.165.9.41</string>
+	<string name="HTTP_SUB">/app/WS/web/app.php/</string>
+	<string name="HTTP_USER_LOGIN">reg/login/</string>
+	<string name="HTTP_PROFILE">user/profile</string>
 	<string name="HTTP_FOOD">user/food/add</string>
 	<string name="HTTP_WORKOUT">user/excersice/add</string>
-	<string name="HTTP_USER_ADD">reg/add/</string>     
+	<string name="HTTP_USER_ADD">reg/add/</string>
 	<!-- Dropdown prompt value -->
 	<string name="excerise_prompt">Choose a Excerise</string>
+	<!-- underline -->
+	<string name="pro">
+		<u>
+			<b>
+				<i>profile >></i>
+			</b>
+		</u>
+	</string>
+	<string name="FOOD_LINK">
+		<u>
+			<b>
+				<i>request to add food >></i>
+			</b>
+		</u>
+	</string>
+	<string name="WORK_LINK">
+		<u>
+			<b>
+				<i>request to add workout >></i>
+			</b>
+		</u>
+	</string>
 </resources>

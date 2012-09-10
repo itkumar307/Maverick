@@ -27,7 +27,6 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	Apppref appPref;
 	RelativeLayout foodTrack, workoutTrack;
 	ProgressBar pbWork, pbDiet;
-	Button gifImage;
 
 	Context context;
 
@@ -55,19 +54,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		foodTrack = (RelativeLayout) findViewById(R.id.tracfoodlayout);
 		workoutTrack = (RelativeLayout) findViewById(R.id.trackworkoutlayout);
-		gifImage = (Button) findViewById(R.id.temp);
 
-		gifImage.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				Intent singup = new Intent(context,ExceriseImageShowActivity.class);
-				startActivity(singup);
-
-			}
-		});
-
-		Button profile = (Button) findViewById(R.id.profile);
+		TextView profile = (TextView) findViewById(R.id.profile);
 		profile.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -170,7 +158,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		try {
 			String value = "0";
 
-			welcome.setText("WELCOME" + "  " + appPref.getUserNameOnly());
+			welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
 			Uri name = Uri.withAppendedPath(
 					WorkoutProvider.WORKOUT_BY_DATE_SOMEVALUE_URI,
 					getCurrentDate());

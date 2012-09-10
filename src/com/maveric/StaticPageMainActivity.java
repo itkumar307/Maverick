@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class StaticPageMainActivity extends MavericBaseActiity {
 
@@ -29,6 +31,19 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 		knowYour = (ImageView) findViewById(R.id.knowyouract);
 		strength = (ImageView) findViewById(R.id.strengthact);
 		warmup = (ImageView) findViewById(R.id.warmupact);
+
+		TextView gifImage = (TextView) findViewById(R.id.gif);
+
+		gifImage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent singup = new Intent(context,
+						ExceriseImageShowActivity.class);
+				startActivity(singup);
+
+			}
+		});
 
 		whyMaverick.setOnClickListener(new OnClickListener() {
 

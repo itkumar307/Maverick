@@ -40,9 +40,9 @@
 					android:layout_height="fill_parent"
 					android:layout_marginTop="10dip"
 					android:background="@drawable/welcomepageonesidewhitecurve"
-					android:text="Welcome"
+					android:text="WELCOME"
 					android:textColor="#0071BB"
-					android:textSize="20dp"
+					android:textSize="24dp"
 					android:textStyle="bold" />
 				<TextView
 					android:id="@+id/profile"
@@ -51,8 +51,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_alignParentRight="true"
-					android:textColor="@color/link_color"
-					android:textSize="20dip"
+					android:textColor="#FF0000"
 					android:text="@string/pro" />
 			</RelativeLayout>
 			<LinearLayout
@@ -241,23 +240,17 @@
 									android:text="Track Workout"
 									android:textColor="@color/allpage_subtitle"
 									android:textSize="20dip" />
-								<ImageView
-									android:id="@+id/maveric_cycle"
-									android:layout_width="wrap_content"
-									android:layout_height="150dp"
-									android:layout_alignParentRight="true"
-									android:src="@drawable/workout_tracker_left" />
 							</RelativeLayout>
 							<RelativeLayout
 								android:id="@+id/how_happy_u_r"
 								android:layout_width="wrap_content"
-								android:layout_height="wrap_content"
-								android:layout_marginLeft="5dip">
+								android:layout_height="wrap_content">
 
 								<ImageView
 									android:id="@+id/how_happy_img"
 									android:layout_width="wrap_content"
-									android:layout_height="wrap_content" />
+									android:layout_height="wrap_content"
+									android:layout_marginLeft="5dip" />
 
 								<TextView
 									android:id="@+id/how_happytext"
@@ -279,7 +272,12 @@
 						android:layout_marginTop="10dip"
 						android:layout_toRightOf="@+id/directlink">
 
-
+						<ImageView
+							android:id="@+id/maveric_cycle"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_alignParentRight="true"
+							android:src="@drawable/workout_tracker_left" />
 					</RelativeLayout>
 				</RelativeLayout>
 

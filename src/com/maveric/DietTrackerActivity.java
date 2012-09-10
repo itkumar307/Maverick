@@ -35,7 +35,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		RelativeLayout breakFastLayout = (RelativeLayout) findViewById(R.id.breakfastlayout);
 		RelativeLayout lunchLayout = (RelativeLayout) findViewById(R.id.lunchlayout);
 		RelativeLayout dinnerLayout = (RelativeLayout) findViewById(R.id.dinnerlayout);
-		Button user_food = (Button) findViewById(R.id.user_food);
+		TextView user_food = (TextView) findViewById(R.id.user_food);
 		user_food.setOnClickListener(new OnClickListener() {
 
 			@Override

@@ -1,23 +1,24 @@
 <resources>
 
-    <color name="allpage_side_page_color">#ffffff</color>
-    <color name="sidetext_title_color">#00FFFF</color>
-    <color name="login_page_content_text_color">#24957e</color>
-    <color name="allpage_subtitle">#F38F2F</color>
-    <color name="subtitle_answer_text_backgroud">#E6E6E6</color>
-    <color name="subtitle_answer_text_color">#8A4B08</color>
-    <color name="menu_view_line">#B9B5B5</color>
-    <color name="Editbox_text_color">#ffffff</color>
-    <color name="signup_pressed">#2E09FC</color>
-    <color name="signup_unpressed">#186B8F</color>
-    <color name="popupdialogtextcolor">#0A0A0A</color>
-    <color name="black">#000000</color>
-    <color name="popupdialogheadcolor">#3366cc</color>
-    <!-- color diet tracker xml food item and count -->
-    <color name="fooditemcolor">#000</color>
-    <color name="countitemforfoodcolor">#1BE06D</color>
-    <color name="dietTrackerTitleColor">#fff</color>
-    <!-- workout tracker view -->
-    <color name="food_time_head_color">#fff</color>
-
+	<color name="allpage_side_page_color">#ffffff</color>
+	<color name="sidetext_title_color">#00FFFF</color>
+	<color name="login_page_content_text_color">#24957e</color>
+	<color name="allpage_subtitle">#F38F2F</color>
+	<color name="subtitle_answer_text_backgroud">#E6E6E6</color>
+	<color name="subtitle_answer_text_color">#8A4B08</color>
+	<color name="menu_view_line">#B9B5B5</color>
+	<color name="Editbox_text_color">#ffffff</color>
+	<color name="signup_pressed">#2E09FC</color>
+	<color name="signup_unpressed">#186B8F</color>
+	<color name="popupdialogtextcolor">#0A0A0A</color>
+	<color name="black">#000000</color>
+	<color name="popupdialogheadcolor">#3366cc</color>
+	<!-- color diet tracker xml food item and count -->
+	<color name="fooditemcolor">#000</color>
+	<color name="countitemforfoodcolor">#1BE06D</color>
+	<color name="dietTrackerTitleColor">#fff</color>
+	<!-- workout tracker view -->
+	<color name="food_time_head_color">#fff</color>
+	<!-- Link color -->
+	<color name="link_color">#FF0000</color>
 </resources>

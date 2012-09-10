@@ -1,151 +1,156 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/basiclinearLayout1"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/basiclinearLayout1"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+	<ScrollView
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
 
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/breakfastlayout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_list" >
+			<RelativeLayout
+				android:id="@+id/breakfastlayout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/selector_list">
 
-                <TextView
-                    android:id="@+id/breakfast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:textColor="#fff" 
-                    android:text="Break fast" />
+				<TextView
+					android:id="@+id/breakfast"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:textColor="#fff"
+					android:text="Break fast" />
 
-                <TextView
-                    android:id="@+id/breakfasttext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="60.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:textColor="#fff" />
+				<TextView
+					android:id="@+id/breakfasttext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:layout_marginRight="60.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:textColor="#fff" />
 
-                <ImageView
-                    android:id="@+id/breakfastimg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom="5dip"
-                    android:paddingRight="15.0dip"
-                    android:paddingTop="5dip"
-                    android:src="@drawable/spinner_new" />
-            </RelativeLayout>
+				<ImageView
+					android:id="@+id/breakfastimg"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:paddingBottom="5dip"
+					android:paddingRight="15.0dip"
+					android:paddingTop="5dip"
+					android:src="@drawable/spinner_new" />
+			</RelativeLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="#B9B5B5" />
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:background="#B9B5B5" />
 
-            <RelativeLayout
-                android:id="@+id/lunchlayout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_list" >
+			<RelativeLayout
+				android:id="@+id/lunchlayout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/selector_list">
 
-                <TextView
-                    android:id="@+id/lunch"
-                    android:layout_width="wrap_content"
-                    android:textColor="#fff" 
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:text="Lunch" />
+				<TextView
+					android:id="@+id/lunch"
+					android:layout_width="wrap_content"
+					android:textColor="#fff"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:text="Lunch" />
 
-                <TextView
-                    android:id="@+id/lunchtext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="60.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:textColor="#fff" />
+				<TextView
+					android:id="@+id/lunchtext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:layout_marginRight="60.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:textColor="#fff" />
 
-                <ImageView
-                    android:id="@+id/lunchimg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom="5dip"
-                    android:paddingRight="15.0dip"
-                    android:paddingTop="5dip"
-                    android:src="@drawable/spinner_new" />
-            </RelativeLayout>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dip"
-                android:background="#B9B5B5" />
-              <RelativeLayout
-                android:id="@+id/dinnerlayout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_list" >
+				<ImageView
+					android:id="@+id/lunchimg"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:paddingBottom="5dip"
+					android:paddingRight="15.0dip"
+					android:paddingTop="5dip"
+					android:src="@drawable/spinner_new" />
+			</RelativeLayout>
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="1dip"
+				android:background="#B9B5B5" />
+			<RelativeLayout
+				android:id="@+id/dinnerlayout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/selector_list">
 
-                <TextView
-                    android:id="@+id/dinner"
-                    android:layout_width="wrap_content"
-                    android:textColor="#fff" 
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:text="Dinner" />
+				<TextView
+					android:id="@+id/dinner"
+					android:layout_width="wrap_content"
+					android:textColor="#fff"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="10.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:text="Dinner" />
 
-                <TextView
-                    android:id="@+id/dinnertext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="60.0dip"
-                    android:paddingBottom="5dip"
-                    android:paddingTop="5dip"
-                    android:textColor="#fff" />
+				<TextView
+					android:id="@+id/dinnertext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:layout_marginRight="60.0dip"
+					android:paddingBottom="5dip"
+					android:paddingTop="5dip"
+					android:textColor="#fff" />
 
-                <ImageView
-                    android:id="@+id/dinnerimg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingBottom="5dip"
-                    android:paddingRight="15.0dip"
-                    android:paddingTop="5dip"
-                    android:src="@drawable/spinner_new" />
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+				<ImageView
+					android:id="@+id/dinnerimg"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:paddingBottom="5dip"
+					android:paddingRight="15.0dip"
+					android:paddingTop="5dip"
+					android:src="@drawable/spinner_new" />
+			</RelativeLayout>
+		
+			<View
+				android:layout_width="fill_parent"
+				android:layout_height="50dip" />
+		</LinearLayout>
+	</ScrollView>
 
 </LinearLayout>

@@ -5,6 +5,14 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:background="@drawable/home_screen">
+	<Button
+		android:id="@+id/home_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_margin="5dip"
+		android:text="Home">
+	</Button>
 	<LinearLayout
 		android:orientation="vertical"
 		android:layout_width="wrap_content"
@@ -57,14 +65,14 @@
 				android:layout_weight="1"
 				android:src="@drawable/normal_sad" />
 			<View
-                android:layout_height="5dp"
-                android:layout_width="5dp" />
-            <ImageView
-                android:id="@+id/very_smile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/very_smile" />
+				android:layout_height="5dp"
+				android:layout_width="5dp" />
+			<ImageView
+				android:id="@+id/very_smile"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:src="@drawable/very_smile" />
 		</LinearLayout>
 	</LinearLayout>
 	<LinearLayout
@@ -72,14 +80,14 @@
 		android:layout_width="fill_parent"
 		android:layout_marginTop="10dip"
 		android:layout_height="wrap_content"
-		android:visibility="gone"
+		android:visibility="visible"
 		android:id="@+id/selected">
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"
-			android:text="Today you are" 
-			android:textColor="@color/allpage_subtitle"/>
+			android:text="Today you are"
+			android:textColor="@color/allpage_subtitle" />
 		<ImageView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"

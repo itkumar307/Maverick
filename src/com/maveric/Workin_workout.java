@@ -196,6 +196,9 @@ public class Workin_workout extends MavericBaseActiity {
 			resultText.setText(getString(R.string.YES_1));
 			appref.setLastWorkQueriesResult(getString(R.string.YES_1));
 			// image.setImageResource(R.drawable.m3);
+		} else {
+			resultText.setText(getString(R.string.YES_1));
+			appref.setLastWorkQueriesResult(getString(R.string.YES_1));
 		}
 	}
 }
