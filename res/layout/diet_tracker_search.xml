@@ -9,19 +9,19 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
 		<ImageView
-		    android:id="@+id/img"
+			android:id="@+id/img"
 			android:layout_width="150dp"
 			android:layout_alignParentLeft="true"
 			android:layout_marginLeft="-10dip"
 			android:layout_height="wrap_content"
 			android:src="@drawable/diet_trcker_side" />
 		<Button
-            android:id="@+id/home_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_toRightOf="@+id/img"
-            android:layout_marginLeft="5dip"
-            android:text="Home"></Button>
+			android:id="@+id/home_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/img"
+			android:layout_marginLeft="5dip"
+			android:text="Home"></Button>
 		<Button
 			android:id="@+id/load_fav"
 			android:layout_width="wrap_content"
@@ -53,6 +53,15 @@
 			android:text="Search"
 			android:textColor="#0AF0BE" />
 	</LinearLayout>
+	<TextView
+		android:id="@+id/empty"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:visibility="gone"
+		android:textSize="20dp"
+		android:layout_marginTop="20dp"
+		android:textColor="@color/allpage_subtitle"
+		android:layout_gravity="center"/>
 	<ListView
 		android:id="@+id/android:list"
 		android:layout_width="fill_parent"

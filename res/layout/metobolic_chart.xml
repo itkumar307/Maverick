@@ -216,7 +216,7 @@
 			android:id="@+id/matabolic_queries"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Do you want move to questions"
+			android:text="Click here take the quiz again"
 			android:layout_marginTop="10dip"
 			android:layout_gravity="center_horizontal" />
 	</LinearLayout>

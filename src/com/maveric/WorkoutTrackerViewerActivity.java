@@ -107,7 +107,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				loding("Loding",1000);
+				loding("Loading",1000);
 				Intent addData = new Intent(context,
 						WorkoutTrackerActivity.class);
 				startActivity(addData);

@@ -88,6 +88,7 @@
 					android:layout_marginTop="5dip"
 					android:background="@drawable/welcomepageonesidewhitecurve"
 					android:text="0/1200 cal"
+					android:visibility="invisible"
 					android:textColor="#E90CF5" />
 
 				<LinearLayout
@@ -150,6 +151,7 @@
 					android:layout_gravity="right"
 					android:layout_marginRight="15dip"
 					android:layout_marginTop="5dip"
+					android:visibility="invisible"
 					android:background="@drawable/welcomepageonesidewhitecurve"
 					android:text="0/1200 cal"
 					android:textColor="#E90CF5" />
@@ -160,24 +162,12 @@
 					android:layout_marginTop="10dip"
 					android:orientation="horizontal">
 
-			<!-- 		<TextView
-						android:id="@+id/todayworkoutcaloriestext"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="left"
-						android:layout_marginLeft="20dip"
-						android:text="Calories Burn Today"
-						android:textColor="@color/allpage_subtitle" />
-
-					<TextView
-						android:id="@+id/todayworkoutValue"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="left"
-						android:layout_marginLeft="10dip"
-						android:background="#DAE2E4"
-						android:padding="3dp"
-						android:text="500 cal"
+					<!-- <TextView android:id="@+id/todayworkoutcaloriestext" android:layout_width="wrap_content" 
+						android:layout_height="wrap_content" android:layout_gravity="left" android:layout_marginLeft="20dip" 
+						android:text="Calories Burn Today" android:textColor="@color/allpage_subtitle" 
+						/> <TextView android:id="@+id/todayworkoutValue" android:layout_width="wrap_content" 
+						android:layout_height="wrap_content" android:layout_gravity="left" android:layout_marginLeft="10dip" 
+						android:background="#DAE2E4" android:padding="3dp" android:text="500 cal" 
 						android:textColor="@color/allpage_subtitle" /> -->
 				</LinearLayout>
 
@@ -262,7 +252,7 @@
 									android:textColor="@color/allpage_subtitle"
 									android:textSize="20dip" />
 							</RelativeLayout>
-							
+
 							<TextView
 								android:id="@+id/water"
 								android:layout_margin="10dip"
@@ -273,7 +263,7 @@
 								android:textColor="@color/link_color"
 								android:textSize="20dip"
 								android:text="@string/water" />
-							
+
 						</LinearLayout>
 					</RelativeLayout>
 

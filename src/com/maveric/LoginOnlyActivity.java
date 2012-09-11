@@ -70,7 +70,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				if (!SUtil.hasRegularExpressionMatch(
 						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
 						userNameString)) {
-					toast("Hey enter valid email address!!!");
+					toast("Pls enter correct email id");
 					return;
 				}
 

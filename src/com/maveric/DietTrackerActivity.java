@@ -73,7 +73,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				loding("Loding", 1000);
+				loding("Loading", 1000);
 				Intent search = new Intent(context, DietTrackerFoodSearch.class);
 				search.putExtra("date", dateText.getText().toString());
 				startActivity(search);
@@ -116,7 +116,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	private void gotoResultActivity(HashMap<String, String[]> map,
 			ArrayList<String> list, String title) {
-		loding("Loding", 1000);
+		loding("Loading", 1000);
 		Intent result = new Intent(this, DietTrackerResultActivity.class);
 		result.putExtra("map", map);
 		result.putStringArrayListExtra("keys", list);

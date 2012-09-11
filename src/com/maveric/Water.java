@@ -46,7 +46,7 @@ public class Water extends MavericBaseActiity {
 				setResultText(Integer.valueOf(app
 						.getWaterConsume(getCurrentDate())));
 				water_result.setText("Today your water consume is "
-						+ app.getWaterConsume(getCurrentDate()) + " liter");
+						+ app.getWaterConsume(getCurrentDate()) + " liters");
 
 			}
 		});

@@ -88,7 +88,6 @@
 					android:layout_marginRight="15dip"
 					android:layout_marginTop="5dip"
 					android:background="@drawable/welcomepageonesidewhitecurve"
-					android:text="20/1200 cal"
 					android:visibility="invisible"
 					android:textColor="#E90CF5" />
 

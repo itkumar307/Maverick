@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 import com.maveric.contentprovider.FoodProvider;
 import com.maveric.database.model.FoodTable;
@@ -66,10 +67,20 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 	private void displayFoods(Uri uri, Boolean t) {
 
 		final Cursor foodList = managedQuery(uri, null, null, null, null);
-		if (foodList.getCount() == 0 && t)
-			toast("No favourites entered");
+		TextView emp = (TextView) findViewById(R.id.empty);
+		emp.setVisibility(View.GONE);
+		if (foodList.getCount() == 0 && t) {
+			emp.setText("No favourites entered");
+			emp.setVisibility(View.VISIBLE);
+		}
+		// toast("No favourites entered");
+		else if (foodList.getCount() == 0 && !t) {
+			emp.setText("Pls contact admin by clicking request add food item link");
+			emp.setVisibility(View.VISIBLE);
+		}
+		// toast("Pls contact admin by clicking request add food item link");
 		Log.i("manikk", "search list count = " + foodList.getCount());
-		loding("Loding", 1000);
+		loding("Loading", 1000);
 		ListView list = getListView();
 		list.setAdapter(new SimpleCursorAdapter(DietTrackerFoodSearch.this,
 				R.layout.data_select_input_cardatat, foodList,

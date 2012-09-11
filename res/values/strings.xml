@@ -178,7 +178,7 @@
 	</string>
 	<string name="MATABOLIC_QUERIES_TITLE">Metabolic Typing Questionnaire</string>
 	<!-- result of WORKIN_QUES -->
-	<string name="YES_4">DO NOY EXERCISE TODAY!</string>
+	<string name="YES_4"> DO NOT EXERCISE TODAY!</string>
 	<string name="YES_3"> DO NOT DO any strenuous Cardio or heavy lifting!
 	</string>
 	<string name="YES_2">Take a few moments to perform some Work-In
@@ -629,7 +629,7 @@
 	<string name="HTTP_USER_LOGIN">reg/login/</string>
 	<string name="HTTP_PROFILE">user/profile</string>
 	<string name="HTTP_FOOD">user/food/add</string>
-	<string name="HTTP_WORKOUT">user/excersice/add</string>
+	<string name="HTTP_WORKOUT">user/exercise/add</string>
 	<string name="HTTP_USER_ADD">reg/add/</string>
 	<string name="HTTP_USER_ASK">user/ask</string>
 	<string name="HTTP_USER_TALK">user/talk</string>
