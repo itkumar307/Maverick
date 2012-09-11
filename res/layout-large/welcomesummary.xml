@@ -248,7 +248,7 @@
 									android:layout_height="wrap_content"
 									android:layout_centerVertical="true"
 									android:layout_toRightOf="@+id/how_happy_img"
-									android:text="How Happy You Are?"
+									android:text="How Happy Are you?"
 									android:textColor="@color/allpage_subtitle"
 									android:textSize="20dip" />
 							</RelativeLayout>
