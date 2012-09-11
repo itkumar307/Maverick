@@ -3,7 +3,9 @@ package com.maveric;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -27,6 +29,9 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 
 		exceriseSpinner = (Spinner) findViewById(R.id.excerisespinner);
 		exceriseImage = (WebView) findViewById(R.id.exceriseimag);
+		exceriseImage.getSettings().setJavaScriptEnabled(true);
+		exceriseImage.getSettings().setBuiltInZoomControls(true);
+
 		// exceriseImage.getSettings().setJavaScriptEnabled(true);
 		exceriseSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -35,10 +40,24 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 					long arg3) {
 				try {
 					String data = list.getItemAtPosition(pos).toString();
-					
-					if(!data.equalsIgnoreCase("-- Please select --")){
-					exceriseImage.loadUrl("file:///android_asset/excerisegif/" + data
-							+ ".gif");
+
+					if (!data.equalsIgnoreCase("-- Please select --")) {
+
+						Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE))
+								.getDefaultDisplay();
+						int width = display.getWidth()+50;
+						int height = display.getHeight()+50;
+
+						String temp = "<html>"
+								+ "<body>"
+								+ " <div >"
+								+ "<img src='file:///android_asset/excerisegif/"
+								+ data + ".gif' width=" + width + "px;height="
+								+ height + "px; align='middle' />"
+								+ "</div></body></html>";
+
+						exceriseImage.loadDataWithBaseURL(null, temp,
+								"text/html", "UTF-8", null);
 					}
 				} catch (Exception e) {
 					Log.i("kumar", "error in webview" + e.getMessage());

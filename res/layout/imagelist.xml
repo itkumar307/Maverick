@@ -14,7 +14,7 @@
             android:layout_height="35dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/maveric_logo" />
     </RelativeLayout>
 
@@ -43,6 +43,7 @@
                 android:id="@+id/exceriseimag"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="4dp" />
         </RelativeLayout>
     </RelativeLayout>

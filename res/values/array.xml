@@ -14,11 +14,11 @@
     <string-array name="excerise_array">
          <item>-- Please select --</item>
         <item>Ab-crunch-machine</item>
-        <item>Ab-crunch with Mediball</item>
+        <item>Ab-crunch-with-Mediball</item>
         <item>Abdominal-bicycle</item>
         <item>Arm-swing-ab-crunch</item>
         <item>Back-Squats-Machine</item>
-        <item>Benchpress barbell</item>
+        <item>Benchpress-barbell</item>
         <item>Bent-over-row</item>
         <item>Bicep-curl-barbell</item>
         <item>Bicep-curl-swissball</item>
@@ -26,7 +26,7 @@
         <item>Bicep-stretch</item>
         <item>Breathing-squats</item>
         <item>Butt-Blaster</item>
-        <item>Chest-press-on -cable-machine</item>
+        <item>Chest-press-on-cable-machine</item>
         <item>Cable-Tri-pushdown</item>
         <item>calf-raise-single-leg</item>
         <item>Cat-stretch</item>
@@ -73,7 +73,7 @@
         <item>Pushup-2</item>
         <item>Reverse-curl-knees-bent</item>
         <item>Reverse-curl-straight-leg</item>
-        <item>Seated Chest-press-machine</item>
+        <item>Seated-Chest-press-machine</item>
         <item>Seated-Row-machine</item>
         <item>Shoulder-shrugs</item>
         <item>Skier-twist</item>
@@ -92,9 +92,9 @@
         <item>Swissball-lateral-roll</item>
         <item>swissball-marching</item>
         <item>Swissball-pelvic-bridging</item>
-        <item>80-Swissball-push-up</item>
+        <item>Swissball-push-up</item>
         <item>Swissball-reverse-hyper-extension</item>
-        <item>swissball Suppine-arm-leg-lift</item>
+        <item>swissball-Suppine-arm-leg-lift</item>
         <item>T-stand</item>
         <item>TA-activation</item>
         <item>Tricep-towel-stretch</item>
