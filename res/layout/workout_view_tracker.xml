@@ -50,8 +50,7 @@
 					android:id="@+id/prev_date"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:background="@drawable/prev"
-					android:visibility="gone" />
+					android:background="@drawable/prev" />
 
 				<View
 					android:id="@+id/prevview"
@@ -81,8 +80,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_toRightOf="@+id/nextview"
-					android:background="@drawable/next_date"
-					android:visibility="gone" />
+					android:background="@drawable/next_date" />
 			</RelativeLayout>
 
 			<TextView
