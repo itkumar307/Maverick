@@ -17,6 +17,7 @@ public class FoodTrackerTable {
 		public static final String FOOD_TYPE = "food_type";
 		public static final String CALORIES = "calories";
 		public static final String SERVE = "serve";
+		public static final String UNIT = "unit";
 		public static final String UPDATED = "updated";
 		public static final String CREATED = "created";
 	}
@@ -35,7 +36,8 @@ public class FoodTrackerTable {
 			+ Column.FAV_STATE + " TEXT, " + Column.FAT + " TEXT, "
 			+ Column.CREATED + " TEXT," + Column.UPDATED + " TEXT,"
 			+ Column.CALORIES + " TEXT," + Column.FOOD_TYPE + " TEXT,"
-			+ Column.DATE + " TEXT, " + Column.SERVE + " TEXT ); ";
+			+ Column.UNIT + " TEXT," + Column.DATE + " TEXT, " + Column.SERVE
+			+ " TEXT ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
 		database.execSQL(DATABASE_CREATE);

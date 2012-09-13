@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.maveric.contentprovider.FoodProvider;
+import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
 import com.maveric.enums.foodTiming;
 
@@ -37,12 +38,14 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 		Button savingFoodItems = (Button) findViewById(R.id.save_food);
 		Button cancel = (Button) findViewById(R.id.cancel_food);
 		Bundle bundle = getIntent().getExtras();
+		TextView unit = (TextView) findViewById(R.id.unit);
 		@SuppressWarnings("unchecked")
 		final HashMap<String, String> selectedFoodDetails = (HashMap<String, String>) bundle
 				.getSerializable("foodmap");
 		foodTypeAdapter();
 		selectedFood.setText(selectedFoodDetails
 				.get(FoodTrackerTable.Column.NAME));
+		unit.setText(selectedFoodDetails.get(FoodTrackerTable.Column.UNIT));
 		savingFoodItems.setOnClickListener(new OnClickListener() {
 
 			@Override

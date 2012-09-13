@@ -7,11 +7,12 @@ public class FoodTable {
 	public static final String TABLE = "food";
 
 	public static class Column {
-//		public static final String _ID = "_id";
+		// public static final String _ID = "_id";
 		public static final String NAME = "name";
 		public static final String PROTIN = "protin";
 		public static final String CARBOS = "carbos";
 		public static final String FAT = "fat";
+		public static final String UNIT = "unit";
 		public static final String CALORIES = "calories";
 		public static final String UPDATED = "updated";
 		public static final String CREATED = "created";
@@ -19,9 +20,8 @@ public class FoodTable {
 	}
 
 	public static String[] getColumns() {
-		String[] columns = { Column.NAME, Column.PROTIN,
-				Column.CARBOS, Column.FAT, Column.CALORIES, Column.UPDATED,
-				Column.CREATED };
+		String[] columns = { Column.NAME, Column.PROTIN, Column.CARBOS,
+				Column.FAT, Column.CALORIES, Column.UPDATED, Column.CREATED };
 		return columns;
 	}
 
@@ -34,7 +34,7 @@ public class FoodTable {
 			+ " TEXT ); ";
 
 	public static void onCreate(SQLiteDatabase database) {
-		//database.execSQL(DATABASE_CREATE);
+		// database.execSQL(DATABASE_CREATE);
 	}
 
 	public static void onUpgrade(SQLiteDatabase database, int oldVersion,

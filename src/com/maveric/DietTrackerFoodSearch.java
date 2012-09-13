@@ -108,6 +108,9 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 				selectedFoodDetails.put(FoodTrackerTable.Column.PROTIN,
 						foodList.getString(foodList
 								.getColumnIndex(FoodTable.Column.PROTIN)));
+				selectedFoodDetails.put(FoodTrackerTable.Column.UNIT, foodList
+						.getString(foodList
+								.getColumnIndex(FoodTrackerTable.Column.UNIT)));
 
 				// String foodValue = foodList.getString(foodList
 				// .getColumnIndex(FoodTable.Column.NAME));
