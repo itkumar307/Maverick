@@ -2,16 +2,16 @@ package com.maveric;
 
 import java.util.HashMap;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -35,26 +35,58 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		final EditText searchBox = (EditText) findViewById(R.id.diet_search_editbox);
-		Button searchButton = (Button) findViewById(R.id.diet_search_button);
+	//	Button searchButton = (Button) findViewById(R.id.diet_search_button);
 		Button loadFav = (Button) findViewById(R.id.load_fav);
-		searchButton.setOnClickListener(new OnClickListener() {
-
+		
+		
+		searchBox.addTextChangedListener(new TextWatcher() {
+			
 			@Override
-			public void onClick(View v) {
-				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-				inputManager.hideSoftInputFromWindow(getCurrentFocus()
-						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
-				if (!TextUtils.isEmpty(searchBox.getText().toString())) {
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				
+				
+				String searchData = searchBox.getText().toString();
+				
+				if(!TextUtils.isEmpty(searchData)){
 					Uri searchList = Uri.withAppendedPath(
 							FoodProvider.FOOD_LIST_BY_SEARCH_VALUE, searchBox
 									.getText().toString());
 					displayFoods(searchList, false);
-				} else
-					toast("Please enter a food type to search for");
+				}
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+			
 			}
 		});
+		
+//		searchButton.setOnClickListener(new OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//
+//				inputManager.hideSoftInputFromWindow(getCurrentFocus()
+//						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+//
+//				if (!TextUtils.isEmpty(searchBox.getText().toString())) {
+//					Uri searchList = Uri.withAppendedPath(
+//							FoodProvider.FOOD_LIST_BY_SEARCH_VALUE, searchBox
+//									.getText().toString());
+//					displayFoods(searchList, false);
+//				} else
+//					toast("Please enter a food type to search for");
+//			}
+//		});
 		loadFav.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -80,7 +112,7 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 		}
 		// toast("Pls contact admin by clicking request add food item link");
 		Log.i("manikk", "search list count = " + foodList.getCount());
-		loding("Loading", 1000);
+		//loding("Loading", 1000);
 		ListView list = getListView();
 		list.setAdapter(new SimpleCursorAdapter(DietTrackerFoodSearch.this,
 				R.layout.data_select_input_cardatat, foodList,

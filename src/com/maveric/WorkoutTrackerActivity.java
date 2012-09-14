@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +35,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	MaverickDataOrganize maverickData;
 	Context ctx;
 	Button showFavourite;
-	Button result;
+	//Button result;
 	Cursor workoutInfo;
 	Cursor exceriseCursor;
 	EditText searchText;
@@ -56,7 +58,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		showFavourite = (Button) findViewById(R.id.load_fav);
 
-		result = (Button) findViewById(R.id.searchresult);
+	//	result = (Button) findViewById(R.id.searchresult);
 
 		searchText = (EditText) findViewById(R.id.excerisesearch);
 
@@ -80,29 +82,61 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 			}
 		});
-		result.setOnClickListener(new OnClickListener() {
+		
+		searchText.addTextChangedListener(new TextWatcher() {
+			
 			@Override
-			public void onClick(View v) {
-				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-
-				inputManager.hideSoftInputFromWindow(getCurrentFocus()
-						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				
+				
 				String searchData = searchText.getText().toString();
-				loding("Loading", 1000);
-				if (!TextUtils.isEmpty(searchData)) {
-
+				
+				if(!TextUtils.isEmpty(searchData)){
 					Uri name = Uri.withAppendedPath(
 							ExceriseProvider.EXCERISETYPE_SEARCH_URI,
 							searchData);
 					exceriseCursor = managedQuery(name, null, null, null, null);
-					Log.i("kumar", "ha");
 					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
-				} else {
-					toast("Please enter a workout to search for");
 				}
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+			
 			}
 		});
+		
+//		result.setOnClickListener(new OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//
+//				inputManager.hideSoftInputFromWindow(getCurrentFocus()
+//						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+//
+//				String searchData = searchText.getText().toString();
+//				loding("Loading", 1000);
+//				if (!TextUtils.isEmpty(searchData)) {
+//
+//					Uri name = Uri.withAppendedPath(
+//							ExceriseProvider.EXCERISETYPE_SEARCH_URI,
+//							searchData);
+//					exceriseCursor = managedQuery(name, null, null, null, null);
+//					Log.i("kumar", "ha");
+//					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+//				} else {
+//					toast("Please enter a workout to search for");
+//				}
+//			}
+//		});
 
 	}
 

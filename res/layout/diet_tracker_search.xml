@@ -39,11 +39,11 @@
 		android:orientation="horizontal">
 		<EditText
 			android:id="@+id/diet_search_editbox"
-			android:layout_width="wrap_content"
+			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:layout_marginRight="5dip" />
-		<Button
+	<!-- 	<Button
 			android:id="@+id/diet_search_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
 			android:background="@drawable/head_curve"
 			android:padding="10dip"
 			android:text="Search"
-			android:textColor="#0AF0BE" />
+			android:textColor="#0AF0BE" /> -->
 	</LinearLayout>
 	<TextView
 		android:id="@+id/empty"

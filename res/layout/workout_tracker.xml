@@ -49,11 +49,11 @@
 
 			<EditText
 				android:id="@+id/excerisesearch"
-				android:layout_width="200dp"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content">
 			</EditText>
 
-			<View
+		<!-- 	<View
 				android:layout_width="30dp"
 				android:layout_height="fill_parent"
 				android:layout_weight="1" />
@@ -66,7 +66,7 @@
 				android:background="@drawable/head_curve"
 				android:padding="10dip"
 				android:text="Search"
-				android:textColor="#0AF0BE" />
+				android:textColor="#0AF0BE" /> -->
 		</LinearLayout>
 
 		<TextView
