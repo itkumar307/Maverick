@@ -28,6 +28,7 @@
 		android:layout_width="wrap_content"
 		android:text="50 cal"
 		android:padding="10dip"
+		android:lineSpacingExtra="5dp"
 		android:textColor="#fff"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/diet_serve"

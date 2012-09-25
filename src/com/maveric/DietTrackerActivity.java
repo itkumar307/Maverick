@@ -133,8 +133,15 @@ public class DietTrackerActivity extends MavericBaseActiity {
 
 	private void setTextValues() {
 		setValues(dateText.getText().toString());
-		breakFastTitle.setText(breakfastCal + "");
-		lunchTitle.setText(lunchCal + "");
-		dinnerTitle.setText(dinnerCal + "");
+		TextView carboTextView = (TextView) findViewById(R.id.carboText);
+		TextView fatTextView = (TextView) findViewById(R.id.fatText);
+		TextView proTextView = (TextView) findViewById(R.id.protineText);
+		breakFastTitle.setText(breakfastCal + " cal");
+		lunchTitle.setText(lunchCal + " cal");
+		dinnerTitle.setText(dinnerCal + "cal");
+		carboTextView.setText(breakfastCorbo + lunchCorbo + dinnerCorbo + "");
+		fatTextView.setText(breakfastFat + lunchFat + dinnerFat + "");
+		proTextView.setText(breakfastPro + lunchPro + dinnerPro + "");
+
 	}
 }

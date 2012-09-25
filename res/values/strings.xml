@@ -49,7 +49,7 @@
 		please try again later
 	</string>
 	<!-- check internet connection -->
-	<string name="NO_INTERNET_CONNECTION">No internet connection Available</string>
+	<string name="NO_INTERNET_CONNECTION">Internet connection required</string>
 	<string name="EXCERISE_TYPE_DIALOG_HEAD"> Excerise Type</string>
 	<string name="CALORIES_DIALOG_HEAD"> Calories</string>
 	<string name="CENTIMETER">cm</string>

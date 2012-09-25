@@ -1,9 +1,6 @@
 package com.maveric;
 
 import java.util.HashMap;
-import java.util.List;
-
-import com.maveric.R.string;
 
 import android.content.Context;
 import android.util.Log;
@@ -43,8 +40,10 @@ public class FoodListAdapter extends ArrayAdapter<String> {
 					.findViewById(R.id.diet_colories);
 			String[] fooditem = map.get(keys[position]);
 			foodItemTextView.setText(keys[position]);
-			foodServeTextView.setText(fooditem[1]+"serving");
-			foodCalTextView.setText(fooditem[0]+"cal");
+			foodServeTextView.setText(fooditem[1] + " " + fooditem[2]);
+			foodCalTextView
+					.setText(fooditem[0] + " cal    " + fooditem[3] + " carbo  "+"\n"
+							+ fooditem[4] + " fat    " + fooditem[5] + " protine");
 			Log.i("manikk", "food Adapter fooditem.size = " + fooditem.length
 					+ " fooditem[0]" + fooditem[0]);
 		} catch (Exception e) {

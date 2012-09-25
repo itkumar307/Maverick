@@ -63,7 +63,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				passWordString = passWordIn.getText().toString();
 
 				if (!isAllFilled(userNameString, passWordString, "checkdata")) {
-					toast("Hey Please fill all fields");
+					toast(" Please fill out all required fields");
 					return;
 				}
 
@@ -75,7 +75,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				}
 
 				if (!isNetworkAvailable()) {
-					toast("Hey Please check your internet connection");
+					toast("Please check your internet connection");
 					return;
 				}
 				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
@@ -140,14 +140,14 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				if (isAllFilled(userNameString, passWordString,
 						conformPassString)) {
 					if (!checkPassWord(passWordString, conformPassString)) {
-						toast("Hey Password is didnot match please five once again");
+						toast("Your passwords do not match - please try again");
 						passWordUp.setText(" ");
 						conformPwdUp.setText(" ");
 						return;
 					}
 
 				} else {
-					toast("Hey Please fill all fields");
+					toast("Please fill out all required fields");
 					return;
 				}
 
@@ -155,12 +155,12 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
 						userNameString)) {
 
-					toast("Hey enter valid email address!!!");
+					toast(" Please enter a valid email ID");
 					return;
 				}
 
 				if (!isNetworkAvailable()) {
-					toast("Hey Please check your internet connection");
+					toast("Internet connection required");
 					return;
 				}
 
@@ -210,7 +210,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				toast("oh Sorry got unexpectedcondition please try some time");
 				break;
 			case 2:
-				toast("Hey username and password is not matched");
+				toast("username and password is not matched");
 				break;
 			case 3:
 				appPref.setUserNameOnly(userNameString);

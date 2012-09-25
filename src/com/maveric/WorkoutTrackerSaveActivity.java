@@ -33,7 +33,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 	TextView countTypeText;
 	TextView countTypeTime;
 	TextView exceriseTypeText;
-//	TextView woroutCalories;
+	// TextView woroutCalories;
 	EditText inputData;
 	Button saveData;
 	String countData;
@@ -56,9 +56,8 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 		Bundle extras = getIntent().getExtras();
 
-	
 		exceriseType = extras.getString("type");
-	
+
 		exceriseTypeText = (TextView) findViewById(R.id.excerisetypetext);
 		exceriseTypeText.setText(exceriseType);
 		countTypeText = (TextView) findViewById(R.id.favouritebefretext);
@@ -76,13 +75,13 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 				try {
 					countData = inputData.getText().toString();
-					
+
 					if (Integer.parseInt(countData) > 300) {
-						toast("Hey !! Enter correct value,Are you did excerise more than five hour? dont cheat");
+						toast("please Enter correct value,Are you did excerise more than five hour? dont cheat");
 						return;
 					}
 				} catch (NumberFormatException e) {
-					toast("Hey !! Enter Number only");
+					toast(" Please enter numbers only - alphabets are not accepted");
 				}
 
 			}

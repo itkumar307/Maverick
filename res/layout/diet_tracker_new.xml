@@ -146,7 +146,93 @@
 					android:paddingTop="5dip"
 					android:src="@drawable/spinner_new" />
 			</RelativeLayout>
-		
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_marginTop="5dip"
+				android:layout_marginBottom="5dip"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginLeft="2dp"
+					android:orientation="vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingLeft="5dip"
+						android:paddingRight="5dip"
+						android:textColor="#fff" />
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:text="Total" />
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginLeft="2dp"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="#FF0000"
+						android:paddingLeft="5dip"
+						android:paddingRight="5dip"
+						android:textColor="#fff"
+						android:text="fat" />
+					<TextView
+						android:id="@+id/fatText"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:text="fat" />
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginLeft="2dp"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="#FF0000"
+						android:textColor="#fff"
+						android:paddingLeft="5dip"
+						android:paddingRight="5dip"
+						android:text="carbo" />
+					<TextView
+						android:id="@+id/carboText"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:text="carbo" />
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_weight="1"
+					android:layout_height="wrap_content"
+					android:orientation="vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="#FF0000"
+						android:textColor="#fff"
+						android:paddingLeft="5dip"
+						android:paddingRight="5dip"
+						android:text="protine" />
+					<TextView
+						android:id="@+id/protineText"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:text="protin" />
+				</LinearLayout>
+			</LinearLayout>
 			<View
 				android:layout_width="fill_parent"
 				android:layout_height="50dip" />
