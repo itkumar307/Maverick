@@ -16,7 +16,7 @@
 			android:layout_height="wrap_content"
 			android:layout_alignParentLeft="true"
 			android:layout_margin="5dip"
-			android:text="Home"></Button>
+			android:background="@drawable/home_arrow"></Button>
 
 		<ImageView
 			android:layout_width="150dp"

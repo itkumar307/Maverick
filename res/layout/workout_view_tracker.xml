@@ -19,11 +19,15 @@
 			android:layout_height="wrap_content"
 			android:layout_marginTop="1dp">
 
-			<ImageView
+			<TextView
 				android:id="@+id/workout_tracker_side"
-				android:layout_width="150dp"
-				android:layout_height="wrap_content"
-				android:src="@drawable/workout_trackerside" />			
+				  android:layout_width="wrap_content"
+					android:textSize="25dp"
+					android:textStyle="bold"
+					android:textColor="#000"
+					android:layout_marginLeft="10dp"
+					android:layout_height="wrap_content"
+					android:text="WORKOUT TRACKER"  />			
           <TextView
 			android:id="@+id/add_workout_data"
 			android:layout_width="wrap_content"
@@ -64,7 +68,8 @@
 					android:id="@+id/prev_date"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:background="@drawable/prev" />
+					android:layout_alignBaseline="@+id/date"
+					android:background="@drawable/home_arrow" />
 
 				<View
 					android:id="@+id/prevview"
@@ -95,7 +100,8 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_toRightOf="@+id/nextview"
-					android:background="@drawable/next_date" />
+					android:layout_alignBaseline="@+id/date"
+					android:background="@drawable/spinner_new" />
 			</RelativeLayout>
 			<View
                   android:layout_width="match_parent"
