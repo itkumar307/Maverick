@@ -7,6 +7,6 @@
 	android:layout_alignParentTop="true"
 	android:background="@drawable/selector_list"
 	android:gravity="center"
-	android:textColor="#fff"
+	android:textColor="#000"
 	android:textSize="16dp"
 	android:padding="8dip" />

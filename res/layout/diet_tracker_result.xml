@@ -4,26 +4,43 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical"
-	android:background="@drawable/diet_trcker">
+	android:background="#fff">
+	
+    <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/maveric_title"
+                android:background="@drawable/green"
+                android:padding="15dip"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/home_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/home_arrow"></Button>
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/maveric_logo" />
+            </RelativeLayout>
 
 	<RelativeLayout
+	    android:layout_below="@+id/maveric_title"
 		android:id="@+id/result_layput"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="15dip">
-	   <Button
-            android:id="@+id/home_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_alignParentLeft="true"
-            android:layout_marginLeft="5dip"
-            android:text="Home"></Button>
 		<TextView
 			android:id="@+id/title"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textStyle="bold"
-			android:textColor="#fff"
+			android:textColor="#000"
 			android:layout_centerHorizontal="true"
 			android:text="Select Tile" />
 
@@ -32,7 +49,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			 android:cacheColorHint="#00000000"
-			 android:layout_below="@+id/home_button"
+			 android:layout_below="@+id/title"
 			 android:background="@drawable/white_curve_background"
 			android:layout_marginTop="15dip" />
 	</RelativeLayout>

@@ -3,19 +3,35 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/home_screen">
+	android:background="#fff">
 
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="vertical">
-    <Button
-            android:id="@+id/home_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="5dip"
-            android:text="Home"></Button>
+     <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/maveric_title"
+                android:background="@drawable/green"
+                android:padding="15dip"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/home_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/home_arrow"></Button>
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/maveric_logo" />
+            </RelativeLayout>
+
 		<LinearLayout
 			android:id="@+id/intro_layout"
 			android:layout_width="fill_parent"
@@ -52,17 +68,20 @@
 				android:id="@+id/question"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:layout_margin="5dip" />
+				android:layout_margin="5dip" 
+				android:textColor="#000"/>
 
 			<RadioButton
 				android:id="@+id/ratio_button_1"
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content" />
+				android:layout_height="wrap_content"
+				android:textColor="#000" />
 
 			<RadioButton
 				android:id="@+id/ratio_button_2"
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content">
+				android:layout_height="wrap_content"
+				android:textColor="#000">
 			</RadioButton>
 
 			<Button

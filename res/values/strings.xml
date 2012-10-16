@@ -644,11 +644,7 @@
 		</u>
 	</string>
 	<string name="FOOD_LINK">
-		<u>
-			<b>
-				<i>request to add food >></i>
-			</b>
-		</u>
+		request to add food 
 	</string>
 	<string name="WORK_LINK">
 		<u>
