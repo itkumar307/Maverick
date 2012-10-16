@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/workout_tracker"
+    android:background="@color/allpage_side_page_color"
 	android:orientation="vertical"
 	android:scrollbars="none">
 
@@ -11,6 +11,7 @@
 		android:id="@+id/date_title"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
+		android:background="@color/allpage_side_page_color"
 		android:orientation="vertical">
 
 		<RelativeLayout
@@ -22,7 +23,19 @@
 				android:id="@+id/workout_tracker_side"
 				android:layout_width="150dp"
 				android:layout_height="wrap_content"
-				android:src="@drawable/workout_trackerside" />
+				android:src="@drawable/workout_trackerside" />			
+          <TextView
+			android:id="@+id/add_workout_data"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="20dip"
+			android:padding="5dip"
+			android:layout_alignParentRight="true"
+			android:layout_marginTop="10dip"
+			android:layout_marginRight="10dip"
+            android:background="@color/orange_color"
+            android:textColor="#000"
+            android:text="@string/WORKOUT_ADD_STRING"></TextView>
 		</RelativeLayout>
 		<TextView
 			android:id="@+id/user_excercise"
@@ -31,6 +44,7 @@
 			android:layout_height="wrap_content"
 			android:textSize="20dip"
             android:layout_margin="5dip"
+            android:visibility="gone"
             android:textColor="@color/link_color"
             android:text="@string/WORK_LINK"></TextView>
 		<RelativeLayout
@@ -64,10 +78,11 @@
 					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_toRightOf="@+id/prevview"
-					android:background="#0791ED"
 					android:padding="10dip"
 					android:text="date"
-					android:textColor="#050505" />
+					android:textStyle="bold"
+					android:textSize="25dip"
+					android:textColor="#000" />
 
 				<View
 					android:id="@+id/nextview"
@@ -82,14 +97,11 @@
 					android:layout_toRightOf="@+id/nextview"
 					android:background="@drawable/next_date" />
 			</RelativeLayout>
-
-			<TextView
-				android:id="@+id/add_workout_data"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignParentRight="true"
-				android:layout_marginRight="10dip"
-				android:background="@drawable/plus" />
+			<View
+                  android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:layout_below="@+id/datearrange"
+                  android:background="@android:color/black" />
 		</RelativeLayout>
 	</LinearLayout>
 

@@ -679,4 +679,7 @@
 		</u>
 	</string>
 	<string name="WATER_CONSUME_BEFORE">Enter your today\'s water consumption</string>
+	
+	<!-- workout add string -->
+	<string name="WORKOUT_ADD_STRING">Add</string>
 </resources>

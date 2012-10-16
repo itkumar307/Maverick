@@ -21,4 +21,6 @@
 	<color name="food_time_head_color">#fff</color>
 	<!-- Link color -->
 	<color name="link_color">#F38F2F</color>
+	<!-- orange color -->
+	<color name="orange_color">#FF9F40</color>
 </resources>
