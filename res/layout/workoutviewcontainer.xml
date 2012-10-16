@@ -32,7 +32,6 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/maveric_title"
-		android:background="@color/allpage_side_page_color"
 		layout="@layout/workout_view_tracker" />
 
 	<include

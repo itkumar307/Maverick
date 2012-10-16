@@ -124,7 +124,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 								sleep(1000);
 								Calendar c = Calendar.getInstance();
 								SimpleDateFormat format = new SimpleDateFormat(
-										"dd-MM-yyyy");
+										"dd-MMMM-yyyy");
 								String cureentDate = format.format(c.getTime());
 
 								Log.i("kumar" + this.getClass(), "date"
