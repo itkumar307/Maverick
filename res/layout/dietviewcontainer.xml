@@ -49,13 +49,15 @@
 					android:layout_height="wrap_content"
 					android:text="DIET TRACKER" />
 
-				<ImageView
+				<TextView
 					android:id="@+id/add_diet"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="10dip"
-					android:src="@drawable/plus"
+					android:background="@color/orange_color"
 					android:layout_marginRight="10dip"
+					android:text="Add"
+					android:textColor="#000"
 					android:layout_alignParentRight="true" />
 			</RelativeLayout>
 			<RelativeLayout

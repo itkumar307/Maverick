@@ -30,7 +30,7 @@ public class DietTrackerActivity extends MavericBaseActiity {
 		dateText.setText(getCurrentDate());
 		ImageView next = (ImageView) findViewById(R.id.date_next);
 		ImageView prev = (ImageView) findViewById(R.id.date_prev);
-		ImageView add = (ImageView) findViewById(R.id.add_diet);
+		TextView add = (TextView) findViewById(R.id.add_diet);
 		RelativeLayout breakFastLayout = (RelativeLayout) findViewById(R.id.breakfastlayout);
 		RelativeLayout lunchLayout = (RelativeLayout) findViewById(R.id.lunchlayout);
 		RelativeLayout dinnerLayout = (RelativeLayout) findViewById(R.id.dinnerlayout);
