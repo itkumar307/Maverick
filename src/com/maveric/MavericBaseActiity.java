@@ -165,12 +165,12 @@ public abstract class MavericBaseActiity extends Activity {
 
 	protected String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MMMM-yyyy");
 		return format.format(c.getTime());
 	}
 
 	private String getStringFromDate(Long date) {
-		return new SimpleDateFormat("dd-MM-yyyy").format(date);
+		return new SimpleDateFormat("dd-MMMM-yyyy").format(date);
 	}
 
 	protected String prevDate(String date) {
@@ -180,7 +180,7 @@ public abstract class MavericBaseActiity extends Activity {
 
 	private Date getDateFromString(String date) {
 		try {
-			return (Date) new SimpleDateFormat("dd-MM-yyyy").parse(date);
+			return (Date) new SimpleDateFormat("dd-MMMM-yyyy").parse(date);
 		} catch (ParseException e) {
 			Log.e("manikk", e.getMessage());
 			return null;

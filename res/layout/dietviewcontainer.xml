@@ -4,98 +4,112 @@
 	android:layout_width="fill_parent"
 	android:background="#fff"
 	android:layout_height="wrap_content">
-	<RelativeLayout
+	<ScrollView
 		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/maveric_title"
-		android:background="#fff"
-		android:padding="15dip"
-		android:layout_marginBottom="10dp">
-		<Button
-			android:id="@+id/home_button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentLeft="true"
-			android:layout_marginLeft="5dip"
-			android:text="Home"></Button>
-		<ImageView
-			android:id="@+id/img"
-			android:layout_width="150dp"
-			android:layout_height="50dp"
-			android:layout_alignParentRight="true"
-			android:background="@drawable/maveric_logo" />
-	</RelativeLayout>
-	<RelativeLayout
-		android:layout_width="fill_parent"
-		android:layout_below="@+id/maveric_title"
-		android:id="@+id/diet_tracker_logo"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="2dp">
-
-		<ImageView
-			android:id="@+id/workout_tracker_side"
-			android:layout_width="150dp"
-			android:layout_marginLeft="-10dp"
-			android:layout_height="wrap_content"
-			android:src="@drawable/diet_trcker_side" />
-
-		<ImageView
-			android:id="@+id/add_diet"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:padding="10dip"
-			android:src="@drawable/plus"
-			android:layout_marginRight="10dip"
-			android:layout_alignParentRight="true" />
-	</RelativeLayout>
-	<RelativeLayout
-		android:id="@+id/date_layout"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		android:layout_below="@+id/diet_tracker_logo">
-		<TextView
-			android:id="@+id/user_food"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textSize="20dip"
-			android:layout_marginLeft="5dip"
-			android:textColor="@color/link_color"
-			android:text="@string/FOOD_LINK" />
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_centerHorizontal="true"
-			android:layout_below="@+id/user_food"
-			android:orientation="horizontal">
-			<ImageView
-				android:id="@+id/date_prev"
-				android:layout_width="wrap_content"
+		android:layout_height="fill_parent">
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<RelativeLayout
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:src="@drawable/prev"
-				android:padding="10dip" />
-			<TextView
-				android:id="@+id/diet_tracker_date"
-				android:layout_width="wrap_content"
+				android:id="@+id/maveric_title"
+				android:background="@drawable/green"
+				android:padding="15dip"
+				android:layout_marginBottom="10dp">
+				<Button
+					android:id="@+id/home_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="5dip"
+					android:background="@drawable/home_arrow"></Button>
+				<ImageView
+					android:id="@+id/img"
+					android:layout_width="150dp"
+					android:layout_height="50dp"
+					android:layout_alignParentRight="true"
+					android:background="@drawable/maveric_logo" />
+			</RelativeLayout>
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_below="@+id/maveric_title"
+				android:id="@+id/diet_tracker_logo"
 				android:layout_height="wrap_content"
-				android:text="22/8/89"
-				android:padding="17dip" />
-			<ImageView
-				android:id="@+id/date_next"
-				android:layout_width="wrap_content"
+				android:layout_marginTop="2dp">
+
+				<TextView
+					android:id="@+id/workout_tracker_side"
+					android:layout_width="wrap_content"
+					android:textSize="25dp"
+					android:textStyle="bold"
+					android:textColor="#000"
+					android:layout_marginLeft="10dp"
+					android:layout_height="wrap_content"
+					android:text="DIET TRACKER" />
+
+				<ImageView
+					android:id="@+id/add_diet"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="10dip"
+					android:src="@drawable/plus"
+					android:layout_marginRight="10dip"
+					android:layout_alignParentRight="true" />
+			</RelativeLayout>
+			<RelativeLayout
+				android:id="@+id/date_layout"
+				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:padding="10dip"
-				android:src="@drawable/next_date" />
-		</LinearLayout>
+				android:orientation="horizontal"
+				android:layout_below="@+id/diet_tracker_logo">
+				<TextView
+					android:id="@+id/user_food"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="20dip"
+					android:visibility="invisible"
+					android:layout_marginLeft="5dip"
+					android:textColor="@color/link_color"
+					android:text="@string/FOOD_LINK" />
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_below="@+id/user_food"
+					android:orientation="horizontal">
+					<ImageView
+						android:id="@+id/date_prev"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:src="@drawable/home_arrow"
+						android:padding="10dip" />
+					<TextView
+						android:id="@+id/diet_tracker_date"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#000"
+						android:textStyle="bold"
+						android:text="22/8/89"
+						android:padding="17dip" />
+					<ImageView
+						android:id="@+id/date_next"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="10dip"
+						android:src="@drawable/spinner_new" />
+				</LinearLayout>
 
-	</RelativeLayout>
-	<include
-		android:id="@+id/detailed"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@+id/date_layout"
-		layout="@layout/diet_tracker_new" />
-
+			</RelativeLayout>
+			<include
+				android:id="@+id/detailed"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/date_layout"
+				layout="@layout/diet_tracker_new" />
+		</RelativeLayout>
+	</ScrollView>
 	<include
 		android:id="@+id/bottom"
 		android:layout_width="wrap_content"
