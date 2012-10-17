@@ -3,18 +3,33 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:background="@drawable/home_screen">
+	android:background="#fff">
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="vertical">
-		<Button
-			android:id="@+id/home_button"
-			android:layout_width="wrap_content"
+		<RelativeLayout
+			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:layout_alignParentLeft="true"
-			android:layout_marginLeft="5dip"
-			android:text="Home"></Button>
+			android:id="@+id/maveric_title"
+			android:background="@drawable/green"
+			android:padding="15dip"
+			android:layout_marginBottom="10dp">
+			<Button
+				android:id="@+id/home_button"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="5dip"
+				android:background="@drawable/home_arrow"></Button>
+			<ImageView
+				android:id="@+id/img"
+				android:layout_width="150dp"
+				android:layout_height="50dp"
+				android:layout_alignParentRight="true"
+				android:background="@drawable/maveric_logo" />
+		</RelativeLayout>
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -34,6 +49,7 @@
 				android:layout_height="wrap_content"
 				android:text="Your Macro  Nutrient Ratio for every meal for"
 				android:layout_marginTop="25dip"
+				android:textColor="#000"
 				android:gravity="center" />
 			<TextView
 				android:layout_width="fill_parent"
@@ -48,6 +64,7 @@
 				android:layout_height="wrap_content"
 				android:text="is as selected below:"
 				android:layout_marginTop="10dip"
+				android:textColor="#000"
 				android:gravity="center" />
 			<LinearLayout
 				android:layout_width="fill_parent"
@@ -173,6 +190,7 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:paddingTop="5dip"
+					android:textColor="#000"
 					android:paddingLeft="10dip"
 					android:textStyle="bold"
 					android:text="Protins" />
@@ -192,6 +210,7 @@
 					android:paddingTop="5dip"
 					android:paddingLeft="10dip"
 					android:textStyle="bold"
+					android:textColor="#000"
 					android:text="Fat" />
 			</LinearLayout>
 			<LinearLayout
@@ -209,6 +228,7 @@
 					android:paddingTop="5dip"
 					android:paddingLeft="10dip"
 					android:textStyle="bold"
+					android:textColor="#000"
 					android:text="Corbohydrate" />
 			</LinearLayout>
 		</LinearLayout>

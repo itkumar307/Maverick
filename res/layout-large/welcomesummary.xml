@@ -6,25 +6,28 @@
 	android:background="@color/allpage_side_page_color"
 	android:orientation="vertical">
 
-	<RelativeLayout
-		android:id="@+id/maveric_title"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
 
-		<ImageView
-			android:layout_width="150dp"
-			android:layout_height="50dp"
-			android:layout_alignParentRight="true"
-			android:layout_marginRight="20dp"
-			android:layout_marginTop="10dp"
-			android:background="@drawable/maveric_logo" />
-	</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/maveric_title"
+            android:background="@drawable/green"
+            android:padding="15dip"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/maveric_logo" />
+        </RelativeLayout>
 
 	<ScrollView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_below="@+id/maveric_title"
-		android:background="@drawable/home_screen">
+		android:background="#fff">
 
 		<LinearLayout
 			android:layout_width="fill_parent"
