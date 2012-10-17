@@ -2,8 +2,8 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/workout_tracker">
+	android:background="#fff"
+	android:layout_height="fill_parent">
 
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -15,29 +15,27 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="10dp">
-
-			<ImageView
-				android:id="@+id/workout_tracker_side"
-				android:layout_width="150dp"
-				android:layout_height="wrap_content"
-				android:src="@drawable/workout_trackerside" />
-			<Button
-				android:id="@+id/home_button"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_toRightOf="@+id/workout_tracker_side"
-				android:layout_marginLeft="5dip"
-				android:text="Home"></Button>
-			<Button
-				android:id="@+id/load_fav"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignParentRight="true"
-				android:layout_marginRight="8dp"
-				android:background="@drawable/head_curve"
-				android:padding="5dip"
-				android:text="Favorite"
-				android:textColor="#0AF0BE" />
+			
+		<TextView
+			    	android:id="@+id/workout_tracker_side"
+				     android:layout_width="wrap_content"
+					android:textSize="25dp"
+					android:textStyle="bold"
+					android:textColor="#000"
+					android:layout_alignBaseline="@+id/load_fav"
+					android:layout_marginLeft="10dp"
+					android:layout_height="wrap_content"
+					android:text="WORKOUT TRACKER"  />
+		<Button
+			android:id="@+id/load_fav"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_marginRight="8dp"
+			android:background="@color/orange_color"
+			android:padding="5dip"
+			android:text="Favorite"
+			android:textColor="#0AF0BE" />
 		</RelativeLayout>
 
 		<LinearLayout
@@ -79,11 +77,11 @@
 		</TextView>
 
 		<ListView
-			android:id="@+id/android:list"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:cacheColorHint="#00000000"
-			android:descendantFocusability="beforeDescendants" />
+		android:id="@+id/android:list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:cacheColorHint="#00000000"
+		android:descendantFocusability="beforeDescendants" />
 	</LinearLayout>
 
 </LinearLayout>

@@ -153,9 +153,9 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				msg.setVisibility(View.GONE);
 				getListView().setVisibility(View.VISIBLE);
 				ListAdapter adapter = new SimpleCursorAdapter(this,
-						android.R.layout.simple_list_item_1, exceriseCursor,
+						R.layout.data_select_input_cardatat, exceriseCursor,
 						new String[] { ExceriseValue.Column.EXCERISE_TYPE },
-						new int[] { android.R.id.text1 });
+						new int[] {  R.id.titlename });
 
 				// Bind to our new adapter.
 				setListAdapter(adapter);

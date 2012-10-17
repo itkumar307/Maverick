@@ -2,21 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scroller"
     android:layout_width="fill_parent"
+    android:background="#fff"
     android:layout_height="fill_parent"
     android:scrollbars="none" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/diet_trcker"
         android:orientation="vertical" >
-    <Button
-            android:id="@+id/home_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="5dip"
-            android:text="Home"></Button>
         <LinearLayout
             android:id="@+id/favouriteparentblock"
             android:layout_width="fill_parent"
@@ -29,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="test"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="32dp" />
 
             <View
@@ -49,7 +42,7 @@
                     android:layout_marginLeft="3dp"
                     android:layout_weight="1"
                     android:text="How Long?"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textStyle="italic" />
 
                 <EditText
@@ -66,7 +59,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="minutes"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -124,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Check to save as favorite"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textSize="18dp"
                     android:textStyle="italic" />
 
@@ -143,7 +136,7 @@
                 android:background="#bb00ff"
                 android:padding="5dp"
                 android:text="Save"
-                android:textColor="#fff"
+                android:textColor="#000"
                 android:textSize="24dp" />
         </LinearLayout>
 

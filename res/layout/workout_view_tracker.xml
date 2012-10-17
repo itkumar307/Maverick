@@ -25,6 +25,7 @@
 					android:textSize="25dp"
 					android:textStyle="bold"
 					android:textColor="#000"
+					android:layout_alignBaseline="@+id/add_workout_data"
 					android:layout_marginLeft="10dp"
 					android:layout_height="wrap_content"
 					android:text="WORKOUT TRACKER"  />			
