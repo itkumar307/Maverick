@@ -85,9 +85,9 @@
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_marginTop="10dip"
-				android:background="@drawable/welcomepageonesidewhitecurve"
+				android:layout_marginLeft="20dp"
 				android:text="Ask our expert"
-				android:textColor="#0071BB"
+				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold" />
 			<TextView
@@ -95,9 +95,9 @@
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_marginTop="10dip"
-				android:background="@drawable/welcomepageonesidewhitecurve"
+				android:layout_marginLeft="20dp"
 				android:text="Expert talk"
-				android:textColor="#0071BB"
+				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold" />
 
@@ -106,9 +106,9 @@
 				android:layout_width="wrap_content"
 				android:layout_height="fill_parent"
 				android:layout_marginTop="10dip"
-				android:background="@drawable/welcomepageonesidewhitecurve"
+				android:layout_marginLeft="20dp"
 				android:text="Exercise Demo"
-				android:textColor="#0071BB"
+				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold" />
 
