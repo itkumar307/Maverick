@@ -79,7 +79,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 					return;
 				}
 				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
-						"Loading...", "Wait a few sec your data is checking");
+						"Loading...", "please wait we are checking your data");
 				new Thread() {
 					public void run() {
 						try {
