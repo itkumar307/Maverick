@@ -155,7 +155,7 @@
 			android:layout_width="fill_parent"
 			android:layout_marginTop="5dip"
 			android:layout_marginBottom="5dip"
-			android:visibility="gone"
+			android:visibility="visible"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal">
 			<LinearLayout
@@ -169,11 +169,11 @@
 					android:layout_height="wrap_content"
 					android:paddingLeft="5dip"
 					android:paddingRight="5dip"
-					android:textColor="#fff" />
+					android:textColor="#000" />
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:textColor="#fff"
+					android:textColor="#000"
 					android:text="Total" />
 			</LinearLayout>
 			<LinearLayout
@@ -194,7 +194,7 @@
 					android:id="@+id/fatText"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:textColor="#fff"
+					android:textColor="#000"
 					android:text="fat" />
 			</LinearLayout>
 			<LinearLayout
@@ -215,7 +215,7 @@
 					android:id="@+id/carboText"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:textColor="#fff"
+					android:textColor="#000"
 					android:text="carbo" />
 			</LinearLayout>
 			<LinearLayout
@@ -235,7 +235,7 @@
 					android:id="@+id/protineText"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:textColor="#fff"
+					android:textColor="#000"
 					android:text="protin" />
 			</LinearLayout>
 		</LinearLayout>
