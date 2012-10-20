@@ -68,7 +68,7 @@ public class Workin_workout extends MavericBaseActiity {
 				if (optionB.isChecked() || optionA.isChecked())
 					showResult();
 				else
-					toast("select any one option");
+					toast("Please select any one option");
 
 			}
 		});

@@ -2,7 +2,7 @@
 <resources>
 
 	<string name="hello">Hello World, MavericActivity!</string>
-	<string name="app_name">Maveric</string>
+	<string name="app_name">Maverick</string>
 	<!-- Apppref string -->
 	<string name="APP_PREF_NAME">MavericAppPreferencesString</string>
 	<string name="LOGIN">LOGIN</string>
@@ -656,7 +656,7 @@
 	<string name="metabolic_ques">
 		<u>
 			<b>
-				<i>Primal pattern diet</i>
+				<i>Primal Pattern diet</i>
 			</b>
 		</u>
 	</string>
@@ -678,4 +678,5 @@
 	
 	<!-- workout add string -->
 	<string name="WORKOUT_ADD_STRING">Add</string>
+	<string name="DISCLIMER">Disclaimer - Above mentioned calorie calculation is an indicative number.</string>
 </resources>

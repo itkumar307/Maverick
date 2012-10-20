@@ -7,21 +7,21 @@
 	android:orientation="vertical">
 
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/maveric_title"
-            android:background="@drawable/green"
-            android:padding="15dip"
-            android:layout_marginBottom="10dp">
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/maveric_title"
+		android:background="@drawable/green"
+		android:padding="15dip"
+		android:layout_marginBottom="10dp">
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/maveric_logo" />
-        </RelativeLayout>
+		<ImageView
+			android:id="@+id/img"
+			android:layout_width="150dp"
+			android:layout_height="50dp"
+			android:layout_alignParentRight="true"
+			android:background="@drawable/maveric_logo" />
+	</RelativeLayout>
 
 	<ScrollView
 		android:layout_width="fill_parent"
@@ -285,6 +285,12 @@
 							android:src="@drawable/workout_tracker_left" />
 					</RelativeLayout>
 				</RelativeLayout>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="@color/allpage_subtitle"
+					android:layout_margin="5dip"
+					android:text="@string/DISCLIMER" />
 
 				<View
 					android:id="@+id/footer"

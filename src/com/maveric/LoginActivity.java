@@ -110,7 +110,7 @@ public class LoginActivity extends MavericBaseActiity {
 					} else {
 						signUp.setClickable(true);
 						signUp.setBackgroundColor(R.color.signup_unpressed);
-						toast("password and confirm password mismatched");
+						toast("Your passwords do not match - please try again");
 					}
 				} else {
 					signUp.setClickable(true);

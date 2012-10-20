@@ -70,12 +70,12 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				if (!SUtil.hasRegularExpressionMatch(
 						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
 						userNameString)) {
-					toast("Pls enter correct email id");
+					toast("Please enter a valid email ID");
 					return;
 				}
 
 				if (!isNetworkAvailable()) {
-					toast("Please check your internet connection");
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
 					return;
 				}
 				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
@@ -160,7 +160,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				}
 
 				if (!isNetworkAvailable()) {
-					toast("Internet connection required");
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
 					return;
 				}
 
