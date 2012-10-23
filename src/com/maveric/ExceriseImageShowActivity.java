@@ -1,6 +1,7 @@
 package com.maveric;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -31,7 +32,9 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 		exceriseImage = (WebView) findViewById(R.id.exceriseimag);
 		exceriseImage.getSettings().setJavaScriptEnabled(true);
 		exceriseImage.getSettings().setBuiltInZoomControls(true);
-
+		
+		ctx=getApplicationContext();
+		
 		// exceriseImage.getSettings().setJavaScriptEnabled(true);
 		exceriseSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -40,27 +43,39 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 					long arg3) {
 				try {
 					String data = list.getItemAtPosition(pos).toString();
-
+					Resources r = getResources();
+//					int stringId = r.getIdentifier(data, "string", ctx.getPackageName());
+//					String des=r.getString(stringId).replaceAll("break", "<br>");
+//					
+					String des="hfsd";
+					Log.i("kumar","NEW"+data);
+					
 					if (!data.equalsIgnoreCase("-- Please select --")) {
 
 						Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE))
 								.getDefaultDisplay();
-						int width = display.getWidth()+50;
-						int height = display.getHeight()+50;
+//						int width = display.getWidth()+50;
+//						int height = display.getHeight()+50;
 
+//						String temp = "<html>"
+//								+ "<body style=\"text-align: center;  vertical-align: center;\">"
+//								+ " <div >"
+//								+ "<img src='file:///android_asset/excerisegif/"
+//								+ data + ".gif' +  align='middle' />"+"<H1 align='left'>" + des + "</H1>"
+//								+ "</div></body></html>";
+						
 						String temp = "<html>"
 								+ "<body>"
-								+ " <div >"
+								+ " <div  style=\"text-align: center;  vertical-align: center;\" >"
 								+ "<img src='file:///android_asset/excerisegif/"
-								+ data + ".gif' width=" + width + "px;height="
-								+ height + "px; align='middle' />"
+								+ data + ".gif' +  align='middle' /> </div>"+"<div> <p style='padding:5px' align='left' > <b>" + des + "</b> </p>"
 								+ "</div></body></html>";
 
 						exceriseImage.loadDataWithBaseURL(null, temp,
 								"text/html", "UTF-8", null);
 					}
 				} catch (Exception e) {
-					Log.i("kumar", "error in webview" + e.getMessage());
+					Log.e("kumar", "error in webview" + e.getMessage());
 				}
 
 			}
