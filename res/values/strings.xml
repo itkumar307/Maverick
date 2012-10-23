@@ -679,4 +679,582 @@
 	<!-- workout add string -->
 	<string name="WORKOUT_ADD_STRING">Add</string>
 	<string name="DISCLIMER">Disclaimer - Above mentioned calorie calculation is an indicative number.</string>
+	
+	<!-- without image string -->
+	<string name="Neck_lateral_flexton">NECK_LATERAL_FLEXION :break 
+
+1. Sit upright on a chair or bench with back straight and head up. break 
+2. Place left hand on left side of head, push sideways and resist with neck muscles. break 
+3. Slowly let head go sideways, while resisting, as far as comfortable
+4. Push head back up, still resisting, as far as possible. break 
+5. After reps, repeat same motions only with right hand on right side of head, and resisting. break 
+       KEY POINTS
+1. Maintain pressure on your head through the full range of motion. break 
+2. Do not jerk, use slow, controlled motions. break 
+3. Remember to repeat with your hands on the other side of your head. break </string>
+	<string name="Upper_shoulder_stretch">UPPER_SHOULDER_STRETCH :break 
+
+1. Sit or stand upright and place your right palm behind your neck, elbow pointing upward. break 
+2. With your left hand, grab your right elbow and pull until a comfortable stretch is felt in your shoulder. break 
+3. Hold for 15 seconds. break 
+4. Repeat with other arm. break 
+          KEY POINTS
+1. Do not bounce or jerk into the stretch; make slow steady movements. break 
+2. A mild pulling sensation is normal.  Stop if there is any pain. break 
+3. Avoid locking joints when stretching. break </string>
+	<string name="Wrist_stretch_1">WRIST STRETCH 1 :break 
+
+1. Stand upright with feet hip-width apart. break 
+2. Extend both arms in front of you, shoulder-width, parallel to the floor. 
+3. Extend both wrists, fingers straight and upward as far as possible. break 
+4. Hold for 10 seconds, then relax. break 
+5. Make a tight fist with both hands. break 
+6. Bend both wrists down as far as possible, while keeping a fist. break 
+7. Hold for 10 seconds, then relax for 5 seconds. break 
+8. When finished with reps, bring arms to side and relax. break 
+KEY POINTS
+1. Do not bounce or jerk into the stretch; make slow steady movements. break 
+2. A mild pulling sensation is normal.  Stop if there is any pain. break 
+3. Avoid locking joints when stretching. break </string>
+	<string name="Wrist_stretch_2">WRIST STRETCH 2 :break 
+
+1. Stand upright with your arms out in front of you at shoulder level, palms down, fists clenched. break 
+2. Flex your wrists downward as far as comfortable, hold for 5 seconds, then relax. 
+3. Extend your wrists upward as far as comfortable, hold for 5 seconds, then relax. break 
+4. Turn your arms inward, palms facing, fists clenched. break 
+5. Flex your wrists inward as far as comfortable, hold for 5 seconds, then relax. break 
+6. Extend your wrists outward as far as comfortable, hold for 5 seconds, then relax. break 
+KEY POINTS
+1. Never do this stretch if there is any pain. break 
+2. Do not bounce or jerk into the stretch; make slow steady movements. break 
+3. A mild pulling sensation is normal.  
+4. Avoid locking joints when stretching. break </string>
+	<string name="Trunk_side_stretch">TRUNK SIDE STRETCH :break 
+
+1. Stand upright with your feet slightly wider than shoulder-width, arms up over your head. break 
+2. Slowly lean to one side and hold for 10 seconds. break 
+3. Slowly lean to the other side and hold for 10 seconds. break 
+KEY POINTS
+1. Do not bounce or jerk into the stretch; make slow steady movements. break 
+2.	A mild pulling sensation is normal.  Stop if there is any pain. break 
+3.	Avoid locking joints when stretching. break </string>
+	<string name="Spinal_rotation">SPINAL ROTATION :break 
+
+1.Sit upright on the floor with your legs extended in front of you. break 
+2.Place your right leg over your left leg, with your right foot on the floor outside the left knee. break 
+3.Place your left elbow on the outside of your right knee, and extend your right arm behind you with your palm on the floor for support. break 
+4.Slowly twist your upper body to the right while looking over your right shoulder using light pressure from your left elbow. break 
+5.When you feel a stretch in your hips and lower back, hold for 30 seconds. break 
+6.Repeat with the other side. break 
+KEY POINTS
+	1.	Do not bounce or jerk into the stretch; make slow steady movements. break 
+2. A mild pulling sensation is normal.  Stop if there is any pain. break 
+3. Avoid locking joints when stretching. break 
+4. Keep your body straight. break </string>
+	<string name="Butterfly">BUTTERFLY :break 
+
+	1.Sit upright on the floor with the bottoms of your feet together and knees pointed outward. break 
+2.With your hands over your feet, gently pull your heels forward your grain. break 
+3.Slowly press the inside of your knees toward the floor with your elbows. break 
+4.When your grain is stretched, hold for 30 seconds. break 
+        KEY POINTS
+1.Do not bounce or jerk into the stretch; make slow steady movements. break 
+2.	A mild pulling sensation is normal.  Stop if there is any pain. break 
+3.	Avoid locking joints when stretching. break</string>
+	<string name="Lying_quadriceps_stretch">LYING QUADRICEPS STRETCH :break 
+
+1. Lie face down on the floor. break 
+2. Lift your right shin up towards your bullocks, bending you knee. break 
+3. Reach back and grab the top of your right foot.  Slowly pull downwards, stretching the front of your thigh. break 
+4. Hold this position for 30 seconds. break 
+5. Repeat with the left leg. break 
+KEY POINTS
+1.	Do not bounce or jerk into the stretch; make slow steady movements. break 
+2.A mild pulling sensation is normal.  Stop if there is any pain. break </string>
+	<string name="Seated_hamstring_stretch">SEATED HAMSTRING STRETCH
+1.Sit upright on the floor with legs straight and spread apart slightly. break 
+2.Extend your arms in front of you and slowly lean forward reaching as far as possible. break 
+3.When you feel a stretch in the backs of your legs, hold for 30 seconds. break 
+KEY POINTS
+1. Do not bounce or jerk into the stretch; make slow steady movements. break 
+2. A mild pulling sensation is normal.  Stop if there is any pain. break 
+3. Avoid locking joints when stretching. break </string>
+	<string name="Ankle_stretch">ANKLE STRETCH :break 
+
+1.Sit on a chair or bench and grab the back of the seat with your hands for support
+2.Stretch your legs out in front of you, heels on the floor. 
+3.Bend ankles to point feet toward you. break 
+4.Hold for 10 seconds, then relax. break 
+5.Bend ankles to point feel away from you. break 
+6.Hold for 10 seconds, then relax. break 
+KEY POINTS
+1.Do not bounce or jerk into the stretch; make slow steady movements. break 
+2.A mild pulling sensation is normal.  Stop if there is any pain. break 
+3.Avoid locking joints when stretching. break </string>
+	<string name="Qigong_toe_touch">QIGONG TOE-TOUCH:break 
+
+ 1.STAND WITH FEET TOGETHER. break 
+  2.SLIDE YOUR HANDS DOWN YOUR LEGS,BENDING YOUR KNEES. break 
+  3.PLACE YOUR HANDS DIRECTLY OVER YOUR TOES, FINGERS ALIGNED WITH TOES. break 
+ 4.INHLAE, RAISE YOUR HIPS UP AND ROLL SLIGHTLY BACK ON TO YOUR HEELS UNTIL YOU FEEL A STRETCH IN YOUR HAMSTRINGS. break 
+5.EXHALE AND DROP DOWN AGAIN,ROLLING SLIGHTLY FORWARD TOWARD THE BALLS OF YOUR FEET.YOU MAY SLOWLY MOVE YOUR HEAD AND HIPS IN CIRCLE AS  YOU PERFORM THE EXERCISE. break 
+KEY POINTS:break 
+1.DO NOT JERK OR MAKE SUDDEN MOVEMENTS. break </string>
+	<string name="Hip_pevis_integrator">HIP PELVIS INTEGRATOR
+1. Lie on your back and bend your left leg, with your left arm at your side. break 
+2. Gently push onto your left foot so that you just barely lift your pelvis up. break 
+3. You should use as little effort as possible; imaging that you have a puppet string attached to the front of your pelvis, that it is lifting you up. break 
+4. Perform 10-20 repetitions, progressively rolling your pelvis over and lifting just one vertebra off the ground with each repetition lower the vertebrae one at a time in the opposite order. break 
+5. Make sure to relax with each rep allow your hips and chest to open up. break 
+	    
+	</string>
+	<string name="Alternating_leg_drop">ALTERNATING LEG DROP :break 
+
+1. Lie on your back. break 
+2. Bend your knees, keeping your feet together as you perform the exercise. break 
+3. Let your legs gently drop to the side, one at a time try to allow the energy of the lowering leg to assist the other leg as it rises. break 
+4. Return to the starting position one leg at a time. break </string>
+	<string name="Energy_push">ENERGY PUSH :break 
+
+1. Stand with your arms raised straight out in front of you. break 
+2. Inhale and bring your hands back in towards your body. break 
+3. Exhale and push your arms straight out with the intent of projecting energy from your core out of your arms and hands. break 
+4. Repeat, pushing to the center, front left, front right and back left and back right. break 
+5. As you push to the sides and back, keep your feet planted and turn your body towards the direction you are pushing. break 
+6. For the back position, only go as far as you comfortably can do not over-rotate your spine. break 
+7. The motion through the rib cage massages the organs of digestion. break </string>
+	
+	<string name="Wood_chop">WOOD CHOP :break 
+
+1. Stand upright and bring your arms over your head as you inhale. break 
+2. Exhale as you come down, bending at the waist, as if you were chopping wood. break 
+3. There should be a natural pause at the end of the movement. break 
+4. Alternate your chopping, left, right and center. break </string>
+	<string name="Neck_ball_exercises">NECK BALL EXERCISES :break 
+
+1. Stand next to a wall or post. break 
+2. Use 50% effort for the following exercises. break </string>
+	<string name="Neck_side_bend">NECK SIDE BEND:break 
+
+1. Place the side of your face slightly under the ball. break 
+2. Bend your head into the ball as you exhale. break</string>
+	<string name="Neck_extension">NECK EXTENSION :break 
+
+1. Place the back of your head against the ball. break 
+2. You may hold onto the doorway for support. break 
+3. Press your head into the ball as you exhale. break 
+	    
+	</string>
+	<string name="Neck_flextion">NECK FLEXION :break 
+
+1. Face Ball
+2. Place your tongue on the roof of your mouth. break 
+3. Push your head into the ball as you exhale. break 
+	    
+	</string>
+	<string name="Neck_rotation">NECK ROTATION :break 
+
+1. Place the side of your head behind the apex of the ball. break 
+2. Turn your head into the ball as you inhale and back our as you exhale. break </string>
+	<string name="Face_energiser">FACE ENERGISER :break 
+
+	Breathe in and look up toward the ceiling. break 
+1. Open your mouth and eyes wide and stick your tongue out. break 
+2. Exhale and look down, contracting your face muscles as you sigh a big sigh of relief. break </string>
+	<string name="Pranayama">PRANAYAMA :break 
+
+1. Plug one nostril with a finger or your thumb. break 
+2. Breathe in – your chest should rise in the last third of your breath only. break 
+3. Breathe out through your nostril, keeping the other one plugged. break 
+4. Try to breathe in and out for the same amount of time; Example – 5 seconds in and five seconds out. break 
+5. Alternate nostrils with each complete breath or with each inhalation. break</string>
+	<string name="French_press">FRENCH PRESS :break 
+
+1. Sit on a chair or bench, head up, back straight, and feet flat on the floor. break 
+2. Hold a barbell overhead with hands about 6-8 inches apart and palms forward. break 
+3. Keeping your upper arms stationary, slowly lower the barbell behind your head as far as possible. break 
+4. Slowly raise the barbell back up your head to the starting position. break 
+        KEY POINTS
+1. Use slow controlled motions, up and down. break 
+2. Concentrate on only using your triceps. break 
+3. Keep your elbows in a fixed position. break 
+4. Use the full range of movement. break</string>
+	<string name="Cable_overhead_extension">CABLE OVERHEAD EXTENSION
+1.  Sit on the seat facing away from the Power Rods.  Bend your knees and place your feet flat on the platform.  Reach behind and grasp both of the handles, palms facing up.  Draw your arms up until your elbows are comfortably overhead and your hands are pointed to the ceiling. break 
+2. Keeping your upper arms stationary, bend your elbows allowing your hands to move downward in an arc to behind your head. break 
+3. Stop your motion at about 90 degrees and then slowly reverse the arc until your elbows are straight. break 
+           KEY POINTS
+1. Keep your upper arms motionless. break 
+2. Keep your wrists straight. break 
+3. Tighten your triceps throughout the exercise and control and motion on the way down. break 
+4. Keep your chest lifted, abs tight and maintain a very slight arch in your lower back. break</string>
+	<string name="Concentration_of_dumbell_curls">CONCENTRATION OF DUMBELL CURLS :break 
+
+1. Sit on a chair on bench with your feet on the floor shoulder-width apart. break 
+2. Hold the dumbbell in your left hand, palm up. break 
+3. Bend forward and place your left arm between your legs. break 
+4. Brace your elbow against the inside of your thigh, leaning slightly into the left leg. break 
+5. Your right arm can also brace your left elbow. break 
+6. Keeping your wrist straight, slowly curl (raise) the dumbbell up toward your chest.  
+7. Hold momentarily, then slowly return to the starting position. break 
+KEY POINTS
+1. Do not move your body in an attempt to complete the curl. break 
+2. Keep your elbow in a fixed position. break 
+3. Let the dumbbell down in a slow, controlled manner. break 
+4. Keep your wrist straight at all times. break  
+	</string>
+	<string name="Decline_push_ups">DECLINE PUSH UPS :break 
+
+1. Lie face down on the floor and prop your feet up on a bench or chair that is 2-3 feet high. break 
+2. Place your hands at chest level, slightly wider than shoulders with elbows pointed outward. break 
+3. Push yourself up extending your arms while keeping your back straight. break 
+4. Hold momentarily. break 
+5. Slowly lower yourself until your nose almost touches the floor. break 
+       KEY POINTS
+1. Do not allow your back to bend or arch. break 
+2. Keep your body as straight as possible. break</string>
+	<string name="Swiss_ball_ham_roll">SWISS BALL HAM ROLL :break 
+
+1. Lie on your back, your heels resting on the ball, knees straight, your back on the floor.  Keep your hands by your side, palms down.  Raise your hips off the floor until your body is straight (starting position). break 
+2. Roll the ball toward you, behind your knees and hips, until your feet are flat on the ball. break 
+3. Roll the ball back to the starting position. break 
+       KEY POINTS
+1. Move in a slow, controlled manner. break 
+2. Don’t bounce on the ball. break 
+3. Use the correct ball size. break 
+4. Give yourself plenty of room. break</string>
+	<string name="Incline_flys_dumbell">INCLINE FLYS DUMBELL :break 
+
+1. Lie on your back on an incline bench with your legs slightly parted and feet flat on the floor. break 
+2. Hold a dumbbell in each hand above your chest, nearly touching, palms inward, with your arms extended and slightly bent. break 
+3. Slowly bend and wrists straight. break 
+4. Slowly raise back up to the starting position. break 
+        KEY POINTS
+1. Do not let your hands turn away from facing each other. break 
+2. Keep your elbows slightly bent. break 
+3. Do not bang the weights. break 
+4. Lower the weights in a slow, controlled manner. break</string>
+	<string name="Resistance_tube_inner_range_external_rotation">RESISTANCE TUBE INNER RANGE EXTERNAL ROTATION :break 
+
+1. Stand upright with your feet shoulder-width apart. break 
+2. Attach one end of the band to a door or fixed object at elbow height. break 
+3. Position your left side toward the door and hold the band with elbow bent, thumb up. break 
+4. Your forearm should be in front of your chest, elbow at a right angle, slight tension in the band. break 
+5. Keeping your elbow at a fixed point, rotate your upper arm to bring your hand in front and out to your side. break 
+6. Slowly return to the starting position. break 
+7. Turn so your right side is toward the door and repeat with the other arm. break 
+
+        KEY POINTS
+1. Keep your elbow at a fixed point, do the work by rotating your upper arm. break 
+2. This exercise can put some stress on your elbow – stop if there is any pain. break 
+3. Move in a slow controlled manner. break </string>
+	
+	<string name="Barbell_front_squats">BARBELL FRONT SQUATS :break 
+
+1. Stand upright, feet hip-width apart, holding a barbell across your shoulders, arms crossed, palms downward stabilizing the bar. break 
+2. Squat down keeping your shins perpendicular to the floor until your thighs are parallel to the floor. break 
+3. Look forward and keep your back straight. break 
+4. Slowly stand up to the starting position. break 
+           KEY POINTS
+1. Keep your back straight and slightly arched. break 
+2. Do not allow your knees to move too far forward. break 
+3. Never bounce or jerk.  Control movements. break 
+4. Squats are an advanced exercise and proper from is essential.  Seek professional advice for instruction on proper technique. break </string>
+	<string name="Arnold_press">ARNOLD PRESS :break 
+
+1. Sit in an upright bench (90-degree chair) with feet flat on the floor. break 
+2. Hold a dumbbell in each hand, arms bent, to your shoulders with palms facing backward. break 
+3. Keep your back against the chair, shoulders back and chest out. break 
+4. Press (raise) the dumbbells straight up while turning them so your palms are facing forward at full extension. break 
+5. Lower the weights while turning your palms back towards you and in front of your shoulders. break 
+              KEY POINTS
+1. Back support is suggested for heavier weights. break 
+2. Rotate your palms back to front while pressing the weights upward. break 
+3. Keep your torso straight. break 
+4. Lower the weights in a slow, controlled manner. break 
+5. Never bounce the weights. break</string>
+	<string name="Bent_over_lateral_raise_dumbbell">BENT OVER LATERAL RAISE DUMBBELL :break 
+
+1. Bend over at the waist with a light dumbbell in each hand. break 
+2. Your arms are down, palms facing each other, elbows slightly bent. break 
+3. Your feet should be hip-width apart with knees slightly bent, your back parallel to the floor. break 
+4. Slowly raise the dumbbells in unison outward and up until they are parallel to the floor. break 
+5. Keep your head down, and elbows slightly bent. break 
+6. Slowly lower the dumbbells to the starting position. break 
+             KEY POINTS
+1. Do not swing or jerk the weights up in an attempt to lift them. break 
+2. Keep your back, head, and legs stationary. break 
+3. Use lighter weights on this exercise so you maintain proper form. break 
+4. Do not bang the weights. Lower the weights in a slow, controlled manner. break</string>
+	<string name="Upright_row_barbell">UPRIGHT ROW BARBELL :break 
+
+1. Stand upright holding a barbell in the center palms facing your body, barbell leaning on your upper thighs. break 
+2. Use a narrow grip, about 6 inches apart, and keep your back straight. break 
+3. Pull the barbell up slowly to your chin, keeping it close to your body with elbows high and pointed out. break 
+4. When the barbell nearly touches your chin, pause for a second. break 
+5. Slowly lower the barbell back to the starting position. break 
+             KEY POINTS
+1. Do not move your body to gain momentum. break 
+2. Do not jerk the barbell up. break 
+3. Lower the bar in a slow controlled manner. break</string>
+	<string name="Barbell_skull_crusher">BARBELL SKULL CRUSHER :break 
+
+	1.Lie on a bench, face up, holding a barbell above your face, hands 6-8 inches part, palms upward. break 
+2Your feet should be on the floor, legs slightly apart. break 
+3Keeping your upper arms vertical, and your elbows fixed, slowly lower the barbell until it reaches your head. break 
+4Slowly raise the bar to the starting position without moving your upper arms. break 
+         KEY POINTS
+1. Use slow, controlled motions, up and down. break 
+2. Concentrate on only using your triceps. break 
+3. Keep your elbows in a fixed position. break 
+4. Use the full range of movement. break</string>
+	<string name="Cable_biceps_curl">CABLE BICEPS CURL :break 
+
+1. Remove the seat and stand on the platform facing the Power Rods.  Grasp the Bar with an underhand grip, arms down by your sides. break 
+2. Keeping your palms facing up, slowly curl the bar in an arc toward your shoulders while keeping your elbows at your sides and your upper arms completely still. break 
+3. Slowly lower to the starting position. break 
+
+                 KEY POINTS
+1. Keep elbows at sides. break 
+2. Keep wrists straight. break 
+3. Keep your chest lifted, abs tight and maintain a very slight arch in your lower back. break</string>
+	<string name="Dumbbell_kickbacks">DUMBBELL KICKBACKS :break 
+
+1. Stand with a bench or chair to your left. break 
+2. Rest your left knee and hand on the bench for support, your right foot on the floor. break 
+3. Hold a light dumbbell in your right hand, palm in, elbow close to your body. break 
+4. Bend over so your back and upper right arm are parallel to the floor, elbow bent, hand down. break 
+5. Extend the dumbbell back and up until your arm is fully extended. break 
+6. Keep your elbow stationary and close to your body. break 
+7. Hold momentarily, then slowly return to the starting position. break 
+                 KEY POINTS
+1. Your elbow should be at a fixed position at all times. break 
+2. Do not lean, sway, or arch your back. break 
+3. Use lighter weights and maintain proper form. break</string>
+	
+	<string name="Close_grip_lat_pull_down">CLOSE GRIP LAT PULL DOWN :break 
+
+1. Straddle the bench facing the Power Rods, grasp the lat bar with an underhand grip slightly narrower than shoulder width, and sit on the bench, knees together, bent, feet, flat on the floor.  Position your thighs under the pulleys and sit upright with your arms extending upward. break 
+2. Initiate the movement by pulling your shoulder blades down and together while drawing your elbows downward in an arc. break 
+3. Stop when your elbows are at 90 degrees. break 
+4. Slowly return to the starting position allowing your arms and shoulder blades to move upward, without relaxing the muscles. break 
+                KEY POINTS
+1. Do not lose spinal alignment. break 
+2. Keep your lats tightened throughout the entire motion. break</string>
+	<string name="Dumbbell_Incline_biceps_curl">DUMBBELL INCLINE BICEPS CURL :break 
+
+1. Lie on an incline bench, a dumbbell in each hand, palms up, arms down near your slides. break 
+2. Slowly lift the dumbbells upward above chest height without letting your elbows leave your sides. break 
+3. Hold momentarily. break 
+4. Slowly return to the starting position. break 
+
+            KEY POINTS
+1. Keep your back against the bench – do not arch. break 
+2. Keep your elbows in a fixed position. break 
+3. Let the dumbbells down in a slow, controlled manner. break 
+4. Keep your wrist straight at all times. break</string>
+	<string name="Shoulder_press_machine">SHOULDER PRESS MACHINE :break 
+
+1. Sit on the machine with your back flat against the pad and your feet flat on the floor at shoulder width. break 
+2. Grasp handles (in either position) with palms facing up. break 
+3. Slowly pres handles overhead, but do not lock your elbows. break 
+4. Slowly lower the handles to the starting position. break</string>
+	<string name="Bosu_ball_squats">BOSU BALL SQUATS :break 
+
+1. Stand on bosu ball
+2. Stand upright, feet wider than hip-width apart, arms relaxed to your sides. break 
+3. Squat down keeping your shins perpendicular to the floor until your thighs are parallel to the floor. break 
+4. Look forward and keep your back straight. break 
+5. You can extend your arms in front of you while you squat for balance. break 
+6. Slowly stand up to the starting position. break 
+                  KEY POINTS
+1. Keep your back straight and slightly arched. break 
+2. Do not allow your knees to move too far forward. break 
+3. Never bounce or jerk.  Control movements. break 
+4.	Squats are an advanced exercise and proper form is 	essential. break 
+5.	Seek professional advice for instruction on proper technique. break</string>
+	<string name="Cable_wood_chop_low_to_high">CABLE WOOD CHOP HIGH TO LOW:break </string>
+	
+	<string name="Cable_wood_chop_high_to_low">1.   Stand off to one side of the platform and kneel on the knee closest to the engine angled about 45 degrees away from the platform.  Seat removed.  Use the Long Hand Grips.  Set the arms to (0) or (1).  Reach across and up and grasp the Hand Grip closest to you with both hands and extend your arms toward the pulley.  Keep the elbows slightly bent. break 
+2. Tighten the entire abdominal area and slowly rotate your ribcage and arms away from the pulley toward your opposite knee. break 
+3. Slowly reverse the motion, returning to the starting position without losing muscle tension. break 
+4. Repeat on the other side of the machine. break 
+                 KEY POINTS
+1. This exercise must be performed correctly; failure to do so could result in injury.  Use only low resistance. break 
+2. Keep all motion in your torso. break 
+3. Move only as far as your muscles will take you.  Do not use momentum to increase your range of motion. break</string>
+	<string name="Scapular_push_ups">CAPULAR PUSH UPS :break 
+
+
+1. Start in a push up position, with your hands about shoulder width apart and directly under your shoulders, resting on your toes. break 
+2. Head is in alignment with your body. break 
+3. Push through your hands and let your shoulder blacks slide forward (Protraction). break 
+4. Keep your spine and elbows straight and your chin tucked in actively pull your shoulder blades together, keeping your shoulders relaxed.	</string>
+	<string name="Incline_arm_raise_barbell">INCLINE ARM RAISE BARBELL :break 
+
+1. Lie on an incline bench. break 
+2. Grab the barbell palms down, hands about shoulder-width apart. break 
+3. Lift the barbell above your head. break 
+4. Slowly lower the barbell, keeping arms straight, in an arc, to your hips.  
+5. Slowly raise the barbell to the starting position, keeping arms straight. break 
+                KEY POINTS
+1. Keep your back against the bench. break 
+2. Do not drop your arms downward. break 
+3. Use slow, controlled movements up and down. break </string>
+	<string name="Resistance_tube_biceps_curl">RESISTANCE TUBE BICEPS CURL :break 
+
+1. Stand upright feet shoulder-width apart. break 
+2. Each foot should be on the end of a flexible band. break 
+3. Grasp the ends of the flexible band with each hand and let your arms extend down by your sides. break 
+4. Stand will your back and knees straight. break 
+5. Keeping your elbows close to your body, curl your arms up to chest level. break 
+6. Hold momentarily. break 
+7. Slowly lower your arms to the starting position. break 
+           KEY POINTS
+1. Do not move your body in an attempt to complete the curl. break 
+2. Do not let your elbows leave your sides. break 
+3. Let your hands down in a slow, controlled manner. break 
+4. Keep your wrists straight and elbows at your side at all times. break</string>
+	
+	<string name="Resistance_tube_triceps_extension">RESISTANCE TUBE TRICEPS EXTENSION :break 
+
+1. Stand with shoulders back and chest out and feet hip-width apart. break 
+2. Grab one end of the flexible band with your left hand behind your head.  The band should be hanging between your shoulder blades. break 
+3. Grab the band’s other end behind your back with your right hand and slowly pull the band down. break 
+4. Raise your left hand upwards extending your arm until it is straight.  Do not move your elbow. break 
+5. Hold this position momentarily. break 
+6. Slowly lower your hand to the starting position.  Repeat with the other arm. break 
+            KEY POINTS
+1. Use slow controlled motions, up and down. break 
+2. Concentrate on only using your triceps. break 
+3. Keep your elbows in a fixed position. break 
+4. Use the full range of movement. break</string>
+	<string name="Machine_chest_fly">MACHINE CHEST FLY :break 
+
+1. Sit on the machine with your back against the pad, feet flat on the floor. break 
+2. Grasp the handles with your palms facing outward. break 
+3. Slowly bring both arms together until they are in front of you. break 
+4. Slowly return to the starting position. break 
+            KEY POINTS
+1. Adjust the seat height such that your hands are at shoulder level. break 
+2. Do not bang the handle together in front of you. break 
+3. Keep your back straight and against the pad at all times. break 
+4. Use slow controlled movements. break</string>
+	<string name="Modified_push_ups">MODIFIED PUSH UPS :break 
+
+1. Lie on the floor face down with hands on the floor at the chest level, slightly more than shoulder-width apart, knees on the floor and feet facing upward. break 
+2. Keeping your back and hips straight, push yourself up, pivoting on your knees, extending your arms. break 
+3. Hold momentarily. break 
+4. Slowly lower yourself until your nose is near the floor.  Your back and hips should still be straight, while your elbow point outward. break 
+	  KEY POINTS
+1. Do not allow your back to bend or arch. break 
+2. Keep your body as straight as possible. break 
+3. Use your knees as pivot points. break 
+</string>
+	<string name="Cable_reverse_pull_down">CABLE REVERSE PULL DOWN :break 
+
+1. Stand on the platform facing the Power Rods.  Grasp the lat bar with an underhand grip at shoulder width.  Bring your arms straight down to your sides. break 
+2. Keeping your upper arms stationary, elbows in a fixed position, bend your elbows moving your hands in an arcing motion towards your shoulders. break 
+3. Stop your motion when your hands are above your elbows, then slowly reverse your arcing motion until your elbows are straight. break 
+           KEY POINTS
+1. Keep your upper arms motionless. break 
+2. Keep your wrists straight. break 
+3. Tighten you triceps throughout the exercise and control the motion on the way back. break </string>
+	<string name="Seated_calf_raise_machine">SEATED CALF RAISE MACHINE :break 
+
+1. Sit at the machine with your knees under the pads and your toes on the foot plate. break 
+2. Use the handle assist to raise the pads to fit under your knees if necessary. break 
+3. Slowly raise your heels bringing the pads upward. break 
+4. Slowly lower your heels to the starting position. break 
+            KEY POINTS
+1. Keep your back straight and arms to the side throughout the exercise. break 
+2. Use the hand lever if necessary to get into and out of the machine. break </string>
+	<string name="Reverse_biceps_curl">REVERSE BICEPS CURL :break 
+
+1. Stand with back straight, knees unlocked, feet hip-width-apart, and grip a barbell with an overhand grip, palms inward, hands close together. break 
+2. Your arms should be down and the barbell should be on your upper thighs. break 
+3. Keeping your elbows close to your body, curl the bar up to your chest. break 
+4. Slowly lower the barbell to the starting position. break 
+              KEY POINTS
+1. Do not away your back or rock your body in an attempt to complete the curl. break 
+2. Do not let your elbows leave your sides. break 
+3. Let the dumbbells down in a slow, controlled manner. break 
+4. Keep your wrists straight and elbows at your sides at all times. break </string>
+	
+	<string name="Hammer_curl_functional_trainer">HAMMER CURL FUNCTIONAL TRAINER :break 
+
+
+1. Remote the seat and stand on the platform facing away from the Power Rods.  Grasp the handles with a hammer grip, arms down by your sides. break 
+2. Keeping your palms facing in, slowly curl the handles in an arc toward your shoulders while keeping your elbows stationary at your sides and your upper arms completely still. break 
+3. Slowly lower to the starting position. break 
+                KEY POINTS
+1. Keep elbows stationary. break 
+2. Keep wrists straight. break 
+3. Keep your chest lifted, abs tight and maintain a very slight arch in your lower back. break </string>
+	<string name="Shoulder_press_smith_machine">SHOULDER PRESS SMITH MACHINE :break 
+
+1. Sit on the machine with your back flat against the pad and your feet flat on the floor at shoulder width. break 
+2. Grasp handles (in either position) with palms facing up. break 
+3. Slowly raise your heels upward onto your toes. break 
+4. Slowly lower your heels to the starting position. break 
+               KEY POINTS
+1. Keep your back straight throughout this exercise.  
+2. Move in slow controlled movements. break </string>
+	<string name="Standing_calf_raise">
+	    STANDING CALF RAISE
+1. Stand up to the machine and place shoulder pads above your shoulders
+2. Grasp the hand holds and place your toes on the foot plate shoulder width apart
+3. Slowly raise your heels upwards onto your toes
+4. Slowly lower your heels to starting position
+
+KEY POINTS
+1. Keep your back straight throughout the exercise
+2. Move in slow controlled movements
+	</string>
+	<string name="Arm_across_chest_crunches">ARM ACROSS CHEST CRUNCHES :break 
+
+1. Lie on your back on the floor with your knees bent and your feet together on the floor. break 
+2. Place your arms crossed on your chest. break 
+3. Curl your upper torso up toward your knees until your shoulder blades are off the ground. break 
+4. Do not lift your lower back. break 
+5. As you come to the highest point hold momentarily. break 
+6. slowly lower yourself to the starting position. break 
+             KEY POINTS
+1. Do not jerk yourself up – slowly bring yourself up using only your abdominals. break 
+2. Do not let your lower back rise off the floor.  As you feel your abdominals become tight hold for a brief second. break 
+3. Do not move too quickly.  Lower yourself down in a slow, controlled manner. break</string>
+	<string name="Swiaa_ball_reverse_crunch">SWISS BALL REVERSE CRUNCH :break 
+
+1. Lie on your back, your calves resting on the ball, knees, bent, your back on the floor.  Keep your hands by your slide, palms down.  Squeeze the ball between your heels and thighs enough to hold it (starting position). break 
+2. Lift the ball of the floor as far as comfortable. break 
+3. Slowly return the ball to the starting position on the floor. break 
+                 KEY POINTS
+1. Move in a slow, controlled manner. break 
+2. Don’t bounce on the ball. break 
+3. Use the correct ball size. break 
+4. Give yourself plenty of room. break </string>
+	
+	<string name="Hands_behind_head_crunch_knees_bent">HANDS BEHIND HEAD CRUNCH KNEES BENT :break 
+
+1. Lie on your back on the floor with your knees bent and your legs up on a bench or chair. break 
+2. Keep your thighs parallel to the floor. break 
+3. Your hands should be cupped behind your ears. break 
+4. Curl your upper torso up toward your knees until your shoulder blades are off the ground, but do not lift your lower back. break 
+5. As you come to the highest point, hold momentarily. break 
+6. Slowly lower yourself to the starting position. break 
+               KEY POINTS
+1. Do not jerk yourself up – slowly bring yourself up using only your abdominals. break 
+2. Do not let your lower back raise off the floor.  As you feel your abdominals become tight hold for a brief second. break 
+3. Do not move too quickly.  Lower yourself down in a slow, controlled manner. break </string>
+	<string name="Isometric_hold">ISOMETRIC HOLD
+1. Lie on a bench face down such that the upper body from waist upwards is hanging over the end of the bench. break 
+2. Lock your feet or strap it to ensure safety
+3. Arms are either on the side or clasped behind the back
+4. Bring the upper body up to the horizontal position and hold for 40- 45 seconds
+
+KEY POINTS
+1. Do not push too much beyond comfort
+2. Do not jerk</string>
+	
+	
 </resources>

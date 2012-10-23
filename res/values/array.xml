@@ -12,7 +12,7 @@
         <item>8</item>
     </string-array>
     <string-array name="excerise_array">
-         <item>-- Please select --</item>
+        <item>-- Please select --</item>
         <item>Ab_crunch_machine</item>
         <item>Ab_crunch_with_Mediball</item>
         <item>Abdominal_bicycle</item>
@@ -126,7 +126,67 @@
         <item>Swiss_ball_in_air_twist</item>
         <item>Swissball_breathing_crunch</item>
         <item>Knees_to _chest stretch</item>
-        
+
+        <!-- without image -->
+
+        <item>Neck_lateral_flexton</item>
+        <item>Upper_shoulder_stretch</item>
+        <item>Wrist_stretch_1</item>
+        <item>Wrist_stretch_2</item>
+        <item>Trunk_side_stretch</item>
+        <item>Spinal_rotation</item>
+        <item>Butterfly</item>
+        <item>Lying_quadriceps_stretch</item>
+        <item>Seated_hamstring_stretch</item>
+        <item>Ankle_stretch</item>
+        <item>Qigong_toe_touch</item>
+        <item>Hip_pevis_integrator</item>
+        <item>Alternating_leg_drop</item>
+        <item>Energy_push</item>
+        <item>Wood_chop</item>
+        <item>Neck_ball_exercises</item>
+        <item>Neck_side_bend</item>
+        <item>Neck_extension</item>
+        <item>Neck_flextion</item>
+        <item>Neck_rotationN</item>
+        <item>Face_energiser</item>
+        <item>Pranayama</item>
+        <item>French_press</item>
+        <item>Cable_overhead_extension</item>
+        <item>Concentration_of_dumbell_curls</item>
+        <item>Decline_push_ups</item>
+        <item>Swiss_ball_ham_roll</item>
+        <item>Incline_flys_dumbell</item>
+        <item>Resistance_tube_inner_range_external_rotation</item>
+        <item>Barbell_front_squats</item>
+        <item>Arnold_press</item>
+        <item>Bent_over_lateral_raise_dumbbell</item>
+        <item>Upright_row_barbell</item>
+        <item>Barbell_skull_crusher</item>
+        <item>Cable_biceps_curl</item>
+        <item>Dumbbell_kickbacks</item>
+        <item>Close_grip_lat_pull_down</item>
+        <item>Dumbbell_Incline_biceps_curl</item>
+        <item>Shoulder_press_machine</item>
+        <item>Bosu_ball_squats</item>
+        <item>Cable_wood_chop_low_to_high</item>
+        <item>Cable_wood_chop_high_to_low</item>
+        <item>Scapular_push_ups</item>
+        <item>Incline_arm_raise_barbell</item>
+        <item>Resistance_tube_biceps_curl</item>
+        <item>Resistance_tube_triceps_extension</item>
+        <item>Machine_chest_fly</item>
+        <item>Modified_push_ups</item>
+        <item>Cable_reverse_pull_down</item>
+        <item>Seated_calf_raise_machine</item>
+        <item>Reverse_biceps_curl</item>
+        <item>Hammer_curl_functional_trainer</item>
+        <item>Shoulder_press_smith_machine</item>
+        <item>Standing_calf_raise</item>
+        <item>Arm_across_chest_crunches</item>
+        <item>Swiaa_ball_reverse_crunch</item>
+        <item>Hands_behind_head_crunch_knees_bent</item>
+        <item>Isometric_hold</item>
     </string-array>
 
 </resources>

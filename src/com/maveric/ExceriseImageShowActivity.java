@@ -1,5 +1,9 @@
 package com.maveric;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -47,10 +51,20 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 //					int stringId = r.getIdentifier(data, "string", ctx.getPackageName());
 //					String des=r.getString(stringId).replaceAll("break", "<br>");
 //					
+
+			
+					
+					
+					
 					String des="hfsd";
 					Log.i("kumar","NEW"+data);
 					
 					if (!data.equalsIgnoreCase("-- Please select --")) {
+						
+						if(!IsExitsFile(data+".gif")){
+							data="Image-unavailable";
+							
+						}
 
 						Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE))
 								.getDefaultDisplay();
@@ -78,6 +92,24 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 					Log.e("kumar", "error in webview" + e.getMessage());
 				}
 
+			}
+
+			private boolean  IsExitsFile(String filename) {
+				
+				
+				  boolean bAssetOk = false;
+				    try {
+				        InputStream stream = context.getAssets().open("excerisegif/"+filename);
+				        stream.close();
+				        bAssetOk = true;
+				    } catch (FileNotFoundException e) {
+				    	bAssetOk = false;
+				        Log.w("IOUtilities", "assetExists failed: "+e.toString());
+				    } catch (IOException e) {
+				    	bAssetOk = false;
+				        Log.w("IOUtilities", "assetExists failed: "+e.toString());
+				    }
+				    return bAssetOk;		
 			}
 
 			@Override
