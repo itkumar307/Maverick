@@ -48,17 +48,10 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 				try {
 					String data = list.getItemAtPosition(pos).toString();
 					Resources r = getResources();
-//					int stringId = r.getIdentifier(data, "string", ctx.getPackageName());
-//					String des=r.getString(stringId).replaceAll("break", "<br>");
-//					
+					int stringId = r.getIdentifier(data, "string", ctx.getPackageName());
+					String des=r.getString(stringId).replaceAll("break", "<br>");
 
-			
-					
-					
-					
-					String des="hfsd";
-					Log.i("kumar","NEW"+data);
-					
+					Log.i("kumar","NEW"+data);					
 					if (!data.equalsIgnoreCase("-- Please select --")) {
 						
 						if(!IsExitsFile(data+".gif")){
@@ -68,6 +61,7 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 
 						Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE))
 								.getDefaultDisplay();
+						
 //						int width = display.getWidth()+50;
 //						int height = display.getHeight()+50;
 
@@ -82,7 +76,8 @@ public class ExceriseImageShowActivity extends MavericBaseActiity {
 								+ "<body>"
 								+ " <div  style=\"text-align: center;  vertical-align: center;\" >"
 								+ "<img src='file:///android_asset/excerisegif/"
-								+ data + ".gif' +  align='middle' /> </div>"+"<div> <p style='padding:5px' align='left' > <b>" + des + "</b> </p>"
+								+ data + ".gif' +  align='middle' /> </div>"+"<div> <p style='padding:5px' align='left' > <b>" 
+								+ des + "</b> </p>"+" <div style='height:70px'> </div>"
 								+ "</div></body></html>";
 
 						exceriseImage.loadDataWithBaseURL(null, temp,
