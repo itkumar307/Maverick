@@ -27,6 +27,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 	Cursor cursorDate;
 	Cursor cursorDetails;;
 	TextView addWorkoutData;
+	String nowDate;
 	
 	@Override
 	protected void setContentToLayout() {
@@ -39,7 +40,12 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		super.onCreate(savedInstanceState);
 
 		ctx = getApplicationContext();
+		
+		Bundle dateSelected=getIntent().getExtras();
 
+		 nowDate=dateSelected.getString("date");
+		
+		
 		maverickData = new MaverickDataOrganize(ctx);
 
 		previous = (TextView) findViewById(R.id.prev_date);
@@ -148,8 +154,8 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 	public void onResume() {
 		super.onResume();
 		try {
-			date.setText(getCurrentDate());
-			listViewRefresh(getCurrentDate());
+			date.setText(nowDate);
+			listViewRefresh(nowDate);
 		} catch (Exception e1) {
 			Log.e("kumar" + this.getClass(),
 					"cursor error load date" + e1.getMessage(), e1);

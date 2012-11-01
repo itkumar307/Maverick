@@ -137,6 +137,11 @@
 		<activity
             android:name=".Water"
             android:windowSoftInputMode="stateHidden"></activity>
+		
+		<activity
+			android:name=".CalendarViewActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
 	</application>
 
 </manifest>

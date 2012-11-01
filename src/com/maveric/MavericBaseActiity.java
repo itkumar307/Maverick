@@ -75,7 +75,7 @@ public abstract class MavericBaseActiity extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					Intent singup = new Intent(context,
-							DietTrackerActivity.class);
+							CalendarViewActivity.class);
 					startActivity(singup);
 				}
 			});
@@ -84,7 +84,7 @@ public abstract class MavericBaseActiity extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					Intent singup = new Intent(context,
-							WorkoutTrackerViewerActivity.class);
+							CalendarViewActivity.class);
 					startActivity(singup);
 				}
 			});
@@ -169,7 +169,7 @@ public abstract class MavericBaseActiity extends Activity {
 		return format.format(c.getTime());
 	}
 
-	private String getStringFromDate(Long date) {
+	protected String getStringFromDate(Long date) {
 		return new SimpleDateFormat("dd-MMMM-yyyy").format(date);
 	}
 
