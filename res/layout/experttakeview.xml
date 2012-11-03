@@ -1,17 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff0000"
-    android:gravity="center"
-    android:orientation="vertical" >
+    android:background="#fff" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="This is one activity."
-        android:textColor="#ffffff"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <RelativeLayout
+            android:id="@+id/maveric_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/green"
+            android:padding="15dip" >
+
+            <Button
+                android:id="@+id/home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:background="@drawable/home_arrow" >
+            </Button>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/maveric_logo" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/experttextview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/selector_list"
+            android:gravity="center_horizontal"
+            android:padding="8dip"
+            android:textColor="#000"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</ScrollView>

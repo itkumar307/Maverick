@@ -8,10 +8,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
@@ -20,23 +21,19 @@ import android.widget.SimpleAdapter;
 
 import com.maveric.util.WSclient;
 
-public abstract class ExpertTalkActivity extends MavericListBaseActiity {
-
-	@Override
-	protected void setContentToLayout() {
-		setContentView(R.layout.experttakeview);
-	}
+public class ExpertTalkActivity extends MavericListBaseActiity {
 
 	protected Context context;
-	ArrayList<HashMap<String, JSONObject>> mylist;
-	ExpertMap data;
+	ArrayList<HashMap<String, String>> mylist;
+
+	Apppref app;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		context = this.getApplicationContext();
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		mylist = new ArrayList<HashMap<String, JSONObject>>();
+		app = new Apppref(context);
+		mylist = new ArrayList<HashMap<String, String>>();
 
 		try {
 			if (isNetworkAvailable()) {
@@ -46,39 +43,40 @@ public abstract class ExpertTalkActivity extends MavericListBaseActiity {
 						+ getString(R.string.HTTP_SUB)
 						+ getString(R.string.HTTP_USER_EXPERT_TALK_JSON_API);
 
-				WSclient expertResponse = new WSclient(expertTalkUrl, context);
+				WSclient expertResponse = new WSclient(expertTalkUrl, context,
+						app.getUserNameOnly(), app.getPasswordonly());
 				expertResponse.getMeta();
 
 				if (!expertResponse.isApiCallSuccessful()) {
-					// TODO somthing gonna failure
+					Intent s = new Intent(context, ExpertTalkViewActivity.class);
+					s.putExtra("description",
+							"unexpected condition occured try after some time");
+					startActivity(s);
 
 					return;
 				}
 
-				if (!expertResponse.isApiCallSuccessful()) {
-					// TODO no expert field in database
-				}
-
 				try {
-
-					data = new ExpertMap();
-
 					JSONArray expertArray = expertResponse.getData();
 
 					for (int i = 0; i < expertArray.length(); i++) {
 
-						JSONObject jo = (JSONObject) expertArray.get(i);
-						data.setJsonData(jo);
-						data.setData(data.getId(), jo);
-						mylist.add(data.getExpertArray());
-					}
+						HashMap<String, String> map = new HashMap<String, String>();
 
+						JSONObject jo = (JSONObject) expertArray.get(i);
+
+						map.put("id", String.valueOf(i));
+						map.put("title", jo.getString("title"));
+						map.put("description", jo.getString("description"));
+						mylist.add(map);
+					}
 				} catch (Exception e) {
 					Log.e("kumar", "error in parsing json" + e.getMessage());
 				}
 
 			} else {
-				// do somthing without network condtion
+				toast(getString(R.string.NO_INTERNET_CONNECTION));
+				this.finish();
 			}
 
 		} catch (Exception e) {
@@ -89,29 +87,38 @@ public abstract class ExpertTalkActivity extends MavericListBaseActiity {
 		ListAdapter adapter = null;
 		try {
 			adapter = new SimpleAdapter(this, mylist,
-					R.layout.data_select_input_cardatat,
-					new String[] { data.getTitle() },
-					new int[] { R.id.titlename });
-		} catch (JSONException e) {
+					R.layout.experttaketabview, new String[] { "title" },
+					new int[] { R.id.titlename1 });
+		} catch (Exception e) {
+			Log.e("kumar", "showlist" + e.getMessage());
 
 		}
 
 		setListAdapter(adapter);
 
 		final ListView lv = getListView();
-		lv.setTextFilterEnabled(true);
+		lv.setBackgroundColor(Color.WHITE);
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-			@SuppressWarnings("unchecked")
-			HashMap<String, JSONObject> o = (HashMap<String, JSONObject>)lv.getItemAtPosition(position);
+				@SuppressWarnings("unchecked")
+				HashMap<String, String> o = (HashMap<String, String>) lv
+						.getItemAtPosition(position);
 
-				toast("ID '" + o.get("id"));
+				Intent s = new Intent(context, ExpertTalkViewActivity.class);
+				s.putExtra("description", o.get("description"));
+				startActivity(s);
 
 			}
 		});
+
+	}
+
+	@Override
+	protected void setContentToLayout() {
+		// TODO Auto-generated method stub
 
 	}
 

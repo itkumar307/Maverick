@@ -43,6 +43,8 @@ public class WSclient {
 
 			getHttpResponse(url, null, null);
 
+			Log.i("kumar", "url" + url);
+
 		} catch (Exception e) {
 			Log.e("WSclient", "Error call response method: " + e.getMessage(),
 					e);
@@ -152,10 +154,10 @@ public class WSclient {
 				responseString = metaResult;
 				if (metaResult != null && metaResult.equals("SUCCESS")) {
 					isApiCallSuccessful = true;
-				}else if(metaResult != null && metaResult.equals("FAILURE")){
+				} else if (metaResult != null && metaResult.equals("FAILURE")) {
 					isApiCallSuccessful = false;
-				}else{
-					//TODO
+				} else {
+					// TODO
 				}
 			} else {
 				Log.i("kumar", "No metaData for API " + url);
@@ -197,11 +199,13 @@ public class WSclient {
 	 */
 	public JSONArray getData() {
 		try {
-			JSONArray jsa = new JSONArray(this.result);
-			JSONObject jo = (JSONObject) jsa.get(0);
+			// JSONArray jsa = new JSONArray(this.result);
+			JSONObject jo = new JSONObject(this.result);
 			JSONArray res = jo.getJSONArray(DATA);
 			return res;
 		} catch (JSONException e) {
+
+			Log.e("kumar", "error parsing data" + e.getMessage());
 			/*
 			 * We get "No data" Exception error when DATA is empty. This is a
 			 * perfectly fine case.

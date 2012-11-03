@@ -75,7 +75,9 @@ public class DashBoardActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent expertZone = new Intent(context,
+						ExportZoneActivity.class);
+				startActivity(expertZone);
 
 			}
 		});
