@@ -59,55 +59,55 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				gotoHomeActivity();
-//				userNameString = userNameIn.getText().toString();
-//				passWordString = passWordIn.getText().toString();
-//
-//				if (!isAllFilled(userNameString, passWordString, "checkdata")) {
-//					toast(" Please fill out all required fields");
-//					return;
-//				}
-//
-//				if (!SUtil.hasRegularExpressionMatch(
-//						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
-//						userNameString)) {
-//					toast("Please enter a valid email ID");
-//					return;
-//				}
-//
-//				if (!isNetworkAvailable()) {
-//					toast(getString(R.string.NO_INTERNET_CONNECTION));
-//					return;
-//				}
-//				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
-//						"Loading...", "please wait we are checking your data");
-//				new Thread() {
-//					public void run() {
-//						try {
-//							String registerUrl = ctx.getResources().getString(
-//									R.string.HTTP)
-//									+ ctx.getResources().getString(
-//											R.string.HTTP_DOMAIN)
-//									+ ctx.getResources().getString(
-//											R.string.HTTP_SUB)
-//									+ ctx.getResources().getString(
-//											R.string.HTTP_USER_LOGIN)
-//									+ userNameString + "/" + passWordString;
-//							WSclient registerResponse = new WSclient(
-//									registerUrl, ctx);
-//							registerResponse.getMeta();
-//							if (registerResponse.isApiCallSuccessful()) {
-//								handlerMsg.sendEmptyMessage(3);
-//							} else {
-//								handlerMsg.sendEmptyMessage(2);
-//							}
-//						} catch (Exception e) {
-//							Log.i("kumar", "loginerror" + e.getMessage(), e);
-//							handlerMsg.sendEmptyMessage(1);
-//
-//						}
-//					}
-//				}.start();
+//				gotoHomeActivity();
+				userNameString = userNameIn.getText().toString();
+				passWordString = passWordIn.getText().toString();
+
+				if (!isAllFilled(userNameString, passWordString, "checkdata")) {
+					toast(" Please fill out all required fields");
+					return;
+				}
+
+				if (!SUtil.hasRegularExpressionMatch(
+						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
+						userNameString)) {
+					toast("Please enter a valid email ID");
+					return;
+				}
+
+				if (!isNetworkAvailable()) {
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
+					return;
+				}
+				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
+						"Loading...", "please wait we are checking your data");
+				new Thread() {
+					public void run() {
+						try {
+							String registerUrl = ctx.getResources().getString(
+									R.string.HTTP)
+									+ ctx.getResources().getString(
+											R.string.HTTP_DOMAIN)
+									+ ctx.getResources().getString(
+											R.string.HTTP_SUB)
+									+ ctx.getResources().getString(
+											R.string.HTTP_USER_LOGIN)
+									+ userNameString + "/" + passWordString;
+							WSclient registerResponse = new WSclient(
+									registerUrl, ctx);
+							registerResponse.getMeta();
+							if (registerResponse.isApiCallSuccessful()) {
+								handlerMsg.sendEmptyMessage(3);
+							} else {
+								handlerMsg.sendEmptyMessage(2);
+							}
+						} catch (Exception e) {
+							Log.i("kumar", "loginerror" + e.getMessage(), e);
+							handlerMsg.sendEmptyMessage(1);
+
+						}
+					}
+				}.start();
 			}
 		});
 
