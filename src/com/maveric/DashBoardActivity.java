@@ -1,5 +1,7 @@
 package com.maveric;
 
+import com.maveric.enums.calender;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,7 +59,10 @@ public class DashBoardActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent calenders = new Intent(context,
+						CalendarViewActivity.class);
+				calenders.putExtra("class", calender.CAlENDAR.getValue());
+				startActivity(calenders);
 
 			}
 		});

@@ -396,17 +396,8 @@ public class CalendarViewActivity extends MavericBaseActiity implements
 		@Override
 		public void onClick(View view) {
 			String date_month_year = (String) view.getTag();
-			Intent singup = null;
-			switch (calender.getCalenderByValue(getIntent().getExtras().getInt(
-					"class"))) {
-			case DIET_TRACKER:
-				singup = new Intent(context, DietTrackerActivity.class);
-				break;
-			case WORK_OUT_TRACKER:
-				singup = new Intent(context, WorkoutTrackerActivity.class);
-				break;
-			}
-
+			Intent singup = new Intent(context, calender.getCalenderByValue(
+					getIntent().getExtras().getInt("class")).getActivity());
 			singup.putExtra("date", date_month_year);
 			startActivity(singup);
 
