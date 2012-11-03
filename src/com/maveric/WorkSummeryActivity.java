@@ -25,7 +25,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	Apppref appPref;
 	RelativeLayout foodTrack, workoutTrack;
 	ProgressBar pbWork, pbDiet;
-
+	String selectedDate;
 	Context context;
 
 	@Override
@@ -37,7 +37,8 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		Bundle dateSelected = getIntent().getExtras();
+		selectedDate = dateSelected.getString("date");
 		context = getApplicationContext();
 		appPref = new Apppref(context);
 		welcome = (TextView) findViewById(R.id.welcometext);
@@ -46,7 +47,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		pbDiet = (ProgressBar) findViewById(R.id.progressbardiet);
 
 		workout1200 = (TextView) findViewById(R.id.workout_currentvalue);
-	
+
 		food1200 = (TextView) findViewById(R.id.Diet_currentvalues);
 		foodshow = (TextView) findViewById(R.id.todayeatenValue);
 
@@ -55,6 +56,18 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		TextView profile = (TextView) findViewById(R.id.profile);
 		TextView water_link = (TextView) findViewById(R.id.water);
+		
+		howHappyUR.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.i("manikk", "howHappyUR");
+				Intent home = new Intent(context, HowHappyUR.class);
+				home.putExtra("date", selectedDate);
+				startActivity(home);
+
+			}
+		});
 		profile.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -78,18 +91,20 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		});
 		// RelativeLayout howHappyUR = (RelativeLayout)
 		// findViewById(R.id.how_happy_u_r);
-		try{
-			if(water_link != null)
-		water_link.setOnClickListener(new OnClickListener() {
+		try {
+			if (water_link != null)
+				water_link.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				Intent wat = new Intent(WorkSummeryActivity.this, Water.class);
-				startActivity(wat);
+					@Override
+					public void onClick(View v) {
+						Intent wat = new Intent(WorkSummeryActivity.this,
+								Water.class);
+						wat.putExtra("date", selectedDate);
+						startActivity(wat);
 
-			}
-		});}
-		catch (Exception e) {
+					}
+				});
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
@@ -99,7 +114,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			public void onClick(View arg0) {
 				Log.i("manikk", "foodTrack");
 				Intent home = new Intent(context, DietTrackerFoodSearch.class);
-				home.putExtra("date", getCurrentDate());
+				home.putExtra("date", selectedDate);
 				startActivity(home);
 			}
 		});
@@ -110,6 +125,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			public void onClick(View arg0) {
 				Log.i("manikk", "workoutTrack");
 				Intent home = new Intent(context, WorkoutTrackerActivity.class);
+				home.putExtra("date", selectedDate);
 				startActivity(home);
 
 			}
@@ -127,43 +143,14 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		}
 	}
 
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (exitOnBackButton() && keyCode == KeyEvent.KEYCODE_BACK
-				&& event.getRepeatCount() == 0) {
-			displayExitAlert();
-			return false;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
-
-	protected boolean exitOnBackButton() {
-		return true;
-	}
-
-	private void displayExitAlert() {
-		AlertDialog dialog = new AlertDialog.Builder(WorkSummeryActivity.this)
-				.create();
-		dialog.setTitle(R.string.DIALOGMESSAGE);
-		dialog.setButton("Yes", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				finish();
-			}
-		});
-		dialog.setButton2("No", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				WorkSummeryActivity.this.closeOptionsMenu();
-			}
-		});
-		dialog.show();
-	}
+	
 
 	@Override
 	public void onResume() {
 		super.onResume();
 
 		setValue();
-		setImage(appPref.getHowHappyUR(getCurrentDate()));
+		setImage(appPref.getHowHappyUR(selectedDate));
 	}
 
 	private void setValue() {
@@ -174,7 +161,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
 			Uri name = Uri.withAppendedPath(
 					WorkoutProvider.WORKOUT_BY_DATE_SOMEVALUE_URI,
-					getCurrentDate());
+					selectedDate);
 
 			Wrktoday = managedQuery(name, null, null, null, null);
 			Wrktoday.moveToFirst();
@@ -188,16 +175,17 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 			} else {
 				value = 0;
 			}
-			
-			//int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) : 0;
+
+			// int cal = !TextUtils.isEmpty(value) ? Integer.parseInt(value) :
+			// 0;
 			workout1200.setText(value + " /300 Mins");
 			pbWork.setMax(300);
 			pbWork.setProgress(value);
 			pbWork.setIndeterminate(false);
-			food1200.setText(getTotalFoodCalories() + " /5000 cal");
-			foodshow.setText(getTotalFoodCalories() + " Cal");
+			food1200.setText(getTotalFoodCalories(selectedDate) + " /5000 cal");
+			foodshow.setText(getTotalFoodCalories(selectedDate) + " Cal");
 			pbDiet.setMax(5000);
-			pbDiet.setProgress(getTotalFoodCalories());
+			pbDiet.setProgress(getTotalFoodCalories(selectedDate));
 			pbDiet.setIndeterminate(false);
 		} catch (Exception e) {
 			Log.e("kumar", "setvalue" + e.getMessage(), e);
@@ -210,24 +198,21 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		switch (value) {
 		case 1:
-			selectedImg.setBackgroundResource(R.drawable.normal);
+			selectedImg.setBackgroundResource(R.drawable.redface);
 			break;
 		case 2:
 			Log.i("manikk", "WorkSummeryActivity case= " + value);
-			selectedImg.setBackgroundResource(R.drawable.smile);
+			selectedImg.setBackgroundResource(R.drawable.greenface);
 			break;
 		case 3:
-			selectedImg.setBackgroundResource(R.drawable.sad);
+			selectedImg.setBackgroundResource(R.drawable.blueface);
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.normal_sad);
-			break;
-		case 5:
-			selectedImg.setBackgroundResource(R.drawable.very_smile);
+			selectedImg.setBackgroundResource(R.drawable.yellowface);
 			break;
 
 		default:
-			selectedImg.setBackgroundResource(R.drawable.normal);
+			selectedImg.setBackgroundResource(R.drawable.yellowface);
 			break;
 		}
 	}

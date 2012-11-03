@@ -2,9 +2,12 @@ package com.maveric;
 
 import com.maveric.enums.calender;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
@@ -20,11 +23,12 @@ public class DashBoardActivity extends MavericBaseActiity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		RelativeLayout myProfile = (RelativeLayout) findViewById(R.id.my_profile);
-		RelativeLayout workout = (RelativeLayout) findViewById(R.id.workout);
+		RelativeLayout quiz = (RelativeLayout) findViewById(R.id.quiz);
 		RelativeLayout calentar = (RelativeLayout) findViewById(R.id.calentar);
 		RelativeLayout expertZone = (RelativeLayout) findViewById(R.id.exper_zone);
 		RelativeLayout dietTracker = (RelativeLayout) findViewById(R.id.diet_tracker);
 		RelativeLayout workoutTracker = (RelativeLayout) findViewById(R.id.workoutTracker);
+		RelativeLayout staticPage = (RelativeLayout) findViewById(R.id.more);
 
 		myProfile.setOnClickListener(new OnClickListener() {
 
@@ -47,11 +51,12 @@ public class DashBoardActivity extends MavericBaseActiity {
 
 			}
 		});
-		workout.setOnClickListener(new OnClickListener() {
+		quiz.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				Intent queries = new Intent(context, Queries.class);
+				startActivity(queries);
 
 			}
 		});
@@ -90,5 +95,46 @@ public class DashBoardActivity extends MavericBaseActiity {
 
 			}
 		});
+		staticPage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent singup = new Intent(context,
+						StaticPageMainActivity.class);
+				startActivity(singup);
+
+			}
+		});
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (exitOnBackButton() && keyCode == KeyEvent.KEYCODE_BACK
+				&& event.getRepeatCount() == 0) {
+			displayExitAlert();
+			return false;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	protected boolean exitOnBackButton() {
+		return true;
+	}
+
+	private void displayExitAlert() {
+		AlertDialog dialog = new AlertDialog.Builder(DashBoardActivity.this)
+				.create();
+		dialog.setTitle(R.string.DIALOGMESSAGE);
+		dialog.setButton("Yes", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				finish();
+			}
+		});
+		dialog.setButton2("No", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				DashBoardActivity.this.closeOptionsMenu();
+			}
+		});
+		dialog.show();
 	}
 }

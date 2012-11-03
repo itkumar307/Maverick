@@ -35,7 +35,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	MaverickDataOrganize maverickData;
 	Context ctx;
 	Button showFavourite;
-	//Button result;
+	// Button result;
 	Cursor workoutInfo;
 	Cursor exceriseCursor;
 	EditText searchText;
@@ -58,7 +58,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		showFavourite = (Button) findViewById(R.id.load_fav);
 
-	//	result = (Button) findViewById(R.id.searchresult);
+		// result = (Button) findViewById(R.id.searchresult);
 
 		searchText = (EditText) findViewById(R.id.excerisesearch);
 
@@ -82,61 +82,62 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 			}
 		});
-		
+
 		searchText.addTextChangedListener(new TextWatcher() {
-			
+
 			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				
-				
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+
 				String searchData = searchText.getText().toString();
-				
-				if(!TextUtils.isEmpty(searchData)){
+
+				if (!TextUtils.isEmpty(searchData)) {
 					Uri name = Uri.withAppendedPath(
 							ExceriseProvider.EXCERISETYPE_SEARCH_URI,
 							searchData);
 					exceriseCursor = managedQuery(name, null, null, null, null);
 					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
 				}
-				
+
 			}
-			
+
 			@Override
 			public void beforeTextChanged(CharSequence s, int start, int count,
 					int after) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void afterTextChanged(Editable s) {
-			
+
 			}
 		});
-		
-//		result.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//
-//				inputManager.hideSoftInputFromWindow(getCurrentFocus()
-//						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-//
-//				String searchData = searchText.getText().toString();
-//				loding("Loading", 1000);
-//				if (!TextUtils.isEmpty(searchData)) {
-//
-//					Uri name = Uri.withAppendedPath(
-//							ExceriseProvider.EXCERISETYPE_SEARCH_URI,
-//							searchData);
-//					exceriseCursor = managedQuery(name, null, null, null, null);
-//					Log.i("kumar", "ha");
-//					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
-//				} else {
-//					toast("Please enter a workout to search for");
-//				}
-//			}
-//		});
+
+		// result.setOnClickListener(new OnClickListener() {
+		// @Override
+		// public void onClick(View v) {
+		// InputMethodManager inputManager = (InputMethodManager)
+		// getSystemService(Context.INPUT_METHOD_SERVICE);
+		//
+		// inputManager.hideSoftInputFromWindow(getCurrentFocus()
+		// .getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+		//
+		// String searchData = searchText.getText().toString();
+		// loding("Loading", 1000);
+		// if (!TextUtils.isEmpty(searchData)) {
+		//
+		// Uri name = Uri.withAppendedPath(
+		// ExceriseProvider.EXCERISETYPE_SEARCH_URI,
+		// searchData);
+		// exceriseCursor = managedQuery(name, null, null, null, null);
+		// Log.i("kumar", "ha");
+		// exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+		// } else {
+		// toast("Please enter a workout to search for");
+		// }
+		// }
+		// });
 
 	}
 
@@ -155,7 +156,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				ListAdapter adapter = new SimpleCursorAdapter(this,
 						R.layout.data_select_input_cardatat, exceriseCursor,
 						new String[] { ExceriseValue.Column.EXCERISE_TYPE },
-						new int[] {  R.id.titlename });
+						new int[] { R.id.titlename });
 
 				// Bind to our new adapter.
 				setListAdapter(adapter);
@@ -202,6 +203,8 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 							.getColumnIndex(ExceriseValue.Column.EXCERISE_TYPE));
 					Intent s = new Intent(ctx, WorkoutTrackerSaveActivity.class);
 					s.putExtra("type", type);
+					s.putExtra("date", getIntent().getExtras()
+							.getString("date"));
 					startActivity(s);
 					WorkoutTrackerActivity.this.finish();
 				}

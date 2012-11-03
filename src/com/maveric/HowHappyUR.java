@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 public class HowHappyUR extends MavericBaseActiity {
 	private Apppref pref;
 	private ImageView selectedImg;
+	String selectedDate;
 
 	@Override
 	protected void setContentToLayout() {
@@ -22,78 +23,72 @@ public class HowHappyUR extends MavericBaseActiity {
 		super.onCreate(savedInstanceState);
 		final LinearLayout default1 = (LinearLayout) findViewById(R.id.default1);
 		final LinearLayout selected = (LinearLayout) findViewById(R.id.selected);
-		ImageView normal = (ImageView) findViewById(R.id.normal);
-		ImageView smile = (ImageView) findViewById(R.id.smile);
-		ImageView sad = (ImageView) findViewById(R.id.sad);
-		ImageView normal_sad = (ImageView) findViewById(R.id.normal_sad);
-		ImageView very_smile = (ImageView) findViewById(R.id.very_smile);
+		ImageView red = (ImageView) findViewById(R.id.red);
+		ImageView green = (ImageView) findViewById(R.id.green);
+		ImageView blue = (ImageView) findViewById(R.id.blue);
+		ImageView yellow = (ImageView) findViewById(R.id.yellow);
+
+		Bundle dateSelected = getIntent().getExtras();
+		selectedDate = dateSelected.getString("date");
 
 		pref = new Apppref(getApplicationContext());
-		if (pref.getHowHappyUR(getCurrentDate()) == 0) {
+		if (pref.getHowHappyUR(selectedDate) == 0) {
 			default1.setVisibility(View.VISIBLE);
 			selected.setVisibility(View.GONE);
 		} else {
 			default1.setVisibility(View.GONE);
 			selected.setVisibility(View.VISIBLE);
-			setImage(pref.getHowHappyUR(getCurrentDate()));
+			setImage(pref.getHowHappyUR(selectedDate));
 		}
-		normal.setOnClickListener(new OnClickListener() {
+		red.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				pref.setHowHappyUR(getCurrentDate(), 1);
+				pref.setHowHappyUR(selectedDate, 1);
 				setValues(default1, selected, 1);
 
 			}
 		});
-		smile.setOnClickListener(new OnClickListener() {
+		green.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				pref.setHowHappyUR(getCurrentDate(), 2);
+				pref.setHowHappyUR(selectedDate, 2);
 				setValues(default1, selected, 2);
 
 			}
 		});
-		sad.setOnClickListener(new OnClickListener() {
+		blue.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				pref.setHowHappyUR(getCurrentDate(), 3);
+				pref.setHowHappyUR(selectedDate, 3);
 				setValues(default1, selected, 3);
 
 			}
 		});
-		normal_sad.setOnClickListener(new OnClickListener() {
+		yellow.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				pref.setHowHappyUR(getCurrentDate(), 4);
+				pref.setHowHappyUR(selectedDate, 4);
 				setValues(default1, selected, 4);
 
 			}
 		});
-		very_smile.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				pref.setHowHappyUR(getCurrentDate(), 5);
-				setValues(default1, selected, 5);
-
-			}
-		});
 	}
 
 	private void setValues(LinearLayout gone, LinearLayout visible, int value) {
 		visible.setVisibility(View.VISIBLE);
 		gone.setVisibility(View.GONE);
 		setImage(value);
-		if (pref.getHowHappyUR(getCurrentDate()) == 3
-				&& pref.getHowHappyUR(prevDate(getCurrentDate())) == 3
-				&& pref.getHowHappyUR(prevDate(prevDate(getCurrentDate()))) == 3) {
-			Intent home = new Intent(context, metabolicQueries.class);
-			startActivity(home);
-		}
+//		if (pref.getHowHappyUR(selectedDate) == 3
+//				&& pref.getHowHappyUR(prevDate(selectedDate)) == 3
+//				&& pref.getHowHappyUR(prevDate(prevDate(selectedDate))) == 3) {
+//			Intent home = new Intent(context, metabolicQueries.class);
+//			startActivity(home);
+//		}
 	}
 
 	private void setImage(int value) {
@@ -101,19 +96,16 @@ public class HowHappyUR extends MavericBaseActiity {
 
 		switch (value) {
 		case 1:
-			selectedImg.setBackgroundResource(R.drawable.normal);
+			selectedImg.setBackgroundResource(R.drawable.redface);
 			break;
 		case 2:
-			selectedImg.setBackgroundResource(R.drawable.smile);
+			selectedImg.setBackgroundResource(R.drawable.greenface);
 			break;
 		case 3:
-			selectedImg.setBackgroundResource(R.drawable.sad);
+			selectedImg.setBackgroundResource(R.drawable.blueface);
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.normal_sad);
-			break;
-		case 5:
-			selectedImg.setBackgroundResource(R.drawable.very_smile);
+			selectedImg.setBackgroundResource(R.drawable.yellowface);
 			break;
 
 		default:

@@ -114,17 +114,7 @@ public abstract class MavericBaseActiity extends Activity {
 					startActivity(home);
 				}
 			});
-		if (howHappyUR != null)
-			howHappyUR.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					Log.i("manikk", "howHappyUR");
-					Intent home = new Intent(context, HowHappyUR.class);
-					startActivity(home);
-
-				}
-			});
+			
 	}
 
 	protected abstract void setContentToLayout();
@@ -305,8 +295,8 @@ public abstract class MavericBaseActiity extends Activity {
 		dinnerCal = 0;
 	}
 
-	protected int getTotalFoodCalories() {
-		setValues(getCurrentDate());
+	protected int getTotalFoodCalories(String date) {
+		setValues(date);
 		return breakfastCal + dinnerCal + lunchCal;
 	}
 

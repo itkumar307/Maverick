@@ -28,7 +28,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 	Cursor cursorDetails;;
 	TextView addWorkoutData;
 	String nowDate;
-	
+
 	@Override
 	protected void setContentToLayout() {
 		setContentView(R.layout.workoutviewcontainer);
@@ -40,12 +40,11 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 		super.onCreate(savedInstanceState);
 
 		ctx = getApplicationContext();
-		
-		Bundle dateSelected=getIntent().getExtras();
 
-		 nowDate=dateSelected.getString("date");
-		
-		
+		Bundle dateSelected = getIntent().getExtras();
+
+		nowDate = dateSelected.getString("date");
+
 		maverickData = new MaverickDataOrganize(ctx);
 
 		previous = (TextView) findViewById(R.id.prev_date);
@@ -99,6 +98,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 				loding("Loading", 1000);
 				Intent addData = new Intent(context,
 						WorkoutTrackerActivity.class);
+				addData.putExtra("date", date.getText().toString());
 				startActivity(addData);
 
 			}
@@ -135,14 +135,14 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 					+ cursorDetails.getCount());
 			// cursorDetails.moveToFirst();
 
-//			if (cursorDetails.getCount() > 0) {
-				ListAdapter adapter = new WorkoutAdapter(this, cursorDetails,
-						new String[] { WorkOutTrackerTable.Column.DATE },
-						new int[] { R.id.listexcerisetype });
-				setListAdapter(adapter);
-		//	} else {
+			// if (cursorDetails.getCount() > 0) {
+			ListAdapter adapter = new WorkoutAdapter(this, cursorDetails,
+					new String[] { WorkOutTrackerTable.Column.DATE },
+					new int[] { R.id.listexcerisetype });
+			setListAdapter(adapter);
+			// } else {
 
-		//	}
+			// }
 		} catch (Exception e1) {
 			Log.e("kumar" + this.getClass(), "cursor error" + e1.getMessage(),
 					e1);

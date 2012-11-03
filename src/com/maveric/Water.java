@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Water extends MavericBaseActiity {
-
+	private String selectedDate;
 	@Override
 	protected void setContentToLayout() {
 		setContentView(R.layout.water_consum);
@@ -25,15 +25,17 @@ public class Water extends MavericBaseActiity {
 		Button edit = (Button) findViewById(R.id.water_edit);
 		final EditText editText = (EditText) findViewById(R.id.water_editbox);
 		final TextView water_result = (TextView) findViewById(R.id.water_result);
+		Bundle dateSelected = getIntent().getExtras();
+		selectedDate = dateSelected.getString("date");
 		final Apppref app = new Apppref(context);
-		if (TextUtils.isEmpty(app.getWaterConsume(getCurrentDate())))
+		if (TextUtils.isEmpty(app.getWaterConsume(selectedDate)))
 			goneVisible(aftFill, beforeFill);
 		else {
 			goneVisible(beforeFill, aftFill);
 			setResultText(Integer
-					.valueOf(app.getWaterConsume(getCurrentDate())));
+					.valueOf(app.getWaterConsume(selectedDate)));
 			water_result.setText("Today you have consumed"
-					+ app.getWaterConsume(getCurrentDate())
+					+ app.getWaterConsume(selectedDate)
 					+ " liters of water");
 		}
 		submit.setOnClickListener(new OnClickListener() {
@@ -41,16 +43,16 @@ public class Water extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				goneVisible(beforeFill, aftFill);
-				app.setWaterConsume(getCurrentDate(), editText.getText()
+				app.setWaterConsume(selectedDate, editText.getText()
 						.toString());
 				setResultText(Integer.valueOf(app
-						.getWaterConsume(getCurrentDate())));
-//				if (Integer.valueOf(app.getWaterConsume(getCurrentDate())) > 1)
+						.getWaterConsume(selectedDate)));
+//				if (Integer.valueOf(app.getWaterConsume(selectedDate)) > 1)
 					water_result.setText("Today's water consumption is "
-							+ app.getWaterConsume(getCurrentDate()) + " liters");
-//				else if (Integer.valueOf(app.getWaterConsume(getCurrentDate())) == 1)
+							+ app.getWaterConsume(selectedDate) + " liters");
+//				else if (Integer.valueOf(app.getWaterConsume(selectedDate)) == 1)
 //					water_result.setText("Today's water consumption is "
-//							+ app.getWaterConsume(getCurrentDate()) + " liter");
+//							+ app.getWaterConsume(selectedDate) + " liter");
 
 			}
 		});
@@ -59,7 +61,7 @@ public class Water extends MavericBaseActiity {
 			@Override
 			public void onClick(View v) {
 				goneVisible(aftFill, beforeFill);
-				editText.setText(app.getWaterConsume(getCurrentDate()));
+				editText.setText(app.getWaterConsume(selectedDate));
 			}
 		});
 	}

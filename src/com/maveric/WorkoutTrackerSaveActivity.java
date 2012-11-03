@@ -122,17 +122,15 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 						public void run() {
 							try {
 								sleep(1000);
-								Calendar c = Calendar.getInstance();
-								SimpleDateFormat format = new SimpleDateFormat(
-										"dd-MMMM-yyyy");
-								String cureentDate = format.format(c.getTime());
-
+								Bundle dateSelected = getIntent().getExtras();
+								String selectedDate = dateSelected
+										.getString("date");
 								Log.i("kumar" + this.getClass(), "date"
-										+ cureentDate);
+										+ selectedDate);
 								ContentValues values = new ContentValues();
 
 								values.put(WorkOutTrackerTable.Column.DATE,
-										cureentDate);
+										selectedDate);
 								values.put(
 										WorkOutTrackerTable.Column.SELECT_EXCERISE,
 										exceriseType);

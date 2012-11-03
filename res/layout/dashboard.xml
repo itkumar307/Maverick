@@ -50,7 +50,7 @@
 		<RelativeLayout
 			android:layout_width="fill_parent"
 			android:layout_height="80dp"
-			android:id="@+id/workout"
+			android:id="@+id/quiz"
 			android:background="@drawable/green"
 			android:padding="15dip">
 			<TextView
@@ -62,7 +62,7 @@
 				android:textStyle="bold"
 				android:textSize="20dp"
 				android:textColor="@color/desh_bord_text"
-				android:text="WORKOUT"></TextView>
+				android:text="QUIZ"></TextView>
 			<ImageView
 				android:id="@+id/img"
 				android:layout_width="wrap_content"
@@ -167,5 +167,29 @@
 				android:layout_centerVertical="true"
 				android:background="@drawable/spinner_new" />
 		</RelativeLayout>
+		<RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:id="@+id/more"
+            android:background="@drawable/green"
+            android:padding="15dip">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/desh_bord_text"
+                android:text="MORE"></TextView>
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/spinner_new" />
+        </RelativeLayout>
 	</LinearLayout>
 </ScrollView>

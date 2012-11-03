@@ -1,12 +1,11 @@
 package com.maveric.enums;
 
-import com.maveric.DashBoardActivity;
 import com.maveric.DietTrackerActivity;
-import com.maveric.WorkoutTrackerActivity;
+import com.maveric.WorkSummeryActivity;
 import com.maveric.WorkoutTrackerViewerActivity;
 
 public enum calender {
-	CAlENDAR(0, DashBoardActivity.class), DIET_TRACKER(1,
+	CAlENDAR(0, WorkSummeryActivity.class), DIET_TRACKER(1,
 			DietTrackerActivity.class), WORK_OUT_TRACKER(2,
 			WorkoutTrackerViewerActivity.class);
 	Integer value;

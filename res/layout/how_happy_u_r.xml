@@ -6,109 +6,156 @@
 	android:layout_height="fill_parent"
 	android:background="#fff">
 	<RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/maveric_title"
-            android:background="@drawable/green"
-            android:padding="15dip"
-            android:layout_marginBottom="10dp">
-            <Button
-                android:id="@+id/home_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dip"
-                android:background="@drawable/home_arrow"></Button>
-            <ImageView
-                android:id="@+id/img"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/maveric_logo" />
-        </RelativeLayout>
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="wrap_content"
-		android:layout_marginTop="10dip"
-		android:layout_height="wrap_content"
-		android:id="@+id/default1"
-		android:visibility="gone">
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:text="How happay are you?"
-			android:textColor="#000" />
-		<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="wrap_content"
-			android:layout_marginTop="10dip"
-			android:layout_height="wrap_content">
-			<ImageView
-				android:id="@+id/normal"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:src="@drawable/normal" />
-			<View
-				android:layout_height="5dp"
-				android:layout_width="5dp" />
-			<ImageView
-				android:id="@+id/smile"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:src="@drawable/smile" />
-			<View
-				android:layout_height="5dp"
-				android:layout_width="5dp" />
-			<ImageView
-				android:id="@+id/sad"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:src="@drawable/sad" />
-			<View
-				android:layout_height="5dp"
-				android:layout_width="5dp" />
-			<ImageView
-				android:id="@+id/normal_sad"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:src="@drawable/normal_sad" />
-			<View
-				android:layout_height="5dp"
-				android:layout_width="5dp" />
-			<ImageView
-				android:id="@+id/very_smile"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_weight="1"
-				android:src="@drawable/very_smile" />
-		</LinearLayout>
-	</LinearLayout>
-	<LinearLayout
-		android:orientation="vertical"
 		android:layout_width="fill_parent"
-		android:layout_marginTop="10dip"
 		android:layout_height="wrap_content"
-		android:visibility="visible"
-		android:id="@+id/selected">
-		<TextView
+		android:id="@+id/maveric_title"
+		android:background="@drawable/green"
+		android:padding="15dip"
+		android:layout_marginBottom="10dp">
+		<Button
+			android:id="@+id/home_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:text="Today you are"
-			android:textColor="#000" />
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5dip"
+			android:background="@drawable/home_arrow"></Button>
 		<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dip"
-			android:id="@+id/selected_img"
-			android:layout_gravity="center_horizontal" />
-	</LinearLayout>
+			android:id="@+id/img"
+			android:layout_width="150dp"
+			android:layout_height="50dp"
+			android:layout_alignParentRight="true"
+			android:background="@drawable/maveric_logo" />
+	</RelativeLayout>
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_height="fill_parent"
+				android:id="@+id/default1"
+				android:layout_weight="0"
+				android:visibility="visible">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:text="HORN OR HALO?"
+					android:textStyle="bold"
+					android:textColor="@color/link_color" />
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center_horizontal"
+						android:layout_toLeftOf="@+id/logs"
+						android:textStyle="bold"
+						android:layout_alignParentLeft="true"
+						android:text="Use this Mood Meter to build your emptional awareness!"
+						android:textColor="#000" />
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:id="@+id/logs"
+						android:layout_alignParentRight="true"
+						android:src="@drawable/happylogo" />
+				</RelativeLayout>
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:background="@drawable/moodbg">
+					<LinearLayout
+						android:orientation="horizontal"
+						android:layout_width="fill_parent"
+						android:layout_marginTop="10dip"
+						android:layout_weight="1"
+						android:layout_height="fill_parent">
+						<ImageView
+							android:id="@+id/red"
+							android:layout_width="fill_parent"
+							android:layout_marginTop="10dip"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:src="@drawable/redface" />
 
+						<ImageView
+							android:id="@+id/yellow"
+							android:layout_width="fill_parent"
+							android:layout_marginTop="10dip"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:src="@drawable/yellowface" />
+					</LinearLayout>
+
+					<LinearLayout
+						android:orientation="horizontal"
+						android:layout_width="fill_parent"
+						android:layout_weight="1"
+						android:layout_height="fill_parent">
+						<ImageView
+							android:id="@+id/blue"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:src="@drawable/blueface" />
+						<ImageView
+							android:id="@+id/green"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:layout_weight="1"
+							android:src="@drawable/greenface" />
+					</LinearLayout>
+				</LinearLayout>
+				<RelativeLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_centerHorizontal="true"
+						android:text="FEELINGS"
+						android:textStyle="bold"
+						android:textColor="#000" />
+					<ImageView
+						android:layout_width="40dp"
+						android:layout_height="40dp"
+						android:id="@+id/logs"
+						android:layout_alignParentLeft="true"
+						android:src="@drawable/happylogo" />
+				</RelativeLayout>
+			</LinearLayout>
+			<LinearLayout
+				android:orientation="vertical"
+				android:layout_width="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_weight="0"
+				android:layout_height="fill_parent"
+				android:visibility="visible"
+				android:id="@+id/selected">
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center_horizontal"
+					android:text="Today you are"
+					android:textColor="#000" />
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="10dip"
+					android:id="@+id/selected_img"
+					android:layout_gravity="center_horizontal" />
+
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
 </LinearLayout>
     

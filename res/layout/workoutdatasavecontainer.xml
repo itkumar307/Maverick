@@ -31,14 +31,9 @@
     <include
         android:id="@+id/detailed"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/maveric_title"
         layout="@layout/favourite_workout_tracker" />
 
-    <include
-        android:id="@+id/bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        layout="@layout/menu" />
 
 </RelativeLayout>

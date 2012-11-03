@@ -105,9 +105,5 @@
 			
 		</RelativeLayout>
 	</ScrollView>
-	<include
-		android:id="@+id/bottom"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		layout="@layout/menu" />
+
 </RelativeLayout>
