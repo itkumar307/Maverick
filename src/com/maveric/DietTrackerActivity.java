@@ -23,11 +23,13 @@ public class DietTrackerActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Bundle dateSelected=getIntent().getExtras();
+
 		dateText = (TextView) findViewById(R.id.diet_tracker_date);
 		breakFastTitle = (TextView) findViewById(R.id.breakfasttext);
 		lunchTitle = (TextView) findViewById(R.id.lunchtext);
 		dinnerTitle = (TextView) findViewById(R.id.dinnertext);
-		dateText.setText(getCurrentDate());
+		dateText.setText(dateSelected.getString("date"));
 		ImageView next = (ImageView) findViewById(R.id.date_next);
 		ImageView prev = (ImageView) findViewById(R.id.date_prev);
 		TextView add = (TextView) findViewById(R.id.add_diet);

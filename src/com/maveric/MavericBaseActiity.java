@@ -9,6 +9,7 @@ import java.util.Calendar;
 
 import com.maveric.contentprovider.FoodProvider;
 import com.maveric.database.model.FoodTrackerTable;
+import com.maveric.enums.calender;
 import com.maveric.enums.foodTiming;
 
 import android.app.Activity;
@@ -74,18 +75,22 @@ public abstract class MavericBaseActiity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent singup = new Intent(context,
+					Intent dietTracker = new Intent(context,
 							CalendarViewActivity.class);
-					startActivity(singup);
+					dietTracker.putExtra("class",
+							calender.DIET_TRACKER.getValue());
+					startActivity(dietTracker);
 				}
 			});
 			workOut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent singup = new Intent(context,
+					Intent workOutTracker = new Intent(context,
 							CalendarViewActivity.class);
-					startActivity(singup);
+					workOutTracker.putExtra("class",
+							calender.WORK_OUT_TRACKER.getValue());
+					startActivity(workOutTracker);
 				}
 			});
 			metaBolic.setOnClickListener(new OnClickListener() {
@@ -165,12 +170,12 @@ public abstract class MavericBaseActiity extends Activity {
 
 	protected String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat("dd-MMMM-yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("d-MMMM-yyyy");
 		return format.format(c.getTime());
 	}
 
 	protected String getStringFromDate(Long date) {
-		return new SimpleDateFormat("dd-MMMM-yyyy").format(date);
+		return new SimpleDateFormat("d-MMMM-yyyy").format(date);
 	}
 
 	protected String prevDate(String date) {
@@ -180,7 +185,7 @@ public abstract class MavericBaseActiity extends Activity {
 
 	private Date getDateFromString(String date) {
 		try {
-			return (Date) new SimpleDateFormat("dd-MMMM-yyyy").parse(date);
+			return (Date) new SimpleDateFormat("d-MMMM-yyyy").parse(date);
 		} catch (ParseException e) {
 			Log.e("manikk", e.getMessage());
 			return null;

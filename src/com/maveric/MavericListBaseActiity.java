@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import com.maveric.enums.calender;
+
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -52,18 +54,22 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent singup = new Intent(context,
+					Intent dietTracker = new Intent(context,
 							CalendarViewActivity.class);
-					startActivity(singup);
+					dietTracker.putExtra("class",
+							calender.DIET_TRACKER.getValue());
+					startActivity(dietTracker);
 				}
 			});
 			workOut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent singup = new Intent(context,
+					Intent workOutTracker = new Intent(context,
 							CalendarViewActivity.class);
-					startActivity(singup);
+					workOutTracker.putExtra("class",
+							calender.WORK_OUT_TRACKER.getValue());
+					startActivity(workOutTracker);
 				}
 			});
 			metaBolic.setOnClickListener(new OnClickListener() {
@@ -128,12 +134,12 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 	protected String getCurrentDate() {
 		Calendar c = Calendar.getInstance();
-		SimpleDateFormat format = new SimpleDateFormat("dd-MMMM-yyyy");
+		SimpleDateFormat format = new SimpleDateFormat("d-MMMM-yyyy");
 		return format.format(c.getTime());
 	}
 
 	private String getStringFromDate(Long date) {
-		return new SimpleDateFormat("dd-MMMM-yyyy").format(date);
+		return new SimpleDateFormat("d-MMMM-yyyy").format(date);
 	}
 
 	protected String prevDate(String date) {
@@ -143,7 +149,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 
 	private Date getDateFromString(String date) {
 		try {
-			return (Date) new SimpleDateFormat("dd-MMMM-yyyy").parse(date);
+			return (Date) new SimpleDateFormat("d-MMMM-yyyy").parse(date);
 		} catch (ParseException e) {
 			Log.e("manikk", e.getMessage());
 			return null;
