@@ -96,7 +96,7 @@ public abstract class MavericListBaseActiity extends ListActivity {
 				@Override
 				public void onClick(View arg0) {
 					loding("Home",1000);
-					Intent home = new Intent(context, WorkSummeryActivity.class)
+					Intent home = new Intent(context, DashBoardActivity.class)
 							.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
 					startActivity(home);

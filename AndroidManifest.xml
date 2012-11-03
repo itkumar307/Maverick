@@ -62,6 +62,10 @@
 			android:name=".WorkoutTrackerSaveActivity"
 			android:windowSoftInputMode="stateHidden">
 		</activity>
+		<activity
+			android:name=".DashBoardActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
 		<provider
 			android:name=".contentprovider.WorkoutProvider"
 			android:authorities="com.maveric.WorkoutProvider" />
@@ -135,9 +139,9 @@
 			android:name=".ExceriseImageShowActivity"
 			android:windowSoftInputMode="stateHidden"></activity>
 		<activity
-            android:name=".Water"
-            android:windowSoftInputMode="stateHidden"></activity>
-		
+			android:name=".Water"
+			android:windowSoftInputMode="stateHidden"></activity>
+
 		<activity
 			android:name=".CalendarViewActivity"
 			android:windowSoftInputMode="stateHidden">

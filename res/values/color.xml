@@ -23,15 +23,13 @@
 	<color name="link_color">#F38F2F</color>
 	<!-- orange color -->
 	<color name="orange_color">#FF9F40</color>
-		<color
-		name="white">#FFFFFF</color>
-	
-	<color
-		name="symptom_color_selected">#003366</color>
-		
-	<color
-		name="reaction_color_selected">#003366</color>
-<color name="static_text_color">#003366</color>
-<color name="journal_entry_listitem_text_color">#003366</color>
-<color name="note_text_disabled">#333333</color>
+	<color name="white">#FFFFFF</color>
+
+	<color name="symptom_color_selected">#003366</color>
+
+	<color name="reaction_color_selected">#003366</color>
+	<color name="static_text_color">#003366</color>
+	<color name="journal_entry_listitem_text_color">#003366</color>
+	<color name="note_text_disabled">#333333</color>
+	<color name="desh_bord_text">#494646</color>
 </resources>

@@ -239,7 +239,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 	}
 
 	private void gotoHomeActivity() {
-		Intent home = new Intent(context, WorkSummeryActivity.class);
+		Intent home = new Intent(context, DashBoardActivity.class);
 		startActivity(home);
 		this.finish();
 	}

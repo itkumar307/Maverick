@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 public abstract class MavericBaseActiity extends Activity {
 	protected Context context;
-	protected TextView diet, workOut, metaBolic, inter;
+	protected TextView diet, workOutTracker, metaBolic, inter;
 	private int MILLIS_IN_DAY = 1000 * 60 * 60 * 24;
 	private ProgressDialog progressDialog;
 
@@ -56,7 +56,7 @@ public abstract class MavericBaseActiity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentToLayout();
 		diet = (TextView) findViewById(R.id.Diet_tracker);
-		workOut = (TextView) findViewById(R.id.workout_tracker);
+		workOutTracker = (TextView) findViewById(R.id.workout_tracker);
 		metaBolic = (TextView) findViewById(R.id.metapolic_typing);
 		inter = (TextView) findViewById(R.id.intract);
 		home = (Button) findViewById(R.id.home_button);
@@ -75,22 +75,14 @@ public abstract class MavericBaseActiity extends Activity {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent dietTracker = new Intent(context,
-							CalendarViewActivity.class);
-					dietTracker.putExtra("class",
-							calender.DIET_TRACKER.getValue());
-					startActivity(dietTracker);
+					gotoDietTracker();
 				}
 			});
-			workOut.setOnClickListener(new OnClickListener() {
+			workOutTracker.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-					Intent workOutTracker = new Intent(context,
-							CalendarViewActivity.class);
-					workOutTracker.putExtra("class",
-							calender.WORK_OUT_TRACKER.getValue());
-					startActivity(workOutTracker);
+					gotoWorkoutTracker();
 				}
 			});
 			metaBolic.setOnClickListener(new OnClickListener() {
@@ -117,7 +109,7 @@ public abstract class MavericBaseActiity extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					loding("Home", 1000);
-					Intent home = new Intent(context, WorkSummeryActivity.class)
+					Intent home = new Intent(context, DashBoardActivity.class)
 							.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(home);
 				}
@@ -316,5 +308,18 @@ public abstract class MavericBaseActiity extends Activity {
 	protected int getTotalFoodCalories() {
 		setValues(getCurrentDate());
 		return breakfastCal + dinnerCal + lunchCal;
+	}
+
+	protected void gotoDietTracker() {
+
+		Intent dietTracker = new Intent(context, CalendarViewActivity.class);
+		dietTracker.putExtra("class", calender.DIET_TRACKER.getValue());
+		startActivity(dietTracker);
+	}
+
+	protected void gotoWorkoutTracker() {
+		Intent workOutTracker = new Intent(context, CalendarViewActivity.class);
+		workOutTracker.putExtra("class", calender.WORK_OUT_TRACKER.getValue());
+		startActivity(workOutTracker);
 	}
 }
