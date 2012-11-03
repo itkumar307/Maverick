@@ -152,6 +152,10 @@ public class WSclient {
 				responseString = metaResult;
 				if (metaResult != null && metaResult.equals("SUCCESS")) {
 					isApiCallSuccessful = true;
+				}else if(metaResult != null && metaResult.equals("FAILURE")){
+					isApiCallSuccessful = false;
+				}else{
+					//TODO
 				}
 			} else {
 				Log.i("kumar", "No metaData for API " + url);

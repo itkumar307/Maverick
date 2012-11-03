@@ -633,6 +633,11 @@
 	<string name="HTTP_USER_ADD">reg/add/</string>
 	<string name="HTTP_USER_ASK">user/ask</string>
 	<string name="HTTP_USER_TALK">user/talk</string>
+	
+	<!-- expert talk json reply -->
+	
+	<string name="HTTP_USER_EXPERT_TALK_JSON_API">user/expert/list</string>
+	
 	<!-- Dropdown prompt value -->
 	<string name="excerise_prompt">Choose a Excerise</string>
 	<!-- underline -->
@@ -648,7 +653,7 @@
 	</string>
 	<string name="WORK_LINK">
 		<u>
-			<b>
+			<b><string name="HTTP_USER_TALK">user/talk</string>
 				<i>request to add workout >></i>
 			</b>
 		</u>

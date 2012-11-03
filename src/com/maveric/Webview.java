@@ -24,6 +24,21 @@ public class Webview extends MavericBaseActiity {
 		super.onCreate(savedInstanceState);
 		final Apppref app = new Apppref(context);
 		Bundle web = getIntent().getExtras();
+
+		/* check the condition for askquestion from ExportZone only */
+
+		try {
+			if (web.getString("askquestion").equals("askquestion")) {
+				if (!isNetworkAvailable()) {
+					toast(getString(R.string.NO_INTERNET_CONNECTION));
+					this.finish();
+				}
+			}
+
+		} catch (Exception e) {
+			Log.i("kumar", "error im webview" + e.getMessage());
+		}
+
 		loding(web.getString("title"), 3000);
 		String url = web.getString("url");
 		Log.i("manikk", url);

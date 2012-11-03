@@ -146,6 +146,18 @@
 			android:name=".CalendarViewActivity"
 			android:windowSoftInputMode="stateHidden">
 		</activity>
+		
+		<activity
+			android:name=".ExportZoneActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		
+		<activity
+			android:name=".ExpertTalkActivity"
+			android:windowSoftInputMode="stateHidden">
+		</activity>
+		
+		
 	</application>
 
 </manifest>
