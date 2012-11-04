@@ -159,6 +159,10 @@
 			android:name=".ExpertTalkViewActivity">
 		</activity>
 		
+		<activity
+			android:name=".WorkoutTrackerCategoryActivity">
+		</activity>
+		
 		
 		
 	</application>

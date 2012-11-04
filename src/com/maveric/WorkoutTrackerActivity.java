@@ -5,17 +5,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -37,8 +33,9 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	// Button result;
 	Cursor workoutInfo;
 	Cursor exceriseCursor;
-	EditText searchText;
+	// EditText searchText;
 	TextView msg;
+	TextView titleName;
 
 	@Override
 	protected void setContentToLayout() {
@@ -52,6 +49,13 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		ctx = getApplicationContext();
 
+		String exerciseType = getIntent().getExtras().getString("category");
+
+		
+
+		titleName = (TextView) findViewById(R.id.workout_tracker_side);
+		titleName.setText("WORKOUTTRACKER");
+
 		maverickData = new MaverickDataOrganize(ctx);
 		msg = (TextView) findViewById(R.id.nolistmsg);
 
@@ -59,9 +63,16 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		// result = (Button) findViewById(R.id.searchresult);
 
-		searchText = (EditText) findViewById(R.id.excerisesearch);
+		// searchText = (EditText) findViewById(R.id.excerisesearch);
 
-		defaultLoadData();
+		if (!TextUtils.isEmpty(exerciseType)) {
+
+			Uri name = Uri.withAppendedPath(
+					ExceriseProvider.EXCERISETYPE_CATOGRY_SEARCH_URI,
+					exerciseType);
+			exceriseCursor = managedQuery(name, null, null, null, null);
+			exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+		}
 
 		showFavourite.setOnClickListener(new OnClickListener() {
 
@@ -70,8 +81,9 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 				showFavourite.setVisibility(View.GONE);
 				loding("Searching", 1000);
-				LinearLayout exceriseBlock = (LinearLayout) findViewById(R.id.exceriseblock);
-				exceriseBlock.setVisibility(View.GONE);
+				// LinearLayout exceriseBlock = (LinearLayout)
+				// findViewById(R.id.exceriseblock);
+				// exceriseBlock.setVisibility(View.GONE);
 
 				exceriseCursor = managedQuery(
 						ExceriseProvider.WORKOUT_FAVOURITE_URI, null, null,
@@ -82,36 +94,36 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 			}
 		});
 
-		searchText.addTextChangedListener(new TextWatcher() {
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before,
-					int count) {
-
-				String searchData = searchText.getText().toString();
-
-				if (!TextUtils.isEmpty(searchData)) {
-					Uri name = Uri.withAppendedPath(
-							ExceriseProvider.EXCERISETYPE_SEARCH_URI,
-							searchData);
-					exceriseCursor = managedQuery(name, null, null, null, null);
-					exceriseTypeInput(exceriseCursor, kumar.SEARCH);
-				}
-
-			}
-
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-
-			}
-		});
+		// searchText.addTextChangedListener(new TextWatcher() {
+		//
+		// @Override
+		// public void onTextChanged(CharSequence s, int start, int before,
+		// int count) {
+		//
+		// String searchData = searchText.getText().toString();
+		//
+		// if (!TextUtils.isEmpty(searchData)) {
+		// Uri name = Uri.withAppendedPath(
+		// ExceriseProvider.EXCERISETYPE_SEARCH_URI,
+		// searchData);
+		// exceriseCursor = managedQuery(name, null, null, null, null);
+		// exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+		// }
+		//
+		// }
+		//
+		// @Override
+		// public void beforeTextChanged(CharSequence s, int start, int count,
+		// int after) {
+		// // TODO Auto-generated method stub
+		//
+		// }
+		//
+		// @Override
+		// public void afterTextChanged(Editable s) {
+		//
+		// }
+		// });
 
 		// result.setOnClickListener(new OnClickListener() {
 		// @Override
@@ -143,7 +155,6 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	private void defaultLoadData() {
 		exceriseCursor = managedQuery(ExceriseProvider.EXCERISETYPE_URI, null,
 				null, null, null);
-		exceriseTypeInput(exceriseCursor, kumar.NORAML);
 
 	}
 
@@ -154,7 +165,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				getListView().setVisibility(View.VISIBLE);
 				ListAdapter adapter = new SimpleCursorAdapter(this,
 						R.layout.data_select_input_cardatat, exceriseCursor,
-						new String[] { ExceriseValue.Column.EXCERISE_TYPE },
+						new String[] { ExceriseValue.Column.EXCERISE_NAME },
 						new int[] { R.id.titlename });
 
 				// Bind to our new adapter.
@@ -198,9 +209,12 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 				@Override
 				public void onItemClick(AdapterView<?> arg0, View view,
 						int position, long id) {
+					String exceriseName = exceriseCursor.getString(exceriseCursor
+							.getColumnIndex(ExceriseValue.Column.EXCERISE_NAME));
 					String type = exceriseCursor.getString(exceriseCursor
-							.getColumnIndex(ExceriseValue.Column.EXCERISE_TYPE));
+							.getColumnIndex(ExceriseValue.Column.TYPE));
 					Intent s = new Intent(ctx, WorkoutTrackerSaveActivity.class);
+					s.putExtra("exceriseName", exceriseName);
 					s.putExtra("type", type);
 					s.putExtra("date", getIntent().getExtras()
 							.getString("date"));

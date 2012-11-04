@@ -35,12 +35,24 @@ public class ExceriseProvider extends ContentProvider {
 	public static final Uri EXCERISETYPE_SEARCH_URI = Uri.parse("content://"
 			+ PROVIDER_NAME + "/selectexceriseserach");
 
+	public static final Uri EXCERISETYPE_CATEGORY_URI = Uri.parse("content://"
+			+ PROVIDER_NAME + "/excersiecategory");
+
+	public static final Uri EXCERISETYPE_SEARCH_SUB_URI = Uri
+			.parse("content://" + PROVIDER_NAME + "/excerisesub");
+
+	public static final Uri EXCERISETYPE_CATOGRY_SEARCH_URI = Uri
+			.parse("content://" + PROVIDER_NAME + "/excerisesearchbycategory");
+
 	// private SQLiteDatabase db;
 	private static final int EXCERISETYPE = 1;
 	private static final int FOODTYPE = 2;
 	private static final int WORKOUT_FAVOURITE = 3;
 	private static final int ADD_WORKOUT_FAVOURITE = 4;
 	private static final int EXCERISETYPE_SEARCH = 5;
+	private static final int EXCERISETYPE_CATEGORY = 6;
+	private static final int EXCERISETYPE_SEARCH_SUB = 7;
+	private static final int EXCERISETYPE_CATOGRY_SEARCH = 8;
 
 	private static final UriMatcher MATCHER;
 
@@ -52,11 +64,15 @@ public class ExceriseProvider extends ContentProvider {
 		MATCHER.addURI(PROVIDER_NAME, "addfavourite", ADD_WORKOUT_FAVOURITE);
 		MATCHER.addURI(PROVIDER_NAME, "selectexceriseserach/*",
 				EXCERISETYPE_SEARCH);
+		MATCHER.addURI(PROVIDER_NAME, "excersiecategory", EXCERISETYPE_CATEGORY);
+		MATCHER.addURI(PROVIDER_NAME, "excerisesub/*", EXCERISETYPE_SEARCH_SUB);
+		MATCHER.addURI(PROVIDER_NAME, "excerisesearchbycategory/*",
+				EXCERISETYPE_CATOGRY_SEARCH);
 	}
 
 	@Override
 	public boolean onCreate() {
-		database = new MaverickHelper(getContext(),WORKOUT_DB);
+		database = new MaverickHelper(getContext(), WORKOUT_DB);
 		return true;
 	}
 
@@ -91,13 +107,39 @@ public class ExceriseProvider extends ContentProvider {
 			break;
 
 		case EXCERISETYPE_SEARCH:
-
 			String columname = url.getPathSegments().get(1);
 			qb.setTables(ExceriseValue.TABLE);
 			checkColumns(projection);
 			sortOrder = ExceriseValue.Column._ID + " DESC ";
-			qb.appendWhere(ExceriseValue.Column.EXCERISE_TYPE + " like '%"
+			qb.appendWhere(ExceriseValue.Column.EXCERISE_NAME + " like '%"
 					+ columname + "%'");
+			break;
+
+		case EXCERISETYPE_CATEGORY:
+			qb.setTables(ExceriseValue.TABLE);
+			checkColumns(projection);
+			selection = "1) GROUP BY (" + ExceriseValue.Column.EXCERISE_TYPE;
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			break;
+
+		case EXCERISETYPE_SEARCH_SUB:
+
+			String categoryName = url.getPathSegments().get(1);
+			qb.setTables(ExceriseValue.TABLE);
+			checkColumns(projection);
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			qb.appendWhere(ExceriseValue.Column.EXCERISE_NAME + " like '%"
+					+ categoryName + "%'" + " AND "
+					+ ExceriseValue.Column.INTENSITY_SELECT + " != 'NA' ");
+			break;
+		case EXCERISETYPE_CATOGRY_SEARCH:
+
+			String subName = url.getPathSegments().get(1);
+			qb.setTables(ExceriseValue.TABLE);
+			checkColumns(projection);
+			sortOrder = ExceriseValue.Column._ID + " DESC ";
+			qb.appendWhere(ExceriseValue.Column.EXCERISE_TYPE + " like '%"
+					+ subName + "%'");
 			break;
 
 		default:
@@ -159,7 +201,7 @@ public class ExceriseProvider extends ContentProvider {
 		switch (uriType) {
 		case ADD_WORKOUT_FAVOURITE:
 			count = db.update(ExceriseValue.TABLE, values,
-					ExceriseValue.Column.EXCERISE_TYPE + "= '" + where + "'",
+					ExceriseValue.Column.EXCERISE_NAME + "= '" + where + "'",
 					whereArgs);
 			// count = db.update(
 			// ExceriseValue.TABLE,

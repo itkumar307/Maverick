@@ -97,7 +97,7 @@ public class WorkoutTrackerViewerActivity extends MavericListBaseActiity {
 			public void onClick(View v) {
 				loding("Loading", 1000);
 				Intent addData = new Intent(context,
-						WorkoutTrackerActivity.class);
+						WorkoutTrackerCategoryActivity.class);
 				addData.putExtra("date", date.getText().toString());
 				startActivity(addData);
 

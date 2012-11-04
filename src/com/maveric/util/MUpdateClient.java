@@ -88,7 +88,7 @@ public class MUpdateClient {
 				for (int i = 0; i < ja.length(); i++) {
 					JSONObject jo = (JSONObject) ja.get(i);
 					ContentValues values = new ContentValues();
-					values.put(ExceriseValue.Column.EXCERISE_TYPE,
+					values.put(ExceriseValue.Column.EXCERISE_NAME,
 							jo.getString("name"));
 					values.put(ExceriseValue.Column.UPDATED,
 							jo.getString(ExceriseValue.Column.UPDATED));

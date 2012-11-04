@@ -1,11 +1,10 @@
 package com.maveric;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,11 +14,15 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.maveric.contentprovider.ExceriseProvider;
@@ -38,8 +41,11 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 	Button saveData;
 	String countData;
 	CheckBox favoriteDataSave;
+	Cursor checkSub;
 
 	String exceriseType;
+	String Type;
+	String intensityData;
 	Boolean isCheckbox = false;
 
 	@Override
@@ -56,7 +62,8 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 		Bundle extras = getIntent().getExtras();
 
-		exceriseType = extras.getString("type");
+		exceriseType = extras.getString("exceriseName");
+		Type = extras.getString("type");
 
 		exceriseTypeText = (TextView) findViewById(R.id.excerisetypetext);
 		exceriseTypeText.setText(exceriseType);
@@ -66,6 +73,9 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 		favoriteDataSave = (CheckBox) findViewById(R.id.favoritcheckbox);
 
 		saveData = (Button) findViewById(R.id.saveexcerisedata);
+
+		checkType();
+		checkSubIntensity();
 
 		inputData.addTextChangedListener(new TextWatcher() {
 
@@ -94,6 +104,11 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 			@Override
 			public void afterTextChanged(Editable s) {
+
+//				if (!intensityData.equalsIgnoreCase("nothing")) {
+//					toast(" Please eselect intensity data");
+//					return;
+//				}
 
 			}
 		});
@@ -170,6 +185,75 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 			}
 
 		});
+
+	}
+
+	private void checkType() {
+		if (Type.equalsIgnoreCase("0")) {
+			// timing excerise
+
+			countTypeText.setText("How Long?");
+			countTypeTime.setText("minutes");
+
+		} else {
+
+			// counting excerise
+
+			countTypeText.setText("Reputation");
+			countTypeTime.setText("count");
+
+		}
+
+	}
+
+	private void checkSubIntensity() {
+		try {
+
+			Uri name = Uri.withAppendedPath(
+					ExceriseProvider.EXCERISETYPE_SEARCH_SUB_URI, exceriseType);
+			checkSub = managedQuery(name, null, null, null, null);
+
+			if (checkSub.getCount() > 0) {
+				Spinner spin = (Spinner) findViewById(R.id.spinner1);
+				spin.setVisibility(View.VISIBLE);
+
+				String[] from = new String[] { ExceriseValue.Column.INTENSITY_SELECT };
+				int[] to = new int[] { android.R.id.text1 };
+				SimpleCursorAdapter sca = new SimpleCursorAdapter(this,
+						android.R.layout.simple_spinner_item, checkSub, from,
+						to);
+
+				// set layout for activated adapter
+				sca.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+				// get xml file spinner and set adapter
+
+				spin.setAdapter(sca);
+
+				spin.setOnItemSelectedListener(new OnItemSelectedListener() {
+					public void onItemSelected(AdapterView<?> parent,
+							View view, int position, long id) {
+
+						intensityData = checkSub.getString(checkSub
+								.getColumnIndex(ExceriseValue.Column.INTENSITY_SELECT));
+						Log.i("kumar", "intentdata" + intensityData);
+
+						exceriseTypeText.setText(exceriseType + " "
+								+ intensityData);
+
+					}
+
+					public void onNothingSelected(AdapterView<?> parent) {
+					}
+				});
+
+			} else {
+				intensityData = "nothing";
+			}
+
+		} catch (Exception e) {
+			Log.e("kumar", "error in intensity search" + e.getMessage());
+		}
 
 	}
 
