@@ -67,13 +67,13 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 					toast(" Please fill out all required fields");
 					return;
 				}
-//
-//				if (!SUtil.hasRegularExpressionMatch(
-//						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
-//						userNameString)) {
-//					toast("Please enter a valid email ID");
-//					return;
-//				}
+
+				if (!SUtil.hasRegularExpressionMatch(
+						getString(R.string.EMAIL_ID_FORMAT_EXPRESSION),
+						userNameString)) {
+					toast("Please enter a valid email ID");
+					return;
+				}
 
 				if (!isNetworkAvailable()) {
 					toast(getString(R.string.NO_INTERNET_CONNECTION));

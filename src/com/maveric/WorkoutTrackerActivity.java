@@ -36,6 +36,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 	// EditText searchText;
 	TextView msg;
 	TextView titleName;
+	Apppref app;
 
 	@Override
 	protected void setContentToLayout() {
@@ -51,7 +52,9 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		String exerciseType = getIntent().getExtras().getString("category");
 
-		
+		// String fav=getIntent().getExtras().getString("favourite");
+
+		app = new Apppref(ctx);
 
 		titleName = (TextView) findViewById(R.id.workout_tracker_side);
 		titleName.setText("WORKOUTTRACKER");
@@ -67,11 +70,28 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 
 		if (!TextUtils.isEmpty(exerciseType)) {
 
-			Uri name = Uri.withAppendedPath(
-					ExceriseProvider.EXCERISETYPE_CATOGRY_SEARCH_URI,
-					exerciseType);
-			exceriseCursor = managedQuery(name, null, null, null, null);
-			exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+			if (exerciseType.equalsIgnoreCase("favourite")) {
+
+				showFavourite.setVisibility(View.GONE);
+				loding("Searching", 1000);
+				// LinearLayout exceriseBlock = (LinearLayout)
+				// findViewById(R.id.exceriseblock);
+				// exceriseBlock.setVisibility(View.GONE);
+
+				exceriseCursor = managedQuery(
+						ExceriseProvider.WORKOUT_FAVOURITE_URI, null, null,
+						null, null);
+
+				exceriseTypeInput(exceriseCursor, kumar.FAVORITE);
+
+			} else {
+
+				Uri name = Uri.withAppendedPath(
+						ExceriseProvider.EXCERISETYPE_CATOGRY_SEARCH_URI,
+						exerciseType);
+				exceriseCursor = managedQuery(name, null, null, null, null);
+				exceriseTypeInput(exceriseCursor, kumar.SEARCH);
+			}
 		}
 
 		showFavourite.setOnClickListener(new OnClickListener() {
@@ -213,9 +233,41 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 							.getColumnIndex(ExceriseValue.Column.EXCERISE_NAME));
 					String type = exceriseCursor.getString(exceriseCursor
 							.getColumnIndex(ExceriseValue.Column.TYPE));
+
+					String calories;
+
+					if (!TextUtils.isEmpty(app.getCurrentWeight())) {
+
+						int weight = Integer.parseInt(app.getCurrentWeight());
+
+						if (weight < 66) {
+							calories = exceriseCursor.getString(exceriseCursor
+									.getColumnIndex(ExceriseValue.Column.KG50));
+
+						} else if (weight > 66 && weight < 76) {
+							calories = exceriseCursor.getString(exceriseCursor
+									.getColumnIndex(ExceriseValue.Column.KG60));
+						} else if (weight > 76 && weight < 86) {
+							calories = exceriseCursor.getString(exceriseCursor
+									.getColumnIndex(ExceriseValue.Column.KG70));
+						} else if (weight > 86 && weight < 96) {
+							calories = exceriseCursor.getString(exceriseCursor
+									.getColumnIndex(ExceriseValue.Column.KG80));
+						} else {
+							calories = exceriseCursor.getString(exceriseCursor
+									.getColumnIndex(ExceriseValue.Column.KG50));
+						}
+
+					} else {
+
+						calories = exceriseCursor.getString(exceriseCursor
+								.getColumnIndex(ExceriseValue.Column.KG50));
+					}
+
 					Intent s = new Intent(ctx, WorkoutTrackerSaveActivity.class);
 					s.putExtra("exceriseName", exceriseName);
 					s.putExtra("type", type);
+					s.putExtra("calories", calories);
 					s.putExtra("date", getIntent().getExtras()
 							.getString("date"));
 					startActivity(s);

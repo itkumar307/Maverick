@@ -102,6 +102,7 @@ public class ExceriseProvider extends ContentProvider {
 
 		case WORKOUT_FAVOURITE:
 			qb.setTables(ExceriseValue.TABLE);
+			selection = "1) GROUP BY (" + ExceriseValue.Column.EXCERISE_NAME;
 			sortOrder = ExceriseValue.Column._ID + " DESC ";
 			qb.appendWhere(ExceriseValue.Column.FAVOURITE_STATUS + "= '1'");
 			break;
@@ -137,9 +138,10 @@ public class ExceriseProvider extends ContentProvider {
 			String subName = url.getPathSegments().get(1);
 			qb.setTables(ExceriseValue.TABLE);
 			checkColumns(projection);
+			selection = "1) GROUP BY (" + ExceriseValue.Column.EXCERISE_NAME;
 			sortOrder = ExceriseValue.Column._ID + " DESC ";
-			qb.appendWhere(ExceriseValue.Column.EXCERISE_TYPE + " like '%"
-					+ subName + "%'");
+			qb.appendWhere(ExceriseValue.Column.EXCERISE_TYPE + " = '"
+					+ subName + "'");
 			break;
 
 		default:

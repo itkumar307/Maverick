@@ -46,7 +46,7 @@ public class WorkoutAdapter extends SimpleCursorAdapter {
 
 			TextView workoutValue = (TextView) view
 					.findViewById(R.id.listworkouttime);
-			workoutValue.setText("Min:" + workoutTime);
+			workoutValue.setText("Cal:" + workoutTime);
 
 //			TextView caloriesValue = (TextView) view
 //					.findViewById(R.id.listcalories);

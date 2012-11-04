@@ -46,6 +46,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 	String exceriseType;
 	String Type;
 	String intensityData;
+	String calories;
 	Boolean isCheckbox = false;
 
 	@Override
@@ -64,6 +65,9 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 		exceriseType = extras.getString("exceriseName");
 		Type = extras.getString("type");
+		calories = extras.getString("calories");
+		
+		Log.i("kumar","calories"+calories);
 
 		exceriseTypeText = (TextView) findViewById(R.id.excerisetypetext);
 		exceriseTypeText.setText(exceriseType);
@@ -105,10 +109,10 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 			@Override
 			public void afterTextChanged(Editable s) {
 
-//				if (!intensityData.equalsIgnoreCase("nothing")) {
-//					toast(" Please eselect intensity data");
-//					return;
-//				}
+				// if (!intensityData.equalsIgnoreCase("nothing")) {
+				// toast(" Please eselect intensity data");
+				// return;
+				// }
 
 			}
 		});
@@ -149,6 +153,33 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 								values.put(
 										WorkOutTrackerTable.Column.SELECT_EXCERISE,
 										exceriseType);
+
+								// calories calculation depends upon type if
+								// type 0 means mulptiply calories otherwise
+								// leave it
+
+								try {
+									if (Type.equalsIgnoreCase("0")) {
+
+										countData = String.valueOf(Integer
+												.parseInt(calories)
+												* Integer.parseInt(countData));
+										Log.i("kumar", "countData" + countData);
+
+									} else {
+
+										countData = "0";
+
+									}
+								} catch (Exception e) {
+									Log.e("kumar",
+											"formatException" + e.getMessage());
+									/*
+									 * default value
+									 */
+									countData = "50";
+								}
+
 								values.put(WorkOutTrackerTable.Column.WORKOUT,
 										countData);
 
@@ -236,6 +267,10 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 
 						intensityData = checkSub.getString(checkSub
 								.getColumnIndex(ExceriseValue.Column.INTENSITY_SELECT));
+
+						calories = checkSub.getString(checkSub
+								.getColumnIndex(ExceriseValue.Column.KG60));
+
 						Log.i("kumar", "intentdata" + intensityData);
 
 						exceriseTypeText.setText(exceriseType + " "

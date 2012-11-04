@@ -6,8 +6,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -21,6 +23,7 @@ public class WorkoutTrackerCategoryActivity extends MavericListBaseActiity {
 	Context ctx;
 	Cursor exceriseCategoryCursor;
 	TextView titleName;
+	Button favourite;
 
 	@Override
 	protected void setContentToLayout() {
@@ -34,6 +37,21 @@ public class WorkoutTrackerCategoryActivity extends MavericListBaseActiity {
 		ctx = getApplicationContext();
 		titleName = (TextView) findViewById(R.id.workout_tracker_side);
 		titleName.setText("List of Exercise");
+		favourite = (Button) findViewById(R.id.load_fav);
+		favourite.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				
+				Intent s = new Intent(ctx, WorkoutTrackerActivity.class);
+				s.putExtra("category", "favourite");
+				s.putExtra("date", getIntent().getExtras()
+						.getString("date"));
+				startActivity(s);
+				
+			}
+		});
+
 		defaultLoadData();
 
 	}
@@ -86,7 +104,7 @@ public class WorkoutTrackerCategoryActivity extends MavericListBaseActiity {
 					s.putExtra("date", getIntent().getExtras()
 							.getString("date"));
 					startActivity(s);
-//					WorkoutTrackerCategoryActivity.this.finish();
+					// WorkoutTrackerCategoryActivity.this.finish();
 				}
 			});
 		} catch (Exception e) {
