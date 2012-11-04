@@ -164,4 +164,31 @@ public class Apppref {
 	public String getWaterConsume(String date) {
 		return appSharedPrefs.getString("water_" + date, "");
 	}
+
+	public void setIsprofileApiCall(Boolean ans) {
+		prefsEditor.putBoolean("pApi", ans);
+		prefsEditor.commit();
+	}
+
+	public Boolean IsprofileApiCall() {
+		return appSharedPrefs.getBoolean("pApi", false);
+	}
+
+	public void setCurrentWeight(String w) {
+		prefsEditor.putString("cWeight", w);
+		prefsEditor.commit();
+	}
+
+	public String getCurrentWeight() {
+		return appSharedPrefs.getString("cWeight", "");
+	}
+
+	public void setUserName(String name) {
+		prefsEditor.putString("name", name);
+		prefsEditor.commit();
+	}
+
+	public String getUserName() {
+		return appSharedPrefs.getString("name", "");
+	}
 }

@@ -637,6 +637,7 @@
 	<!-- expert talk json reply -->
 	
 	<string name="HTTP_USER_EXPERT_TALK_JSON_API">user/expert/list</string>
+	<string name="HTTP_USER_NAME">user/name</string>
 	
 	<!-- Dropdown prompt value -->
 	<string name="excerise_prompt">Choose a Excerise</string>

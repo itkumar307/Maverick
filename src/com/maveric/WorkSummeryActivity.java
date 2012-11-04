@@ -1,14 +1,11 @@
 package com.maveric;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -37,12 +34,13 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		Bundle dateSelected = getIntent().getExtras();
 		selectedDate = dateSelected.getString("date");
 		context = getApplicationContext();
 		appPref = new Apppref(context);
 		welcome = (TextView) findViewById(R.id.welcometext);
-
+		userApiCall();
 		pbWork = (ProgressBar) findViewById(R.id.progressbarworkout);
 		pbDiet = (ProgressBar) findViewById(R.id.progressbardiet);
 
@@ -57,6 +55,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		TextView profile = (TextView) findViewById(R.id.profile);
 		TextView water_link = (TextView) findViewById(R.id.water);
 		
+
 		howHappyUR.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -143,8 +142,6 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 		}
 	}
 
-	
-
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -157,11 +154,14 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		try {
 			int value = 0;
-
+			if(appPref.IsprofileApiCall())
+				welcome.setText("Welcome" + "  " + appPref.getUserName());
+			else
 			welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
-			Uri name = Uri.withAppendedPath(
-					WorkoutProvider.WORKOUT_BY_DATE_SOMEVALUE_URI,
-					selectedDate);
+			Uri name = Uri
+					.withAppendedPath(
+							WorkoutProvider.WORKOUT_BY_DATE_SOMEVALUE_URI,
+							selectedDate);
 
 			Wrktoday = managedQuery(name, null, null, null, null);
 			Wrktoday.moveToFirst();

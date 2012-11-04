@@ -221,4 +221,29 @@ public class WSclient {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public JSONObject getDataobj() {
+		try {
+			// JSONArray jsa = new JSONArray(this.result);
+			JSONObject jo = new JSONObject(this.result);
+			JSONObject res = jo.getJSONObject(DATA);
+			return res;
+		} catch (JSONException e) {
+
+			Log.e("kumar", "error parsing data" + e.getMessage());
+			/*
+			 * We get "No data" Exception error when DATA is empty. This is a
+			 * perfectly fine case.
+			 */
+			return null;
+		} catch (Exception e) {
+			/*
+			 * How do we propagate Http errors back to caller properly?
+			 */
+
+			// TODO exception handling to be improved. we need to have precise
+			// message and log the errors.
+			throw new RuntimeException(e);
+		}
+	}
 }

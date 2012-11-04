@@ -7,10 +7,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import org.json.JSONObject;
+
 import com.maveric.contentprovider.FoodProvider;
 import com.maveric.database.model.FoodTrackerTable;
 import com.maveric.enums.calender;
 import com.maveric.enums.foodTiming;
+import com.maveric.util.WSclient;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -220,29 +223,25 @@ public abstract class MavericBaseActiity extends Activity {
 									.getColumnIndex(FoodTrackerTable.Column.FOOD_TYPE)));
 					String serving = foodList.getString(foodList
 							.getColumnIndex(FoodTrackerTable.Column.SERVE));
-					String userServing =foodList.getString(foodList
+					String userServing = foodList.getString(foodList
 							.getColumnIndex(FoodTrackerTable.Column.USERSERVE));
 					String calories = ""
-							+ (Float
-									.valueOf(foodList.getString(foodList
-											.getColumnIndex(FoodTrackerTable.Column.CALORIES)))
-							* Float.valueOf(serving));
-					
+							+ (Float.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.CALORIES))) * Float
+									.valueOf(serving));
+
 					String protine = ""
-							+ (Float
-									.valueOf(foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.PROTIN)))
-							* Float.valueOf(serving));
+							+ (Float.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.PROTIN))) * Float
+									.valueOf(serving));
 					String fat = ""
-							+ (Float
-									.valueOf(foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.FAT)))
-							* Float.valueOf(serving));
+							+ (Float.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.FAT))) * Float
+									.valueOf(serving));
 					String corbo = ""
-							+ (Float
-									.valueOf(foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.CARBOS)))
-							* Float.valueOf(serving));
+							+ (Float.valueOf(foodList.getString(foodList
+									.getColumnIndex(FoodTrackerTable.Column.CARBOS))) * Float
+									.valueOf(serving));
 					String unit = foodList.getString(foodList
 							.getColumnIndex(FoodTrackerTable.Column.UNIT));
 
@@ -266,16 +265,16 @@ public abstract class MavericBaseActiity extends Activity {
 						breakfastPro += Float.valueOf(protine);
 					} else if (food_type == foodTiming.LUNCH.getValue()) {
 						lunchKeyValues.add(name);
-						lunchMap.put(name, new String[] { calories, userServing,
-								unit, protine, fat, corbo });
+						lunchMap.put(name, new String[] { calories,
+								userServing, unit, protine, fat, corbo });
 						lunchCal += Float.valueOf(calories);
 						lunchCorbo += Float.valueOf(corbo);
 						lunchFat += Float.valueOf(fat);
 						lunchPro += Float.valueOf(protine);
 					} else if (food_type == foodTiming.DINNER.getValue()) {
 						dinnerKeyValues.add(name);
-						dinnerMap.put(name, new String[] { calories, userServing,
-								unit, protine, fat, corbo });
+						dinnerMap.put(name, new String[] { calories,
+								userServing, unit, protine, fat, corbo });
 						dinnerCal += Float.valueOf(calories);
 						dinnerCorbo += Float.valueOf(corbo);
 						dinnerFat += Float.valueOf(fat);
@@ -326,5 +325,43 @@ public abstract class MavericBaseActiity extends Activity {
 		Intent workOutTracker = new Intent(context, CalendarViewActivity.class);
 		workOutTracker.putExtra("class", calender.WORK_OUT_TRACKER.getValue());
 		startActivity(workOutTracker);
+
+	}
+
+	protected void userApiCall() {
+		Apppref app = new Apppref(context);
+		Log.e("manikk", "" + app.IsprofileApiCall());
+		if (!app.IsprofileApiCall()) {
+			if (isNetworkAvailable()) {
+				String expertTalkUrl = getString(R.string.HTTP)
+						+ getString(R.string.HTTP_DOMAIN)
+						+ getString(R.string.HTTP_SUB)
+						+ getString(R.string.HTTP_USER_NAME);
+
+				WSclient expertResponse = new WSclient(expertTalkUrl, context,
+						app.getUserNameOnly(), app.getPasswordonly());
+
+				try {
+					Log.e("manikk", expertResponse.getMeta()
+							.getString("result")
+							+ "  "
+							+ expertResponse.getMeta().getString("result")
+									.equals("SUCCESS"));
+					if (expertResponse.getMeta().getString("result")
+							.equals("SUCCESS")) {
+						Log.e("manikk", "meta");
+						JSONObject expertArray = expertResponse.getDataobj();
+
+						app.setUserName(expertArray.getString("name"));
+						Log.e("manikk", expertArray.getString("name"));
+						app.setCurrentWeight(expertArray
+								.getString("currentWeight"));
+						app.setIsprofileApiCall(true);
+					}
+				} catch (Exception e) {
+					Log.e("manikk", "error in parsing json" + e.getMessage());
+				}
+			}
+		}
 	}
 }
