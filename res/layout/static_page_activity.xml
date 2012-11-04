@@ -88,6 +88,7 @@
 				android:layout_marginLeft="20dp"
 				android:text="Ask our expert"
 				android:textColor="#0AAEDC"
+				android:visibility="gone"
 				android:textSize="20dp"
 				android:textStyle="bold" />
 			<TextView
@@ -98,6 +99,7 @@
 				android:layout_marginLeft="20dp"
 				android:text="Expert talk"
 				android:textColor="#0AAEDC"
+				android:visibility="gone"
 				android:textSize="20dp"
 				android:textStyle="bold" />
 

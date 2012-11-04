@@ -114,7 +114,7 @@ public abstract class MavericBaseActiity extends Activity {
 					startActivity(home);
 				}
 			});
-			
+
 	}
 
 	protected abstract void setContentToLayout();
@@ -218,16 +218,31 @@ public abstract class MavericBaseActiity extends Activity {
 					int food_type = Integer
 							.valueOf(foodList.getString(foodList
 									.getColumnIndex(FoodTrackerTable.Column.FOOD_TYPE)));
-					String calories = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.CALORIES));
-					String protine = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.PROTIN));
-					String fat = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.FAT));
-					String corbo = foodList.getString(foodList
-							.getColumnIndex(FoodTrackerTable.Column.CARBOS));
 					String serving = foodList.getString(foodList
 							.getColumnIndex(FoodTrackerTable.Column.SERVE));
+					String userServing =foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.USERSERVE));
+					String calories = ""
+							+ (Float
+									.valueOf(foodList.getString(foodList
+											.getColumnIndex(FoodTrackerTable.Column.CALORIES)))
+							* Float.valueOf(serving));
+					
+					String protine = ""
+							+ (Float
+									.valueOf(foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.PROTIN)))
+							* Float.valueOf(serving));
+					String fat = ""
+							+ (Float
+									.valueOf(foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.FAT)))
+							* Float.valueOf(serving));
+					String corbo = ""
+							+ (Float
+									.valueOf(foodList.getString(foodList
+							.getColumnIndex(FoodTrackerTable.Column.CARBOS)))
+							* Float.valueOf(serving));
 					String unit = foodList.getString(foodList
 							.getColumnIndex(FoodTrackerTable.Column.UNIT));
 
@@ -244,27 +259,27 @@ public abstract class MavericBaseActiity extends Activity {
 					if (food_type == foodTiming.BREAKFAST.getValue()) {
 						breakFastKeyValues.add(name);
 						breakFastMap.put(name, new String[] { calories,
-								serving, unit, protine, fat, corbo });
-						breakfastCal += Integer.valueOf(calories);
-						breakfastCorbo += Integer.valueOf(corbo);
-						breakfastFat += Integer.valueOf(fat);
-						breakfastPro += Integer.valueOf(protine);
+								userServing, unit, protine, fat, corbo });
+						breakfastCal += Float.valueOf(calories);
+						breakfastCorbo += Float.valueOf(corbo);
+						breakfastFat += Float.valueOf(fat);
+						breakfastPro += Float.valueOf(protine);
 					} else if (food_type == foodTiming.LUNCH.getValue()) {
 						lunchKeyValues.add(name);
-						lunchMap.put(name, new String[] { calories, serving,
+						lunchMap.put(name, new String[] { calories, userServing,
 								unit, protine, fat, corbo });
-						lunchCal += Integer.valueOf(calories);
-						lunchCorbo += Integer.valueOf(corbo);
-						lunchFat += Integer.valueOf(fat);
-						lunchPro += Integer.valueOf(protine);
+						lunchCal += Float.valueOf(calories);
+						lunchCorbo += Float.valueOf(corbo);
+						lunchFat += Float.valueOf(fat);
+						lunchPro += Float.valueOf(protine);
 					} else if (food_type == foodTiming.DINNER.getValue()) {
 						dinnerKeyValues.add(name);
-						dinnerMap.put(name, new String[] { calories, serving,
+						dinnerMap.put(name, new String[] { calories, userServing,
 								unit, protine, fat, corbo });
-						dinnerCal += Integer.valueOf(calories);
-						dinnerCorbo += Integer.valueOf(corbo);
-						dinnerFat += Integer.valueOf(fat);
-						dinnerPro += Integer.valueOf(protine);
+						dinnerCal += Float.valueOf(calories);
+						dinnerCorbo += Float.valueOf(corbo);
+						dinnerFat += Float.valueOf(fat);
+						dinnerPro += Float.valueOf(protine);
 					}
 
 				} while (foodList.moveToNext());

@@ -145,7 +145,8 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 							FoodTrackerTable.Column.UNIT,
 							foodList.getString(foodList
 									.getColumnIndex(FoodTrackerTable.Column.UNIT)));
-				
+				String serve = foodList.getString(foodList
+						.getColumnIndex(FoodTrackerTable.Column.SERVE));
 
 				// String foodValue = foodList.getString(foodList
 				// .getColumnIndex(FoodTable.Column.NAME));
@@ -161,6 +162,7 @@ public class DietTrackerFoodSearch extends MavericListBaseActiity {
 				Intent foodAdd = new Intent(DietTrackerFoodSearch.this,
 						DietTrackerAddActivity.class);
 				foodAdd.putExtra("foodmap", selectedFoodDetails);
+				foodAdd.putExtra("serve", serve);
 				foodAdd.putExtra("date",
 						getIntent().getExtras().getString("date"));
 				startActivity(foodAdd);

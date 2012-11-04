@@ -83,7 +83,12 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 		for (Entry<String, String> foods : selectedFoodDetails.entrySet()) {
 			values.put(foods.getKey(), foods.getValue());
 		}
-		values.put(FoodTrackerTable.Column.SERVE, serving_count.getText()
+
+		String serves = ""
+				+ (Integer.valueOf(serving_count.getText().toString()) / Integer
+						.valueOf(getIntent().getExtras().getString("serve")));
+		values.put(FoodTrackerTable.Column.SERVE, serves);
+		values.put(FoodTrackerTable.Column.USERSERVE, serving_count.getText()
 				.toString());
 		values.put(FoodTrackerTable.Column.FAV_STATE,
 				diet_tracker_add_as_fav.isChecked() ? 1 : 0);
