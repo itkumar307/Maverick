@@ -130,7 +130,7 @@
 					android:paddingTop="5dip"
 					android:paddingLeft="10dip"
 					android:textStyle="bold"
-					android:text="Protins" />
+					android:text="Proteins" />
 			</LinearLayout>
 			<LinearLayout
 				android:layout_width="fill_parent"

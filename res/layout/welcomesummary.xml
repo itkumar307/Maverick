@@ -270,17 +270,6 @@
 					</RelativeLayout>
 				</RelativeLayout>
 				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_margin="5dip"
-					android:textColor="@color/allpage_subtitle"
-					android:text="@string/DISCLIMER" />
-				<View
-					android:id="@+id/footer"
-					android:layout_width="fill_parent"
-					android:layout_height="50dip" />
-
-				<TextView
 					android:id="@+id/how_happytext"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -407,6 +396,16 @@
 							android:text="happy" />
 					</LinearLayout>
 				</LinearLayout>
+				<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:textColor="@color/allpage_subtitle"
+                    android:text="@string/DISCLIMER" />
+                <View
+                    android:id="@+id/footer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" />
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>

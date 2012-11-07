@@ -189,7 +189,7 @@
 					android:paddingLeft="5dip"
 					android:paddingRight="5dip"
 					android:textColor="#fff"
-					android:text="fat" />
+					android:text="Fat" />
 				<TextView
 					android:id="@+id/fatText"
 					android:layout_width="wrap_content"
@@ -210,7 +210,7 @@
 					android:textColor="#fff"
 					android:paddingLeft="5dip"
 					android:paddingRight="5dip"
-					android:text="carbo" />
+					android:text="Carbo" />
 				<TextView
 					android:id="@+id/carboText"
 					android:layout_width="wrap_content"
@@ -230,13 +230,13 @@
 					android:textColor="#fff"
 					android:paddingLeft="5dip"
 					android:paddingRight="5dip"
-					android:text="protine" />
+					android:text="Protein" />
 				<TextView
 					android:id="@+id/protineText"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:textColor="#000"
-					android:text="protin" />
+					android:text="Protein" />
 			</LinearLayout>
 		</LinearLayout>
 		<View

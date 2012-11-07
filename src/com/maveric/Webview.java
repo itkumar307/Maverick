@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.HttpAuthHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
 
 public class Webview extends MavericBaseActiity {
 	WebView webView;
@@ -29,6 +31,8 @@ public class Webview extends MavericBaseActiity {
 
 		try {
 			if (web.getString("askquestion").equals("askquestion")) {
+				RelativeLayout logo = (RelativeLayout)findViewById(R.id.logo);
+				logo.setVisibility(View.GONE);
 				if (!isNetworkAvailable()) {
 					toast(getString(R.string.NO_INTERNET_CONNECTION));
 					this.finish();

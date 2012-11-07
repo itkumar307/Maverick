@@ -15,6 +15,7 @@
 			android:orientation="vertical">
 			<RelativeLayout
 				android:layout_width="fill_parent"
+				android:id="@+id/logo"
 				android:background="@drawable/green"
 				android:layout_height="wrap_content">
 
