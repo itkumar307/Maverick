@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class HowHappyUR extends MavericBaseActiity {
 	private Apppref pref;
-	private ImageView selectedImg;
+	private TextView selectedImg;
 	String selectedDate;
 
 	@Override
@@ -23,24 +24,27 @@ public class HowHappyUR extends MavericBaseActiity {
 		super.onCreate(savedInstanceState);
 		final LinearLayout default1 = (LinearLayout) findViewById(R.id.default1);
 		final LinearLayout selected = (LinearLayout) findViewById(R.id.selected);
-		ImageView red = (ImageView) findViewById(R.id.red);
-		ImageView green = (ImageView) findViewById(R.id.green);
-		ImageView blue = (ImageView) findViewById(R.id.blue);
-		ImageView yellow = (ImageView) findViewById(R.id.yellow);
+		
+		LinearLayout angry = (LinearLayout) findViewById(R.id.angry);
+		LinearLayout sad = (LinearLayout) findViewById(R.id.sad);
+		LinearLayout neutral = (LinearLayout) findViewById(R.id.neutral);
+		LinearLayout satisfied = (LinearLayout) findViewById(R.id.satisfied);
+		LinearLayout happy = (LinearLayout) findViewById(R.id.happy);
 
 		Bundle dateSelected = getIntent().getExtras();
 		selectedDate = dateSelected.getString("date");
 
 		pref = new Apppref(getApplicationContext());
 		if (pref.getHowHappyUR(selectedDate) == 0) {
+			setImage(0);
 			default1.setVisibility(View.VISIBLE);
 			selected.setVisibility(View.GONE);
 		} else {
-			default1.setVisibility(View.GONE);
+//			default1.setVisibility(View.GONE);
 			selected.setVisibility(View.VISIBLE);
 			setImage(pref.getHowHappyUR(selectedDate));
 		}
-		red.setOnClickListener(new OnClickListener() {
+		angry.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -49,7 +53,7 @@ public class HowHappyUR extends MavericBaseActiity {
 
 			}
 		});
-		green.setOnClickListener(new OnClickListener() {
+		sad.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -58,7 +62,7 @@ public class HowHappyUR extends MavericBaseActiity {
 
 			}
 		});
-		blue.setOnClickListener(new OnClickListener() {
+		neutral.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -67,7 +71,7 @@ public class HowHappyUR extends MavericBaseActiity {
 
 			}
 		});
-		yellow.setOnClickListener(new OnClickListener() {
+		satisfied.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -76,40 +80,78 @@ public class HowHappyUR extends MavericBaseActiity {
 
 			}
 		});
+		happy.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				pref.setHowHappyUR(selectedDate, 5);
+				setValues(default1, selected, 5);
+
+			}
+		});
+
 
 	}
 
 	private void setValues(LinearLayout gone, LinearLayout visible, int value) {
 		visible.setVisibility(View.VISIBLE);
-		gone.setVisibility(View.GONE);
-		setImage(value);
-//		if (pref.getHowHappyUR(selectedDate) == 3
-//				&& pref.getHowHappyUR(prevDate(selectedDate)) == 3
-//				&& pref.getHowHappyUR(prevDate(prevDate(selectedDate))) == 3) {
-//			Intent home = new Intent(context, metabolicQueries.class);
-//			startActivity(home);
-//		}
+//		one.setVisibility(View.GONE);
+		 setImage(value);
+		// if (pref.getHowHappyUR(selectedDate) == 3
+		// && pref.getHowHappyUR(prevDate(selectedDate)) == 3
+		// && pref.getHowHappyUR(prevDate(prevDate(selectedDate))) == 3) {
+		// Intent home = new Intent(context, metabolicQueries.class);
+		// startActivity(home);
+		// }
 	}
 
 	private void setImage(int value) {
-		selectedImg = (ImageView) findViewById(R.id.selected_img);
+		selectedImg = (TextView) findViewById(R.id.today);
+		final ImageView red = (ImageView) findViewById(R.id.redc);
+		final ImageView green = (ImageView) findViewById(R.id.greenstrike);
+		final ImageView blue = (ImageView) findViewById(R.id.bluestrike);
+		final ImageView yellow = (ImageView) findViewById(R.id.yellowstrike);
+		final ImageView yellowc = (ImageView) findViewById(R.id.yellowc);
+		ImageView[] img = {red, green, blue, yellow, yellowc};
 
 		switch (value) {
 		case 1:
-			selectedImg.setBackgroundResource(R.drawable.redface);
+			red.setBackgroundResource(R.drawable.dym);
+			changeImg(img, red);
+			selectedImg.setText("angry");
 			break;
 		case 2:
-			selectedImg.setBackgroundResource(R.drawable.greenface);
+			blue.setBackgroundResource(R.drawable.dym);
+			changeImg(img, blue);
+			selectedImg.setText("sad");
 			break;
 		case 3:
-			selectedImg.setBackgroundResource(R.drawable.blueface);
+			green.setBackgroundResource(R.drawable.dym);
+			changeImg(img, green);
+			selectedImg.setText("neutral");
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.yellowface);
+			yellow.setBackgroundResource(R.drawable.dym);
+			changeImg(img, yellow);
+			selectedImg.setText("satisfied");
+			break;
+		case 5:
+			yellowc.setBackgroundResource(R.drawable.dym);
+			changeImg(img, yellowc);
+			selectedImg.setText("happy");
 			break;
 
 		default:
+			green.setBackgroundResource(R.drawable.dym);
 			break;
+		}
+	}
+	private void changeImg(ImageView[] imgs, ImageView img)
+	{
+		for (ImageView im : imgs )
+		{
+			if(!im.equals(img))
+				im.setBackgroundResource(R.drawable.strike);
 		}
 	}
 }

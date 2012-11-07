@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +51,7 @@ public abstract class MavericBaseActiity extends Activity {
 	protected int breakfastPro = 0, lunchPro = 0, dinnerPro = 0;
 	protected int breakfastCorbo = 0, lunchCorbo = 0, dinnerCorbo = 0;
 	protected Button home;
-	protected RelativeLayout howHappyUR;
+	protected LinearLayout howHappyUR;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public abstract class MavericBaseActiity extends Activity {
 		metaBolic = (TextView) findViewById(R.id.metapolic_typing);
 		inter = (TextView) findViewById(R.id.intract);
 		home = (Button) findViewById(R.id.home_button);
-		howHappyUR = (RelativeLayout) findViewById(R.id.how_happy_u_r);
+		howHappyUR = (LinearLayout) findViewById(R.id.how_happy_u_r);
 		/* login Activity not use for nw via menu */
 		// member.setOnClickListener(new OnClickListener() {
 		//

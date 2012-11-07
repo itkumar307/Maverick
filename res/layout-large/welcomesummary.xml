@@ -234,27 +234,11 @@
 									android:textColor="@color/allpage_subtitle"
 									android:textSize="20dip" />
 							</RelativeLayout>
-							<RelativeLayout
-								android:id="@+id/how_happy_u_r"
+
+							<ImageView
+								android:id="@+id/how_happy_img"
 								android:layout_width="wrap_content"
-								android:layout_height="wrap_content">
-
-								<ImageView
-									android:id="@+id/how_happy_img"
-									android:layout_width="wrap_content"
-									android:layout_height="wrap_content"
-									android:layout_marginLeft="5dip" />
-
-								<TextView
-									android:id="@+id/how_happytext"
-									android:layout_width="wrap_content"
-									android:layout_height="wrap_content"
-									android:layout_centerVertical="true"
-									android:layout_toRightOf="@+id/how_happy_img"
-									android:text="Mood Meter"
-									android:textColor="@color/allpage_subtitle"
-									android:textSize="20dip" />
-							</RelativeLayout>
+								android:layout_height="wrap_content" />
 
 							<TextView
 								android:id="@+id/water"
@@ -285,6 +269,134 @@
 							android:src="@drawable/workout_tracker_left" />
 					</RelativeLayout>
 				</RelativeLayout>
+				<TextView
+					android:id="@+id/how_happytext"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerVertical="true"
+					android:textStyle="bold"
+					android:layout_toRightOf="@+id/how_happy_img"
+					android:text="How are you feeling today?"
+					android:textColor="@color/allpage_subtitle"
+					android:textSize="20dip" />
+				<LinearLayout
+					android:id="@+id/how_happy_u_r"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/scalers12"
+					android:layout_marginLeft="5dip"
+					android:orientation="horizontal">
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="left"
+							android:text="-10" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="left"
+							android:layout_height="wrap_content"
+							android:id="@+id/redc" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="angry" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:text="-5" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:id="@+id/bluestrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:text="sad" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="0" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_gravity="center_horizontal"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:id="@+id/greenstrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="neutral" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="5" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:id="@+id/yellowstrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:text="satisfied" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="right"
+							android:text="10" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="right"
+							android:layout_height="wrap_content"
+							android:id="@+id/yellowc" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="right"
+							android:text="happy" />
+					</LinearLayout>
+				</LinearLayout>
+
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"

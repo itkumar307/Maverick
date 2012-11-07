@@ -18,68 +18,83 @@
 			android:layout_height="fill_parent"
 			android:orientation="vertical">
 
-			 <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/maveric_title"
-                android:background="@drawable/green"
-                android:padding="15dip"
-                android:layout_marginBottom="10dp">
-                <Button
-                    android:id="@+id/home_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:background="@drawable/home_arrow"></Button>
-                <ImageView
-                    android:id="@+id/img"
-                    android:layout_width="150dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentRight="true"
-                    android:background="@drawable/maveric_logo" />
-            </RelativeLayout>
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/maveric_title"
+				android:background="@drawable/green"
+				android:padding="15dip"
+				android:layout_marginBottom="10dp">
+				<Button
+					android:id="@+id/home_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:layout_marginLeft="5dip"
+					android:background="@drawable/home_arrow"></Button>
+				<ImageView
+					android:id="@+id/img"
+					android:layout_width="150dp"
+					android:layout_height="50dp"
+					android:layout_alignParentRight="true"
+					android:background="@drawable/maveric_logo" />
+			</RelativeLayout>
 
-			<ImageView
+			<TextView
 				android:id="@+id/whymaverickact"
-				android:layout_width="130dp"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="3dp"
-				android:layout_marginTop="10dp"
-				android:src="@drawable/whymaverick" />
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_marginLeft="20dp"
+				android:textColor="#0AAEDC"
+				android:textSize="20dp"
+				android:textStyle="bold"
+				android:text="Why Maveric?" />
 
-			<ImageView
+			<TextView
 				android:id="@+id/stressmanagementact"
-				android:layout_width="250dp"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="3dp"
-				android:layout_marginTop="10dp"
-				android:src="@drawable/stressmanagement" />
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_marginLeft="20dp"
+				android:textColor="#0AAEDC"
+				android:textSize="20dp"
+				android:textStyle="bold"
+				android:text="Basis of stress management" />
 
-			<ImageView
+			<TextView
 				android:id="@+id/knowyouract"
-				android:layout_width="150dp"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="3dp"
-				android:layout_marginTop="1dp"
-				android:src="@drawable/knowurbasic" />
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_marginLeft="20dp"
+				android:textColor="#0AAEDC"
+				android:textSize="20dp"
+				android:textStyle="bold"
+				android:text="Know your basis" />
 
-			<ImageView
+			<TextView
 				android:id="@+id/strengthact"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="3dp"
-				android:layout_marginTop="10dp"
-				android:src="@drawable/srengthtrainingbasics" />
+				android:layout_height="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_marginLeft="20dp"
+				android:textColor="#0AAEDC"
+				android:textSize="20dp"
+				android:textStyle="bold"
+				android:text="Strength training basis" />
 
-			<ImageView
+			<TextView
 				android:id="@+id/warmupact"
-				android:layout_width="250dp"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="3dp"
-				android:layout_marginTop="15dp"
-				android:src="@drawable/warmup" />
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_marginTop="10dip"
+				android:layout_marginLeft="20dp"
+				android:textColor="#0AAEDC"
+				android:textSize="20dp"
+				android:textStyle="bold"
+				android:text="The how and why of warming-up" />
 			<TextView
 				android:id="@+id/ask_our_expert"
 				android:layout_width="wrap_content"
@@ -109,10 +124,10 @@
 				android:layout_height="fill_parent"
 				android:layout_marginTop="10dip"
 				android:layout_marginLeft="20dp"
-				android:text="Exercise Demo"
 				android:textColor="#0AAEDC"
 				android:textSize="20dp"
-				android:textStyle="bold" />
+				android:textStyle="bold"
+				android:text="Exercise Demo" />
 
 			<LinearLayout
 				android:layout_width="fill_parent"

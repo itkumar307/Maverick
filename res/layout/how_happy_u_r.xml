@@ -36,103 +36,143 @@
 			android:layout_height="fill_parent">
 			<LinearLayout
 				android:orientation="vertical"
-				android:layout_width="fill_parent"
-				android:layout_marginTop="10dip"
-				android:layout_height="fill_parent"
 				android:id="@+id/default1"
-				android:layout_weight="0"
-				android:visibility="visible">
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
 				<TextView
+					android:id="@+id/how_happytext"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_gravity="center_horizontal"
-					android:text="HORN OR HALO?"
+					android:layout_centerVertical="true"
 					android:textStyle="bold"
-					android:textColor="@color/link_color" />
-				<RelativeLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content">
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_gravity="center_horizontal"
-						android:layout_toLeftOf="@+id/logs"
-						android:textStyle="bold"
-						android:layout_alignParentLeft="true"
-						android:text="Use this Mood Meter to build your emptional awareness!"
-						android:textColor="#000" />
-					<ImageView
-						android:layout_width="40dp"
-						android:layout_height="40dp"
-						android:id="@+id/logs"
-						android:layout_alignParentRight="true"
-						android:src="@drawable/happylogo" />
-				</RelativeLayout>
+					android:layout_toRightOf="@+id/how_happy_img"
+					android:text="How are you feeling today?"
+					android:textColor="@color/allpage_subtitle"
+					android:textSize="20dip" />
 				<LinearLayout
+					android:id="@+id/how_happy_u_r"
 					android:layout_width="fill_parent"
-					android:layout_height="fill_parent"
-					android:orientation="vertical"
-					android:background="@drawable/moodbg">
+					android:layout_height="wrap_content"
+					android:background="@drawable/scalers12"
+					android:layout_marginLeft="5dip"
+					android:orientation="horizontal">
 					<LinearLayout
-						android:orientation="horizontal"
 						android:layout_width="fill_parent"
-						android:layout_marginTop="10dip"
+						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:layout_height="fill_parent">
-						<ImageView
-							android:id="@+id/red"
-							android:layout_width="fill_parent"
-							android:layout_marginTop="10dip"
+						android:id="@+id/angry"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:layout_weight="1"
-							android:src="@drawable/redface" />
-
+							android:layout_gravity="left"
+							android:text="-10" />
 						<ImageView
-							android:id="@+id/yellow"
-							android:layout_width="fill_parent"
-							android:layout_marginTop="10dip"
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="left"
 							android:layout_height="wrap_content"
-							android:layout_weight="1"
-							android:src="@drawable/yellowface" />
+							android:id="@+id/redc" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="angry" />
 					</LinearLayout>
-
 					<LinearLayout
-						android:orientation="horizontal"
 						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:layout_height="fill_parent">
-						<ImageView
-							android:id="@+id/blue"
-							android:layout_width="fill_parent"
+						android:id="@+id/sad"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
 							android:layout_height="wrap_content"
-							android:layout_weight="1"
-							android:src="@drawable/blueface" />
+							android:text="-5" />
 						<ImageView
-							android:id="@+id/green"
-							android:layout_width="fill_parent"
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
 							android:layout_height="wrap_content"
-							android:layout_weight="1"
-							android:src="@drawable/greenface" />
+							android:id="@+id/bluestrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:text="sad" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:id="@+id/neutral"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="0" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_gravity="center_horizontal"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:id="@+id/greenstrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="neutral" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:id="@+id/satisfied"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:text="5" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:id="@+id/yellowstrike" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_height="wrap_content"
+							android:text="satisfied" />
+					</LinearLayout>
+					<LinearLayout
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:id="@+id/happy"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="right"
+							android:text="10" />
+						<ImageView
+							android:src="@drawable/strike"
+							android:layout_width="wrap_content"
+							android:layout_gravity="right"
+							android:layout_height="wrap_content"
+							android:id="@+id/yellowc" />
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="right"
+							android:text="happy" />
 					</LinearLayout>
 				</LinearLayout>
-				<RelativeLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content">
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:layout_centerHorizontal="true"
-						android:text="FEELINGS"
-						android:textStyle="bold"
-						android:textColor="#000" />
-					<ImageView
-						android:layout_width="40dp"
-						android:layout_height="40dp"
-						android:id="@+id/logs"
-						android:layout_alignParentLeft="true"
-						android:src="@drawable/happylogo" />
-				</RelativeLayout>
 			</LinearLayout>
+
 			<LinearLayout
 				android:orientation="vertical"
 				android:layout_width="fill_parent"
@@ -147,11 +187,12 @@
 					android:layout_gravity="center_horizontal"
 					android:text="Today you are"
 					android:textColor="#000" />
-				<ImageView
+				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginTop="10dip"
-					android:id="@+id/selected_img"
+					android:id="@+id/today"
+					android:textColor="@color/allpage_subtitle"
 					android:layout_gravity="center_horizontal" />
 
 			</LinearLayout>

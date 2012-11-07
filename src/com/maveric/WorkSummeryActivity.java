@@ -34,7 +34,7 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		Bundle dateSelected = getIntent().getExtras();
 		selectedDate = dateSelected.getString("date");
 		context = getApplicationContext();
@@ -54,7 +54,6 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		TextView profile = (TextView) findViewById(R.id.profile);
 		TextView water_link = (TextView) findViewById(R.id.water);
-		
 
 		howHappyUR.setOnClickListener(new OnClickListener() {
 
@@ -154,10 +153,10 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 
 		try {
 			int value = 0;
-			if(appPref.IsprofileApiCall())
+			if (appPref.IsprofileApiCall())
 				welcome.setText("Welcome" + "  " + appPref.getUserName());
 			else
-			welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
+				welcome.setText("Welcome" + "  " + appPref.getUserNameOnly());
 			Uri name = Uri
 					.withAppendedPath(
 							WorkoutProvider.WORKOUT_BY_DATE_SOMEVALUE_URI,
@@ -193,27 +192,45 @@ public class WorkSummeryActivity extends MavericBaseActiity {
 	}
 
 	private void setImage(int value) {
-		Log.i("manikk", "WorkSummeryActivity img= " + value);
-		ImageView selectedImg = (ImageView) findViewById(R.id.how_happy_img);
-
+		final ImageView red = (ImageView) findViewById(R.id.redc);
+		final ImageView green = (ImageView) findViewById(R.id.greenstrike);
+		final ImageView blue = (ImageView) findViewById(R.id.bluestrike);
+		final ImageView yellow = (ImageView) findViewById(R.id.yellowstrike);
+		final ImageView yellowc = (ImageView) findViewById(R.id.yellowc);
+		ImageView[] imgs = { red, green, blue, yellow, yellowc };
 		switch (value) {
 		case 1:
-			selectedImg.setBackgroundResource(R.drawable.redface);
+			red.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, red);
 			break;
 		case 2:
-			Log.i("manikk", "WorkSummeryActivity case= " + value);
-			selectedImg.setBackgroundResource(R.drawable.greenface);
+			blue.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, blue);
 			break;
 		case 3:
-			selectedImg.setBackgroundResource(R.drawable.blueface);
+			green.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, green);
 			break;
 		case 4:
-			selectedImg.setBackgroundResource(R.drawable.yellowface);
+			yellow.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, yellow);
+			break;
+		case 5:
+			yellowc.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, yellowc);
 			break;
 
 		default:
-			selectedImg.setBackgroundResource(R.drawable.yellowface);
+			green.setBackgroundResource(R.drawable.dym);
+			setDym(imgs, green);
 			break;
+		}
+	}
+
+	private void setDym(ImageView[] imgs, ImageView img) {
+		for (ImageView im : imgs) {
+			if (!img.equals(im))
+				im.setBackgroundResource(R.drawable.strike);
 		}
 	}
 }

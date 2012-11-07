@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class StaticPageMainActivity extends MavericBaseActiity {
@@ -15,21 +14,21 @@ public class StaticPageMainActivity extends MavericBaseActiity {
 
 	}
 
-	ImageView whyMaverick;
-	ImageView knowYour;
-	ImageView stressManagement;
-	ImageView strength;
-	ImageView warmup;
+	TextView whyMaverick;
+	TextView knowYour;
+	TextView stressManagement;
+	TextView strength;
+	TextView warmup;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		whyMaverick = (ImageView) findViewById(R.id.whymaverickact);
-		stressManagement = (ImageView) findViewById(R.id.stressmanagementact);
-		knowYour = (ImageView) findViewById(R.id.knowyouract);
-		strength = (ImageView) findViewById(R.id.strengthact);
-		warmup = (ImageView) findViewById(R.id.warmupact);
+		whyMaverick = (TextView) findViewById(R.id.whymaverickact);
+		stressManagement = (TextView) findViewById(R.id.stressmanagementact);
+		knowYour = (TextView) findViewById(R.id.knowyouract);
+		strength = (TextView) findViewById(R.id.strengthact);
+		warmup = (TextView) findViewById(R.id.warmupact);
 
 		TextView gifImage = (TextView) findViewById(R.id.gif);
 		TextView askOurExpert = (TextView) findViewById(R.id.ask_our_expert);
