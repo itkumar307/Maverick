@@ -36,7 +36,7 @@ public class WorkoutTrackerCategoryActivity extends MavericListBaseActiity {
 		super.onCreate(savedInstanceState);
 		ctx = getApplicationContext();
 		titleName = (TextView) findViewById(R.id.workout_tracker_side);
-		titleName.setText("List of Exercise");
+		titleName.setText("List of Exercises");
 		favourite = (Button) findViewById(R.id.load_fav);
 		favourite.setOnClickListener(new OnClickListener() {
 

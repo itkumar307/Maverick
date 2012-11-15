@@ -185,7 +185,7 @@ public class metabolicQueries extends MavericBaseActiity {
 		Log.i("manikk", "metabolicQueries = " + optionA);
 		if (optionA == 3 || optionA > optionB) {
 			// resultText.setText("You are a Protein Type");
-			appref.setLastMetabolicQueriesResult("You are a Protein Type");
+			appref.setLastMetabolicQueriesResult("You belong to Protein Type category");
 			// image.setImageResource(R.drawable.m2);
 		} else if (optionB == 3 || optionA < optionB) {
 			// resultText.setText("You are a Mixed Type");

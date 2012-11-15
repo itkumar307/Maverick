@@ -28,18 +28,20 @@ public class MetobolicChartActivity extends MavericBaseActiity {
 			}
 		});
 		TextView lastQueriesAnswer = (TextView) findViewById(R.id.lastQueriesAnswer);
-		lastQueriesAnswer.setText(app.getLastMetabolicQueriesResult() + " "
-				+ "is");
+
 		if ("You are a Protein Type".equalsIgnoreCase(app
 				.getLastMetabolicQueriesResult())) {
+			lastQueriesAnswer.setText("You belong to PROTIEN TYPE category");
 			RelativeLayout pro = (RelativeLayout) findViewById(R.id.protine_type_image);
 			pro.setVisibility(View.VISIBLE);
 		} else if ("You are a Mixed Type".equalsIgnoreCase(app
 				.getLastMetabolicQueriesResult())) {
+			lastQueriesAnswer.setText("You belong to MIXED TYPE category");
 			RelativeLayout mixed = (RelativeLayout) findViewById(R.id.mixed_type_image);
 			mixed.setVisibility(View.VISIBLE);
 		} else if ("You are a Carbo Type".equalsIgnoreCase(app
 				.getLastMetabolicQueriesResult())) {
+			lastQueriesAnswer.setText("You belong to CARBO TYPE category");
 			RelativeLayout mixed = (RelativeLayout) findViewById(R.id.carbo_type_image);
 			mixed.setVisibility(View.VISIBLE);
 		}

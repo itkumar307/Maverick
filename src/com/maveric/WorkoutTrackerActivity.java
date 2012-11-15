@@ -57,7 +57,7 @@ public class WorkoutTrackerActivity extends MavericListBaseActiity {
 		app = new Apppref(ctx);
 
 		titleName = (TextView) findViewById(R.id.workout_tracker_side);
-		titleName.setText("WORKOUTTRACKER");
+		titleName.setText("WORKOUT TRACKER");
 
 		maverickData = new MaverickDataOrganize(ctx);
 		msg = (TextView) findViewById(R.id.nolistmsg);

@@ -66,8 +66,8 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 		exceriseType = extras.getString("exceriseName");
 		Type = extras.getString("type");
 		calories = extras.getString("calories");
-		
-		Log.i("kumar","calories"+calories);
+
+		Log.i("kumar", "calories" + calories);
 
 		exceriseTypeText = (TextView) findViewById(R.id.excerisetypetext);
 		exceriseTypeText.setText(exceriseType);
@@ -135,7 +135,7 @@ public class WorkoutTrackerSaveActivity extends MavericBaseActiity {
 				if (isAllfilled()) {
 					final ProgressDialog progressDialog = ProgressDialog.show(
 							WorkoutTrackerSaveActivity.this, "Saving...",
-							"Wait a few sec your data is saving");
+							"Wait a few secs while your data is being saved");
 
 					new Thread() {
 						public void run() {

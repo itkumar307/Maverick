@@ -59,7 +59,7 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 
 			@Override
 			public void onClick(View v) {
-//				gotoHomeActivity();
+				// gotoHomeActivity();
 				userNameString = userNameIn.getText().toString();
 				passWordString = passWordIn.getText().toString();
 
@@ -166,7 +166,8 @@ public class LoginOnlyActivity extends MavericBaseActiity {
 				}
 
 				progressDialog = ProgressDialog.show(LoginOnlyActivity.this,
-						"Loading...", "Wait a few sec your data is saving");
+						"Loading...",
+						"Wait a few secs while your data is being saved");
 				new Thread() {
 					public void run() {
 						try {

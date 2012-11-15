@@ -31,6 +31,6 @@
 		android:lineSpacingExtra="5dp"
 		android:textColor="#000"
 		android:layout_height="wrap_content"
-		android:layout_below="@+id/diet_serve"
+		android:layout_below="@+id/diet_name"
 		android:layout_centerHorizontal="true" />
 </RelativeLayout>

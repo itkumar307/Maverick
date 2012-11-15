@@ -50,7 +50,7 @@
 				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold"
-				android:text="Why Maveric?" />
+				android:text="Why Maverick?" />
 
 			<TextView
 				android:id="@+id/stressmanagementact"
@@ -61,7 +61,7 @@
 				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold"
-				android:text="Basis of stress management" />
+				android:text="Basics of stress management" />
 
 			<TextView
 				android:id="@+id/knowyouract"
@@ -72,7 +72,7 @@
 				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold"
-				android:text="Know your basis" />
+				android:text="Know your Basics" />
 
 			<TextView
 				android:id="@+id/strengthact"
@@ -83,7 +83,7 @@
 				android:textColor="#0AAEDC"
 				android:textSize="20dp"
 				android:textStyle="bold"
-				android:text="Strength training basis" />
+				android:text="Strength training Basics" />
 
 			<TextView
 				android:id="@+id/warmupact"

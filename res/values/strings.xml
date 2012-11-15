@@ -534,7 +534,7 @@
 		\‘stress\’. Unless this ‘hole’ at
 		the bottom of the bucket
 		is sealed, no point filling up the bucket.
-		Maverick helps identify
+		Maverick helps identify this hole in your body.
 	</string>
 	<!-- Regex for email -->
 	<string name="EMAIL_ID_FORMAT_EXPRESSION">^\\s*[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\@[\\w\\-\\+_]+\\.[\\w\\-\\+_]+(\\.[\\w\\-\\+_]+)*\\s*$
@@ -596,7 +596,7 @@
 		gluteus muscles,
 		hamstrings, quadriceps) the next.
 	</string>
-	<string name="strength4">ifting weights can lift your spirits. A recent
+	<string name="strength4">Lifting weights can lift your spirits. A recent
 		study found that strength training improved moods in people
 		suffering
 		from depression. It also seemed to help them sleep better. Other

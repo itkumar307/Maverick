@@ -47,7 +47,7 @@
 			<TextView
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Your Macro  Nutrient Ratio for every meal for"
+				android:text="Your macro nutrient ratio in every meal for"
 				android:layout_marginTop="25dip"
 				android:textColor="#000"
 				android:gravity="center" />
@@ -62,7 +62,7 @@
 			<TextView
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="is as selected below:"
+				android:text="is"
 				android:layout_marginTop="10dip"
 				android:textColor="#000"
 				android:gravity="center" />

@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import android.content.ContentValues;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -15,7 +16,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.maveric.contentprovider.FoodProvider;
-import com.maveric.database.model.FoodTable;
 import com.maveric.database.model.FoodTrackerTable;
 import com.maveric.enums.foodTiming;
 
@@ -83,21 +83,23 @@ public class DietTrackerAddActivity extends MavericBaseActiity {
 		for (Entry<String, String> foods : selectedFoodDetails.entrySet()) {
 			values.put(foods.getKey(), foods.getValue());
 		}
-
-		String serves = ""
-				+ (Integer.valueOf(serving_count.getText().toString()) / Integer
-						.valueOf(getIntent().getExtras().getString("serve")));
-		values.put(FoodTrackerTable.Column.SERVE, serves);
-		values.put(FoodTrackerTable.Column.USERSERVE, serving_count.getText()
-				.toString());
-		values.put(FoodTrackerTable.Column.FAV_STATE,
-				diet_tracker_add_as_fav.isChecked() ? 1 : 0);
-		values.put(FoodTrackerTable.Column.FOOD_TYPE,
-				foodTiming.valueByMsg(foodTiming1.getSelectedItem().toString()));
-		values.put(FoodTrackerTable.Column.DATE, getIntent().getExtras()
-				.getString("date"));
-		getContentResolver().insert(FoodProvider.INSERT_FOOD_DETAILS_URI,
-				values);
-		this.finish();
+		if (!TextUtils.isEmpty(serving_count.getText().toString())) {
+			String serves = ""
+					+ (Integer.valueOf(serving_count.getText().toString()) / Integer
+							.valueOf(getIntent().getExtras().getString("serve")));
+			values.put(FoodTrackerTable.Column.SERVE, serves);
+			values.put(FoodTrackerTable.Column.USERSERVE, serving_count
+					.getText().toString());
+			values.put(FoodTrackerTable.Column.FAV_STATE,
+					diet_tracker_add_as_fav.isChecked() ? 1 : 0);
+			values.put(FoodTrackerTable.Column.FOOD_TYPE, foodTiming
+					.valueByMsg(foodTiming1.getSelectedItem().toString()));
+			values.put(FoodTrackerTable.Column.DATE, getIntent().getExtras()
+					.getString("date"));
+			getContentResolver().insert(FoodProvider.INSERT_FOOD_DETAILS_URI,
+					values);
+			this.finish();
+		} else
+			toast("Please fill your serving");
 	}
 }
